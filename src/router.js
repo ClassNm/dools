@@ -2,24 +2,175 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 
-Vue.use(Router)
+/*  Sigh 报名须知 */
+import sigh from './components/sigh/index'
+
+/*  Rank  确认身份*/
+import  rank from './components/rank/index'
+
+/* Basic  基本信息*/
+import  basic from './components/basic/index'
+
+/* Photo  个人照片*/
+import photo from  './components/photo/index'
+
+/* midelSchool  中学信息*/
+import midelSchool from  './components/midelSchool/index'
+
+/* grade   成绩信息*/
+import grade from  './components/grade/index'
+
+/* selectionTest   选考科目成绩*/
+import selectionTest from  './components/selectionTest/index'
+
+/*  generalMessage  综合信息*/
+import generalMessage from  './components/generalMessage/index'
+
+/*   newly         获奖记录    综合信息里*/
+import bear from './components/newly/index'
+
+/* publicActivity   高中期间获奖记录  综合信息里*/
+import  schoolAward from './components/publicActivity/index'
+
+/* patent           获得的专利      综合信息*/
+import  patent from './components/patent/index'
+
+/*  mockExam   模考成绩*/
+import mockExam from  './components/mockExam/index'
+
+/*  singleSub  单科排名*/
+import singleSub from  './components/singleSub/index'
+
+/*  referrer  推荐人信息*/
+import referrer from  './components/referrer/index'
+
+/*  expert   推荐专家  推荐人信息*/
+import expert from './components/expert/index'
+
+/*   secondarySchool  推荐中学  推荐人信息*/
+import  secondarySchool from './components/secondarySchool/index'
+
+/* organization   推荐社会团体  推荐人信息*/
+import organization from './components/organization/index'
+
+
+/*  volunteer  志愿管理*/
+import volunteer from  './components/volunteer/index'
+
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      {
+        path:'/',
+        redirect:'/home'
+      },
+      {
+          path: '/home',
+          name: 'home',
+          component: Home,
+          children:[
+              {
+                  path: '/',
+                  redirect:'/home/sigh'
+              },
+              {
+                  path: '/home/sigh',
+                  name: 'sigh',
+                  component: sigh
+              },
+              {
+                  path: '/rank',
+                  name: 'rank',
+                  component: rank
+              },
+              {
+                  path: '/basic',
+                  name: 'basic',
+                  component: basic
+              },
+              {
+                  path: '/photo',
+                  name: 'photo',
+                  component: photo
+              },
+              {
+                  path: '/midelSchool',
+                  name: 'midelSchool',
+                  component: midelSchool
+              },
+              {
+                  path: '/grade',
+                  name: 'grade',
+                  component: grade
+              },
+              {
+                  path: '/selectionTest',
+                  name: 'selectionTest',
+                  component: selectionTest
+              },
+              {
+                  path: '/generalMessage',
+                  name: 'generalMessage',
+                  component: generalMessage,
+                  children:[
+                      {
+                          path:'/newly',
+                          name:'bear',
+                          component: bear
+                      },
+                      {
+                          path:'/publicActivity',
+                          name:'schoolAward',
+                          component: schoolAward
+                      },
+                      {
+                          path:'/patent',
+                          name:'patent',
+                          component: patent
+                      },
+                  ]
+              },
+              {
+                  path: '/mockExam',
+                  name: 'mockExam',
+                  component: mockExam
+              },
+              {
+                  path: '/singleSub',
+                  name: 'singleSub',
+                  component: singleSub
+              },
+              {
+                  path: '/referrer',
+                  name: 'referrer',
+                  component: referrer,
+                  children:[
+                      {
+                          path:'/expert',
+                          name:'expert',
+                          component: expert
+                      },
+                      {
+                          path:'/secondarySchool',
+                          name:'secondarySchool',
+                          component: secondarySchool
+                      },
+                      {
+                          path:'/organization',
+                          name:'organization',
+                          component: organization
+                      }
+                  ]
+              },
+              {
+                  path: '/volunteer',
+                  name: 'volunteer',
+                  component: volunteer
+              },
+          ]
+      },
   ]
 })

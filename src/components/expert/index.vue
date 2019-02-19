@@ -1,20 +1,28 @@
 <template>
     <div>
+        <!--<div class="ui-breadcrumbs">-->
+            <!--<ul class="ui-breadcrumb ">-->
+                <!--<li><a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a></li>-->
+                <!--<li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>-->
+                <!--<li class="active">填报个人信息</li>-->
+                <!--<li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>-->
+                <!--<li class="active">推荐人/推荐单位</li>-->
+            <!--</ul>-->
+        <!--</div>-->
         <div class="ui-box">
             <div class="ui-box-head">
-                <h3 class="ui-box-head-title">添加推荐中学</h3>
-                <span class="ui-box-head-text">
-                    （<span class="redstar">*</span> 为必填项）
+                <h3 class="ui-box-head-title">添加推荐专家</h3>
+                <span class="ui-box-head-text">（<span class="redstar">*</span> 为必填项）
                 </span>
             </div>
             <div class="ui-box-container">
-                <form id="form_step" name="form_step" action="/zzbm/stu/tjr/savesch.action" method="post" novalidate="novalidate">
+                <form id="form_step" name="form_step" action="/zzbm/stu/tjr/savegr.action" method="post" novalidate="novalidate">
                     <input name="zid" value="" id="form_step_zid" type="hidden">
-                    <input name="data.type" value="SCHOOL" id="form_step_data_type" type="hidden">
+                    <input name="data.type" value="EXPERT" id="form_step_data_type" type="hidden">
                     <input name="data.id" value="" id="form_step_data_id" type="hidden">
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>推荐中学名称：</strong></label>
-                        <input name="data.dwmc" maxlength="50" id="form_step_data_dwmc" class="ui-input" type="text">
+                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>推荐人姓名：</strong></label>
+                        <input name="data.xm" maxlength="30" id="form_step_data_xm" class="ui-input" type="text">
                         <p class="ui-form-explain">添加后将不允许修改</p>
                     </div>
                     <div class="ui-form-item">
@@ -28,9 +36,19 @@
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>联系人：</strong></label>
-                        <input name="data.xm" maxlength="30" id="form_step_data_xm" class="ui-input" type="text">
+                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>所在单位：</strong></label>
+                        <input name="data.dwmc" maxlength="50" id="form_step_data_dwmc" class="ui-input" type="text">
                         <p class="ui-form-explain">添加后将不允许修改</p>
+                    </div>
+                    <div class="ui-form-item">
+                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>职称：</strong></label>
+                        <input name="data.zc" maxlength="30" id="form_step_data_zc" class="ui-input" type="text">
+                        <p class="ui-form-explain"></p>
+                    </div>
+                    <div class="ui-form-item">
+                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>职务：</strong></label>
+                        <input name="data.zw" maxlength="30" id="form_step_data_zw" class="ui-input" type="text">
+                        <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item" title="该手机号用于提醒推荐人填写推荐信，仅限一个，请如实填写">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>手机号码：</strong></label>
@@ -52,8 +70,41 @@
     </div>
 </template>
 
-
 <style scoped>
+
+
+    .ui-breadcrumb {
+        font-size: 0;
+        padding: 0;
+    }
+    .ui-breadcrumb li {
+        padding: 8px 4px;
+    }
+    .ui-breadcrumb li {
+        color: #333;
+        font-size: 14px;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: top;
+    }
+    .ui-breadcrumb a {
+        color: #333;
+    }
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+    .ui-breadcrumb .icon .iconfont {
+        font-size: 12px;
+    }
+    .iconfont {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+    }
+    .ui-breadcrumb li.active {
+        color: #999;
+    }
     .ui-box {
         zoom: 1;
         font-size: 12px;
@@ -94,7 +145,7 @@
         padding: 10px 0;
     }
     .ui-form-item {
-        padding: 0 5px 6px 180px;
+        padding: 0 5px 6px 150px;
         zoom: 1;
     }
     .ui-label {
@@ -140,10 +191,13 @@
         min-height: 1.2em;
         padding: 0px 2px 1px;
     }
+    .m_top10 {
+        margin-top: 10px;
+    }
     .ui-form-item input {
         vertical-align: middle;
-        width: 50px;
-        height: 30px;
+        height: 32px;
+        width: 38px;
     }
     .ui-button-lorange {
         height: 32px;
@@ -153,12 +207,10 @@
         border: 1px solid #d66500;
         background-color: #f57403;
     }
-    .ui-button-lceladon, .ui-button-mceladon, .ui-button-sceladon {
-        color: #fff;
-        text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-        border: 1px solid #4498ae;
-        background-color: #50aac2;
-    }
+
+
+
+
 
 
 
