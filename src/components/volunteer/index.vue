@@ -2,12 +2,16 @@
     <div class="volunteer">
         <div class="ui-breadcrumbs">
             <ul class="ui-breadcrumb ">
-                <li><a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a></li>
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">志愿管理</li>
             </ul>
         </div>
-        <div class="ui-box">
+        <div class="ui-box" v-if="flag">
             <div class="ui-box-container">
                 <div class="ui-tiptext-container ui-tiptext-container-message" style="margin-bottom:10px; background:#eef6fa;">
                     <p class="ui-tiptext ui-tiptext-message" style="font-size:14px; width: 78px;margin: 0"  align="left">
@@ -32,14 +36,41 @@
                         <h3 class="ui-tipbox-title" style="color: #f00; width: 86px">暂无志愿信息</h3>
                     </div>
                 </div>
-                <div class="text_center">
-                    <a href="https://gaokao.chsi.com.cn/zzbm/stu/zhiy/toselorg.action" class="ui-button ui-button-lceladon">添加志愿</a>
-                </div>
+                <router-link to="/volunteerNew">
+                    <div class="text_center">
+                        <!--<a href="https://gaokao.chsi.com.cn/zzbm/stu/zhiy/toselorg.action" class="ui-button ui-button-lceladon">添加志愿</a>-->
+                        <!--<Button type="primary" @click="btn">添加志愿</Button>-->
+                        <Button type="primary" @click="btn">添加志愿</Button>
+                    </div>
+                </router-link>
             </div>
         </div>
+        <router-view></router-view>
     </div>
 </template>
 
+<script>
+    export default {
+        methods:{
+            btn() {
+                // router.push('/volunteer/volunteerNew')
+                // router.push({path:'/volunteer/volunteerNew'})
+                // console.log(1111)
+            }
+        },
+        computed:{
+            flag(){
+                let pa = this.$route.path;
+                if (pa == '/volunteerNew' || pa=="/volunteerNew/applicationForm" ||pa=="/additional"){
+                    console.log('2级路由');
+                    return false;
+                } else {
+                    return true
+                }
+            }
+        }
+    }
+</script>
 
 <style scoped>
     .volunteer{
@@ -217,8 +248,6 @@
         color: #333;
         text-decoration: none;
     }
-
-
 
 
 </style>

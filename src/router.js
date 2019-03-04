@@ -57,10 +57,19 @@ import organization from './components/organization/index'
 /*  volunteer  志愿管理*/
 import volunteer from  './components/volunteer/index'
 
+/*  volunteerNew  添加志愿   志愿管理*/
+import volunteerNew from './components/volunteerNew/index'
+
+/*  applicationForm  报考志愿   三级路由  志愿管理*/
+import applicationForm from './components/applicationForm/index'
+
+/*  additional   附加材料    三级路由   志愿管理*/
+import additional from './components/additional/index'
+
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
       {
@@ -168,7 +177,26 @@ export default new Router({
               {
                   path: '/volunteer',
                   name: 'volunteer',
-                  component: volunteer
+                  component: volunteer,
+                  children:[
+                      {
+                          path:'/volunteerNew',
+                          name:'volunteerNew',
+                          component:volunteerNew,
+                          children:[
+                              {
+                                  path:'/volunteerNew/applicationForm',
+                                  name:'applicationForm',
+                                  component:applicationForm,
+                              },
+                              {
+                                  path:'/additional',
+                                  name:'additional',
+                                  component:additional
+                              }
+                          ]
+                      }
+                  ]
               },
           ]
       },

@@ -2,39 +2,57 @@
     <div class="referrer">
         <div class="ui-breadcrumbs">
             <ul class="ui-breadcrumb ">
-                <li><a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a></li>
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">填报个人信息</li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">推荐人/推荐单位</li>
             </ul>
         </div>
-        <div class="ui-box">
+        <div class="ui-box"  v-if="flag">
             <div class="ui-box-head">
                 <h3 class="ui-box-head-title">推荐人/推荐单位</h3>
             </div>
             <div class="ui-box-container">
                 <div class="jbxxadd m_top10 m_bottom10">
-                    <router-link to="/expert">
-                        <a href="javascript" class="tjr" for="tjr">+ 添加推荐专家</a>
+                    <router-link to="/expert" >
+                        <a href="javascript:;" class="tjr" for="tjr">+ 添加推荐专家</a>
                     </router-link>
                     &nbsp;或者&nbsp;
                     <router-link to="/secondarySchool">
-                        <a href="javascript" class="tjr" for="tjdw">+ 添加推荐中学</a>
+                        <a href="javascript:;" class="tjr" for="tjdw">+ 添加推荐中学</a>
                     </router-link>
                     &nbsp;或者&nbsp;
                     <router-link to="/organization">
-                        <a href="javascript" class="tjr" for="tjdw">+ 添加推荐社会团体</a>
+                        <a href="javascript:;" class="tjr" for="tjdw">+ 添加推荐社会团体</a>
                     </router-link>
                 </div>
                 尚未添加推荐人信息。
             </div>
         </div>
-        <!--<keep-alive>-->
             <router-view></router-view>
-        <!--</keep-alive>-->
     </div>
 </template>
+
+<script>
+    export default {
+        computed:{
+            flag(){
+                let pa = this.$route.path;
+                if( pa == '/secondarySchool' || pa == '/expert' || pa == '/organization'){
+                    return false
+                }else{
+                    return true
+                }
+            }
+        },
+    }
+
+</script>
 
 <style scoped>
     .referrer{

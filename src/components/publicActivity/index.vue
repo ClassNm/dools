@@ -13,7 +13,8 @@
             </div>
             <div class="ui-box-container">
                 <input name="gzStartTime" value="20150901" id="gzStartTime" type="hidden">
-                <form id="commitEditForm" name="commitEditForm" action="/zzbm/stu/info/commitHjjl.action" method="post" enctype="multipart/form-data" novalidate="novalidate">
+                <form id="commitEditForm"
+                      name="commitEditForm" action="/zzbm/stu/info/commitHjjl.action" method="post" enctype="multipart/form-data" novalidate="novalidate">
                     <input name="zid" value="" id="commitEditForm_zid" type="hidden">
                     <input name="xxId" value="" id="commitEditForm_xxId" type="hidden">
                     <input id="UpToken" name="upToken" style="display: none;" value="c30b263cab7fba7d8239566eb1ff401f">
@@ -66,8 +67,9 @@
                         <p class="ui-form-explain uploadeddel" style="padding-top:0;">上传图片格式为 jpg 或 jpeg；大小为20K-1M</p>
                     </div>
                     <div class="ui-form-item m_top10">
-                        <input id="saveBtn" class="ui-button ui-button-lorange" value="新增" type="submit">
-                        &nbsp;&nbsp;<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">
+                        <Button type="warning">新增</Button>
+                        &nbsp;&nbsp;
+                        <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                     </div>
                 </form>
             </div>
@@ -75,9 +77,6 @@
     </div>
 </template>
 
-<script>
-
-</script>
 
 <style scoped>
     .ui-box {

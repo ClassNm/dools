@@ -2,7 +2,11 @@
     <div class="selectionTest">
         <div class="ui-breadcrumbs">
             <ul class="ui-breadcrumb ">
-                <li> <a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a> </li>
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">填报个人信息</li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
@@ -23,9 +27,13 @@
                             </p>
                         </div>
                         <div class="text_center">
-                            <form action="ignoreKskmcj.action" method="post" id="form_step" class="addsubmittip" novalidate="novalidate">
-                                <input class="ui-button ui-button-lceladon" value="下一步" type="submit">
-                            </form>
+                            <!--action="ignoreKskmcj.action"-->
+                            <!--method="post"-->
+                            <!--novalidate="novalidate"-->
+                            <div id="form_step" class="addsubmittip">
+                                <!--<input class="ui-button ui-button-lceladon" value="下一步" type="submit">-->
+                                <Button type="primary">下一步</Button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,7 +138,7 @@
     }
     .text_center {
         text-align: center;
-        padding: 0;
+        padding: 10px 0;
     }
     .ui-button-lceladon {
          height: 32px;

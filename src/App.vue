@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/home">返回首页</router-link>
+      <router-link to="/home"></router-link>
+      <!--<router-link to="/home"></router-link>-->
       <!--<router-link to="/about">About</router-link>-->
     </div>
     <keep-alive>
@@ -19,7 +20,15 @@
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  /*padding: 30px;*/
+
+}
+.ivu-menu-submenu{
+
+}
+.ivu-menu-submenu-title{
+  padding: 9px 24px;
+  height: 48px;
 }
 
 #nav a {

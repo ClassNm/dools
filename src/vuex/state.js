@@ -1,5 +1,5 @@
 const state = {
-    appName:'',
+    // appName:'',
     SerialNumber: '11111111',
     PhoneNumber: ''
 };

@@ -13,16 +13,20 @@
         </p>
         <div class="four">
             <!--用户名？？？-->
-            <p class="Only">欢迎,web_liuhang@163.com </p><br>
-            <a href="JavaScript" class="Clear">用户中心</a>
-            <a href="JavaScript" class="ClearAgain">退出</a>
+            <p class="Only" style="cursor:wait">欢迎,web_liuhang@163.com </p><br>
+            <a href="javascript:;" class="Clear" @click="change">用户中心</a>
+            <a href="javascript:;" class="ClearAgain">退出</a>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-
+        methods:{
+            change(){
+                console.log(1)
+            }
+        }
     }
 </script>
 
@@ -86,6 +90,7 @@
         text-decoration: none;
         padding: 10px;
         font-size: 12px;
+        /*cursor:s-resize*/
     }
     .ClearAgain{
         color: white;

@@ -2,14 +2,18 @@
     <div class="generalMessage">
         <div class="ui-breadcrumbs">
             <ul class="ui-breadcrumb ">
-                <li> <a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a> </li>
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">填报个人信息</li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">综合信息</li>
             </ul>
         </div>
-        <div class="ui-box">
+        <div class="ui-box" v-if="flag">
             <div class="ui-box-head">
                 <h3 class="ui-box-head-title">综合信息</h3>
             </div>
@@ -22,21 +26,22 @@
                 </div>
                 <div class="jbxxadd m_bottom10">
                     <router-link to="/newly">
-                        <a href="javascript">+ 新增高中期间参与过的社会活动</a>
+                        <a href="javascript:;">+ 新增高中期间参与过的社会活动</a>
                     </router-link>
                     &nbsp;或者&nbsp;
                     <router-link to="/publicActivity">
-                        <a href="javascript">+ 新增高中期间的获奖记录</a>
+                        <a href="javascript:;">+ 新增高中期间的获奖记录</a>
                     </router-link>
                     &nbsp;或者&nbsp;
                     <router-link to="/patent">
-                        <a href="javascript">+ 新增高中期间获得的专利</a>
+                        <a href="javascript:;">+ 新增高中期间获得的专利</a>
                     </router-link>
                 </div>
                 <div class="text_center">
-                    <form action="ignoreZhxx.action" method="post">
-                        <input value="下一步" class="ui-button ui-button-lceladon" type="submit">
-                    </form>
+                    <!--<form action="ignoreZhxx.action" method="post">-->
+                        <!--<input value="下一步" class="ui-button ui-button-lceladon" type="submit">-->
+                    <!--</form>-->
+                    <Button type="primary">下一步</Button>
                 </div>
             </div>
         </div>
@@ -44,6 +49,21 @@
     </div>
 </template>
 
+<script>
+    export default {
+        computed:{
+            flag(){
+                let pa = this.$route.path;
+                if (pa == '/newly' || pa == '/publicActivity' || pa == '/patent'){
+                    return false
+                }else {
+                    return true
+                }
+            }
+        }
+
+    }
+</script>
 
 
 <style scoped>

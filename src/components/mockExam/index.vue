@@ -2,7 +2,11 @@
     <div class="mockExam">
         <div class="ui-breadcrumbs">
             <ul class="ui-breadcrumb ">
-                <li> <a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a> </li>
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">填报个人信息</li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
@@ -32,19 +36,19 @@
                         <tbody>
                         <tr>
                             <td>语文</td>
-                            <td style="text-align:center;" id="td00"><input name="xycjs[0].cj1" maxlength="10" value="110" id="commitMkcjxx_xycjs_0__cj1" type="text">/<input name="xycjs[0].mf1" maxlength="10" value="150" id="commitMkcjxx_xycjs_0__mf1" type="text"></td>
+                            <td style="text-align:center;" id="td00"><input name="xycjs[0].cj1" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cj1" type="text">/<input name="xycjs[0].mf1" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf1" type="text"></td>
                             <td style="text-align:center;" id="td01"><input name="xycjs[1].cj1" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj1" type="text">/<input name="xycjs[1].mf1" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf1" type="text"></td>
                             <td style="text-align:center;" id="td02"><input name="xycjs[2].cj1" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj1" type="text">/<input name="xycjs[2].mf1" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf1" type="text"></td>
                         </tr>
                         <tr>
                             <td>数学</td>
-                            <td style="text-align:center;" id="td10"><input name="xycjs[0].cj2" maxlength="10" value="130" id="commitMkcjxx_xycjs_0__cj2" type="text">/<input name="xycjs[0].mf2" maxlength="10" value="150" id="commitMkcjxx_xycjs_0__mf2" type="text"></td>
-                            <td style="text-align:center;" id="td11"><input name="xycjs[1].cj2" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj2" type="text">/<input name="xycjs[1].mf2" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf2" type="text"></td>
-                            <td style="text-align:center;" id="td12"><input name="xycjs[2].cj2" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj2" type="text">/<input name="xycjs[2].mf2" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf2" type="text"></td>
+                            <td style="text-align:center;" id="td10"><input name="xycjs[0].cj2" maxlength="无" value="无" id="commitMkcjxx_xycjs_0__cj2" type="text">/<input name="xycjs[0].mf2" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf2" type="text"></td>
+                            <td style="text-align:center;" id="td11"><input name="xycjs[1].cj2" maxlength="无" value="无" id="commitMkcjxx_xycjs_1__cj2" type="text">/<input name="xycjs[1].mf2" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf2" type="text"></td>
+                            <td style="text-align:center;" id="td12"><input name="xycjs[2].cj2" maxlength="无" value="无" id="commitMkcjxx_xycjs_2__cj2" type="text">/<input name="xycjs[2].mf2" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf2" type="text"></td>
                         </tr>
                         <tr>
                             <td>外语</td>
-                            <td style="text-align:center;" id="td20"><input name="xycjs[0].cj3" maxlength="10" value="112" id="commitMkcjxx_xycjs_0__cj3" type="text">/<input name="xycjs[0].mf3" maxlength="10" value="150" id="commitMkcjxx_xycjs_0__mf3" type="text"></td>
+                            <td style="text-align:center;" id="td20"><input name="xycjs[0].cj3" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cj3" type="text">/<input name="xycjs[0].mf3" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf3" type="text"></td>
                             <td style="text-align:center;" id="td21"><input name="xycjs[1].cj3" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj3" type="text">/<input name="xycjs[1].mf3" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf3" type="text"></td>
                             <td style="text-align:center;" id="td22"><input name="xycjs[2].cj3" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj3" type="text">/<input name="xycjs[2].mf3" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf3" type="text"></td>
                         </tr>
@@ -68,19 +72,19 @@
                         </tr>
                         <tr>
                             <td>物理</td>
-                            <td style="text-align:center;" id="td60"><input name="xycjs[0].cj7" maxlength="10" value="90" id="commitMkcjxx_xycjs_0__cj7" type="text">/<input name="xycjs[0].mf7" maxlength="10" value="110" id="commitMkcjxx_xycjs_0__mf7" type="text"></td>
+                            <td style="text-align:center;" id="td60"><input name="xycjs[0].cj7" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cj7" type="text">/<input name="xycjs[0].mf7" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf7" type="text"></td>
                             <td style="text-align:center;" id="td61"><input name="xycjs[1].cj7" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj7" type="text">/<input name="xycjs[1].mf7" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf7" type="text"></td>
                             <td style="text-align:center;" id="td62"><input name="xycjs[2].cj7" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj7" type="text">/<input name="xycjs[2].mf7" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf7" type="text"></td>
                         </tr>
                         <tr>
                             <td>化学</td>
-                            <td style="text-align:center;" id="td70"><input name="xycjs[0].cj8" maxlength="10" value="90" id="commitMkcjxx_xycjs_0__cj8" type="text">/<input name="xycjs[0].mf8" maxlength="10" value="100" id="commitMkcjxx_xycjs_0__mf8" type="text"></td>
+                            <td style="text-align:center;" id="td70"><input name="xycjs[0].cj8" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cj8" type="text">/<input name="xycjs[0].mf8" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf8" type="text"></td>
                             <td style="text-align:center;" id="td71"><input name="xycjs[1].cj8" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj8" type="text">/<input name="xycjs[1].mf8" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf8" type="text"></td>
                             <td style="text-align:center;" id="td72"><input name="xycjs[2].cj8" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj8" type="text">/<input name="xycjs[2].mf8" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf8" type="text"></td>
                         </tr>
                         <tr>
                             <td>生物</td>
-                            <td style="text-align:center;" id="td80"><input name="xycjs[0].cj9" maxlength="10" value="80" id="commitMkcjxx_xycjs_0__cj9" type="text">/<input name="xycjs[0].mf9" maxlength="10" value="90" id="commitMkcjxx_xycjs_0__mf9" type="text"></td>
+                            <td style="text-align:center;" id="td80"><input name="xycjs[0].cj9" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cj9" type="text">/<input name="xycjs[0].mf9" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf9" type="text"></td>
                             <td style="text-align:center;" id="td81"><input name="xycjs[1].cj9" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj9" type="text">/<input name="xycjs[1].mf9" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf9" type="text"></td>
                             <td style="text-align:center;" id="td82"><input name="xycjs[2].cj9" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj9" type="text">/<input name="xycjs[2].mf9" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf9" type="text"></td>
                         </tr>
@@ -122,25 +126,25 @@
                         </tr>
                         <tr>
                             <td>理科综合</td>
-                            <td style="text-align:center;" id="td150"><input name="xycjs[0].cj15" maxlength="10" value="200" id="commitMkcjxx_xycjs_0__cj15" type="text">/<input name="xycjs[0].mf15" maxlength="10" value="300" id="commitMkcjxx_xycjs_0__mf15" type="text"></td>
+                            <td style="text-align:center;" id="td150"><input name="xycjs[0].cj15" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cj15" type="text">/<input name="xycjs[0].mf15" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mf15" type="text"></td>
                             <td style="text-align:center;" id="td151"><input name="xycjs[1].cj15" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cj15" type="text">/<input name="xycjs[1].mf15" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mf15" type="text"></td>
                             <td style="text-align:center;" id="td152"><input name="xycjs[2].cj15" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cj15" type="text">/<input name="xycjs[2].mf15" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mf15" type="text"></td>
                         </tr>
                         <tr>
                             <td>总分</td>
-                            <td id="tdzf0" style="text-align:center;"><input name="xycjs[0].cjzf" maxlength="10" value="612" id="commitMkcjxx_xycjs_0__cjzf" type="text">/<input name="xycjs[0].mfzf" maxlength="10" value="750" id="commitMkcjxx_xycjs_0__mfzf" type="text"></td>
+                            <td id="tdzf0" style="text-align:center;"><input name="xycjs[0].cjzf" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__cjzf" type="text">/<input name="xycjs[0].mfzf" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__mfzf" type="text"></td>
                             <td id="tdzf1" style="text-align:center;"><input name="xycjs[1].cjzf" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__cjzf" type="text">/<input name="xycjs[1].mfzf" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__mfzf" type="text"></td>
                             <td id="tdzf2" style="text-align:center;"><input name="xycjs[2].cjzf" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__cjzf" type="text">/<input name="xycjs[2].mfzf" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__mfzf" type="text"></td>
                         </tr>
                         <tr>
                             <td>年级排名</td>
-                            <td id="tdpm0" style="text-align:center;"><input name="xycjs[0].pm" maxlength="10" value="5" id="commitMkcjxx_xycjs_0__pm" class="big" type="text"></td>
+                            <td id="tdpm0" style="text-align:center;"><input name="xycjs[0].pm" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__pm" class="big" type="text"></td>
                             <td id="tdpm1" style="text-align:center;"><input name="xycjs[1].pm" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__pm" class="big" type="text"></td>
                             <td id="tdpm2" style="text-align:center;"><input name="xycjs[2].pm" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__pm" class="big" type="text"></td>
                         </tr>
                         <tr>
                             <td>年级人数</td>
-                            <td id="tdrs0" style="text-align:center;"><input name="xycjs[0].rs" maxlength="10" value="1000" id="commitMkcjxx_xycjs_0__rs" class="big" type="text"></td>
+                            <td id="tdrs0" style="text-align:center;"><input name="xycjs[0].rs" maxlength="10" value="无" id="commitMkcjxx_xycjs_0__rs" class="big" type="text"></td>
                             <td id="tdrs1" style="text-align:center;"><input name="xycjs[1].rs" maxlength="10" value="无" id="commitMkcjxx_xycjs_1__rs" class="big" type="text"></td>
                             <td id="tdrs2" style="text-align:center;"><input name="xycjs[2].rs" maxlength="10" value="无" id="commitMkcjxx_xycjs_2__rs" class="big" type="text"></td>
                         </tr>
@@ -148,7 +152,8 @@
                     </table>
                     <p class="text_center m_top10" id="errortip"></p>
                     <div class="text_center m_top10">
-                        <input id="commitMkcjxx_0" value="保存" class="ui-button ui-button-lceladon" type="submit">
+                        <!--<input id="commitMkcjxx_0" value="保存" class="ui-button ui-button-lceladon" type="submit">-->
+                        <Button type="primary">保存</Button>
                     </div>
                 </form>
             </div>

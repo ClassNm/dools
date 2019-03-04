@@ -13,7 +13,12 @@
             </div>
             <div class="ui-box-container">
                 <input name="gzStartTime" value="20150901" id="gzStartTime" type="hidden">
-                <form id="commitEditForm" name="commitEditForm" action="/zzbm/stu/info/commitShhd.action" method="post" enctype="multipart/form-data" novalidate="novalidate">
+                <form id="commitEditForm"
+                      name="commitEditForm"
+                      action="/zzbm/stu/info/commitShhd.action"
+                      method="post"
+                      enctype="multipart/form-data"
+                      novalidate="novalidate">
                     <input name="zid" value="" id="commitEditForm_zid" type="hidden">
                     <input name="xxId" value="" id="commitEditForm_xxId" type="hidden">
                     <input id="UpToken" name="upToken" style="display: none;" value="ad0fcef5b7d9a3c7368ef03d9ffa38ec">
@@ -46,13 +51,22 @@
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>证明材料：</strong></label>
                         <div id="showBox" class="ui-form-text" style="width:610px;">
-                            <div class="uploadnullbox" id="uploadnullbox"><i class="iconfont" title="添加-方"></i><br>添加图片<input class="file" id="upZmcl" value="" name="zmcl" type="file"></div>
+                            <div
+                                    class="uploadnullbox"
+                                    id="uploadnullbox">
+                                <i class="iconfont" title="添加-方"></i>
+                                <br>添加图片
+                                <input class="file" id="upZmcl" value="" name="zmcl" type="file">
+                            </div>
                         </div>
                         <p class="ui-form-explain uploadeddel" style="padding-top:0;">上传图片格式为 jpg 或 jpeg；大小为20K-1M</p>
                     </div>
                     <div class="ui-form-item m_top10">
-                        <input id="saveBtn" class="ui-button ui-button-lorange" value="新增" type="submit">
-                        &nbsp;&nbsp;<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">
+                        <!--<input id="saveBtn" class="ui-button ui-button-lorange" value="新增" type="submit">-->
+                        <Button type="warning">新增</Button>
+                        &nbsp;&nbsp;
+                        <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
+                        <!--<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">-->
                     </div>
                 </form>
             </div>
@@ -235,11 +249,4 @@
         border: 1px solid #4498ae;
         background-color: #50aac2;
     }
-
-
-
-
-
-
-
 </style>

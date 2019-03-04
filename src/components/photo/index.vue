@@ -2,7 +2,11 @@
     <div class="picture">
         <div class="ui-breadcrumbs">
             <ul class="ui-breadcrumb ">
-                <li> <a href="https://gaokao.chsi.com.cn/zzbm/stu/">首页</a> </li>
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
                 <li class="active">填报个人信息</li>
                 <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
@@ -14,53 +18,57 @@
                 <h3 class="ui-box-head-title">个人照片</h3>
                 <span class="ui-box-head-text">（<span class="redstar">*</span> 为必填项）</span> </div>
             <div class="ui-box-container">
-                <form action="uploadPhoto.action" method="post" enctype="multipart/form-data" id="form_step" novalidate="novalidate">
+                <form action="uploadPhoto.action"
+                      method="post"
+                      enctype="multipart/form-data"
+                      id="form_step"
+                      novalidate="novalidate">
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>个人照片：</strong></label>
-                        <p class="ui-form-text">
-                            <img id="imgPhoto" src="../../assets/1111.jpg" width="120" height="160">
-                        </p>
-                        <p style="padding:8px 0px;">必须上传本人近期一寸正面免冠彩色头像照片(参照居民身份证照片样式)：<br>
+                        <label for="" class="ui-label" style="padding-right: 0;margin-left: -80px;"><span class="ui-form-required">
+                            *
+                        </span>
+                            <strong>
+                                个人照片：
+                            </strong>
+                        </label>
+                        <div class="ui-form-text">
+                            <!--<img id="imgPhoto" src="../../assets/1111.jpg" width="120px" height="160px" v-if="isShow">-->
+                            <img :src="uploadImg.url" alt="" width="120px" height="160px" >
+                            <h4 class="Hoo">请选择照片</h4>
+                        </div>
+                        <p style="padding:8px 0; text-align: left;margin-left: 117px;">必须上传本人近期一寸正面免冠彩色头像照片(参照居民身份证照片样式)：<br>
                             1.格式 jpg 或 jpeg ，大小20K－500K<br>
                             2.照片背景为单色(白色、蓝色、红色均可)，人像清晰，神态自然，无明显畸变<br>
                             3.上传的照片文件名称不要包含空格等特殊字符<br>
                             4.非jpg 或 jpeg格式的文件修改后缀上传、图片本身因素等有可能引起图片解析失败。可尝试使用图片编辑工具将该图另存为jpg 或 jpeg格式然后上传</p>
                         <div class="file_box">
-                            <input name="textfield" id="textfield" class="textfield" readonly="readonly" type="text">
-                            <input class="ui-button ui-button-mwhite" value="选择照片" type="button">
-                            <input name="photo" value="" id="myphoto" class="file" type="file">
+                            <!--<input name="textfield" id="textfield" class="textfield" readonly="readonly" type="text">-->
+                            <!--<input class="ui-button ui-button-mwhite" value="选择照片" type="button">-->
+                                <Button type="text" class="ui-button ui-button-mwhite">选择照片</Button>
+                            <!--<input name="photo" value="" id="myphoto" class="file" type="file">-->
+                            <Upload
+                                    ref="upload"
+                                    :show-upload-list="false"
+                                    :before-upload="handleUpload"
+                                    type="drag"
+                                    action=""
+                                    style="display: inline-block;width:58px;"
+                            >
+                                <!--<div style="width: 58px;height:58px;line-height: 58px;" @click="onChange">-->
+                                <div style="width: 58px;height:58px;line-height: 58px;">
+                                    <Icon type="ios-camera" size="20"></Icon>
+                                </div>
+                            </Upload>
                         </div>
                         <p class="ui-form-explain ui-tiptext ui-tiptext-error" id="myphoto-tips"></p>
                     </div>
-                    <div class="ui-form-item">
-                        <input class="ui-button ui-button-lceladon m_top10" value="上传照片" type="submit">
+                    <div class="ui-form-item" style="margin-right:344px">
+                        <!--<input class="ui-button ui-button-lceladon m_top10" value="上传照片" type="submit">-->
+                        <Button type="primary">上传照片</Button>
                     </div>
                     <!--<wrap></wrap>-->
                 </form>
             </div>
-        </div>
-
-        <div>
-            <div class="demo-upload-list" v-for="item in uploadList">
-                ![](item.url)
-                <div class="demo-upload-list-cover">
-                    <Icon type="ios-trash-outline" @click.native="handleRemove(item)"></Icon>
-                </div>
-            </div>
-            <Upload ref="upload"
-                    :show-upload-list="false"
-                    :format="['jpg','jpeg','png']"
-                    :max-size="2048"
-                    :before-upload="handleBeforeUpload"
-                    :on-format-error="handleFormatError"
-                    :on-exceeded-size="handleMaxSize"
-                    type="drag"
-                    action="//jsonplaceholder.typicode.com/posts/"
-                    style="display: inline-block;width:58px;">
-                <div style="width: 58px;height:58px;line-height: 58px;">
-                    <Icon type="camera" size="20"></Icon>
-                </div>
-            </Upload>
         </div>
 
         <!--<wrap></wrap>-->
@@ -70,57 +78,57 @@
 <script>
     // import wrap from './loa'
     export default {
-        // name:{
-        //
-        // },
-        components:{
-            // wrap
-        },
-        data(){
+        // components:{
+        //     // wrap
+        // }
+        data () {
             return {
-                uploadList: []
-            }
+                uploadImg: {},
+                // isShow:true
+            };
         },
         methods: {
-            // data(){
-            //     return {
-            //         uploadList: []
-            //     }
-            // },
-            handleBeforeUpload(file) {
-                // 创建一个 FileReader 对象
-                let reader = new FileReader()
-                // readAsDataURL 方法用于读取指定 Blob 或 File 的内容
-                // 当读操作完成，readyState 变为 DONE，loadend 被触发，此时 result 属性包含数据：URL（以 base64 编码的字符串表示文件的数据）
-                // 读取文件作为 URL 可访问地址
-                reader.readAsDataURL(file)
-
-                const _this = this
-                reader.onloadend = function (e) {
-                    file.url = reader.result
-                    _this.uploadList.push(file)
-                }
-            },
-            handleRemove(file) {
-                this.uploadList.splice(this.uploadList.indexOf(file), 1)
-            },
             handleFormatError(file) {
                 this.$Notice.warning({
                     title: '文件格式不正确',
-                    desc: '文件 ' + file.name + ' 格式不正确，请上传 jpg 或 png 格式的图片。'
-                })
+                    desc: '文件 ' + file.name + ' 格式不正确，请上传 jpg、jpeg 或 png 的图片文件。',
+                });
             },
             handleMaxSize(file) {
                 this.$Notice.warning({
                     title: '超出文件大小限制',
-                    desc: '文件 ' + file.name + ' 太大，不能超过 2M。'
-                })
-            }
-        }
+                    desc: '文件 ' + file.name + ' 太大，不能超过 2M。',
+                });
+            },
+            handleUpload(file) {
+                if (file.type !== 'image/jpg' && file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                    this.handleFormatError(file);
+                } else if (file.size > 2 * 1024 * 1024) {
+                    this.handleMaxSize(file);
+                } else {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = () => {
+                        this.uploadImg = {
+                            url: reader.result,
+                            file,
+                        };
+                    };
+                }
+                return false;
+            },
+            // onChange(){
+            //     this.isShow = false
+            // }
+        },
+
     }
 </script>
 
 <style scoped>
+    .Hoo{
+        color: red;
+    }
     .picture{
         /*width: 900px;*/
         background: white;
@@ -224,7 +232,7 @@
         display: inline-block;
         margin-top: 5px;
         zoom: 1;
-        margin-right: 203px;
+        margin-right: 447px;
     }
     img {
         border: 0;
@@ -238,6 +246,7 @@
     }
     .file_box {
         position: relative;
+        margin-right: 350px;
     }
     .file_box .textfield {
         height: 27px;
@@ -251,6 +260,8 @@
     .ui-button-mwhite {
         height: 29px;
         padding: 0 10px;
+        display: block;
+        margin: 0 auto;
     }
     .file_box .file {
         position: absolute;

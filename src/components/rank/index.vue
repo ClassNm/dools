@@ -1,27 +1,15 @@
 <template>
     <div class="box">
-        <ul class="page">
-            <li class="home">
-                首页
-            </li>
-            <li class="arrows">
-                <span class="icon">
-                    <i title="单箭头右" class="iconfont">
-                        
-                    </i>
-                </span>
-            </li>
-            <li class="papers">
-                确认证件号码
-            </li>
-        </ul>
-        <div class="state">
-            <div class="affirm">
-                <h3 class="font">
-                    确认身份
-                </h3>
-                <span class="underline"></span>
-            </div>
+        <div class="ui-breadcrumbs">
+            <ul class="ui-breadcrumb ">
+                <li>
+                    <router-link to="/home">
+                        <a href="">首页</a>
+                    </router-link>
+                </li>
+                <li><span class="icon"><i title="单箭头右" class="iconfont"></i></span></li>
+                <li class="active">确认证件号码</li>
+            </ul>
         </div>
         <div class="name">
             <p class="section">
@@ -45,7 +33,7 @@
                                 "
 
                     >
-                        1311111111111111
+                        123456789111111
                     </p>
                 </div>
                 <div class="resolve">
@@ -66,7 +54,7 @@
                     考生姓名：
                 </strong>
                 <p class="alias">
-                    万达文
+                    格学教育
                 </p>
             </div>
         </div>
@@ -77,9 +65,52 @@
 </template>
 
 <style scoped>
+    .ui-breadcrumb {
+        font-size: 0px;
+        padding: 0;
+    }
+    ul, li {
+        list-style: none;
+    }
+    .ui-breadcrumb li {
+        padding: 8px 4px;
+    }
+    .ui-breadcrumb li {
+        color: #333;
+        font-size: 14px;
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        vertical-align: top;
+    }
+    .ui-breadcrumb a {
+        color: #333;
+    }
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+    .ui-breadcrumb .icon .iconfont {
+        font-size: 12px;
+    }
+    .iconfont {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+    }
+    .iconfont {
+        font-family: "iconfont";
+        font-size: 16px;
+        font-style: normal;
+    }
+    .ui-breadcrumb li.active {
+        color: #999;
+    }
+    li {
+        white-space: normal;
+    }
     .box{
-        margin: 8px;
-        width: 790px;
+        padding: 8px;
+        /*width: 790px;*/
         height: 424px;
         text-align: left;
         background: white;
@@ -109,14 +140,6 @@
     .page .arrows{
         display: inline-block;
         float: left;
-    }
-    .state{
-        border-bottom: 1px solid #ccc;
-        position: relative;
-        padding-bottom: 5px;
-        height: 26px;
-        line-height: 26px;
-        zoom: 1;
     }
     .state .affirm{
         color: #656565;
@@ -159,7 +182,7 @@
         float: left;
     }
     .student{
-        padding: 0 5px 6px 66px;
+        padding: 0 5px 6px 50px;
         zoom: 1;
         float: left;
         /*display: block;*/
@@ -187,7 +210,7 @@
     .monicker{
         /*display: block;*/
         /*margin-left: 200px;*/
-        padding: 0 5px 6px 20px;
+        padding: 0 5px 6px 0;
         zoom: 1;
         width: 100px;
         height: 100px;
