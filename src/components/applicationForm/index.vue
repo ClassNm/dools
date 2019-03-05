@@ -1,60 +1,8 @@
 <template>
     <div>
         <div class="ui-box">
-            <ul class="stepul">
-                <li class="onread" title="">
-                    <a>填报志愿<br><i class="iconfont"></i></a>
-                    <span class="onreadarrow"></span>
-                </li>
-                <li class="" title="请等待志愿高校审核。">
-                    <a>学校审核<br><i class="iconfont"></i></a>
-                    <span class=""></span>
-                    <div class="title_Info" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; padding: 5px; z-index: 10000; margin-top: 9px; margin-left: -30px; border-radius: 3px; width: 130px;  font-weight: normal; font-size: 12px; line-height: 21px; display: none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>请等待志愿高校审核。</div><div class="title_Info" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; padding: 5px; z-index: 10000; margin-top: 9px; margin-left: -30px; border-radius: 3px; width: 130px;  font-weight: normal; font-size: 12px; line-height: 21px; display: none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>请等待志愿高校审核。</div></li>
-                <li class="" title="请于2018-05-10 09:00:00至2018-05-16 00:00:00完成确认考试。">
-                    <a>确认考试<br><i class="iconfont"></i></a>
-                    <span class=""></span>
-                    <div class="title_Info" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; padding: 5px; z-index: 10000; margin-top: 9px; margin-left: -30px; border-radius: 3px; width: 130px;  font-weight: normal; font-size: 12px; line-height: 21px; display: none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>请于2018-05-10 09:00:00至2018-05-16 00:00:00完成确认考试。</div><div class="title_Info" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; padding: 5px; z-index: 10000; margin-top: 9px; margin-left: -30px; border-radius: 3px; width: 130px;  font-weight: normal; font-size: 12px; line-height: 21px; display: none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>请于2018-05-10 09:00:00至2018-05-16 00:00:00完成确认考试。</div></li>
-                <li class="" title="志愿高校要求考生通过本系统打印准考证，具体要求请咨询志愿高校。">
-                    <a>打印准考证<br><i class="iconfont"></i></a>
-                    <span class=""></span>
-                    <div class="title_Info" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; padding: 5px; z-index: 10000; margin-top: 9px; margin-left: -30px; border-radius: 3px; width: 130px;  font-weight: normal; font-size: 12px; line-height: 21px; display: none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>志愿高校要求考生通过本系统打印准考证，具体要求请咨询志愿高校。</div><div class="title_Info" style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; color: rgb(255, 255, 255); position: absolute; padding: 5px; z-index: 10000; margin-top: 9px; margin-left: -30px; border-radius: 3px; width: 130px;font-weight: normal; font-size: 12px; line-height: 21px; display: none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>志愿高校要求考生通过本系统打印准考证，具体要求请咨询志愿高校。</div></li>
-                <li class="" title="查询考试成绩。">
-                    <a>成绩查询<br><i class="iconfont"></i></a>
-                    <span class=""></span>
-                    <div class="title_Info" style="background: #000000 none repeat scroll 0% 0%; color: #FFF; position: absolute; padding: 5px; z-index: 10000; margin-top:9px;*margin-top:30px;margin-left:-30px;*margin-left:-81px;border-radius: 3px;width: 130px;font-weight: normal;font-size:12px;line-height:21px;+margin-left:-50px;+width:100px;+padding:2px;display:none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>查询考试成绩。</div><div class="title_Info" style="background: #000000 none repeat scroll 0% 0%; color: #FFF; position: absolute; padding: 5px; z-index: 10000; margin-top:9px;*margin-top:30px;margin-left:-30px;*margin-left:-81px;border-radius: 3px;width: 130px;font-weight: normal;font-size:12px;line-height:21px;+margin-left:-50px;+width:100px;+padding:2px;display:none;"><span style="position: absolute; width: 0px; height: 0px; font-size: 0px; border-width: 7px; border-style: dashed dashed solid; border-color: transparent transparent #000000; left: 62px; top: -13px;+left:30px"></span>查询考试成绩。</div></li>
-            </ul>
-            <div class="zystepbox">
-                <ul class="zystep">
-                    <li class="stepon">
-                        <span class="step-span">选专业</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">附加材料</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">综合信息</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">推荐人</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">预览申请表</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">确认志愿</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">下载申请表</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">邮寄材料</span>
-                    </li>
-                    <li class="">
-                        <span class="step-span">完成</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="ui-box-container ui-box-zhiy" v-if="flag">
+            <headerT></headerT>
+            <div class="ui-box-container ui-box-zhiy">
                 <!--<form id="add" name="add" action="https://gaokao.chsi.com.cn/zzbm/stu/zhiy/add.action" method="POST">-->
                 <form id="add" name="add" method="POST">
                     <div class="ui-form-item">
@@ -278,155 +226,28 @@
 </template>
 
 <script>
+    import headerT from '../common/headerT'
     export default {
+        components:{
+            headerT
+        },
         computed:{
-            flag(){
-                // console.log(this.$route.path);
-                let pa = this.$route.path;
-                // console.log('bb');
-                if (pa == '/additional'){
-                    console.log('附加材料');
-                    return false
-                }else {
-                    return true
-                }
-            }
+            // flag(){
+            //     // console.log(this.$route.path);
+            //     let pa = this.$route.path;
+            //     // console.log('bb');
+            //     if (pa == '/additional'){
+            //         console.log('附加材料');
+            //         return false
+            //     }else {
+            //         return true
+            //     }
+            // }
         }
     }
 </script>
 
 <style scoped>
-    .ui-box {
-        zoom: 1;
-        font-size: 12px;
-        margin: 0;
-        padding: 0;
-        border-bottom: 0;
-        /*box-shadow: 0 1px 2px #dadad8;*/
-    }
-    .stepul {
-        width: 800px;
-        clear: both;
-        padding-bottom: 20px;
-    }
-    ul, li {
-        list-style: none;
-    }
-    .stepul li.onread {
-        color: #50aac2;
-        /*background: #d9f1f7 url(../../images/bm/arrowtop.png) no-repeat center 60px;*/
-        border: 1px solid #c1e1ea;
-        font-weight: 700;
-    }
-    .stepul li {
-        position: relative;
-        float: left;
-        display: inline;
-        margin-right: 20px;
-        width: 78px;
-        height: 46px;
-        padding-top: 4px;
-        line-height: 22px;
-        background: #FFF;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-size: 14px;
-        color: #999;
-        text-align: center;
-        overflow: visible;
-    }
-    li {
-        white-space: normal;
-    }
-    .stepul li a {
-        color: #06d;
-        text-decoration: none;
-    }
-    .ui-box a {
-        color: #09f;
-    }
-    a {
-        color: #333;
-        text-decoration: none;
-    }
-    .stepul li .iconfont {
-        font-size: 16px;
-    }
-    .iconfont {
-        -webkit-font-smoothing: antialiased;
-        -webkit-text-stroke-width: 0.2px;
-    }
-    .iconfont {
-        font-family: "iconfont";
-        font-size: 16px;
-        font-style: normal;
-    }
-    .iconfont {
-        font-family: "iconfont" !important;
-        font-size: 16px;
-        font-style: normal;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-    .stepul li.onread span.onreadarrow {
-        background-position: 0 0;
-    }
-    .stepul li.onread span.onreadarrow {
-        position: absolute;
-        top: 62px;
-        left: 30px;
-        width: 18px;
-        height: 9px;
-        overflow: hidden;
-        /*background: url(../../images/bm/arrowtop.png) no-repeat 0 -9px;*/
-        background-position-x: 0px;
-        background-position-y: -9px;
-        z-index: 100;
-    }
-    .stepul li {
-        line-height: 22px;
-        font-size: 14px;
-        color: #999;
-        text-align: center;
-    }
-    .zystepbox {
-        /*margin-top: -1px;*/
-        margin: 50px 0 0 0;
-        border: 1px solid #ddd;
-        border-bottom-color: rgb(221, 221, 221);
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom: none;
-        background: #f9f9f9;
-        clear: both;
-    }
-    .zystep {
-        padding: 10px 0;
-        margin: 10px 10px 0 10px;
-        clear: both;
-        overflow: hidden;
-    }
-    .zystep li.stepon {
-        /*background: url(../../images/bm/icon-prog-on.png) no-repeat center 0;*/
-        color: #f60;
-        font-weight: 700;
-    }
-    .zystep li {
-        float: left;
-        display: inline;
-        width: 51px;
-        padding-top: 20px;
-        /*background: url(../../images/bm/icon-prog-no.png) no-repeat center 0;*/
-        color: #999;
-        text-align: center;
-    }
-    .zystep li .step-span {
-        width: 20px;
-        display: block;
-        margin: 0 auto;
-        width: 20px;
-        line-height: 1.2;
-    }
     .ui-box-zhiy {
         border: 1px solid #ddd;
         border-top-color: rgb(221, 221, 221);
@@ -462,6 +283,7 @@
         font-size: 14px;
     }
     .ui-form-text {
+        list-style: none;
         font-size: 14px;
         word-wrap: break-word;
         word-break: break-all;
@@ -606,7 +428,12 @@
          height: 32px;
      }
 
-
+    /* orange 字体颜色*/
+    .zystep li.stepon {
+        /*background: url(../../images/bm/icon-prog-on.png) no-repeat center 0;*/
+        color: #f60;
+        font-weight: 700;
+    }
 
 
 </style>

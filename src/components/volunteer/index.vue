@@ -61,7 +61,13 @@
         computed:{
             flag(){
                 let pa = this.$route.path;
-                if (pa == '/volunteerNew' || pa=="/volunteerNew/applicationForm" ||pa=="/additional"){
+                if (
+                    pa == '/volunteerNew' ||
+                    pa=="/volunteerNew/applicationForm" ||
+                    pa=="/additional" ||
+                    pa=="/messaged" ||
+                    pa=="/referrerT"
+                ){
                     console.log('2级路由');
                     return false;
                 } else {

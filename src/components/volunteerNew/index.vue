@@ -142,7 +142,10 @@
         computed:{
           free(){
               let pa = this.$route.path;
-              if (pa == '/volunteerNew/applicationForm' || pa=="/additional"){
+              if (pa == '/volunteerNew/applicationForm' ||
+                  pa=="/additional" ||
+                  pa=="/messaged" ||
+                  pa=="/referrerT"){
                   console.log('三级路由');
                   // debugger;
                   return false;
