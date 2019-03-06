@@ -14,9 +14,23 @@
                         </div>
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>选择填报学校：</strong></label>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                选择填报学校：
+                            </strong>
+                        </label>
                         <div class="ui-form-text">
-                            <input type="text" name="" v-model="SchoolName" readonly="readonly" id="orgName" class="ui-input" autocomplete="off" @click="modal10 = true">
+                            <input type="text"
+                                   name=""
+                                   v-model="SchoolName"
+                                   readonly="readonly"
+                                   id="orgName"
+                                   class="ui-input"
+                                   autocomplete="off"
+                                   @click="modal10 = true">
                             <!-- 对话框 -->
                             <Modal
                                     title="请选择学校"
@@ -28,14 +42,18 @@
                                 <div class="school">北京化工大学</div>
                                 <div class="school">北京师范大学</div>
                                 <div class="school">北京语言大学</div>
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free2">
+                                <div
+                                        class="school"
+                                        style="color: orangered;cursor:pointer"
+                                        @click="free1()"
+                                >
                                     {{this.science}}
                                 </div>
                                 <div class="school">中央财经大学</div>
                                 <div class="school">对外经济贸易大学</div>
                                 <div class="school">天津大学</div>
                                 <!--<div class="school" style="color: orangered;cursor:pointer" @click="modal10 = false">-->
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free1">
+                                <div class="school" style="color: orangered;cursor:pointer" @click="free2">
                                     {{this.Highdong}}
                                 </div>
                                 <div class="school">黑龙江大学</div>
@@ -111,7 +129,8 @@
                         <!--  报考志愿 button点击跳路由 -->
                         <div class="ui-form-item" style="width: 70px">
                             <!--<input type="submit" id="lxdmform_0" value="下一步" class="ui-button ui-button-lceladon m_top10" onclick="">-->
-                            <router-link to="/volunteerNew/applicationForm"  exact-active-class="router-volunteerNew-applicationForm">
+                            <router-link :to="{path:'/volunteerNew/applicationForm',query:obj}"   exact-active-class="router-volunteerNew-applicationForm">
+                                <!--<router-link :to="{path:'/home111',query:obj}">首页</router-link>-->
                                 <Button type="primary" id="lxdmform_0" class="ui-button ui-button-lceladon m_top10">下一步</Button>
                             </router-link>
                         </div>
@@ -136,7 +155,11 @@
                 project:"哈尔滨工程大学",
                 Hunan:"湖南大学",
                 electricity:"华北电力大学",
-                southwest:"西南大学"
+                southwest:"西南大学",
+                /* 根据点击input框来浮现下一步跳的学校 query里的1-6代替query传的参*/
+                obj:{
+                    a:1
+                }
             }
         },
         computed:{
@@ -145,6 +168,7 @@
               if (pa == '/volunteerNew/applicationForm' ||
                   pa=="/additional" ||
                   pa=="/messaged" ||
+                  pa == "/applicationT" ||
                   pa=="/referrerT"){
                   console.log('三级路由');
                   // debugger;
@@ -156,34 +180,40 @@
         },
         methods:{
             free1(){
-                this.SchoolName = this.Highdong;
-                this.modal10 = false;
-                this.Show = true;
-            },
-            free2(){
                 this.SchoolName = this.science;
                 this.modal10 = false;
                 this.Show = true;
+                this.obj.a = 1;
+            },
+            free2(){
+                this.SchoolName = this.Highdong;
+                this.modal10 = false;
+                this.Show = true;
+                this.obj.a = 2;
             },
             free3(){
                 this.SchoolName = this.project;
                 this.modal10 = false;
                 this.Show = true;
+                this.obj.a = 3;
             },
             free4(){
                 this.SchoolName = this.Hunan;
                 this.modal10 = false;
                 this.Show = true;
+                this.obj.a = 4;
             },
             free5(){
                 this.SchoolName = this.electricity;
                 this.modal10 = false;
                 this.Show = true;
+                this.obj.a = 5;
             },
             free6(){
                 this.SchoolName = this.southwest;
                 this.modal10 = false;
                 this.Show = true;
+                this.obj.a = 6;
             },
         }
     }

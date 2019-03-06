@@ -181,7 +181,6 @@
                                 <li>
                                     <label>
                                         <input type="checkbox" id="hjduvhet4kuuf5ay" onclick="" bmtjs="">
-
                                         应用化学
                                     </label>
                                 </li>
@@ -230,6 +229,9 @@
     export default {
         components:{
             headerT
+        },
+        mounted(){
+            console.log(this.$route.query.a,'query的参数显示对应的信息')
         },
         computed:{
             // flag(){

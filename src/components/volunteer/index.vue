@@ -63,10 +63,11 @@
                 let pa = this.$route.path;
                 if (
                     pa == '/volunteerNew' ||
-                    pa=="/volunteerNew/applicationForm" ||
-                    pa=="/additional" ||
-                    pa=="/messaged" ||
-                    pa=="/referrerT"
+                    pa == "/volunteerNew/applicationForm" ||
+                    pa == "/additional" ||
+                    pa == "/messaged" ||
+                    pa == "/referrerT" ||
+                    pa == "/applicationT"
                 ){
                     console.log('2级路由');
                     return false;

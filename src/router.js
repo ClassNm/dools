@@ -69,8 +69,11 @@ import additional from './components/additional/index'
 /*  messaged     综合信息   三级路由     志愿管理*/
 import messaged from './components/messaged/index'
 
-/*  referrerT     推荐人    三级路由     referrerT*/
+/*  referrerT     推荐人    三级路由     志愿管理 */
 import referrerT from  './components/referrerT/index'
+
+/*  applicationT   预览申请表  三级路由   志愿管理 */
+import applicationT from './components/applicationT/index'
 
 Vue.use(Router);
 
@@ -209,6 +212,11 @@ export default new Router({
                                   path:'/referrerT',
                                   name:'referrerT',
                                   component:referrerT
+                              },
+                              {
+                                  path:'/applicationT',
+                                  name:'applicationT',
+                                  component:applicationT
                               }
                           ]
                       }

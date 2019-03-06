@@ -23,12 +23,12 @@
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加推荐人</Button>
                 <br>
                 <!--<a href="javascript:;" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</a>-->
-                <router-link to="">
-
+                <router-link to="/applicationT">
+                    <Button type="info" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</Button>
                 </router-link>
-                <Button type="info" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</Button>
             </div>
         </div>
+        <router-view></router-view>
     </div>
 </template>
 

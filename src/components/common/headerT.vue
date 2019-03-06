@@ -24,19 +24,19 @@
         </ul>
         <div class="zystepbox">
             <ul class="zystep">
-                <li class="stepon">
+                <li :class="free">
                     <span class="step-span">选专业</span>
                 </li>
-                <li class="">
-                    <span class="step-span step-spanTwo">附加材料</span>
+                <li :class="free1" >
+                    <span class="step-span">附加材料</span>
                 </li>
-                <li class="">
+                <li :class="free2">
                     <span class="step-span">综合信息</span>
                 </li>
-                <li class="">
+                <li :class="free3">
                     <span class="step-span">推荐人</span>
                 </li>
-                <li class="">
+                <li :class="free4">
                     <span class="step-span">预览申请表</span>
                 </li>
                 <li class="">
@@ -58,7 +58,65 @@
 
 <script>
     export default {
-
+        data(){
+            return{
+                // styleObject: {
+                //     color: '',
+                //     // free:false
+                // }
+            }
+        },
+        computed:{
+            free(){
+                let pa = this.$route.path;
+                if (pa=="/volunteerNew/applicationForm") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+            free1(){
+                let pa = this.$route.path;
+                if (pa=="/additional") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+            free2(){
+                let pa = this.$route.path;
+                if (pa=="/messaged") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+            free3(){
+                let pa = this.$route.path;
+                if (pa=="/referrerT") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+            free4(){
+                let pa = this.$route.path;
+                if (pa=="/applicationT") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            }
+        },
+        mounted(){
+            // let pa = this.$route.path;
+            // if (pa == "additional"){
+            //     // this.data.free="true";
+            //     this.data.color = 'red';
+            // }else {
+            //     this.data.color = "black";
+            // }
+        }
     }
 </script>
 
@@ -190,7 +248,6 @@
         width: 20px;
         display: block;
         margin: 0 auto;
-        width: 20px;
         line-height: 1.2;
     }
 </style>
