@@ -10,7 +10,7 @@
             </div>
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
-                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">北京科技大学</span> 的说明：
+                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">{{schoolName}}</span> 的说明：
                 </p>
                 <p class="ui-tiptext ui-tiptext-follow">
                     高中阶段三项以内具有代表性的获奖记录，参与的三项以内具有代表性的社会活动，不可多填。
@@ -37,7 +37,7 @@
             <div class="text_center" style="margin-top:15px;">
                 <!--<a href="javascript:;" class="ui-button ui-button-lceladon">下一步</a>-->
                 <!-- referrerT 推荐人-->
-                <router-link to="/referrerT">
+                <router-link :to="{path:'/referrerT',query:obj}">
                     <Button type="primary" class="ui-button ui-button-lceladon">下一步</Button>
                 </router-link>
             </div>
@@ -49,9 +49,21 @@
 <script>
     import headerT from '../common/headerT'
     export default {
+        data(){
+            return {
+                schoolName: '',
+                obj:{
+
+                }
+            }
+        },
         components:{
             headerT
-        }
+        },
+        mounted() {
+            this.schoolName = this.$route.query.schoolName
+            this.obj.schoolName = this.schoolName
+        },
     }
 </script>
 

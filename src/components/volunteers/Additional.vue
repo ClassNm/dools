@@ -5,7 +5,7 @@
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
                     <i class="ui-tiptext-icon iconfont" title="提示"></i>
-                    北京科技大学（自主招生）
+                    {{schoolName}}(自主招生）
                     需要您提供以下附加材料
                 </p>
             </div>
@@ -40,7 +40,7 @@
                 </strong>
                 <br>
                 <!-- messaged  综合信息-->
-                <router-link to="/messaged">
+                <router-link :to="{path:'/messaged',query:obj}">
                     <a href="javascript:;" class="ui-button ui-button-ldisable" style="background: #cacccd;color: #999999">下一步</a>
                 </router-link>
             </div>
@@ -52,11 +52,21 @@
 <script>
     import headerT from '../common/headerT';
     export default {
+        data(){
+            return {
+                schoolName:'',
+                obj:{
+
+                }
+            }
+        },
         components:{
             headerT
         },
         mounted(){
             // alert(1);
+            this.schoolName = this.$route.query.schoolName
+            this.obj.schoolName = this.schoolName
         }
     }
 </script>

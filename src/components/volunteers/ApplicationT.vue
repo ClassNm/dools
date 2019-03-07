@@ -17,7 +17,7 @@
                 </p>
             </div>
             <div class="zhiysqbt">
-                北京科技大学
+                {{schoolName}}
                 2018年
                 普通自主招生 申请表
             </div>
@@ -514,9 +514,17 @@
 <script>
     import headerT from '../common/headerT'
     export default {
+        data(){
+            return {
+                schoolName:''
+            }
+        },
         components:{
             headerT
-        }
+        },
+        mounted() {
+            this.schoolName = this.$route.query.schoolName
+        },
     }
 </script>
 

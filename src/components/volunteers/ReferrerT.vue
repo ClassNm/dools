@@ -9,7 +9,7 @@
             </div>
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
-                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">北京科技大学</span> 推荐人填写说明：<br>
+                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">{{schoolName}}</span> 推荐人填写说明：<br>
                 </p>
                 <p class="ui-tiptext ui-tiptext-follow">
                     考生需要在报名平台选择增加推荐人(中学校长、社会团体或专家)，由报名平台通知推荐人(中学校长、社会团体或专家)下载《2018年试点高校自主招生推荐表》，填写推荐人推荐意见，按要求签字并加盖公章，由推荐人上传到报名系统，并将纸质推荐材料单独密封，在密封处签字，随考生其它材料一同或推荐人单独邮寄到北京科技大学招生办公室。
@@ -23,7 +23,7 @@
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加推荐人</Button>
                 <br>
                 <!--<a href="javascript:;" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</a>-->
-                <router-link to="/applicationT">
+                <router-link :to="{path:'/applicationT',query:obj}">
                     <Button type="info" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</Button>
                 </router-link>
             </div>
@@ -35,9 +35,21 @@
 <script>
     import headerT from '../common/headerT'
     export default {
+        data(){
+            return {
+                schoolName:'',
+                obj:{
+
+                }
+            }
+        },
         components:{
             headerT
-        }
+        },
+        mounted() {
+            this.schoolName = this.$route.query.schoolName
+            this.obj.schoolName = this.schoolName
+        },
     }
 </script>
 

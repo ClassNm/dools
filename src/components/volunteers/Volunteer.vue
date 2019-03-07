@@ -51,6 +51,11 @@
 
 <script>
     export default {
+        data(){
+            return{
+
+            }
+        },
         methods:{
             btn() {
                 // router.push('/volunteer/volunteerNew')

@@ -55,25 +55,25 @@ import organization from './components/organization/index'
 
 
 /*  volunteer  志愿管理*/
-import volunteer from  './components/volunteer/index'
+import volunteer from  './components/volunteers/Volunteer'
 
 /*  volunteerNew  添加志愿   志愿管理*/
-import volunteerNew from './components/volunteerNew/index'
+import volunteerNew from './components/volunteers/VolunteerNew'
 
 /*  applicationForm  报考志愿   三级路由  志愿管理*/
-import applicationForm from './components/applicationForm/index'
+import applicationForm from './components/volunteers/ApplicationForm'
 
 /*  additional   附加材料    三级路由   志愿管理*/
-import additional from './components/additional/index'
+import additional from './components/volunteers/Additional'
 
 /*  messaged     综合信息   三级路由     志愿管理*/
-import messaged from './components/messaged/index'
+import messaged from './components/volunteers/Messaged'
 
 /*  referrerT     推荐人    三级路由     志愿管理 */
-import referrerT from  './components/referrerT/index'
+import referrerT from  './components/volunteers/ReferrerT'
 
 /*  applicationT   预览申请表  三级路由   志愿管理 */
-import applicationT from './components/applicationT/index'
+import applicationT from './components/volunteers/ApplicationT'
 
 Vue.use(Router);
 
