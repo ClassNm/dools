@@ -37,66 +37,7 @@
                                     v-model="modal10"
                                     class-name="vertical-center-modal"
                             >
-                                <div class="school">中国人民大学</div>
-                                <div class="school">北京航空航天大学</div>
-                                <div class="school">北京化工大学</div>
-                                <div class="school">北京师范大学</div>
-                                <div class="school">北京语言大学</div>
-                                <div
-                                        class="school"
-                                        style="color: orangered;cursor:pointer"
-                                        @click="free1()"
-                                >
-                                    {{this.science}}
-                                </div>
-                                <div class="school">中央财经大学</div>
-                                <div class="school">对外经济贸易大学</div>
-                                <div class="school">天津大学</div>
-                                <!--<div class="school" style="color: orangered;cursor:pointer" @click="modal10 = false">-->
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free2">
-                                    {{this.Highdong}}
-                                </div>
-                                <div class="school">黑龙江大学</div>
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free3">
-                                    {{this.project}}
-                                </div>
-                                <div class="school">复旦大学</div>
-                                <div class="school">同济大学</div>
-                                <div class="school">东华大学</div>
-                                <div class="school">上海财经大学</div>
-                                <div class="school">南京大学</div>
-                                <div class="school">南京航空航天大学</div>
-                                <div class="school">南京理工大学</div>
-                                <div class="school">江南大学</div>
-                                <div class="school">南京信息工程大学</div>
-                                <div class="school">南京农业大学</div>
-                                <div class="school">中国药科大学</div>
-                                <div class="school">南京师范大学</div>
-                                <div class="school">厦门大学</div>
-                                <div class="school">山东大学</div>
-                                <div class="school">武汉大学</div>
-                                <div class="school">华中科技大学</div>
-                                <div class="school">中国地质大学(武汉)</div>
-                                <div class="school">武汉理工大学</div>
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free4">
-                                    {{this.Hunan}}
-                                </div>
-                                <div class="school">中南大学</div>
-                                <div class="school">湖南师范大学</div>
-                                <div class="school">中山大学</div>
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free5">
-                                    {{this.electricity}}
-                                </div>
-                                <div class="school">四川大学</div>
-                                <div class="school">重庆大学</div>
-                                <div class="school">西南交通大学</div>
-                                <div class="school">电子科技大学</div>
-                                <div class="school" style="color: orangered;cursor:pointer" @click="free6">
-                                    {{this.southwest}}
-                                </div>
-                                <div class="school">西南财经大学</div>
-                                <div class="school">兰州大学</div>
-                                <div class="school">香港中文大学(深圳)</div>
+                                <div class="school" v-for="(item,index) in schoolArr" :key="index" @click="schoolSel" :data-index="index">{{item.schoolName}}</div>
                             </Modal>
                         </div>
                     </div>
@@ -106,7 +47,7 @@
                                 <input type="hidden" name="org" value="476736792" id="lxdmform_org">
                                 <div id="gkxxDiv">
                                     <ul class="orgInfos">
-                                        <li>• <a href="javascript:;" target="_blank">北京师范大学2019年外语类专业保送生招生简章</a></li>
+                                        <li>• <a href="javascript:;" target="_blank">{{SchoolName}}2019年外语类专业保送生招生简章</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -121,7 +62,7 @@
                                 </label>
                                 <ul class="orgInfos" style="margin-bottom:12px;width: 580px;text-align: left">
                                     <li>报名时间：2019-01-29 19:00:00 至 2019-02-26
-                                        23:00:00；北京师范大学最多允许填报 10 个报名类型；“保送生”类型要求考生的报考学校总数不能超过50个；允许填报的专业类别总数至少 1
+                                        23:00:00；{{SchoolName}}最多允许填报 10 个报名类型；“保送生”类型要求考生的报考学校总数不能超过50个；允许填报的专业类别总数至少 1
                                         个，最多 3 个；允许填报专业总数最少 1 个，最多 3 个；允许每个专业类别下可选专业数最少 1 个，最多 3 个。</li>
                                 </ul>
                             </div>
@@ -150,16 +91,126 @@
                 modal10: false,
                 Show:false,
                 SchoolName:"",
-                Highdong:"东北大学",
-                science:"北京科技大学",
-                project:"哈尔滨工程大学",
-                Hunan:"湖南大学",
-                electricity:"华北电力大学",
-                southwest:"西南大学",
+                modal10:false,
+                Show: false,
                 /* 根据点击input框来浮现下一步跳的学校 query里的1-6代替query传的参*/
                 obj:{
                     a:1
-                }
+                },
+                schoolArr:[
+                    {
+                        schoolName:'中国人民大学'
+                    },
+                    {
+                        schoolName:'北京航空航天大学'
+                    },
+                    {
+                        schoolName:'北京化工大学'
+                    },
+                    {
+                        schoolName:'北京师范大学'
+                    },
+                    {
+                        schoolName:'北京语言大学'
+                    },
+                    {
+                        schoolName:'中央财经大学'
+                    },
+                    {
+                        schoolName:'对外经济贸易大学'
+                    },
+                    {
+                        schoolName:'天津大学'
+                    },
+                    {
+                        schoolName:'黑龙江大学'
+                    },
+                    {
+                        schoolName:'复旦大学'
+                    },
+                    {
+                        schoolName:'同济大学'
+                    },
+                    {
+                        schoolName:'东华大学'
+                    },
+                    {
+                        schoolName:'上海财经大学'
+                    },
+                    {
+                        schoolName:'南京大学'
+                    },
+                    {
+                        schoolName:'南京航空航天大学'
+                    },
+                    {
+                        schoolName:'南京理工大学'
+                    },
+                    {
+                        schoolName:'江南大学'
+                    },
+                    {
+                        schoolName:'南京信息工程大学'
+                    },
+                    {
+                        schoolName:'南京农业大学'
+                    },
+                    {
+                        schoolName:'中国药科大学'
+                    },
+                    {
+                        schoolName:'南京师范大学'
+                    },
+                    {
+                        schoolName:'厦门大学'
+                    },
+                    {
+                        schoolName:'山东大学'
+                    },
+                    {
+                        schoolName:'武汉大学'
+                    },
+                    {
+                        schoolName:'华中科技大学'
+                    },
+                    {
+                        schoolName:'中国地质大学(武汉)'
+                    },
+                    {
+                        schoolName:'武汉理工大学'
+                    },
+                    {
+                        schoolName:'中南大学'
+                    },
+                    {
+                        schoolName:'湖南师范大学'
+                    },
+                    {
+                        schoolName:'中山大学'
+                    },
+                    {
+                        schoolName:'四川大学'
+                    },
+                    {
+                        schoolName:'重庆大学'
+                    },
+                    {
+                        schoolName:'西南交通大学'
+                    },
+                    {
+                        schoolName:'电子科技大学'
+                    },
+                    {
+                        schoolName:'西南财经大学'
+                    },
+                    {
+                        schoolName:'兰州大学'
+                    },
+                    {
+                        schoolName:'香港中文大学(深圳)'
+                    },
+                    
+                ]
             }
         },
         computed:{
@@ -183,42 +234,14 @@
             }
         },
         methods:{
-            free1(){
-                this.SchoolName = this.science;
+            schoolSel(e){
+                console.log(e)
+                this.SchoolName = e.target.innerText;
                 this.modal10 = false;
                 this.Show = true;
-                this.obj.a = 1;
-            },
-            free2(){
-                this.SchoolName = this.Highdong;
-                this.modal10 = false;
-                this.Show = true;
-                this.obj.a = 2;
-            },
-            free3(){
-                this.SchoolName = this.project;
-                this.modal10 = false;
-                this.Show = true;
-                this.obj.a = 3;
-            },
-            free4(){
-                this.SchoolName = this.Hunan;
-                this.modal10 = false;
-                this.Show = true;
-                this.obj.a = 4;
-            },
-            free5(){
-                this.SchoolName = this.electricity;
-                this.modal10 = false;
-                this.Show = true;
-                this.obj.a = 5;
-            },
-            free6(){
-                this.SchoolName = this.southwest;
-                this.modal10 = false;
-                this.Show = true;
-                this.obj.a = 6;
-            },
+                this.obj.a = e.target.dataset.index;
+                this.obj.schoolName = this.SchoolName
+            }
         }
     }
 </script>
@@ -324,6 +347,7 @@
         /*float: left;*/
         padding-right: 10px;
         line-height: 24px;
+        cursor: pointer;
     }
 
     /*  确定 取消 按钮文字*/

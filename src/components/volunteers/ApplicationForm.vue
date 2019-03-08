@@ -14,7 +14,7 @@
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>学校：</strong></label>
                         <p class="ui-form-text" style="margin-right: 345px">
-                            北京科技大学
+                            {{schoolName}}
                             <input type="hidden" name="zhiY.orgId" value="476734158">
                         </p>
                         <input type="hidden" name="org" value="476734158" id="add_org">
@@ -211,7 +211,7 @@
                     <div class="ui-form-item" id="errorMessageBox" style="display:none">
                     </div>
                     <!-- 点击跳转  附加材料页面 -->
-                    <router-link to="/additional">
+                    <router-link :to="{path:'/additional',query:obj}">
                         <div class="ui-form-item" style="width: 391px;padding:0 5px 6px 0">
                             <!--<input type="submit" id="add_0" value="下一步" class="ui-button ui-button-lceladon">-->
                             <Button type="primary">下一步</Button>
@@ -227,11 +227,21 @@
 <script>
     import headerT from '../common/headerT'
     export default {
+        data(){
+            return {
+                schoolName:'',
+                obj:{
+
+                }
+            }
+        },
         components:{
             headerT
         },
         mounted(){
             console.log(this.$route.query.a,'query的参数显示对应的信息')
+            this.schoolName = this.$route.query.schoolName
+            this.obj.schoolName = this.$route.query.schoolName
         },
         computed:{
             // flag(){
