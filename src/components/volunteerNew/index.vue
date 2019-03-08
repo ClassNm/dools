@@ -169,7 +169,11 @@
                   pa=="/additional" ||
                   pa=="/messaged" ||
                   pa == "/applicationT" ||
-                  pa=="/referrerT"){
+                  pa=="/referrerT" ||
+                  pa == "/statement" ||
+                  pa == "/mock" ||
+                  pa == "/obstetrics"
+              ){
                   console.log('三级路由');
                   // debugger;
                   return false;

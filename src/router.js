@@ -75,6 +75,16 @@ import referrerT from  './components/referrerT/index'
 /*  applicationT   预览申请表  三级路由   志愿管理 */
 import applicationT from './components/applicationT/index'
 
+/*  多余的三个*/
+/* statement 个人陈述 3级路由 报考志愿*/
+import statement from './components/statement/index'
+
+/* mock  模考成绩 3级路由 报考志愿*/
+import mock from './components/mock/index'
+
+/* obstetrics 单科排名 3级路由 报考志愿*/
+import obstetrics from  './components/obstetrics/index'
+
 Vue.use(Router);
 
 export default new Router({
@@ -217,6 +227,21 @@ export default new Router({
                                   path:'/applicationT',
                                   name:'applicationT',
                                   component:applicationT
+                              },
+                              {
+                                  path:'/statement',
+                                  name:'statement',
+                                  component:statement
+                              },
+                              {
+                                  path:'/mock',
+                                  name:'mock',
+                                  component:mock
+                              },
+                              {
+                                  path:'/obstetrics',
+                                  name:'obstetrics',
+                                  component:obstetrics
                               }
                           ]
                       }

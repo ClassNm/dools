@@ -27,6 +27,17 @@
                 <li :class="free">
                     <span class="step-span">选专业</span>
                 </li>
+                <!--  11111111111111111-->
+                <li class="" v-if="hear">
+                    <span class="step-span">个人陈述</span>
+                </li>
+                <li class="" v-if="hear">
+                    <span class="step-span">模考成绩</span>
+                </li>
+                <li class="" v-if="foot">
+                    <span class="step-span">单科排名</span>
+                </li>
+                <!--1111111111111111111111111-->
                 <li :class="free1" >
                     <span class="step-span">附加材料</span>
                 </li>
@@ -106,6 +117,28 @@
                 }else {
                     return ""
                 }
+            },
+            /* 多余的三个*/
+            hear(){
+                let pa = window.location.hash;
+                console.log(pa,'1111');
+                if (pa == "#/volunteerNew/applicationForm?a=2" ||
+                    pa == "#/volunteerNew/applicationForm?a=4" ||
+                    pa == "#/volunteerNew/applicationForm?a=5" ||
+                    pa == "#/volunteerNew/applicationForm?a=6"
+                ){
+                    return true
+                }else {
+                    return false
+                }
+            },
+            foot(){
+                let pa = window.location.hash;
+                if (pa == "#/volunteerNew/applicationForm?a=5"){
+                    return true
+                }else {
+                    return false
+                }
             }
         },
         mounted(){
@@ -116,6 +149,10 @@
             // }else {
             //     this.data.color = "black";
             // }
+            // console.log(window,'333333');
+            // console.log(window.location.href,'headerT');
+            // console.log(window.location.hash,'headerT')
+            // console.log(this.$route.params,'headerT')
         }
     }
 </script>

@@ -67,7 +67,10 @@
                     pa == "/additional" ||
                     pa == "/messaged" ||
                     pa == "/referrerT" ||
-                    pa == "/applicationT"
+                    pa == "/applicationT" ||
+                    pa == "/statement" ||
+                    pa == "/mock" ||
+                    pa == "/obstetrics"
                 ){
                     console.log('2级路由');
                     return false;
