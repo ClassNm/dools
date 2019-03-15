@@ -8,7 +8,7 @@
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
                     <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>
-                    来自于 <span style="color: #c30;font-weight: 700"> 湖南大学</span> 的个人陈述说明：<br>
+                    来自于 <span style="color: #c30;font-weight: 700"> {{schoolName}}</span> 的个人陈述说明：<br>
                 </p>
                 <p class="ui-tiptext ui-tiptext-follow">
                     内容包括本人的申请理由、成长经历及体会、学科特长及取得的成果、进入大学后的努力方向及设想等，不超过1000字。
@@ -31,9 +31,9 @@
                     <p></p>
                     <!--<input type="hidden" name="id" value="9mcas3swdee0k8dv" id="grcs_id">-->
                     <!--<input type="submit" id="grcs_0" value="下一步" class="ui-button ui-button-lceladon m_top10">-->
-                    <router-link to="/mock">
-                        <Button type="primary" class="ui-button ui-button-lceladon m_top10">下一步</Button>
-                    </router-link>
+                    <!-- <router-link :to="{path:'/mock',query:obj}"> -->
+                        <Button type="primary" class="ui-button ui-button-lceladon m_top10" @click="heer">下一步</Button>
+                    <!-- </router-link> -->
                 </div>
             </form>
         </div>
@@ -46,6 +46,31 @@
     export default {
         components:{
             headerT
+        },
+        data(){
+            return{
+                schoolName:'',
+                obj:{
+
+                }
+            }
+        },
+        mounted(){
+            this.schoolName = this.$route.query.schoolName
+            this.obj.schoolName = this.$route.query.schoolName
+        },
+        methods:{
+            heer(){
+                let obj = this.obj;
+                // let a = obj.schoolName;
+                // if(a == "西南大学"){
+                //     this.$router.push({path:'/additional',query:obj})
+                // }else{
+                //     this.$router.push({path:'/mock',query:obj})
+                // }
+                this.$router.push({path:'/mock',query:obj})
+                
+            }
         }
     }
 </script>

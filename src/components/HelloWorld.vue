@@ -47,7 +47,7 @@ export default {
             setTimeout(() => {
                 this.modal6 = false;
             }, 2000);
-            console.log('(#^.^#)')
+            // console.log('(#^.^#)')
         }
     }
 }

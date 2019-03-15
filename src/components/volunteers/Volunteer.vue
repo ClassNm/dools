@@ -77,7 +77,7 @@
                     pa == "/mock" ||
                     pa == "/obstetrics"
                 ){
-                    console.log('2级路由');
+                    // console.log('2级路由');
                     return false;
                 } else {
                     return true

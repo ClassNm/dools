@@ -8,7 +8,7 @@
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>招生类型：</strong></label>
                         <p class="ui-form-text" style="margin-right: 345px">
-                            普通自主招生
+                            {{autonomously}}
                         </p>
                     </div>
                     <div class="ui-form-item">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>报名类型：</strong></label>
-                        <p class="ui-form-text" style="margin-right: 372px">自主招生</p>
+                        <p class="ui-form-text" style="margin-right: 372px">{{autonomouslyL}}</p>
                         <div class="ui-tiptext-container ui-tiptext-container-wait" style="margin-top:6px;">
                             <div class="ui-tiptext-arrow ui-tiptext-arrowup" style="left:14px;">
                                 <em>◆</em>
@@ -30,7 +30,7 @@
                             </div>
                             <p class="ui-tiptext ui-tiptext-wait">
                                 <i class="ui-tiptext-icon iconfont" title="提示"></i>
-                                报名时间：2018-03-20 19:40:00 至 2018-04-01 00:00:00；北京科技大学最多允许填报 2 个报名类型；“自主招生”类型要求考生的报考学校总数不能超过5个；允许填报的专业类别总数至少 1 个，最多 2 个；允许填报专业总数最少 6 个，最多 6 个；允许每个专业类别下可选专业数最少 0 个，最多 6 个。
+                                {{time}}
                             </p>
                         </div>
                         <input type="hidden" name="zhiY.lxmc" value="自主招生">
@@ -43,7 +43,7 @@
                             <li style="color:#c06800;">
                                 可填报专业依赖于报名条件，请先选择报名条件再选择报考专业
                             </li>
-                            <li>
+                            <!-- <li>
                                 <label>
                                     <input type="checkbox" value="高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者；" name="bmtjs">
                                     高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者；
@@ -58,7 +58,15 @@
                             <li>
                                 <label>
                                     <input type="checkbox" value="对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。" name="bmtjs">
-                                    对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。
+                                    对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，
+                                    须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质
+                                    ，推荐人或推荐单位须对其所推荐材料真实性负责。
+                                </label>
+                            </li> -->
+                            <li v-for="(item,index) in uitest" :key="index">
+                                <label>
+                                    <input type="checkbox" :value="{'value':item.testvalue }" name="bmtjs" onclick="">
+                                    {{item.testname}}
                                 </label>
                             </li>
                             <div class="ui-tiptext-container ui-tiptext-container-wait" style="margin-top:6px;">
@@ -83,121 +91,117 @@
                         <div id="allZymls">
                             <ul class="zhiyzy">
                                 <li class="zhiyzyt">理工二类</li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
-                                <li>
+                                <!-- <li>
                                     <label>
                                         <input type="checkbox" id="cakv1nz4g1rl4gnu" onclick="" bmtjs="">
                                         冶金工程
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="mgnsdv5se550dv2z" onclick="" bmtjs="">
                                         矿业类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="zs6fuje1jtpw2nx4" onclick="" bmtjs="">
                                         安全工程
                                     </label>
+                                </li> -->
+                                <li v-for="(item,index) in second" :key="index">
+                                    <label>
+                                        <input type="checkbox" :id="{'id':item.id}" onclick="" bmtjs="">
+                                        {{item.name}}
+                                    </label>
                                 </li>
                             </ul>
                             <ul class="zhiyzy">
                                 <li class="zhiyzyt">理工一类</li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
-                                <li>
+                                <li v-for="(item,index) in category" :key="index">
+                                    <label>
+                                        <input type="checkbox" :id="{'id':item.id}" onclick="" bmtjs="">
+                                        {{item.name}}
+                                    </label>
+                                </li>
+                                <!-- <li>
                                     <label>
                                         <input type="checkbox" id="sdrk4sfvrmsgf0pp" onclick="" bmtjs="">
                                         材料科学与工程
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="5h49mm89x8blrx5d" onclick="" bmtjs="">
                                         机械类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="48xth0zyyo3cs5b7" onclick="" bmtjs="">
                                         计算机类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="81z2o4t7dd5u5ojy" onclick="" bmtjs="">
                                         通信工程
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="xqom8mq1jpmorkmf" onclick="" bmtjs="">
                                         自动化类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="upu3e0p6nhn60c5y" onclick="" bmtjs="">
                                         土木类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="whw9oavvcjiekdkc" onclick="" bmtjs="">
                                         能源动力类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="oqieo8c1v0ujx0x0" onclick="" bmtjs="">
                                         环境科学与工程类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="jxmg11fgbv8wmkgg" onclick="" bmtjs="">
                                         数学类
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="axni75f6ohywf19s" onclick="" bmtjs="">
                                         应用物理学
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="hjduvhet4kuuf5ay" onclick="" bmtjs="">
                                         应用化学
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="0iox18182eybh1xs" onclick="" bmtjs="">
                                         生物技术
                                     </label>
                                 </li>
-                                <!-- 北京邮电大学 || 厦门大学特殊处理 -->
                                 <li>
                                     <label>
                                         <input type="checkbox" id="uc5axdlettrkwwmn" onclick="" bmtjs="">
                                         管理科学与工程类
                                     </label>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -211,12 +215,12 @@
                     <div class="ui-form-item" id="errorMessageBox" style="display:none">
                     </div>
                     <!-- 点击跳转  附加材料页面 -->
-                    <router-link :to="{path:'/additional',query:obj}">
+                    <!-- <router-link :to="{path:'/additional',query:obj}"> -->
                         <div class="ui-form-item" style="width: 391px;padding:0 5px 6px 0">
                             <!--<input type="submit" id="add_0" value="下一步" class="ui-button ui-button-lceladon">-->
-                            <Button type="primary">下一步</Button>
+                            <Button type="primary" @click="hot">下一步</Button>
                         </div>
-                    </router-link>
+                    <!-- </router-link> -->
                 </form>
                 <router-view></router-view>
             </div>
@@ -229,17 +233,109 @@
     export default {
         data(){
             return {
+                // 学校名字
                 schoolName:'',
+                // 传参
                 obj:{
 
-                }
+                },
+                // 招生类型
+                autonomously:'普通自主招生',
+                // 报名类型
+                autonomouslyL:"自主招生",
+                // 报名时间
+                time:"报名时间：2018-03-20 19:40:00 至 2018-04-01 00:00:00；北京科技大学最多允许填报 2 个报名类型；“自主招生”类型要求考生的报考学校总数不能超过5个；允许填报的专业类别总数至少 1 个，最多 2 个；允许填报专业总数最少 6 个，最多 6 个；允许每个专业类别下可选专业数最少 0 个，最多 6 个。",
+                // 报名条件
+                uitest:[
+                    {
+                        testname:"高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者;",
+                        testvalue:"高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者；"
+                    },
+                    {
+                        testname:"高中阶段在全国青少年科技创新大赛（含全国青少年生物和环境科学实践活动）、“明天小小科学家”奖励活动或全国中小学电脑制作活动中获得省级一等奖（含）以上奖励者;",
+                        testvalue:"高中阶段在全国青少年科技创新大赛（含全国青少年生物和环境科学实践活动）、“明天小小科学家”奖励活动或全国中小学电脑制作活动中获得省级一等奖（含）以上奖励者；"
+                    },
+                    {
+                        testname:"对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。",
+                        testvalue:"对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。"
+                    },
+                ],
+                // 二类
+                second:[
+                    {
+                        name:"冶金工程",
+                        id:"cakv1nz4g1rl4gnu"
+                    },
+                    {
+                        name:"矿业类",
+                        id:"mgnsdv5se550dv2z"
+                    },
+                    {
+                        name:"安全工程",
+                        id:"zs6fuje1jtpw2nx4"
+                    }
+                ],
+                // 一类
+                category:[
+                    {
+                        name:"材料科学与工程",
+                        id:"zs6fuje1jtpw2nx4"
+                    },
+                    {
+                        name:"机械类",
+                        id:"5h49mm89x8blrx5d"
+                    },
+                    {
+                        name:"计算机类",
+                        id:"48xth0zyyo3cs5b7"
+                    },
+                    {
+                        name:"通信工程",
+                        id:"81z2o4t7dd5u5ojy"
+                    },
+                    {
+                        name:"自动化类",
+                        id:"xqom8mq1jpmorkmf"
+                    },
+                    {
+                        name:"土木类",
+                        id:"upu3e0p6nhn60c5y"
+                    },
+                    {
+                        name:"能源动力类",
+                        id:"whw9oavvcjiekdkc"
+                    },
+                    {
+                        name:"环境科学与工程类",
+                        id:"oqieo8c1v0ujx0x0"
+                    },
+                    {
+                        name:"数学类",
+                        id:"jxmg11fgbv8wmkgg"
+                    },
+                    {
+                        name:"应用物理学",
+                        id:"axni75f6ohywf19s"
+                    },
+                    {
+                        name:"应用化学",
+                        id:"hjduvhet4kuuf5ay"
+                    },
+                     {
+                        name:"生物技术",
+                        id:"0iox18182eybh1xs"
+                    },
+                     {
+                        name:"管理科学与工程类",
+                        id:"uc5axdlettrkwwmn"
+                    },
+                ]
             }
         },
         components:{
             headerT
         },
         mounted(){
-            console.log(this.$route.query.a,'query的参数显示对应的信息')
             this.schoolName = this.$route.query.schoolName
             this.obj.schoolName = this.$route.query.schoolName
         },
@@ -255,6 +351,23 @@
             //         return true
             //     }
             // }
+        },
+        methods:{
+            hot(){
+                // console.log(this.$route.query.a,'query的参数显示对应的信息')
+                // console.log(this.$route)
+                let a = this.$route.query.a;
+                let obj = this.obj;
+                // console.log(obj)
+                // 32 湖南大学  8 东北大学  21 华北电力大学  38 西南大学
+                if(a == 8 || a == 32 || a == 21 || a == 38){
+                    // this.$route.path = '/statement'
+                    this.$router.push({path:'/statement',query:obj})
+                }else{
+                    //  {path:'/additional',query:obj}
+                     this.$router.push({path:'/additional',query:obj});
+                }
+            }
         }
     }
 </script>

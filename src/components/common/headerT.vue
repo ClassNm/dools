@@ -28,13 +28,13 @@
                     <span class="step-span">选专业</span>
                 </li>
                 <!--  11111111111111111-->
-                <li class="" v-if="hear">
+                <li :class="free5" v-if="hear">
                     <span class="step-span">个人陈述</span>
                 </li>
-                <li class="" v-if="hear">
+                <li :class="free6" v-if="hear">
                     <span class="step-span">模考成绩</span>
                 </li>
-                <li class="" v-if="foot">
+                <li :class="free7" v-if="foot">
                     <span class="step-span">单科排名</span>
                 </li>
                 <!--1111111111111111111111111-->
@@ -78,6 +78,8 @@
             }
         },
         computed:{
+
+            // 字体颜色  导航栏的字体颜色 跟随着router的变化而变化
             free(){
                 let pa = this.$route.path;
                 if (pa=="/volunteerNew/applicationForm") {
@@ -118,14 +120,43 @@
                     return ""
                 }
             },
+
+            // 多余的三个的 颜色问题  根据路由判断导航栏字体的颜色
+            free5(){
+                let pa = this.$route.path;
+                if (pa=="/statement") {
+                    console.log(111)
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+            free6(){
+                let pa = this.$route.path;
+                if (pa=="/mock") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+            free7(){
+                let pa = this.$route.path;
+                if (pa=="/obstetrics") {
+                    return "stepon"
+                }else {
+                    return ""
+                }
+            },
+
             /* 多余的三个*/
+            // 显示的那三个的问题
             hear(){
-                let pa = window.location.hash;
-                console.log(pa,'1111');
-                if (pa == "#/volunteerNew/applicationForm?a=2" ||
-                    pa == "#/volunteerNew/applicationForm?a=4" ||
-                    pa == "#/volunteerNew/applicationForm?a=5" ||
-                    pa == "#/volunteerNew/applicationForm?a=6"
+                let pa = this.$route.query.schoolName;
+                // console.log(pa,'1111');
+                if (pa == "东北大学" ||
+                    pa == "湖南大学" ||
+                    pa == "华北电力大学" ||
+                    pa == "西南大学"
                 ){
                     return true
                 }else {
@@ -133,8 +164,8 @@
                 }
             },
             foot(){
-                let pa = window.location.hash;
-                if (pa == "#/volunteerNew/applicationForm?a=5"){
+                let pa = this.$route.query.schoolName;
+                if (pa == "华北电力大学"){
                     return true
                 }else {
                     return false

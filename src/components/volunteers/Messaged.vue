@@ -5,7 +5,7 @@
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
                     <i class="ui-tiptext-icon iconfont" title="提示"></i>
-                    请为该志愿添加社会活动、获奖记录和专利的证明材料，只有在此处添加后志愿高校才能看到您的证明材料
+                    {{evidentiary}}
                 </p>
             </div>
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
@@ -13,22 +13,22 @@
                     <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">{{schoolName}}</span> 的说明：
                 </p>
                 <p class="ui-tiptext ui-tiptext-follow">
-                    高中阶段三项以内具有代表性的获奖记录，参与的三项以内具有代表性的社会活动，不可多填。
+                   {{fill}}。
                 </p>
             </div>
-            <div class="jbxxhjtitle text_center">高中期间参与的社会活动</div>
+            <div class="jbxxhjtitle text_center">{{publicActivity}}</div>
             <div class="text_center color-999">尚未添加社会活动</div>
             <div class="text_center" style="margin: 15px 0;">
                 <!--<a class="ui-button ui-button-lgreen select" href="javascript:;">+ 添加社会活动</a>-->
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加社会活动</Button>
             </div>
-            <div class="jbxxhjtitle text_center">高中期间的获奖记录</div>
+            <div class="jbxxhjtitle text_center">{{bearThePalm}}</div>
             <div class="text_center color-999">尚未添加获奖记录</div>
             <div class="text_center" style="margin: 15px 0;">
                 <!--<a class="ui-button ui-button-lgreen select" href="javascript:;">+ 添加获奖记录</a>-->
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加获奖记录</Button>
             </div>
-            <div class="jbxxhjtitle text_center">高中期间获得的专利</div>
+            <div class="jbxxhjtitle text_center">{{patent}}</div>
             <div class="text_center color-999">尚未添加专利</div>
             <div class="text_center" style="margin: 15px 0;">
                 <!--<a class="ui-button ui-button-lgreen select" href="javascript:;" style="width: 100px;">+ 添加专利</a>-->
@@ -37,9 +37,9 @@
             <div class="text_center" style="margin-top:15px;">
                 <!--<a href="javascript:;" class="ui-button ui-button-lceladon">下一步</a>-->
                 <!-- referrerT 推荐人-->
-                <router-link :to="{path:'/referrerT',query:obj}">
-                    <Button type="primary" class="ui-button ui-button-lceladon">下一步</Button>
-                </router-link>
+                <!-- <router-link :to="{path:'/referrerT',query:obj}"> -->
+                    <Button type="primary" class="ui-button ui-button-lceladon" @click="pook">下一步</Button>
+                <!-- </router-link> -->
             </div>
         </div>
         <router-view></router-view>
@@ -54,7 +54,17 @@
                 schoolName: '',
                 obj:{
 
-                }
+                },
+                // 证明材料
+                evidentiary:"请为该志愿添加社会活动、获奖记录和专利的证明材料，只有在此处添加后志愿高校才能看到您的证明材料",
+                // 不可多填
+                fill:"高中阶段三项以内具有代表性的获奖记录，参与的三项以内具有代表性的社会活动，不可多填",
+                // 社会活动
+                publicActivity:"高中期间参与的社会活动", 
+                //获奖记录
+                bearThePalm:"高中期间的获奖记录",
+                // 专利
+                patent:"高中期间获得的专利"
             }
         },
         components:{
@@ -64,6 +74,17 @@
             this.schoolName = this.$route.query.schoolName
             this.obj.schoolName = this.schoolName
         },
+        methods:{
+            pook(){
+                let obj = this.obj;
+                let a = obj.schoolName;
+                if(a == "西南大学"){
+                    this.$router.push({path:'/applicationT',query:obj})
+                }else{
+                    this.$router.push({path:'/referrerT',query:obj})
+                }
+            }
+        }
     }
 </script>
 

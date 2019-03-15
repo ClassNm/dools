@@ -77,20 +77,21 @@ import applicationT from './components/volunteers/ApplicationT'
 
 /*  多余的三个*/
 /* statement 个人陈述 3级路由 报考志愿*/
-import statement from './components/statement/index'
+import statement from './components/volunteers/statement.vue'
 
 /* mock  模考成绩 3级路由 报考志愿*/
-import mock from './components/mock/index'
+import mock from './components/volunteers/mock.vue'
 
 /* obstetrics 单科排名 3级路由 报考志愿*/
-import obstetrics from  './components/obstetrics/index'
+import obstetrics from  './components/volunteers/obstetrics.vue'
 
 Vue.use(Router);
 
+// export default new Router({
 export default new Router({
-  mode: 'hash',
-  base: process.env.BASE_URL,
-  routes: [
+    mode: 'hash',
+    base: process.env.BASE_URL,
+    routes: [
       {
         path:'/',
         redirect:'/home'
@@ -206,7 +207,24 @@ export default new Router({
                               {
                                   path:'/volunteerNew/applicationForm',
                                   name:'applicationForm',
+                                //   meta:{auth:true},
+                                //   设置当前路由需要判断 
                                   component:applicationForm,
+                              },
+                              {
+                                 path:'/statement',
+                                 name:'statement',
+                                 component:statement
+                              },
+                              {
+                                  path:'/mock',
+                                  name:'mock',
+                                  component:mock
+                              },
+                              {
+                                  path:'/obstetrics',
+                                  name:'obstetrics',
+                                  component:obstetrics
                               },
                               {
                                   path:'/additional',
@@ -228,21 +246,6 @@ export default new Router({
                                   name:'applicationT',
                                   component:applicationT
                               },
-                              {
-                                  path:'/statement',
-                                  name:'statement',
-                                  component:statement
-                              },
-                              {
-                                  path:'/mock',
-                                  name:'mock',
-                                  component:mock
-                              },
-                              {
-                                  path:'/obstetrics',
-                                  name:'obstetrics',
-                                  component:obstetrics
-                              }
                           ]
                       }
                   ]
@@ -251,3 +254,18 @@ export default new Router({
       },
   ]
 })
+
+// routes.beforeEach((to,from,next) =>{   
+//     if(to.matched.some( m => m.meta.auth)){     
+//             // 对路由进行验证     
+//         if(store.state.isLogin=='1') { // 跳1蹦页面       
+//             // 未登录则跳转到登陆界面，query:{ Rurl: to.fullPath}表示把当前路由信息传递过去方便登录后跳转回来；
+//             next({path:'/statement',query:{Rurl:to.fullPath}})     
+//         }else{       
+//             // next({path:'/login',query:{ Rurl: to.fullPath} })
+//             next()   // 正常跳转到你设置好的页面
+// 　    　} 
+// 　  }else{ 
+// 　　　　　　next() 
+// 　　} 
+// })

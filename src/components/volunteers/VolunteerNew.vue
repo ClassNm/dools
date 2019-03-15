@@ -10,7 +10,7 @@
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><strong>招生类型：</strong></label>
                         <div class="ui-form-text" style="width: 50px;margin-right: 546px">
-                            保送生
+                            {{form}}
                         </div>
                     </div>
                     <div class="ui-form-item">
@@ -37,7 +37,7 @@
                                     v-model="modal10"
                                     class-name="vertical-center-modal"
                             >
-                                <div class="school" v-for="(item,index) in schoolArr" :key="index" @click="schoolSel" :data-index="index">{{item.schoolName}}</div>
+                                <div class="school" v-for="(item,index) in schoolArr" :key="index" @click="schoolSel" :data-index="index" :style="{'color':item.color}">{{item.schoolName}}</div>
                             </Modal>
                         </div>
                     </div>
@@ -58,12 +58,10 @@
                                 <label style="margin-right: 463px">
                                     <input type="radio" name="lxdm" value="11">
                                     保送生&nbsp;&nbsp;<font color="red"></font>
-                                    <a href="https://gaokao.chsi.com.cn/zzbm/stu/zhiy/tip.action?orgId=476736792&amp;lxdm=11" target="_blank">填报说明</a>
+                                    <a href="javascript:;" target="_blank">填报说明</a>
                                 </label>
                                 <ul class="orgInfos" style="margin-bottom:12px;width: 580px;text-align: left">
-                                    <li>报名时间：2019-01-29 19:00:00 至 2019-02-26
-                                        23:00:00；{{SchoolName}}最多允许填报 10 个报名类型；“保送生”类型要求考生的报考学校总数不能超过50个；允许填报的专业类别总数至少 1
-                                        个，最多 3 个；允许填报专业总数最少 1 个，最多 3 个；允许每个专业类别下可选专业数最少 1 个，最多 3 个。</li>
+                                    <li>报名时间：{{timeL}}；{{SchoolName}}{{condition}}。</li>
                                 </ul>
                             </div>
                         </div>
@@ -93,16 +91,25 @@
                 SchoolName:"",
                 modal10:false,
                 Show: false,
+                // 招生类型
+                form:"保送生",
+                // 报名时间
+                timeL:"2019-01-29 19:00:00 至 2019-02-26 23:00:00",
+                // 报名时间条件
+                condition:"最多允许填报 10 个报名类型；“保送生”类型要求考生的报考学校总数不能超过50个；允许填报的专业类别总数至少 1 个，最多 3 个；允许填报专业总数最少 1 个，最多 3 个；允许每个专业类别下可选专业数最少 1 个，最多 3 个",
                 /* 根据点击input框来浮现下一步跳的学校 query里的1-6代替query传的参*/
                 obj:{
                     a:1
                 },
+                // 学校名字
                 schoolArr:[
                     {
-                        schoolName:'中国人民大学'
+                        schoolName:'中国人民大学',
+
                     },
                     {
-                        schoolName:'北京航空航天大学'
+                        schoolName:'北京科技大学',
+                        color:'orange'
                     },
                     {
                         schoolName:'北京化工大学'
@@ -123,7 +130,15 @@
                         schoolName:'天津大学'
                     },
                     {
+                        schoolName:'东北大学',
+                        color:'orange'
+                    },
+                    {
                         schoolName:'黑龙江大学'
+                    },
+                    {
+                        schoolName:'哈尔滨工业大学',
+                        color:'orange'
                     },
                     {
                         schoolName:'复旦大学'
@@ -133,6 +148,9 @@
                     },
                     {
                         schoolName:'东华大学'
+                    },
+                    {
+                        schoolName:'华东师范大学'
                     },
                     {
                         schoolName:'上海财经大学'
@@ -151,6 +169,10 @@
                     },
                     {
                         schoolName:'南京信息工程大学'
+                    },
+                    {
+                        schoolName:'华北电力大学',
+                        color:'orange'
                     },
                     {
                         schoolName:'南京农业大学'
@@ -183,7 +205,8 @@
                         schoolName:'中南大学'
                     },
                     {
-                        schoolName:'湖南师范大学'
+                        schoolName:'湖南大学',
+                        color:'orange'
                     },
                     {
                         schoolName:'中山大学'
@@ -199,6 +222,10 @@
                     },
                     {
                         schoolName:'电子科技大学'
+                    },
+                    {
+                        schoolName:'西南大学',
+                        color:'orange'
                     },
                     {
                         schoolName:'西南财经大学'
@@ -225,23 +252,35 @@
                   pa == "/mock" ||
                   pa == "/obstetrics"
               ){
-                  console.log('三级路由');
+                //   console.log('三级路由');
                   // debugger;
                   return false;
               } else {
                   return true
               }
-            }
+          },
+        //   color(){
+        //       let a  = this.schoolArr.index;
+        //       if(a == 1){
+                
+        //     }
+        //   }
         },
         methods:{
             schoolSel(e){
-                console.log(e)
+                // console.log(e)
                 this.SchoolName = e.target.innerText;
                 this.modal10 = false;
                 this.Show = true;
                 this.obj.a = e.target.dataset.index;
                 this.obj.schoolName = this.SchoolName
             }
+        },
+        mounted(){
+            // let a  = this.schoolArr.index;
+            // if(a == 1){
+            //     return two;
+            // }
         }
     }
 </script>

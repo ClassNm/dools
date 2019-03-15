@@ -16,7 +16,7 @@
             </div>
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
-                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">华北电力大学(北京)</span> 的说明：</p>
+                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">{{schoolName}}</span> 的说明：</p>
                 <p class="ui-tiptext ui-tiptext-follow">
                     所有成绩及排名须经中学审核无误后，方可填写提交。如果某科目在某学期没有成绩或没有排名，请填“无”。
                 </p>
@@ -173,7 +173,7 @@
                 <p class="text_center m_top10" id="errortip"></p>
                 <div class="text_center m_top10">
                     <!--<input type="submit" id="dkpmnext_0" value="下一步" class="ui-button ui-button-lceladon">-->
-                    <Button type="primary" class="ui-button ui-button-lceladon">下一步</Button>
+                    <Button type="primary" class="ui-button ui-button-lceladon" @click="fool">下一步</Button>
                 </div>
             </form>
         </div>
@@ -185,6 +185,25 @@
     export default {
         components:{
             headerT
+        },
+         data(){
+            return{
+                schoolName:'',
+                obj:{
+
+                }
+            }
+        },
+        mounted(){
+            // console.log(this.$route.query,'obste')
+            this.schoolName = this.$route.query.schoolName
+            this.obj.schoolName = this.$route.query.schoolName
+        },
+        methods:{
+            fool(){
+                let obj = this.obj;
+                this.$router.push({path:'/additional',query:obj})
+            }
         }
     }
 </script>
