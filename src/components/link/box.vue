@@ -153,7 +153,7 @@
         <div class="layout">
             <Layout>
                 <Sider breakpoint="md" collapsible :collapsed-width="78" v-model="isCollapsed">
-                    <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses">
+                    <Menu active-name="1-1" theme="dark" width="auto" :class="menuitemClasses" :open-names="['3']">
                         <router-link to="/home/sigh">
                             <Submenu name="1">
                                 <template slot="title">
@@ -170,12 +170,11 @@
                                 </template>
                             </Submenu>
                         </router-link>
-
                         <Submenu name="3">
                             <template slot="title">
                                     <Icon type="ios-keypad" style="margin: 0 10px 10px 0"></Icon>
                                     <div style="display: inline-block;" title="填报个人信息">
-                                        填报信息
+                                        填报个人信息
                                     </div>
                             </template>
                             <router-link to="/basic">
@@ -295,6 +294,9 @@
         transition: font-size .2s ease .2s, transform .2s ease .2s;
         vertical-align: middle;
         font-size: 22px;
+    }
+    .ivu-menu-dark{
+        text-align: left
     }
 </style>
 

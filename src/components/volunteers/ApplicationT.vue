@@ -29,7 +29,7 @@
                 <div class="zhiysqbtr">
                     <div style="float: right;">
                         <img
-                                src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=520599061,592653383&fm=26&gp=0.jpg"
+                                src="../../../public/111.jpg"
                                 height="37px"
                                 width="250px"
                         >

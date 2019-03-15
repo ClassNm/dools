@@ -192,7 +192,7 @@
         font-size: 18px;
         font-weight: 700;
         float: left;
-        display: inline;
+        /* display: inline; */
         margin: 0;
         padding: 0;
     }
@@ -268,10 +268,10 @@
         top: 0;
         left: 0;
         height: 29px;
-        filter: alpha(opacity:0);
+        /* filter: alpha(opacity:0); */
         opacity: 0;
         width: 265px;
-        cursor: pointer;
+        cursor:pointer
     }
     .ui-tiptext {
         margin: 0;

@@ -139,7 +139,7 @@
                             <input type="text" name="xycjs[2].mf1" maxlength="10" :value="item.value1" id="mkcjnext_xycjs_2__mf1">
                         </td>
                     </tr>
-                     <!-- 生物 -->  
+                     <!-- 生物 -->
                     <tr>
                         <td>{{biology}}</td>
                         <!-- <td style="text-align: center; background-color: rgb(255, 204, 204);" id="td80"><input type="text" name="xycjs[0].cj9" maxlength="10" value="86" id="mkcjnext_xycjs_0__cj9">/<input type="text" name="xycjs[0].mf9" maxlength="10" value="90" id="mkcjnext_xycjs_0__mf9"></td> -->

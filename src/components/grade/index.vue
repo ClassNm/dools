@@ -977,7 +977,7 @@ export default {
         font-size: 18px;
         font-weight: 700;
         float: left;
-        display: inline;
+        /* display: inline; */
         margin: 0;
         padding: 0;
     }

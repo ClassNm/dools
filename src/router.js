@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+// 外边
 import Home from './views/Home.vue'
 
 /*  Sigh 报名须知 */
@@ -14,7 +16,7 @@ import  basic from './components/basic/index'
 /* Photo  个人照片*/
 import photo from  './components/photo/index'
 
-/* midelSchool  中学信息*/
+/* midelSchool  中学信息*/ 
 import midelSchool from  './components/midelSchool/index'
 
 /* grade   成绩信息*/
@@ -53,7 +55,6 @@ import  secondarySchool from './components/secondarySchool/index'
 /* organization   推荐社会团体  推荐人信息*/
 import organization from './components/organization/index'
 
-
 /*  volunteer  志愿管理*/
 import volunteer from  './components/volunteers/Volunteer'
 
@@ -77,13 +78,13 @@ import applicationT from './components/volunteers/ApplicationT'
 
 /*  多余的三个*/
 /* statement 个人陈述 3级路由 报考志愿*/
-import statement from './components/volunteers/statement.vue'
+import statement from './components/volunteers/Statement.vue'
 
 /* mock  模考成绩 3级路由 报考志愿*/
-import mock from './components/volunteers/mock.vue'
+import mock from './components/volunteers/Mock.vue'
 
 /* obstetrics 单科排名 3级路由 报考志愿*/
-import obstetrics from  './components/volunteers/obstetrics.vue'
+import obstetrics from  './components/volunteers/Obstetrics.vue'
 
 Vue.use(Router);
 
@@ -92,10 +93,12 @@ export default new Router({
     mode: 'hash',
     base: process.env.BASE_URL,
     routes: [
+        // 路由重定向
       {
         path:'/',
         redirect:'/home'
       },
+    //   整体
       {
           path: '/home',
           name: 'home',
@@ -105,56 +108,67 @@ export default new Router({
                   path: '/',
                   redirect:'/home/sigh'
               },
+              /*  Sigh 报名须知 */
               {
                   path: '/home/sigh',
                   name: 'sigh',
                   component: sigh
               },
+              /*  Rank  确认身份*/
               {
                   path: '/rank',
                   name: 'rank',
                   component: rank
               },
+              /* Basic  基本信息*/
               {
                   path: '/basic',
                   name: 'basic',
                   component: basic
               },
+              /* Photo  个人照片*/
               {
                   path: '/photo',
                   name: 'photo',
                   component: photo
               },
+              /* midelSchool  中学信息*/ 
               {
                   path: '/midelSchool',
                   name: 'midelSchool',
                   component: midelSchool
               },
+              /* grade   成绩信息*/
               {
                   path: '/grade',
                   name: 'grade',
                   component: grade
               },
+               /* selectionTest   选考科目成绩*/
               {
                   path: '/selectionTest',
                   name: 'selectionTest',
                   component: selectionTest
               },
-              {
+              /*  generalMessage  综合信息*/
+              { 
                   path: '/generalMessage',
                   name: 'generalMessage',
                   component: generalMessage,
                   children:[
+                      /*   newly         获奖记录    综合信息里*/
                       {
                           path:'/newly',
                           name:'bear',
                           component: bear
                       },
+                      /* publicActivity   高中期间获奖记录  综合信息里*/
                       {
                           path:'/publicActivity',
                           name:'schoolAward',
                           component: schoolAward
                       },
+                      /* patent           获得的专利      综合信息*/
                       {
                           path:'/patent',
                           name:'patent',
@@ -162,31 +176,37 @@ export default new Router({
                       },
                   ]
               },
+              /*  mockExam   模考成绩*/
               {
                   path: '/mockExam',
                   name: 'mockExam',
                   component: mockExam
               },
+              /*  singleSub  单科排名*/
               {
                   path: '/singleSub',
                   name: 'singleSub',
                   component: singleSub
               },
+               /*  referrer  推荐人信息*/
               {
                   path: '/referrer',
                   name: 'referrer',
                   component: referrer,
                   children:[
+                      /*  expert   推荐专家  推荐人信息*/
                       {
                           path:'/expert',
                           name:'expert',
                           component: expert
                       },
+                      /*   secondarySchool  推荐中学  推荐人信息*/
                       {
                           path:'/secondarySchool',
                           name:'secondarySchool',
                           component: secondarySchool
                       },
+                       /* organization   推荐社会团体  推荐人信息*/
                       {
                           path:'/organization',
                           name:'organization',
@@ -194,16 +214,19 @@ export default new Router({
                       }
                   ]
               },
+               /*  volunteer  志愿管理*/
               {
                   path: '/volunteer',
                   name: 'volunteer',
                   component: volunteer,
                   children:[
+                      /*  volunteerNew  添加志愿   志愿管理*/
                       {
                           path:'/volunteerNew',
                           name:'volunteerNew',
                           component:volunteerNew,
                           children:[
+                              /*  applicationForm  报考志愿   三级路由  志愿管理*/
                               {
                                   path:'/volunteerNew/applicationForm',
                                   name:'applicationForm',
@@ -211,36 +234,43 @@ export default new Router({
                                 //   设置当前路由需要判断 
                                   component:applicationForm,
                               },
+                               /* statement 个人陈述 3级路由 报考志愿*/
                               {
                                  path:'/statement',
                                  name:'statement',
                                  component:statement
                               },
+                              /* mock  模考成绩 3级路由 报考志愿*/
                               {
                                   path:'/mock',
                                   name:'mock',
                                   component:mock
                               },
+                               /* obstetrics 单科排名 3级路由 报考志愿*/
                               {
                                   path:'/obstetrics',
                                   name:'obstetrics',
                                   component:obstetrics
                               },
+                              /*  additional   附加材料    三级路由   志愿管理*/
                               {
                                   path:'/additional',
                                   name:'additional',
                                   component:additional
                               },
+                              /*  messaged     综合信息   三级路由     志愿管理*/
                               {
                                   path:'/messaged',
                                   name:'messaged',
                                   component:messaged
                               },
+                              /*  referrerT     推荐人    三级路由     志愿管理 */
                               {
                                   path:'/referrerT',
                                   name:'referrerT',
                                   component:referrerT
                               },
+                              /*  applicationT   预览申请表  三级路由   志愿管理 */
                               {
                                   path:'/applicationT',
                                   name:'applicationT',
