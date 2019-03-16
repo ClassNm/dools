@@ -41,7 +41,7 @@
                             </th>
                             <th>{{SeniorTwo}}<br>成绩/满分
                             </th>
-                            <th>{{SeniorTwo}}<br>成绩/满分
+                            <th>{{SeniorTwoL}}<br>成绩/满分
                             </th>
                             <th>{{gradeThree}}<br>成绩/满分
                             </th>
@@ -358,7 +358,7 @@ export default {
             seniorOneL:"高一（下）期末",
             // 高二成绩
             SeniorTwo:"高二（上）期末",
-            SeniorTwo:"高二（下）期末",
+            SeniorTwoL:"高二（下）期末",
            //高三成绩
            gradeThree:"高三（上）期末",
            // 学业水平（会考）   
