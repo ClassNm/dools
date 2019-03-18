@@ -18,7 +18,7 @@
                 <h3 class="ui-box-head-title">综合信息</h3>
             </div>
             <div class="ui-box-container">
-                <div class="txt-explain m_bottom10">
+                <div class="txt-explain m_bottom10" id="aaa">
                     1、请如实填写在高中期间参与过的社会活动、获奖记录或专利，如果无任何社会活动、获奖记录或专利请跳过此步。<br>
                     2、“高中期间参与过的社会活动”可填写高中阶段参与的科学研究、创新实践、文学创作、志愿服务、社团活动、学校或班团学生工作等。<br>
                     3、“高中期间的获奖记录”可填写高中阶段获得的省级（含）以上学科竞赛奖励、校级（含）以上个人荣誉、本人所具备的文艺或体育特长等。<br>
@@ -32,10 +32,10 @@
                     <router-link to="/publicActivity">
                         <a href="javascript:;">+ 新增高中期间的获奖记录</a>
                     </router-link>
-                    &nbsp;或者&nbsp;
-                    <router-link to="/patent">
+                    <!-- &nbsp;或者&nbsp; -->
+                    <!-- <router-link to="/patent">
                         <a href="javascript:;">+ 新增高中期间获得的专利</a>
-                    </router-link>
+                    </router-link> -->
                 </div>
                 <div class="text_center">
                     <!--<form action="ignoreZhxx.action" method="post">-->
@@ -67,6 +67,10 @@
 
 
 <style scoped>
+
+    #aaa{
+        text-align: left
+    }
     .generalMessage{
         padding: 10px;
         background: white;

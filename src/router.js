@@ -35,7 +35,7 @@ import bear from './components/newly/index'
 import  schoolAward from './components/publicActivity/index'
 
 /* patent           获得的专利      综合信息*/
-import  patent from './components/patent/index'
+// import  patent from './components/patent/index'
 
 /*  mockExam   模考成绩*/
 import mockExam from  './components/mockExam/index'
@@ -169,11 +169,11 @@ export default new Router({
                           component: schoolAward
                       },
                       /* patent           获得的专利      综合信息*/
-                      {
-                          path:'/patent',
-                          name:'patent',
-                          component: patent
-                      },
+                    //   {
+                    //       path:'/patent',
+                    //       name:'patent',
+                    //       component: patent
+                    //   },
                   ]
               },
               /*  mockExam   模考成绩*/

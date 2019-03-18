@@ -16,7 +16,12 @@
             </div>
             <div class="ui-tiptext-container ui-tiptext-container-message m_bottom10">
                 <p class="ui-tiptext ui-tiptext-message">
-                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;"></i>来自于 <span style="color: #c30;font-weight: 700">{{schoolName}}</span> 的说明：</p>
+                    <i class="ui-tiptext-icon iconfont" title="提示" style="font-size: 18px;">
+                        
+                    </i>
+                    来自于 
+                    <span style="color: #c30;font-weight: 700">{{schoolName}}</span> 的说明：
+                </p>
                 <p class="ui-tiptext ui-tiptext-follow">
                     所有成绩及排名须经中学审核无误后，方可填写提交。如果某科目在某学期没有成绩或没有排名，请填“无”。
                 </p>
@@ -25,27 +30,27 @@
                 <input type="hidden" name="zid" value="b8qrptta4dvwnxyy" id="dkpmnext_zid">
                 <table class="ui-table cjxxtable" style="margin: 0 auto;">
                     <thead>
-                    <tr>
-                        <th>科目\<br>学期
-                        </th>
-                        <th>{{seniorOne}}<br> 排名/人数
-                        </th>
-                        <th>{{seniorOneL}}<br> 排名/人数
-                        </th>
-                        <th>{{SeniorTwo}}<br> 排名/人数
-                        </th>
-                        <th>{{SeniorTwoL}}<br> 排名/人数
-                        </th>
-                        <th>{{gradeThree}}<br> 排名/人数
-                        </th>
-                        <th>{{Once}}<br> 排名/人数
-                        </th>
-                        <th>{{Two}}<br> 排名/人数
-                        </th>
-                        <th>{{Three}}<br> 排名/人数
-                        </th>
-                    </tr>
-                    </thead>
+                        <tr>
+                            <th>科目\<br>学期
+                            </th>
+                            <th>{{seniorOne}}<br> 排名/人数
+                            </th>
+                            <th>{{seniorOneL}}<br> 排名/人数
+                            </th>
+                            <th>{{SeniorTwo}}<br> 排名/人数
+                            </th>
+                            <th>{{SeniorTwoL}}<br> 排名/人数
+                            </th>
+                            <th>{{gradeThree}}<br> 排名/人数
+                            </th>
+                            <th>{{Once}}<br> 排名/人数
+                            </th>
+                            <th>{{Two}}<br> 排名/人数
+                            </th>
+                            <th>{{Three}}<br> 排名/人数
+                            </th>
+                        </tr>
+                    </thead>·
                     <tbody>
                      <!-- 语文 -->       
                     <tr>
@@ -59,7 +64,7 @@
                         <!-- <td id="td06" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj1" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj1">/<input type="text" name="xycjs[6].mf1" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf1"></td> -->
                         <!-- <td id="td07" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj1" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj1">/<input type="text" name="xycjs[7].mf1" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf1"></td> -->
                         <td v-for="(item,index) in languageL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 数学 -->
@@ -74,7 +79,7 @@
                         <!-- <td id="td16" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj2" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj2">/<input type="text" name="xycjs[6].mf2" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf2"></td> -->
                         <!-- <td id="td17" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj2" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj2">/<input type="text" name="xycjs[7].mf2" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf2"></td> -->
                         <td v-for="(item,index) in mathematicsL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                      <!-- 外语 -->
@@ -89,7 +94,7 @@
                         <!-- <td id="td26" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj3" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj3">/<input type="text" name="xycjs[6].mf3" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf3"></td> -->
                         <!-- <td id="td27" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj3" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj3">/<input type="text" name="xycjs[7].mf3" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf3"></td> -->
                         <td v-for="(item,index) in languagesL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 政治 -->
@@ -104,7 +109,7 @@
                         <!-- <td id="td36" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj4" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj4">/<input type="text" name="xycjs[6].mf4" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf4"></td> -->
                         <!-- <td id="td37" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj4" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj4">/<input type="text" name="xycjs[7].mf4" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf4"></td> -->
                         <td v-for="(item,index) in politicsL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 历史 --> 
@@ -119,7 +124,7 @@
                         <!-- <td id="td46" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj5" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj5">/<input type="text" name="xycjs[6].mf5" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf5"></td> -->
                         <!-- <td id="td47" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj5" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj5">/<input type="text" name="xycjs[7].mf5" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf5"></td> -->
                         <td v-for="(item,index) in historyL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!--地理  -->
@@ -134,7 +139,7 @@
                         <!-- <td id="td56" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj6" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj6">/<input type="text" name="xycjs[6].mf6" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf6"></td> -->
                         <!-- <td id="td57" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj6" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj6">/<input type="text" name="xycjs[7].mf6" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf6"></td> -->
                         <td v-for="(item,index) in geographyL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 物理 -->
@@ -149,7 +154,7 @@
                         <!-- <td id="td66" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj7" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj7">/<input type="text" name="xycjs[6].mf7" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf7"></td> -->
                         <!-- <td id="td67" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj7" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj7">/<input type="text" name="xycjs[7].mf7" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf7"></td> -->
                         <td v-for="(item,index) in physicsL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 化学 -->
@@ -164,7 +169,7 @@
                         <!-- <td id="td76" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj8" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj8">/<input type="text" name="xycjs[6].mf8" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf8"></td> -->
                         <!-- <td id="td77" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj8" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj8">/<input type="text" name="xycjs[7].mf8" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf8"></td> -->
                         <td v-for="(item,index) in chemistryL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 生物 -->
@@ -179,7 +184,7 @@
                         <!-- <td id="td86" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj9" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj9">/<input type="text" name="xycjs[6].mf9" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf9"></td> -->
                         <!-- <td id="td87" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj9" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj9">/<input type="text" name="xycjs[7].mf9" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf9"></td> -->
                         <td v-for="(item,index) in biologyL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 文科综合 -->
@@ -194,7 +199,7 @@
                         <!-- <td id="td146" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj14" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj14">/<input type="text" name="xycjs[6].mf14" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf14"></td> -->
                         <!-- <td id="td147" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj14" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj14">/<input type="text" name="xycjs[7].mf14" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf14"></td> -->
                         <td v-for="(item,index) in comprehensiveL" :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     <!-- 理科综合 -->
@@ -209,7 +214,7 @@
                         <!-- <td id="td156" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[6].cj15" maxlength="10" value="无" id="dkpmnext_xycjs_6__cj15">/<input type="text" name="xycjs[6].mf15" maxlength="10" value="无" id="dkpmnext_xycjs_6__mf15"></td> -->
                         <!-- <td id="td157" style="background-color: rgb(255, 204, 204);"><input type="text" name="xycjs[7].cj15" maxlength="10" value="无" id="dkpmnext_xycjs_7__cj15">/<input type="text" name="xycjs[7].mf15" maxlength="10" value="无" id="dkpmnext_xycjs_7__mf15"></td> -->
                         <td v-for="(item,index) in integratedL " :key="index" style="background-color: rgb(255, 204, 204);">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                            <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
                         </td>
                     </tr>
                     </tbody>
