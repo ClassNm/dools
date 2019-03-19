@@ -34,44 +34,51 @@
                                 </a>
                             </span>
                         </div>
+                        <!-- 姓名 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>姓名：</strong></label>
                             <p class="ui-form-text" style="margin-right: 470px;width: 100px;">
-                                格学教育
+                                {{name}}
                             </p>
                         </div>
+                        <!-- 证件号码 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>证件号码：</strong></label>
                             <p class="ui-form-text" id="zjhm" style="margin-right: 390px;width: 140px;">
-                                411381201902186111
+                                {{papers}}
                             </p>
                         </div>
+                        <!-- 手机号码 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>手机号码：</strong></label>
                             <p class="ui-form-text" style="margin-right: 450px;width: 100px;">
-                                4000180810
+                                {{Phone}}
                             </p>
                         </div>
+                        <!-- 性别 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>性别：</strong></label>
                             <select name="jbxxVO.xbDm" id="jbxx_xb" style="margin-right: 460px;">
-                                <option value=""  selected="selected">请选择</option>
-                                <option value="1">男</option>
-                                <option value="2">女</option>
+                                <option :selected="item.selected" :value="item.value" v-for="(item,i) in sex" :key="i">{{item.sexL}}</option>
+                                <!-- <option value="1">{{sexK}}</option> -->
+                                <!-- <option value="2">{{sexJ}}</option> -->
                             </select>
                             <p class="ui-form-explain" id="zjhmInfo"></p>
                         </div>
+                        <!-- 出生日期 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>出生日期：</strong></label>
                             <p class="ui-form-text" style="margin-right: 450px;width: 100px;">
-                                2019-02-26
+                                {{birth}}
                             </p>
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 民族 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>民族：</strong></label>
                             <select name="jbxxVO.mzDm" id="jbxx_mz" style="margin-right: 390px;width: 140px;">
-                                <option value="" selected="selected">请选择</option>
+                                 <option  v-for="(item,i) in Home" :key="i" :selected="item.selected" :value="item.value">{{item.name}}</option>
+                                <!-- <option value="" selected="selected">请选择</option>
                                 <option value="01">汉族</option>
                                 <option value="02">蒙古族</option>
                                 <option value="03">回族</option>
@@ -129,14 +136,16 @@
                                 <option value="55">珞巴族</option>
                                 <option value="56">基诺族</option>
                                 <option value="97">其他</option>
-                                <option value="98">外国血统中国籍人士</option>
+                                <option value="98">外国血统中国籍人士</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 政治面貌： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>政治面貌：</strong></label>
                             <select name="jbxxVO.zzmmDm" id="jbxx_zzmm" style="margin-right: 390px;width: 140px;">
-                                <option value="" selected="selected">请选择</option>
+                                <option  v-for="(item,i) in Faces" :key="i" :selected="item.selected" :value="item.value">{{item.face}}</option>
+                                <!-- <option value="" selected="selected">请选择</option>
                                 <option value="01">中国共产党党员</option>
                                 <option value="02">中国共产党预备党员</option>
                                 <option value="03">中国共产主义青年团团员</option>
@@ -149,77 +158,151 @@
                                 <option value="10">九三学社社员</option>
                                 <option value="11">台湾民主自治同盟盟员</option>
                                 <option value="12">无党派民主人士</option>
-                                <option value="13">群众</option>
+                                <option value="13">群众</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
                         <div class="ui-form-item" style="margin-left: 73px">
                             <span class="ui-form-explain">请查看学校招生简章，如果报考专业对视力、是否色盲、身高、体重有要求，则必须填写。</span>
                         </div>
+                        <!-- 视力 -->
                         <div class="ui-form-item" title="视力标准为 0.1-1.5（或 4.0-5.2）">
                             <label for="" class="ui-label"><strong>裸眼视力（左/右）：</strong></label>
                             <div style="margin-right: 400px">
-                                <input name="jbxxVO.sll" class="ui-input" style="width:58px;" maxlength="6" type="text"> / <input name="jbxxVO.slr" class="ui-input" style="width:58px;" maxlength="6" type="text">
+                                <input name="jbxxVO.sll" class="ui-input" style="width:58px;" maxlength="6" type="text" :value="seeingLeft"> / <input :value="seeingRight" name="jbxxVO.slr" class="ui-input" style="width:58px;" maxlength="6" type="text">
                             </div>
                             <p class="ui-form-explain" style="margin-right: 150px">视力标准为 0.1-1.5（或 4.0-5.2）</p>
                         </div>
+                        <!-- 是否色盲： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>是否色盲：</strong></label>
                             <select name="jbxxVO.sm" style="margin-right: 460px;">
-                                <option value="" selected="selected">请选择</option>
-                                <option value="0">非色盲</option>
-                                <option value="1">色盲</option>
-                                <option value="2">色弱</option>
+                                <option  v-for="(item,i) in chromatodysopia" :key="i" :selected="item.selected" :value="item.valueLL">{{item.if}}</option>
+                                <!-- <option value="" selected="selected">请选择</option> -->
+                                <!-- <option value="0">非色盲</option> -->
+                                <!-- <option value="1">色盲</option> -->
+                                <!-- <option value="2">色弱</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 身高 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>身高(cm)：</strong></label>
-                            <input name="jbxxVO.sg" value="" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px;" type="text">
+                            <input name="jbxxVO.sg" :value="Height" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px;" type="text">
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 体重 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>体重(kg)：</strong></label>
-                            <input name="jbxxVO.tz" value="" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px" type="text">
+                            <input name="jbxxVO.tz" :value="Weight" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px" type="text">
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 高考报名所在地 -->
                         <div class="ui-form-item" title="">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>高考报名所在地：</strong></label>
-                            <!--<select id="bmszdSslist" class="ignoreselect" onchange="initBmszdXjsList('bmszdSslist', 'bmszdXjslist', 'bmszdDqlist', '', '');initKlList();">-->
                             <div style="margin-right: 245px">
                                 <select id="bmszdSslist" class="ignoreselect">
-                                    <option value="" selected="selected">请选择</option>
-                                    <option value="110000">北京市</option><option value="120000">天津市</option><option value="130000">河北省</option><option value="140000">山西省</option><option value="150000">内蒙古自治区</option><option value="210000">辽宁省</option><option value="220000">吉林省</option><option value="230000">黑龙江省</option><option value="310000">上海市</option><option value="320000">江苏省</option><option value="330000">浙江省</option><option value="340000">安徽省</option><option value="350000">福建省</option><option value="360000">江西省</option><option value="370000">山东省</option><option value="410000">河南省</option><option value="420000">湖北省</option><option value="430000">湖南省</option><option value="440000">广东省</option><option value="450000">广西壮族自治区</option><option value="460000">海南省</option><option value="500000">重庆市</option><option value="510000">四川省</option><option value="520000">贵州省</option><option value="530000">云南省</option><option value="540000">西藏自治区</option><option value="610000">陕西省</option><option value="620000">甘肃省</option><option value="630000">青海省</option><option value="640000">宁夏回族自治区</option><option value="650000">新疆维吾尔自治区</option><option value="710000">台湾省</option><option value="810000">香港特别行政区</option><option value="820000">澳门特别行政区</option><option value="990000">其他</option></select>
-                                <!--<select id="bmszdXjslist" class="ignoreselect" onchange="initBmszdDqList('bmszdSslist', 'bmszdXjslist', 'bmszdDqlist', '');">-->
+                                    <option value="" :selected="item.selected" v-for="(item,i) in Bourn" :key="i">{{item.name}}</option>
+                                    <!-- <option value="" selected="selected">请选择</option>
+                                    <option value="110000">北京市</option>
+                                    <option value="120000">天津市</option>
+                                    <option value="130000">河北省</option>
+                                    <option value="140000">山西省</option>
+                                    <option value="150000">内蒙古自治区</option>
+                                    <option value="210000">辽宁省</option>
+                                    <option value="220000">吉林省</option>
+                                    <option value="230000">黑龙江省</option>
+                                    <option value="310000">上海市</option>
+                                    <option value="320000">江苏省</option>
+                                    <option value="330000">浙江省</option>
+                                    <option value="340000">安徽省</option>
+                                    <option value="350000">福建省</option>
+                                    <option value="360000">江西省</option>
+                                    <option value="370000">山东省</option>
+                                    <option value="410000">河南省</option>
+                                    <option value="420000">湖北省</option>
+                                    <option value="430000">湖南省</option>
+                                    <option value="440000">广东省</option>
+                                    <option value="450000">广西壮族自治区</option>
+                                    <option value="460000">海南省</option>
+                                    <option value="500000">重庆市</option>
+                                    <option value="510000">四川省</option>
+                                    <option value="520000">贵州省</option>
+                                    <option value="530000">云南省</option>
+                                    <option value="540000">西藏自治区</option>
+                                    <option value="610000">陕西省</option>
+                                    <option value="620000">甘肃省</option>
+                                    <option value="630000">青海省</option>
+                                    <option value="640000">宁夏回族自治区</option>
+                                    <option value="650000">新疆维吾尔自治区</option>
+                                    <option value="710000">台湾省</option>
+                                    <option value="810000">香港特别行政区</option>
+                                    <option value="820000">澳门特别行政区</option>
+                                    <option value="990000">其他</option> -->
+                                </select>
+                                <!-- 石家庄市 -->
                                 <select id="bmszdXjslist" class="ignoreselect">
-                                    <option value="" selected="selected">请选择</option>
-                                    <option value="130100">石家庄市</option><option value="130200">唐山市</option><option value="130300">秦皇岛市</option><option value="130400">邯郸市</option><option value="130500">邢台市</option><option value="130600">保定市</option><option value="130700">张家口市</option><option value="130800">承德市</option><option value="130900">沧州市</option><option value="131000">廊坊市</option><option value="131100">衡水市</option></select>
+                                    <option value="" :selected="item.selected" v-for="(item,i) in CityLevel" :key="i">{{item.name}}</option>
+                                    <!-- <option value="130100">石家庄市</option>
+                                    <option value="130200">唐山市</option>
+                                    <option value="130300">秦皇岛市</option>
+                                    <option value="130400">邯郸市</option>
+                                    <option value="130500">邢台市</option>
+                                    <option value="130600">保定市</option>
+                                    <option value="130700">张家口市</option>
+                                    <option value="130800">承德市</option>
+                                    <option value="130900">沧州市</option>
+                                    <option value="131000">廊坊市</option>
+                                    <option value="131100">衡水市</option> -->
+                                </select>
+                                <!-- 市辖区 -->
                                 <select id="bmszdDqlist" name="jbxxVO.bmszdDm">
-                                    <option value="" selected="selected">请选择</option>
-                                    <option value="130201">市辖区</option><option value="130202">路南区</option><option value="130203">路北区</option><option value="130204">古冶区</option><option value="130205">开平区</option><option value="130207">丰南区</option><option value="130208">丰润区</option><option value="130209">曹妃甸区</option><option value="130223">滦县</option><option value="130224">滦南县</option><option value="130225">乐亭县</option><option value="130227">迁西县</option><option value="130229">玉田县</option><option value="130281">遵化市</option><option value="130283">迁安市</option></select>
+                                    <option value="" :selected="item.selected" v-for="(item,i) in County" :key="i">{{item.name}}</option>
+                                    <!-- <option value="130201">市辖区</option>
+                                    <option value="130202">路南区</option>
+                                    <option value="130203">路北区</option>
+                                    <option value="130204">古冶区</option>
+                                    <option value="130205">开平区</option>
+                                    <option value="130207">丰南区</option>
+                                    <option value="130208">丰润区</option>
+                                    <option value="130209">曹妃甸区</option>
+                                    <option value="130223">滦县</option>
+                                    <option value="130224">滦南县</option>
+                                    <option value="130225">乐亭县</option>
+                                    <option value="130227">迁西县</option>
+                                    <option value="130229">玉田县</option>
+                                    <option value="130281">遵化市</option>
+                                    <option value="130283">迁安市</option> -->
+                                </select>
                             </div>
                             <p class="ui-form-explain" style="margin-left: 66px">填写高考报名时的户籍所在地，应与参加高考录取的省（区、市）保持一致</p>
                         </div>
+                        <!-- 高考报名号 -->
                         <div class="ui-form-item" title="请填写14位高考报名号(全国统一编号)">
                             <label for="" class="ui-label"><strong>高考报名号：</strong></label>
-                            <input name="jbxxVO.gkbmh" maxlength="32" class="ui-input" type="text" v-model="SerialNumber" style="margin-right: 350px">
+                            <input name="jbxxVO.gkbmh" maxlength="32" class="ui-input" type="text" :value="SerialNumber" style="margin-right: 350px">
                             <p class="ui-form-explain" style="margin-right: 130px">请填写14位高考报名号(全国统一编号)</p>
                         </div>
+                        <!-- 考生类型： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>考生类型：</strong></label>
                             <select name="jbxxVO.kslxDm" id="jbxx_kslx" style="margin-right: 450px">
-                                <option value="" selected="selected">请选择</option>
+                                <option :value="item.value" :selected="item.selected" v-for="(item,i) in Examinee" :key="i">{{item.name}}</option>
+                                <!-- <option value="" selected="selected">请选择</option>
                                 <option value="01">农村应届</option>
                                 <option value="02">农村往届</option>
                                 <option value="03">城镇应届</option>
-                                <option value="04">城镇往届</option>
+                                <option value="04">城镇往届</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 外语语种： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>外语语种：</strong></label>
                             <select name="jbxxVO.wyyzDm" id="jbxx_wyyz" style="margin-right: 440px">
-                                <option value="" selected="selected">请选择</option>
+                                <option :value="item.value" :selected="item.selected" v-for="(item,i) in Language" :key="i">{{item.name}}</option>
+
+                                <!-- <option value="" selected="selected">请选择</option>
                                 <option value="0">不应试外语</option>
                                 <option value="1">英语</option>
                                 <option value="2">俄语</option>
@@ -227,10 +310,11 @@
                                 <option value="4">德语</option>
                                 <option value="5">法语</option>
                                 <option value="6">西班牙语</option>
-                                <option value="7">其他外语</option>
+                                <option value="7">其他外语</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
+                        <!-- 学科类型： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">
                                 *
@@ -240,37 +324,104 @@
                                 </strong>
                             </label>
                             <select name="jbxxVO.xklbDm" id="jbxx_xklx" style="margin-right: 450px">
-                                <option value="" selected="selected">请选择</option>
-                                <option value="1">文史</option>
-                                <option value="5">理工</option>
-                                <option value="Z" disabled="disabled">综合改革</option>
+                                <option :value="item.value" :selected="item.selected" :disabled="item.disabled" v-for="(item,i) in Type" :key="i">{{item.name}}</option>
+                                <!-- <option value="" selected="selected">请选择</option> -->
+                                <!-- <option value="1">文史</option> -->
+                                <!-- <option value="5">理工</option> -->
+                                <!-- <option value="Z" disabled="disabled">综合改革</option> -->
                             </select>
                             <p class="ui-form-explain" style="margin-left: 170px">
                                 高考报名所在地为上海、浙江的考生，请选择“综合改革”。其他省份的考生请选择“文科”或“理科”
                             </p>
                         </div>
+                        <!-- 联系电话： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>联系电话：</strong></label>
-                            <input name="jbxxVO.lxdh" id="jbxx_lxdh" v-model="PhoneNumber" maxlength="30" class="ui-input" type="text" style="margin-right: 350px">
+                            <input name="jbxxVO.lxdh" id="jbxx_lxdh" :value="PhoneNumber" maxlength="30" class="ui-input" type="text" style="margin-right: 350px">
                             <p class="ui-form-explain"></p>
                         </div>
                         <div class="ui-form-item" title="最多可输入50个字符；地址请写明街道名称、门牌号码、楼层和房间号等信息">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>联系地址：</strong></label>
-                            <!--<select id="txdzSslist" class="ignoreselect" onchange="initXjsList('txdzSslist', 'txdzXjslist', 'txdzDqlist', '', '');">-->
                             <div style="margin-right: 250px">
                                 <select id="txdzSslist" class="ignoreselect">
-                                    <option value="" selected="selected">请选择</option>
-                                    <option value="110000">北京市</option><option value="120000">天津市</option><option value="130000">河北省</option><option value="140000">山西省</option><option value="150000">内蒙古自治区</option><option value="210000">辽宁省</option><option value="220000">吉林省</option><option value="230000">黑龙江省</option><option value="310000">上海市</option><option value="320000">江苏省</option><option value="330000">浙江省</option><option value="340000">安徽省</option><option value="350000">福建省</option><option value="360000">江西省</option><option value="370000">山东省</option><option value="410000">河南省</option><option value="420000">湖北省</option><option value="430000">湖南省</option><option value="440000">广东省</option><option value="450000">广西壮族自治区</option><option value="460000">海南省</option><option value="500000">重庆市</option><option value="510000">四川省</option><option value="520000">贵州省</option><option value="530000">云南省</option><option value="540000">西藏自治区</option><option value="610000">陕西省</option><option value="620000">甘肃省</option><option value="630000">青海省</option><option value="640000">宁夏回族自治区</option><option value="650000">新疆维吾尔自治区</option><option value="710000">台湾省</option><option value="810000">香港特别行政区</option><option value="820000">澳门特别行政区</option><option value="990000">其他</option></select>
-                                <!--<select id="txdzXjslist" class="ignoreselect" onchange="initDqList('txdzSslist', 'txdzXjslist', 'txdzDqlist', '');">-->
+                                    <option :selected="item.selected" :value="item.value" v-for="(item,i) in Site" :key="i">{{item.name}}</option>
+                                    <!-- <option value="" selected="selected">请选择</option>
+                                    <option value="110000">北京市</option>
+                                    <option value="120000">天津市</option>
+                                    <option value="130000">河北省</option>
+                                    <option value="140000">山西省</option>
+                                    <option value="150000">内蒙古自治区</option>
+                                    <option value="210000">辽宁省</option>
+                                    <option value="220000">吉林省</option>
+                                    <option value="230000">黑龙江省</option>
+                                    <option value="310000">上海市</option>
+                                    <option value="320000">江苏省</option>
+                                    <option value="330000">浙江省</option>
+                                    <option value="340000">安徽省</option>
+                                    <option value="350000">福建省</option>
+                                    <option value="360000">江西省</option>
+                                    <option value="370000">山东省</option>
+                                    <option value="410000">河南省</option>
+                                    <option value="420000">湖北省</option>
+                                    <option value="430000">湖南省</option>
+                                    <option value="440000">广东省</option>
+                                    <option value="450000">广西壮族自治区</option>
+                                    <option value="460000">海南省</option>
+                                    <option value="500000">重庆市</option>
+                                    <option value="510000">四川省</option>
+                                    <option value="520000">贵州省</option>
+                                    <option value="530000">云南省</option>
+                                    <option value="540000">西藏自治区</option>
+                                    <option value="610000">陕西省</option>
+                                    <option value="620000">甘肃省</option>
+                                    <option value="630000">青海省</option>
+                                    <option value="640000">宁夏回族自治区</option>
+                                    <option value="650000">新疆维吾尔自治区</option>
+                                    <option value="710000">台湾省</option>
+                                    <option value="810000">香港特别行政区</option>
+                                    <option value="820000">澳门特别行政区</option>
+                                    <option value="990000">其他</option> -->
+                                </select>
+                                <!-- 联系地址 -->
                                 <select id="txdzXjslist" class="ignoreselect">
-                                    <option value="" selected="selected">请选择</option>
-                                    <option value="130100">石家庄市</option><option value="130200">唐山市</option><option value="130300">秦皇岛市</option><option value="130400">邯郸市</option><option value="130500">邢台市</option><option value="130600">保定市</option><option value="130700">张家口市</option><option value="130800">承德市</option><option value="130900">沧州市</option><option value="131000">廊坊市</option><option value="131100">衡水市</option></select>
+                                    <option :selected="item.selected" :value="item.value" v-for="(item,i) in CityLevelTwo" :key="i">{{item.name}}</option>
+
+                                    <!-- <option value="" selected="selected">请选择</option>
+                                    <option value="130100">石家庄市</option>
+                                    <option value="130200">唐山市</option>
+                                    <option value="130300">秦皇岛市</option>
+                                    <option value="130400">邯郸市</option>
+                                    <option value="130500">邢台市</option>
+                                    <option value="130600">保定市</option>
+                                    <option value="130700">张家口市</option>
+                                    <option value="130800">承德市</option>
+                                    <option value="130900">沧州市</option>
+                                    <option value="131000">廊坊市</option>
+                                    <option value="131100">衡水市</option> -->
+                                </select>
                                 <select id="txdzDqlist" name="jbxxVO.txdzDm">
-                                    <option value="" selected="selected">请选择</option>
-                                    <option value="130201">市辖区</option><option value="130202">路南区</option><option value="130203">路北区</option><option value="130204">古冶区</option><option value="130205">开平区</option><option value="130207">丰南区</option><option value="130208">丰润区</option><option value="130209">曹妃甸区</option><option value="130223">滦县</option><option value="130224">滦南县</option><option value="130225">乐亭县</option><option value="130227">迁西县</option><option value="130229">玉田县</option><option value="130281">遵化市</option><option value="130283">迁安市</option></select>
+                                    <option :selected="item.selected" :value="item.value" v-for="(item,i) in CountyTwo" :key="i">{{item.name}}</option>
+
+                                    <!-- <option value="" selected="selected">请选择</option>
+                                    <option value="130201">市辖区</option>
+                                    <option value="130202">路南区</option>
+                                    <option value="130203">路北区</option>
+                                    <option value="130204">古冶区</option>
+                                    <option value="130205">开平区</option>
+                                    <option value="130207">丰南区</option>
+                                    <option value="130208">丰润区</option>
+                                    <option value="130209">曹妃甸区</option>
+                                    <option value="130223">滦县</option>
+                                    <option value="130224">滦南县</option>
+                                    <option value="130225">乐亭县</option>
+                                    <option value="130227">迁西县</option>
+                                    <option value="130229">玉田县</option>
+                                    <option value="130281">遵化市</option>
+                                    <option value="130283">迁安市</option> -->
+                                </select>
                             </div>
                             <br><input name="jbxxVO.txdzXxdz" id="jbxx_xxdz"
-                                       value="" maxlength="50"
+                                       :value="SiteLL" maxlength="50"
                                        class="ui-input"
                                        style="width:300px;
                                        margin-right: 30px"
@@ -281,7 +432,7 @@
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>邮政编码：</strong></label>
                             <input id="hdxx_daszDwYzbm"
                                    name="jbxxVO.txdzYzbm"
-                                   value=""
+                                   :value="postal"
                                    maxlength="6"
                                    class="ui-input"
                                    style="width:58px;margin-right: 475px"
@@ -295,34 +446,36 @@
                                     <tbody><tr>
                                         <td align="right">父亲姓名</td>
                                         <td>
-                                            <input name="faInfoVO.xm" id="faname" class="ui-input valid" value="" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="faInfoVO.xm" id="faname" class="ui-input valid" :value="father" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">联系电话</td>
                                         <td>
-                                            <input name="faInfoVO.lxdh" id="jbxx_fa_lxdh" class="ui-input valid" value="" maxlength="30" aria-invalid="false" type="text">
+                                            <input name="faInfoVO.lxdh" id="jbxx_fa_lxdh" class="ui-input valid" :value="PhoneNumberFather" maxlength="30" aria-invalid="false" type="text">
                                         </td>
                                         <td align="right">文化程度</td>
                                         <td>
                                             <select name="faInfoVO.whcdDm" id="jbxx_fa_whcd">
-                                                <option value="" selected="selected">请选择</option>
+                                                <option :selected="item.selected" :value="item.value" v-for="(item,i) in degree" :key="i">{{item.name}}</option>
+
+                                                <!-- <option value="" selected="selected">请选择</option>
                                                 <option value="01">博士</option>
                                                 <option value="02">硕士</option>
                                                 <option value="03">本科</option>
                                                 <option value="04">专科</option>
-                                                <option value="05">高中及以下</option>
+                                                <option value="05">高中及以下</option> -->
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="right">职业</td>
                                         <td>
-                                            <input name="faInfoVO.zy" id="jbxx_fa_zy" class="ui-input valid" value="" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="faInfoVO.zy" id="jbxx_fa_zy" class="ui-input valid" :value="professionFather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">工作单位</td>
-                                        <td><input name="faInfoVO.dw" id="jbxx_fa_dw" class="ui-input" value="" maxlength="30" type="text">
+                                        <td><input name="faInfoVO.dw" id="jbxx_fa_dw" class="ui-input" :value="organizationFather" maxlength="30" type="text">
                                         </td>
                                         <td align="right">职务</td>
-                                        <td><input name="faInfoVO.zw" id="jbxx_fa_zw" class="ui-input" value="" maxlength="30" type="text">
+                                        <td><input name="faInfoVO.zw" id="jbxx_fa_zw" class="ui-input" :value="dutyFather" maxlength="30" type="text">
                                         </td>
                                     </tr>
                                     </tbody></table>
@@ -330,34 +483,36 @@
                                     <tbody><tr>
                                         <td align="right">母亲姓名</td>
                                         <td>
-                                            <input name="maInfoVO.xm" id="maname" class="ui-input valid" value="" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="maInfoVO.xm" id="maname" class="ui-input valid" :value="mather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">联系电话</td>
                                         <td>
-                                            <input name="maInfoVO.lxdh" id="jbxx_ma_lxdh" class="ui-input valid" value="" maxlength="30" aria-invalid="false" type="text" aria-required="true">
+                                            <input name="maInfoVO.lxdh" id="jbxx_ma_lxdh" class="ui-input valid" :value="PhoneNumberMather" maxlength="30" aria-invalid="false" type="text" aria-required="true">
                                         </td>
                                         <td align="right">文化程度</td>
                                         <td>
                                             <select name="maInfoVO.whcdDm" id="jbxx_ma_whcd">
-                                                <option value="" selected="selected">请选择</option>
+                                                <option :selected="item.selected" :value="item.value" v-for="(item,i) in degreeT" :key="i">{{item.name}}</option>
+
+                                                <!-- <option value="" selected="selected">请选择</option>
                                                 <option value="01">博士</option>
                                                 <option value="02">硕士</option>
                                                 <option value="03">本科</option>
                                                 <option value="04">专科</option>
-                                                <option value="05">高中及以下</option>
+                                                <option value="05">高中及以下</option> -->
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td align="right">职业</td>
                                         <td>
-                                            <input name="maInfoVO.zy" id="jbxx_ma_zy" class="ui-input valid" value="" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="maInfoVO.zy" id="jbxx_ma_zy" class="ui-input valid" :value="professionMather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">工作单位</td>
-                                        <td><input name="maInfoVO.dw" id="jbxx_ma_dw" class="ui-input" value="" maxlength="30" type="text">
+                                        <td><input name="maInfoVO.dw" id="jbxx_ma_dw" class="ui-input" :value="organizationMather" maxlength="30" type="text">
                                         </td>
                                         <td align="right">职务</td>
-                                        <td><input name="maInfoVO.zw" id="jbxx_ma_zw" class="ui-input" value="" maxlength="30" type="text">
+                                        <td><input name="maInfoVO.zw" id="jbxx_ma_zw" class="ui-input" :value="dutyMather" maxlength="30" type="text">
                                         </td>
                                     </tr>
                                     </tbody></table>
@@ -380,7 +535,776 @@
             data() {
                 return {
                     SerialNumber: '',
-                    PhoneNumber:''
+                    PhoneNumber:'',
+                    name:"格学教育",
+                    papers:"411381201902186111",
+                    Phone:"4000180810",
+                    // 性别
+                    sex:[
+                        {
+                            sexL:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            sexL:"男",
+                            value:"1",
+                        },
+                        {
+                            sexL:"女",
+                            value:"2"
+                        },
+                    ],
+                    birth:"2019-02-26",
+                    // 民族
+                    Home:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"汉族",
+                            value:"01"
+                        },
+                        {
+                            name:"蒙古族",
+                            value:"02"
+                        },
+                        {
+                            name:"回族",
+                            value:"03"
+                        },
+                        {
+                            name:"藏族",
+                            value:"04"
+                        },
+                        {
+                            name:"维吾尔族",
+                            value:"05"
+                        },
+                        {
+                            name:"苗族",
+                            value:"06"
+                        },
+                        {
+                            name:"彝族",
+                            value:"07"
+                        },
+                        {
+                            name:"壮族",
+                            value:"08"
+                        },
+                        {
+                            name:"布依族",
+                            value:"09"
+                        },
+                        {
+                            name:"朝鲜族",
+                            value:"10"
+                        },
+                        {
+                            name:"满族",
+                            value:"11"
+                        },
+                        {
+                            name:"侗族",
+                            value:"12"
+                        },
+                        {
+                            name:"瑶族",
+                            value:"13"
+                        },
+                        {
+                            name:"白族",
+                            value:"14"
+                        },
+                        {
+                            name:"土家族",
+                            value:"15"
+                        },
+                        {
+                            name:"哈尼族",
+                            value:"16"
+                        },
+                        {
+                            name:"哈萨克族",
+                            value:"17"
+                        },
+                        {
+                            name:"傣族",
+                            value:"18"
+                        },
+                        {
+                            name:"黎族",
+                            value:"19"
+                        },
+                        {
+                            name:"傈僳族",
+                            value:"20"
+                        },
+                        {
+                            name:"佤族",
+                            value:"21"
+                        },
+                        {
+                            name:"畲族",
+                            value:"22"
+                        },
+                        {
+                            name:"高山族",
+                            value:"23"
+                        },
+                        {
+                            name:"拉祜族",
+                            value:"24"
+                        },
+                        {
+                            name:"水族",
+                            value:"25"
+                        },
+                        {
+                            name:"达斡尔族",
+                            value:"26"
+                        },
+                    ],
+                    // // 政治面貌
+                    Faces:[
+                        {
+                            face:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            face:"中国共产党党员",
+                            value:"01"
+                        },
+                        {
+                            face:"中国共产党预备党员",
+                            value:"02"
+                        },
+                        {
+                            face:"中国共产主义青年团团员",
+                            value:"03"
+                        },
+                        {
+                            face:"中国国民党革命委员会会员",
+                            value:"04"
+                        },
+                        {
+                            face:"中国民主同盟盟员",
+                            value:"05"
+                        },
+                        {
+                            face:"中国民主建国会会员",
+                            value:"06"
+                        },
+                        {
+                            face:"中国民主促进会会员",
+                            value:"07"
+                        },
+                        {
+                            face:"中国农工民主党党员",
+                            value:"08"
+                        },
+                        {
+                            face:"中国致公党党员",
+                            value:"09"
+                        },
+                        {
+                            face:"九三学社社员",
+                            value:"10"
+                        },
+                        {
+                            face:"台湾民主自治同盟盟员",
+                            value:"11"
+                        },
+                        {
+                            face:"无党派民主人士",
+                            value:"12"
+                        },
+                        {
+                            face:"群众",
+                            value:"13"
+                        }
+                    ],
+                    // 视力
+                    seeingLeft:"",
+                    seeingRight:"",
+                    // 是否色盲
+                    chromatodysopia:[
+                        {
+                            if:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            if:"非色盲",
+                            valueLL:"1"
+                        },
+                        {
+                            if:"色盲",
+                            valueLL:"2",
+                        },
+                        {
+                            if:"色弱",
+                            valueLL:"3"
+                        }
+                    ],
+                    // 身高
+                    Height:"",
+                    // 体重
+                    Weight:"",
+                    // 高考报名所在地
+                    Bourn:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"北京市"
+                        },
+                         {
+                            name:"天津市"
+                        },
+                         {
+                            name:"河北省"
+                        },
+                         {
+                            name:"山西省"
+                        },
+                         {
+                            name:"内蒙古自治区"
+                        },
+                         {
+                            name:"辽宁省"
+                        },
+                         {
+                            name:"吉林省"
+                        },
+                         {
+                            name:"黑龙江省"
+                        },
+                         {
+                            name:"上海市"
+                        },
+                         {
+                            name:"江苏省"
+                        },
+                         {
+                            name:"浙江省"
+                        },
+                         {
+                            name:"安徽省"
+                        },
+                         {
+                            name:"福建省"
+                        },
+                         {
+                            name:"江西省"
+                        },
+                         {
+                            name:"山东省"
+                        },
+                         {
+                            name:"河南省"
+                        },
+                         {
+                            name:"湖北省"
+                        },
+                         {
+                            name:"湖南省"
+                        },
+                         {
+                            name:"广东省"
+                        },
+                         {
+                            name:"广西壮族自治区"
+                        },
+                         {
+                            name:"海南省"
+                        },
+                         {
+                            name:"四川省"
+                        },
+                         {
+                            name:"贵州省"
+                        },
+                         {
+                            name:"云南省"
+                        },
+                         {
+                            name:"西藏自治区"
+                        },
+                         {
+                            name:"陕西省"
+                        },
+                         {
+                            name:"甘肃省"
+                        },
+                         {
+                            name:"青海省"
+                        },
+                         {
+                            name:"宁夏回族自治区"
+                        },
+                         {
+                            name:"新疆维吾尔自治区"
+                        },
+                         {
+                            name:"台湾省"
+                        },
+                         {
+                            name:"香港特别行政区"
+                        },
+                         {
+                            name:"澳门特别行政区"
+                        },
+                         {
+                            name:"其他"
+                        },
+                    ],
+                    // 市级
+                    CityLevel:[
+                        {
+                            name:"石家庄市",
+                            selected:"selected"
+                        },
+                        {
+                            name:"唐山市"
+                        },
+                        {
+                            name:"秦皇岛市"
+                        },
+                        {
+                            name:"邯郸市"
+                        },
+                        {
+                            name:"邢台市"
+                        },
+                        {
+                            name:"保定市"
+                        },
+                        {
+                            name:"张家口市"
+                        },
+                        {
+                            name:"承德市"
+                        },
+                        {
+                            name:"沧州市"
+                        },
+                        {
+                            name:"廊坊市"
+                        },
+                        {
+                            name:"衡水市"
+                        },
+                    ],
+                    // 区县级别
+                    County:[
+                        {
+                            name:"市辖区"
+                        },
+                        {
+                            name:"路南区"
+                        },
+                        {
+                            name:"路北区"
+                        },
+                        {
+                            name:"古冶区"
+                        },
+                        {
+                            name:"开平区"
+                        },
+                        {
+                            name:"丰南区"
+                        },
+                        {
+                            name:"丰润区"
+                        },
+                        {
+                            name:"曹妃甸区"
+                        },
+                        {
+                            name:"滦县"
+                        },
+                        {
+                            name:"滦南县"
+                        },
+                        {
+                            name:"乐亭县"
+                        },
+                        {
+                            name:"迁西县"
+                        },
+                        {
+                            name:"玉田县"
+                        },
+                        {
+                            name:"遵化市"
+                        },
+                        {
+                            name:"迁安市"
+                        }
+                    ],
+                    // 考生类型
+                    Examinee:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"农村应届",
+                            value:"1"
+                        },
+                         {
+                            name:"农村往届",
+                            value:"2"
+                        },
+                         {
+                            name:"城镇应届",
+                            value:"3"
+                        },
+                         {
+                            name:"城镇往届",
+                            value:"4"
+                        },
+                    ],
+                    // 外语语种：
+                    Language:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"不应试外语",
+                            value:'1'
+                        },
+                        {
+                            name:"英语",
+                            value:'2'
+                        },
+                        {
+                            name:"俄语",
+                            value:'3'
+                        },
+                        {
+                            name:"日语",
+                            value:'4'
+                        },
+                        {
+                            name:"德语",
+                            value:'5'
+                        },
+                        {
+                            name:"法语",
+                            value:'6'
+                        },
+                        {
+                            name:"西班牙语",
+                            value:'7'
+                        },
+                        {
+                            name:"其他外语",
+                            value:'8'
+                        },
+                    ],
+                    // 学科类型：
+                    Type:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"文史",
+                            value:"1"
+                        },
+                        {
+                            name:"理工",
+                            value:"2"
+                        },
+                        {
+                            name:"综合改革",
+                            disabled:"disabled"
+                        }
+                    ],
+                    // 联系地址
+                    Site:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"北京市"
+                        },
+                         {
+                            name:"天津市"
+                        },
+                         {
+                            name:"河北省"
+                        },
+                         {
+                            name:"山西省"
+                        },
+                         {
+                            name:"内蒙古自治区"
+                        },
+                         {
+                            name:"辽宁省"
+                        },
+                         {
+                            name:"吉林省"
+                        },
+                         {
+                            name:"黑龙江省"
+                        },
+                         {
+                            name:"上海市"
+                        },
+                         {
+                            name:"江苏省"
+                        },
+                         {
+                            name:"浙江省"
+                        },
+                         {
+                            name:"安徽省"
+                        },
+                         {
+                            name:"福建省"
+                        },
+                         {
+                            name:"江西省"
+                        },
+                         {
+                            name:"山东省"
+                        },
+                         {
+                            name:"河南省"
+                        },
+                         {
+                            name:"湖北省"
+                        },
+                         {
+                            name:"湖南省"
+                        },
+                         {
+                            name:"广东省"
+                        },
+                         {
+                            name:"广西壮族自治区"
+                        },
+                         {
+                            name:"海南省"
+                        },
+                         {
+                            name:"四川省"
+                        },
+                         {
+                            name:"贵州省"
+                        },
+                         {
+                            name:"云南省"
+                        },
+                         {
+                            name:"西藏自治区"
+                        },
+                         {
+                            name:"陕西省"
+                        },
+                         {
+                            name:"甘肃省"
+                        },
+                         {
+                            name:"青海省"
+                        },
+                         {
+                            name:"宁夏回族自治区"
+                        },
+                         {
+                            name:"新疆维吾尔自治区"
+                        },
+                         {
+                            name:"台湾省"
+                        },
+                         {
+                            name:"香港特别行政区"
+                        },
+                         {
+                            name:"澳门特别行政区"
+                        },
+                         {
+                            name:"其他"
+                        },
+                    ],
+                    // 市级
+                    CityLevelTwo:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"石家庄市"
+                        },
+                        {
+                            name:"唐山市"
+                        },
+                        {
+                            name:"秦皇岛市"
+                        },
+                        {
+                            name:"邯郸市"
+                        },
+                        {
+                            name:"邢台市"
+                        },
+                        {
+                            name:"保定市"
+                        },
+                        {
+                            name:"张家口市"
+                        },
+                        {
+                            name:"承德市"
+                        },
+                        {
+                            name:"沧州市"
+                        },
+                        {
+                            name:"廊坊市"
+                        },
+                        {
+                            name:"衡水市"
+                        },
+                    ],
+                    // 区县级别
+                    CountyTwo:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"市辖区"
+                        },
+                        {
+                            name:"路南区"
+                        },
+                        {
+                            name:"路北区"
+                        },
+                        {
+                            name:"古冶区"
+                        },
+                        {
+                            name:"开平区"
+                        },
+                        {
+                            name:"丰南区"
+                        },
+                        {
+                            name:"丰润区"
+                        },
+                        {
+                            name:"曹妃甸区"
+                        },
+                        {
+                            name:"滦县"
+                        },
+                        {
+                            name:"滦南县"
+                        },
+                        {
+                            name:"乐亭县"
+                        },
+                        {
+                            name:"迁西县"
+                        },
+                        {
+                            name:"玉田县"
+                        },
+                        {
+                            name:"遵化市"
+                        },
+                        {
+                            name:"迁安市"
+                        }
+                    ],
+                    // 详细地址
+                    SiteLL:"",
+                    // 邮政编码：
+                    postal:"",
+                    // 文化程度
+                    degree:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"博士",
+                            value:"1"
+                        },
+                        {
+                            name:"硕士",
+                            value:"2"
+                        },
+                        {
+                            name:"本科",
+                            value:"3"
+                        },
+                        {
+                            name:"专科",
+                            value:"4"
+                        },
+                        {
+                            name:"高中及以下",
+                            value:"5"
+                        },
+                    ],
+                     // 文化程度
+                    degreeT:[
+                        {
+                            name:"请选择",
+                            selected:"selected"
+                        },
+                        {
+                            name:"博士",
+                            value:"1"
+                        },
+                        {
+                            name:"硕士",
+                            value:"2"
+                        },
+                        {
+                            name:"本科",
+                            value:"3"
+                        },
+                        {
+                            name:"专科",
+                            value:"4"
+                        },
+                        {
+                            name:"高中及以下",
+                            value:"5"
+                        },
+                    ],
+                    // 父亲姓名
+                    father:"",
+                    // 联系电话
+                    PhoneNumberFather:"",
+                    // 职业
+                    professionFather:"",
+                    // 工作单位
+                    organizationFather:"",
+                    // 职务
+                    dutyFather:"",
+                    // 母亲姓名
+                    mather:"",
+                    // 联系电话
+                    PhoneNumberMather:"",
+                    // 职业
+                    professionMather:"",
+                    // 工作单位
+                    organizationMather:"",
+                    // 职务
+                    dutyMather:"",
                 }
             },
             methods:{

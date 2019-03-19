@@ -19,18 +19,18 @@
             </div>
             <div class="ui-box-container">
                 <div class="txt-explain m_bottom10" id="aaa">
-                    1、请如实填写在高中期间参与过的社会活动、获奖记录或专利，如果无任何社会活动、获奖记录或专利请跳过此步。<br>
-                    2、“高中期间参与过的社会活动”可填写高中阶段参与的科学研究、创新实践、文学创作、志愿服务、社团活动、学校或班团学生工作等。<br>
-                    3、“高中期间的获奖记录”可填写高中阶段获得的省级（含）以上学科竞赛奖励、校级（含）以上个人荣誉、本人所具备的文艺或体育特长等。<br>
-                    4、“高中期间获得的专利”可填写高中阶段获得的由国家颁发的专利证书信息。<br>
+                    1、{{messageL}}<br>
+                    2、{{messageK}}<br>
+                    3、{{messageJ}}<br>
+                    4、{{messageH}}<br>
                 </div>
                 <div class="jbxxadd m_bottom10">
                     <router-link to="/newly">
-                        <a href="javascript:;">+ 新增高中期间参与过的社会活动</a>
+                        <a href="javascript:;">+ {{newlyL}}</a>
                     </router-link>
                     &nbsp;或者&nbsp;
                     <router-link to="/publicActivity">
-                        <a href="javascript:;">+ 新增高中期间的获奖记录</a>
+                        <a href="javascript:;">+ {{newlyK}}</a>
                     </router-link>
                     <!-- &nbsp;或者&nbsp; -->
                     <!-- <router-link to="/patent">
@@ -40,7 +40,7 @@
                 <div class="text_center">
                     <!--<form action="ignoreZhxx.action" method="post">-->
                         <!--<input value="下一步" class="ui-button ui-button-lceladon" type="submit">-->
-                    <!--</form>-->
+                    <!--</form>--> 
                     <Button type="primary">下一步</Button>
                 </div>
             </div>
@@ -51,6 +51,16 @@
 
 <script>
     export default {
+        data(){
+            return{
+                messageL:"请如实填写在高中期间参与过的社会活动、获奖记录或专利，如果无任何社会活动、获奖记录或专利请跳过此步。",
+                messageK:"“高中期间参与过的社会活动”可填写高中阶段参与的科学研究、创新实践、文学创作、志愿服务、社团活动、学校或班团学生工作等。",
+                messageJ:"“高中期间的获奖记录”可填写高中阶段获得的省级（含）以上学科竞赛奖励、校级（含）以上个人荣誉、本人所具备的文艺或体育特长等.",
+                messageH:"“高中期间获得的专利”可填写高中阶段获得的由国家颁发的专利证书信息。",
+                newlyL:"新增高中期间参与过的社会活动",
+                newlyK:"新增高中期间的获奖记录"
+            }
+        },
         computed:{
             flag(){
                 let pa = this.$route.path;
