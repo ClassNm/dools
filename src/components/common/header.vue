@@ -9,7 +9,7 @@
         <p class="three">
             <!--？？？暂定-->
             其他招生类型
-            <i class="iconfont" style="padding-left:8px; font-size:12px;"></i>
+            <i class="iconfont" style="padding-left:8px; font-size:12px;">></i>
         </p>
         <div class="four">
             <!--用户名？？？-->

@@ -28,12 +28,12 @@
                 <!--<a class="ui-button ui-button-lgreen select" href="javascript:;">+ 添加获奖记录</a>-->
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加获奖记录</Button>
             </div>
-            <div class="jbxxhjtitle text_center">{{patent}}</div>
-            <div class="text_center color-999">尚未添加专利</div>
-            <div class="text_center" style="margin: 15px 0;">
+            <!-- <div class="jbxxhjtitle text_center">{{patent}}</div> -->
+            <!-- <div class="text_center color-999">尚未添加专利</div> -->
+            <!-- <div class="text_center" style="margin: 15px 0;"> -->
                 <!--<a class="ui-button ui-button-lgreen select" href="javascript:;" style="width: 100px;">+ 添加专利</a>-->
-                <Button type="success" class="ui-button ui-button-lgreen select">+ 添加专利</Button>
-            </div>
+                <!-- <Button type="success" class="ui-button ui-button-lgreen select">+ 添加专利</Button> -->
+            <!-- </div> -->
             <div class="text_center" style="margin-top:15px;">
                 <!--<a href="javascript:;" class="ui-button ui-button-lceladon">下一步</a>-->
                 <!-- referrerT 推荐人-->

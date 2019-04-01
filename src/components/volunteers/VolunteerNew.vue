@@ -9,7 +9,7 @@
                 <div class="ui-box-container">
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><strong>招生类型：</strong></label>
-                        <div class="ui-form-text" style="width: 50px;margin-right: 546px">
+                        <div class="ui-form-text" style="width: 62px;margin-right: 546px">
                             {{form}}
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <div class="ui-form-text">
                                 <label style="margin-right: 463px">
                                     <input type="radio" name="lxdm" value="11">
-                                    保送生&nbsp;&nbsp;<font color="red"></font>
+                                    {{form}}&nbsp;&nbsp;<font color="red"></font>
                                     <a href="javascript:;" target="_blank">填报说明</a>
                                 </label>
                                 <ul class="orgInfos" style="margin-bottom:12px;width: 580px;text-align: left">
@@ -92,7 +92,7 @@
                 modal10:false,
                 Show: false,
                 // 招生类型
-                form:"保送生",
+                form:"自主招生",
                 // 报名时间
                 timeL:"2019-01-29 19:00:00 至 2019-02-26 23:00:00",
                 // 报名时间条件

@@ -48,6 +48,9 @@
 </template>
 <!--    about  居中 margin  0  auto-->
 
+
+
+
 <style scoped>
     .lable{
         background: white;

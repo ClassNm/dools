@@ -96,7 +96,7 @@ export default new Router({
         // 路由重定向
       {
         path:'/',
-        redirect:'/home'
+        redirect:'/home/sigh'
       },
     //   整体
       {
@@ -104,10 +104,10 @@ export default new Router({
           name: 'home',
           component: Home,
           children:[
-              {
-                  path: '/',
-                  redirect:'/home/sigh'
-              },
+            //   {
+            //       path: '/',
+            //       redirect:'/home/sigh'
+            //   },
               /*  Sigh 报名须知 */
               {
                   path: '/home/sigh',

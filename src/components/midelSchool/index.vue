@@ -1179,7 +1179,7 @@
                         <!--<input class="ui-button ui-button-lceladon" value="取消"-->
                                <!--onclick="javascript:history.go(-1);"-->
                                <!--type="button"-->
-                                <!--style=" width: 44px;height: 31px"-->
+                               <!--style=" width: 44px;height: 31px"-->
                         <!--&gt;-->
                         <Button type="warning">保存</Button>
                         &nbsp;&nbsp;
@@ -3167,10 +3167,14 @@ export default {
             // 备选2 证明人
             referencesAlternativeTwo:"",
         }
-    }
+    },
+    // computed:{
+    //     SchoolCountyLT(){
+    //         return this.SchoolCountyLT.reverse();
+    //     }
+    // }
 }
 </script>
-
 
 <style scoped>
     .School{
