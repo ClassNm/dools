@@ -520,7 +520,7 @@
                             <p class="ui-form-explain" style="margin-left: 66px">请根据实际情况填写家庭信息。如果没有，各项请填 “无”，文化程度请选择 “请选择”</p>
                         </div>
                         <div class="ui-form-item m_top10">
-                            <Button type="warning" :onclick="submit">保存</Button>
+                            <Button type="warning" @click="submit">保存</Button>
                             &nbsp;&nbsp;
                             <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                         </div>
@@ -1317,11 +1317,51 @@
                     // this.$store.commit('GET_APP_NAME','this.SerialNumber')
                 },
                 submit(){
-                    aa();
-                    // let data = {
-                    //     Height : this.Height
-                    // }
-                    // this.$axios.post('/StudentInformation/save',data).then(res => {
+                    let data = {
+                        Height : this.Height,
+                        // chromatodysopia : this.colorEye,
+                        PhoneNumber : this.contactNumber,
+                        // Site : this.contactProvinceAddress,
+                        // SiteLL : this.contactRoadAddress,
+                        // birth : this.date,
+                        // seeingLeft : this.eyeLeft,
+                        // seeingRight : this.eyeRight,
+                        // Home : this.famousRace,
+                        // degreeT : this.fatherCulture,
+                        father : this.fatherName,
+                        // dutyFather : this.fatherOccupation,
+                        // PhoneNumberFather : this.fatherPhone,
+                        // dutyFather : this.fatherPost,
+                        // organizationFather : this.fatherWork,
+                        // SerialNumber : this.idNumber,
+                        // Language : this.languageType,
+                        // degree : this.motherCulture,
+                        mather : this.motherName,
+                        // professionMather : this.motherOccupation,
+                        // PhoneNumberMather : this.motherPhone,
+                        // dutyMather : this.motherPost,
+                        // organizationMather : this.motherWork,
+                        // name : this.name,
+                        // Phone : this.Phone,
+                        // Faces : this.politicalOutlook,
+                        // postal : this.postalCode,
+                        // sex : this.sex,
+                        // SerialNumber : this.signupNumber,
+                        // Bourn : this.signupProvinceAddress,
+                        // Examinee : this.studentType,
+                        // Type : this.subjectType,
+                        // Weight : this.weight,
+                    }
+                    // let url = "/StudentInformation/save"
+                    // let data = {}
+                    // this.$axios.post(url,data).then((res) => {
+                    //     res = res.data;
+                    //     console.log(res)
+                    // },(err) => {
+                    //     console.log(err)
+                    // })
+                    aa(data);
+                    // axios.post('/StudentInformation/save',data).then(res => {
                     //     res = res.data,
                     //     // if(res.status == 0){
                     //     console.log('发送数据成功')

@@ -8,19 +8,6 @@ axios.defaults.baseURL = "http://192.168.0.130:8080/swagger-ui.html#/";
 //     })
 // };
 
-// 模拟成绩表
-// 根据学生id查询学生模考成绩
-// export const getListDataFn = ({commit},obj)=>{
-//     axios.post('/Analogscore/findBySid').then((data)=>{
-//         commit('getListData',data.data)
-//     })
-// }
-// 保存模拟成绩
-// export const getListDataFn = ({commit},obj)=>{
-//     axios.post('/Analogscore/save').then((data)=>{
-//         commit('getListData',data.data)
-//     })
-// }
 
 // 学生基本信息·
 // export const getListDataFn = ({commit},obj)=>{
@@ -37,11 +24,16 @@ axios.defaults.baseURL = "http://192.168.0.130:8080/swagger-ui.html#/";
 
     //     }
     // }
-    export const aa = function(){
+    export const aa = function(e){
         let url = "/StudentInformation/save"
+        let data = e
         axios.post(url,data).then((res) => {
+            // res = res.data;
             console.log(res)
         },(err) => {
             console.log(err)
         })
+        // heads : {
+        //     'content-type' : 'application/x-www-form-urlencoded'
+        // }
     }
