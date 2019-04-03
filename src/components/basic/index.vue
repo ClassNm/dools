@@ -520,7 +520,7 @@
                             <p class="ui-form-explain" style="margin-left: 66px">请根据实际情况填写家庭信息。如果没有，各项请填 “无”，文化程度请选择 “请选择”</p>
                         </div>
                         <div class="ui-form-item m_top10">
-                            <Button type="warning">保存</Button>
+                            <Button type="warning" :onclick="submit">保存</Button>
                             &nbsp;&nbsp;
                             <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                         </div>
@@ -531,6 +531,7 @@
     </template>
 
     <script>
+    import {aa} from '../../vuex/actions.js'
         export default {
             data() {
                 return {
@@ -1313,7 +1314,19 @@
                     //     SerialNumber: this.SerialNumber,
                     //     PhoneNumber: this.PhoneNumber
                     // };
-                    this.$store.commit('GET_APP_NAME','this.SerialNumber')
+                    // this.$store.commit('GET_APP_NAME','this.SerialNumber')
+                },
+                submit(){
+                    aa();
+                    // let data = {
+                    //     Height : this.Height
+                    // }
+                    // this.$axios.post('/StudentInformation/save',data).then(res => {
+                    //     res = res.data,
+                    //     // if(res.status == 0){
+                    //     console.log('发送数据成功')
+                    //     // }
+                    // })
                 }
             }
         }
