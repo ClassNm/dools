@@ -531,6 +531,8 @@
     </template>
 
     <script>
+    // import axios from 'axios'
+    import axios from '../../../node_modules/axios/dist/axios.js'
     import {aa} from '../../vuex/actions.js'
         export default {
             data() {
@@ -1309,18 +1311,18 @@
                 }
             },
             methods:{
-                add(){
+                // add(){
                     // let obj = {
                     //     SerialNumber: this.SerialNumber,
                     //     PhoneNumber: this.PhoneNumber
                     // };
                     // this.$store.commit('GET_APP_NAME','this.SerialNumber')
-                },
+                // },
                 submit(){
                     let data = {
                         Height : this.Height,
                         // chromatodysopia : this.colorEye,
-                        PhoneNumber : this.contactNumber,
+                        // PhoneNumber : this.contactNumber,
                         // Site : this.contactProvinceAddress,
                         // SiteLL : this.contactRoadAddress,
                         // birth : this.date,
@@ -1328,21 +1330,21 @@
                         // seeingRight : this.eyeRight,
                         // Home : this.famousRace,
                         // degreeT : this.fatherCulture,
-                        father : this.fatherName,
+                        // father : this.fatherName,
                         // dutyFather : this.fatherOccupation,
                         // PhoneNumberFather : this.fatherPhone,
                         // dutyFather : this.fatherPost,
                         // organizationFather : this.fatherWork,
                         // SerialNumber : this.idNumber,
-                        // Language : this.languageType,
+                        // languageType : this.Language,
                         // degree : this.motherCulture,
-                        mather : this.motherName,
+                        motherName : this.mather,
                         // professionMather : this.motherOccupation,
                         // PhoneNumberMather : this.motherPhone,
                         // dutyMather : this.motherPost,
                         // organizationMather : this.motherWork,
                         // name : this.name,
-                        // Phone : this.Phone,
+                        Phone : this.Phone,
                         // Faces : this.politicalOutlook,
                         // postal : this.postalCode,
                         // sex : this.sex,
@@ -1350,25 +1352,23 @@
                         // Bourn : this.signupProvinceAddress,
                         // Examinee : this.studentType,
                         // Type : this.subjectType,
-                        // Weight : this.weight,
+                        Weight : this.weight,
                     }
-                    // let url = "/StudentInformation/save"
-                    // let data = {}
-                    // this.$axios.post(url,data).then((res) => {
-                    //     res = res.data;
-                    //     console.log(res)
-                    // },(err) => {
-                    //     console.log(err)
-                    // })
                     aa(data);
-                    // axios.post('/StudentInformation/save',data).then(res => {
-                    //     res = res.data,
-                    //     // if(res.status == 0){
-                    //     console.log('发送数据成功')
-                    //     // }
-                    // })
-                }
+                    // axios.post('/StudentInformation/save',data
+                    //         // Phone : this.Phone,
+                    //         // Height : this.Height,
+                    //         // languageType : this.Language.value,
+                    // )
+                    // .then((data) => {
+                    //     console.log(data);
+                    //     // res = res.data;
+                    // }).catch(function (error) {
+                    //     console.log(error);
+                    // });
+               }
             }
+                        
         }
     </script>
 

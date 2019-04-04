@@ -1,5 +1,6 @@
 import axios from 'axios';
-axios.defaults.baseURL = "http://192.168.0.130:8080/swagger-ui.html#/";
+axios.defaults.baseURL = "http://192.168.0.130:8080";
+
 
 /*实验用作基础信息页面级存储*/
 // export const information = ({commit},obj)=>{
@@ -24,16 +25,24 @@ axios.defaults.baseURL = "http://192.168.0.130:8080/swagger-ui.html#/";
 
     //     }
     // }
-    export const aa = function(e){
-        let url = "/StudentInformation/save"
-        let data = e
-        axios.post(url,data).then((res) => {
-            // res = res.data;
-            console.log(res)
-        },(err) => {
-            console.log(err)
-        })
-        // heads : {
+    // heads : {
         //     'content-type' : 'application/x-www-form-urlencoded'
         // }
+        // let heads = {
+        //     'content-type' : 'application/x-www-form-urlencoded'
+        // }
+        // var instance = axios.create({
+        //     baseURL: 'http://192.168.0.130:8080/swagger-ui.html#/',
+        //     timeout: 1000,
+        //     headers: {'X-Custom-Header': 'foobar'}
+        //   });    
+    export const aa = function(e) {
+        let url = '/StudentInformation/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+        },(err)=>{
+            console.log(err)
+        })
     }
+            
