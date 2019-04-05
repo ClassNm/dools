@@ -10,40 +10,75 @@
                 <input name="zid" value="" id="form_step_zid" type="hidden">
                 <input name="data.type" value="GROUP" id="form_step_data_type" type="hidden">
                 <input name="data.id" value="" id="form_step_data_id" type="hidden">
+                <!-- 推荐社会团体名称： -->
                 <div class="ui-form-item">
                     <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>推荐社会团体名称：</strong></label>
-                    <input name="data.dwmc" maxlength="50" id="form_step_data_dwmc" class="ui-input" type="text">
+                    <input name="data.dwmc" maxlength="50" 
+                    id="form_step_data_dwmc" class="ui-input" type="text"
+                    v-model="team"
+                    >
                     <p class="ui-form-explain">添加后将不允许修改</p>
                 </div>
                 <div class="ui-form-item">
                     <!--<label for="" class="ui-label"><span class="ui-form-required">*</span><strong>所在地：</strong></label> <select id="slist" name="slist" onchange="initXjsList('slist', 'clist', 'xlist');">-->
-                    <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>所在地：</strong></label> <select id="slist" name="slist">
-                    <option value="" selected="selected">请选择</option>
-                    <option value="110000">北京市</option><option value="120000">天津市</option><option value="130000">河北省</option><option value="140000">山西省</option><option value="150000">内蒙古自治区</option><option value="210000">辽宁省</option><option value="220000">吉林省</option><option value="230000">黑龙江省</option><option value="310000">上海市</option><option value="320000">江苏省</option><option value="330000">浙江省</option><option value="340000">安徽省</option><option value="350000">福建省</option><option value="360000">江西省</option><option value="370000">山东省</option><option value="410000">河南省</option><option value="420000">湖北省</option><option value="430000">湖南省</option><option value="440000">广东省</option><option value="450000">广西壮族自治区</option><option value="460000">海南省</option><option value="500000">重庆市</option><option value="510000">四川省</option><option value="520000">贵州省</option><option value="530000">云南省</option><option value="540000">西藏自治区</option><option value="610000">陕西省</option><option value="620000">甘肃省</option><option value="630000">青海省</option><option value="640000">宁夏回族自治区</option><option value="650000">新疆维吾尔自治区</option><option value="710000">台湾省</option><option value="810000">香港特别行政区</option><option value="820000">澳门特别行政区</option><option value="990000">其他</option></select> <select id="clist" name="clist" onchange="initDqList('slist', 'clist', 'xlist');">
-                    <option value="" selected="selected">请选择</option>
-                </select> <select id="xlist" name="data.szdm">
-                    <option value="" selected="selected">请选择</option>
-                </select>
+                    <label for="" class="ui-label">
+                        <span class="ui-form-required">
+                            *
+                        </span>
+                        <strong>
+                            所在地：
+                        </strong>
+                    </label> 
+                    <select id="slist" name="slist">
+                        <option value="" :selected="item.selected"  
+                        v-for="(item,i) in Bourn" :key="i" 
+                        >{{item.name}}</option>
+                    </select> 
+                    <select id="clist" name="clist" onchange="i
+                    nitDqList('slist', 'clist', 'xlist');">
+                        <option value="" :selected="item.selected" 
+                        v-for="(item,i) in CityLevel" :key="i"
+                        >{{item.name}}
+                        </option>
+                    </select> 
+                    <select id="xlist" name="data.szdm">
+                        <option value="" :selected="item.selected" 
+                        v-for="(item,i) in County" :key="i">
+                        {{item.name}}
+                        </option>
+                    </select>
                     <p class="ui-form-explain"></p>
                 </div>
+                <!-- 联系人： -->
                 <div class="ui-form-item">
                     <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>联系人：</strong></label>
-                    <input name="data.xm" maxlength="30" id="form_step_data_xm" class="ui-input" type="text">
+                    <input name="data.xm" maxlength="30" id="form_step_data_xm" 
+                    class="ui-input" type="text"
+                    v-model="people"
+                    >
                     <p class="ui-form-explain">添加后将不允许修改</p>
                 </div>
+                <!-- 手机号码： -->
                 <div class="ui-form-item" title="该手机号用于提醒推荐人填写推荐信，仅限一个，请如实填写">
                     <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>手机号码：</strong></label>
-                    <input name="data.mobile" maxlength="30" id="form_step_data_mobile" class="ui-input" type="text">
+                    <input name="data.mobile" maxlength="30" id="form_step_data_mobile" 
+                    class="ui-input" type="text"
+                    v-model="number"
+                    >
                     <p class="ui-form-explain">该手机号用于提醒推荐人填写推荐信，仅限一个，请如实填写</p>
                 </div>
+                <!-- 邮箱： -->
                 <div class="ui-form-item" title="该邮箱用于提醒推荐人填写推荐信，仅限一个，请如实填写">
                     <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>邮箱：</strong></label>
-                    <input name="data.email" maxlength="50" id="form_step_data_email" class="ui-input" type="text">
+                    <input name="data.email" maxlength="50" id="form_step_data_email" 
+                    class="ui-input" type="text"
+                    v-model="emil"
+                    >
                     <p class="ui-form-explain">该邮箱用于提醒推荐人填写推荐信，仅限一个，请如实填写</p>
                 </div>
                 <div class="ui-form-item m_top10">
                     <!--<input id="form_step_0" value="保存" class="ui-button ui-button-lorange add" type="submit">-->
-                    <Button type="warning">保存</Button>
+                    <Button type="warning" @click="submit">保存</Button>
                     &nbsp;&nbsp;
                     <!--<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">-->
                     <Button type="primary" onclick="javascript:history.go(-1);" >取消</Button>
@@ -52,6 +87,239 @@
         </div>
     </div>
 </template>
+
+<script>
+import { organization } from '../../vuex/actions.js'
+export default {
+    data(){
+        return{
+             // 高考报名所在地
+            Bourn:[
+                {
+                    name:"请选择",
+                    selected:"selected"
+                },
+                {
+                    name:"北京市"
+                },
+                {
+                    name:"天津市"
+                },
+                {
+                    name:"河北省"
+                },
+                {
+                    name:"山西省"
+                },
+                {
+                    name:"内蒙古自治区"
+                },
+                {
+                    name:"辽宁省"
+                },
+                {
+                    name:"吉林省"
+                },
+                {
+                    name:"黑龙江省"
+                },
+                {
+                    name:"上海市"
+                },
+                {
+                    name:"江苏省"
+                },
+                {
+                    name:"浙江省"
+                },
+                {
+                    name:"安徽省"
+                },
+                {
+                    name:"福建省"
+                },
+                {
+                    name:"江西省"
+                },
+                {
+                    name:"山东省"
+                },
+                {
+                    name:"河南省"
+                },
+                {
+                    name:"湖北省"
+                },
+                {
+                    name:"湖南省"
+                },
+                {
+                    name:"广东省"
+                },
+                {
+                    name:"广西壮族自治区"
+                },
+                {
+                    name:"海南省"
+                },
+                {
+                    name:"四川省"
+                },
+                {
+                    name:"贵州省"
+                },
+                {
+                    name:"云南省"
+                },
+                {
+                    name:"西藏自治区"
+                },
+                {
+                    name:"陕西省"
+                },
+                {
+                    name:"甘肃省"
+                },
+                {
+                    name:"青海省"
+                },
+                {
+                    name:"宁夏回族自治区"
+                },
+                {
+                    name:"新疆维吾尔自治区"
+                },
+                {
+                    name:"台湾省"
+                },
+                {
+                    name:"香港特别行政区"
+                },
+                {
+                    name:"澳门特别行政区"
+                },
+                {
+                    name:"其他"
+                },
+            ],
+            // 市级
+            CityLevel:[
+                {
+                    name:"请选择",
+                    selected:"selected"
+                },
+                {
+                    name:"石家庄市"
+                },
+                {
+                    name:"唐山市"
+                },
+                {
+                    name:"秦皇岛市"
+                },
+                {
+                    name:"邯郸市"
+                },
+                {
+                    name:"邢台市"
+                },
+                {
+                    name:"保定市"
+                },
+                {
+                    name:"张家口市"
+                },
+                {
+                    name:"承德市"
+                },
+                {
+                    name:"沧州市"
+                },
+                {
+                    name:"廊坊市"
+                },
+                {
+                    name:"衡水市"
+                },
+            ],
+            // 区县级别
+            County:[
+                {
+                    name:"请选择",
+                    selected : "selected"
+                },
+                {
+                    name:"市辖区"
+                },
+                {
+                    name:"路南区"
+                },
+                {
+                    name:"路北区"
+                },
+                {
+                    name:"古冶区"
+                },
+                {
+                    name:"开平区"
+                },
+                {
+                    name:"丰南区"
+                },
+                {
+                    name:"丰润区"
+                },
+                {
+                    name:"曹妃甸区"
+                },
+                {
+                    name:"滦县"
+                },
+                {
+                    name:"滦南县"
+                },
+                {
+                    name:"乐亭县"
+                },
+                {
+                    name:"迁西县"
+                },
+                {
+                    name:"玉田县"
+                },
+                {
+                    name:"遵化市"
+                },
+                {
+                    name:"迁安市"
+                }
+            ],
+            // 联系人
+            people : "",
+            // 推荐社会团体名称：
+            team : "",
+            // 手机号码：
+            number : "",
+            // 邮箱
+            emil : ""
+        }
+    },
+    methods:{
+        submit(){
+            let data = {
+                email : this.emil,
+                name : this.team,
+                peopleName : this.people,
+                phone : this.number,
+                // address : this.Bourn, 所在地
+            }
+            console.log(data);
+            // organization(data);
+        }
+    }
+}
+</script>
+
 
 <style scoped>
     .ui-breadcrumb {

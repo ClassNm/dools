@@ -35,12 +35,115 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
         //     baseURL: 'http://192.168.0.130:8080/swagger-ui.html#/',
         //     timeout: 1000,
         //     headers: {'X-Custom-Header': 'foobar'}
-        //   });    
+        //   });  
+        
+        
+        //基本信息 
     export const aa = function(e) {
         let url = '/StudentInformation/save'
         let data = e
         axios.post(url,data).then((res)=>{
             console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+
+    // 中学信息
+    export const mSchool = function(e) {
+        let url = '/MiddleschoolInformation/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+    // 成绩信息
+    export const grade = function(e) {
+        let url = '/Scoresheet/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+
+
+    // 新增社会活动
+    export const activity = function(e) {
+        let url = '/Activity/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+     // 新增获奖记录
+     export const newly = function(e) {
+        let url = '/Prize/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+    // 推荐人信息  添加推荐专家
+    export const expert = function(e) {
+        let url = '/Recommender/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+    // 推荐人信息  添加推荐中学
+    export const secondarySchool = function(e) {
+        let url = '/RecommendSchool/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+    // 推荐人信息  添加推荐社会团体
+    export const organization = function(e) {
+        let url = '/RecommendSocialgroups/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+    // 个人照片
+    export const photo = function(e) {
+        let url = '/Picture/save'
+        let data = e
+        axios.post(url,data).then((res)=>{
+            console.log(res)
+            res = res.data;
         },(err)=>{
             console.log(err)
         })

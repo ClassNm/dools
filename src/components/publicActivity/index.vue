@@ -8,7 +8,7 @@
             <div class="ui-tiptext-container ui-tiptext-container-message" style="margin-top:10px;">
                 <p class="ui-tiptext ui-tiptext-message">
                     <i title="提示" class="ui-tiptext-icon iconfont"></i>
-                    <span style="color:#c30;">注意：</span>本页面对于证明材料的删除，上传操作，均在点击“新增”或“保存”按钮之后才会生效。
+                    <span style="color:#c30;">注意：</span>{{kool}}。
                 </p>
             </div>
             <div class="ui-box-container">
@@ -21,27 +21,41 @@
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>选择奖项类别：</strong></label>
                         <select name="zhxxVO.info" id="zhxx_jxlb">
-                            <option value="" selected="selected">请选择</option>
+                            <option :value="item.value" :selected="item.selected" v-for="(item,i) in aa" :key="i">
+                                {{item.name}}
+                            </option>
+<!-- 
                             <option value="01">国际五项学科奥林匹克竞赛</option>
                             <option value="02">全国青少年科技竞赛</option>
                             <option value="03">全国中小学电脑制作活动</option>
-                            <option value="04">其他</option>
+                            <option value="04">其他</option> -->
                         </select>
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>奖项名称：</strong></label>
-                        <input name="zhxxVO.name" id="zhxx_jxmc" maxlength="50" class="ui-input" type="text">
+                        <input name="zhxxVO.name" 
+                        id="zhxx_jxmc" maxlength="50" 
+                        class="ui-input" type="text"
+                        v-model="name"
+                        >
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item" title="如国家级、省级、其他等">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>奖项级别：</strong></label>
-                        <input name="zhxxVO.level" id="zhxx_jxjb" maxlength="30" class="ui-input" type="text">
+                        <input name="zhxxVO.level" id="zhxx_jxjb"
+                         maxlength="30" class="ui-input" type="text"
+                         v-model="rank"
+                         >
                         <p class="ui-form-explain">如国家级、省级、其他等</p>
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>获奖时间：</strong></label>
-                        <input name="zhxxVO.time" id="zhxx_hjsj" maxlength="10" class="ui-input date_time" onfocus="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-%d'})" type="text">
+                        <input name="zhxxVO.time" id="zhxx_hjsj" maxlength="10" 
+                        class="ui-input date_time" 
+                        type="text"
+                        v-model="time"
+                        >
                         <div class="td_title" style="display:none;position: absolute;z-index: 10000;border-radius: 2px;opacity: 0.9;background: #000;padding:5px 10px;color:#fff;">
                             <span style="border-color: transparent transparent #000;border-style: dashed dashed solid;border-width: 6px;font-size: 0;height: 0;left: 14px;position: absolute;top: -12px;width: 0;"></span>
                             <p style="color:#fff;"><i class="ui-tiptext-icon iconfont" style="color:#fff;padding-right: 5px"></i>当前活动时间不在高中时期</p>
@@ -51,12 +65,18 @@
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>组织单位：</strong></label>
-                        <input name="zhxxVO.org" id="zhxx_zzdw" maxlength="50" class="ui-input" type="text">
+                        <input name="zhxxVO.org" id="zhxx_zzdw" 
+                        maxlength="50" class="ui-input" type="text"
+                        v-model="unit"
+                        >
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item" title="如一等奖、二等奖、其他等">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>获奖等级：</strong></label>
-                        <input name="zhxxVO.role" id="zhxx_hjdj" maxlength="30" class="ui-input" type="text">
+                        <input name="zhxxVO.role" id="zhxx_hjdj" 
+                        maxlength="30" class="ui-input" type="text"
+                        v-model="classk"
+                        >
                         <p class="ui-form-explain">如一等奖、二等奖、其他等</p>
                     </div>
                     <div class="ui-form-item">
@@ -67,7 +87,7 @@
                         <p class="ui-form-explain uploadeddel" style="padding-top:0;">上传图片格式为 jpg 或 jpeg；大小为20K-1M</p>
                     </div>
                     <div class="ui-form-item m_top10">
-                        <Button type="warning">新增</Button>
+                        <Button type="warning" @click="submit">新增</Button>
                         &nbsp;&nbsp;
                         <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                     </div>
@@ -76,6 +96,64 @@
         </div>
     </div>
 </template>
+
+<script>
+import { newly } from '../../vuex/actions.js'
+export default {
+    data(){
+        return{
+            kool : "本页面对于证明材料的删除，上传操作，均在点击“新增”或“保存”按钮之后才会生效",
+            aa:[
+                {
+                    name : "请选择",
+                    selected : "selected"
+                },
+                {
+                    name : "国际五项学科奥林匹克竞赛",
+                    value : 1    
+                },
+                {
+                    name : "全国青少年科技竞赛",
+                    value : 2
+                },
+                {
+                    name : "全国中小学电脑制作活动",
+                    value : 3    
+                },
+                {
+                    name : "其他",
+                    value : 4    
+                }
+            ],
+            // 奖项名称
+            name : "",
+            // 奖项级别：
+            rank : "",
+            // 获奖时间
+            time : "",
+            // 组织单位
+            unit : "",
+            // 获奖等级：
+            classk : ""
+        }
+    },
+    methods:{
+        submit(){
+            let data = {
+                awardLevel : this.rank,
+                organizationalUnit : this.unit,
+                prizeCategory : this.rank,
+                prizeName : this.name,
+                prizeTime : this.time,
+                // proofMaterial : this.  证明材料
+                winAwardGrade : this.classk
+            }
+            console.log(data);
+            // newly(data);
+        }
+    }
+}
+</script>
 
 
 <style scoped>
@@ -257,7 +335,6 @@
         top: 0;
         left: 0px;
         height: 120px;
-        filter: alpha(opacity:0);
         opacity: 0;
         width: 90px;
         cursor: pointer;

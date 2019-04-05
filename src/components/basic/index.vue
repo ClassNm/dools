@@ -169,7 +169,7 @@
                         <div class="ui-form-item" title="视力标准为 0.1-1.5（或 4.0-5.2）">
                             <label for="" class="ui-label"><strong>裸眼视力（左/右）：</strong></label>
                             <div style="margin-right: 400px">
-                                <input name="jbxxVO.sll" class="ui-input" style="width:58px;" maxlength="6" type="text" :value="seeingLeft"> / <input :value="seeingRight" name="jbxxVO.slr" class="ui-input" style="width:58px;" maxlength="6" type="text">
+                                <input name="jbxxVO.sll" class="ui-input" style="width:58px;" maxlength="6" type="text" v-model="seeingLeft"> / <input v-model="seeingRight" name="jbxxVO.slr" class="ui-input" style="width:58px;" maxlength="6" type="text">
                             </div>
                             <p class="ui-form-explain" style="margin-right: 150px">视力标准为 0.1-1.5（或 4.0-5.2）</p>
                         </div>
@@ -188,13 +188,13 @@
                         <!-- 身高 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>身高(cm)：</strong></label>
-                            <input name="jbxxVO.sg" :value="Height" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px;" type="text">
+                            <input name="jbxxVO.sg" v-model="Height" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px;" type="text">
                             <p class="ui-form-explain"></p>
                         </div>
                         <!-- 体重 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>体重(kg)：</strong></label>
-                            <input name="jbxxVO.tz" :value="Weight" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px" type="text">
+                            <input name="jbxxVO.tz" v-model="Weight" maxlength="3" class="ui-input" style="width:58px;margin-right: 470px" type="text">
                             <p class="ui-form-explain"></p>
                         </div>
                         <!-- 高考报名所在地 -->
@@ -280,7 +280,7 @@
                         <!-- 高考报名号 -->
                         <div class="ui-form-item" title="请填写14位高考报名号(全国统一编号)">
                             <label for="" class="ui-label"><strong>高考报名号：</strong></label>
-                            <input name="jbxxVO.gkbmh" maxlength="32" class="ui-input" type="text" :value="SerialNumber" style="margin-right: 350px">
+                            <input name="jbxxVO.gkbmh" maxlength="32" class="ui-input" type="text" v-model="SerialNumber" style="margin-right: 350px">
                             <p class="ui-form-explain" style="margin-right: 130px">请填写14位高考报名号(全国统一编号)</p>
                         </div>
                         <!-- 考生类型： -->
@@ -337,7 +337,7 @@
                         <!-- 联系电话： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>联系电话：</strong></label>
-                            <input name="jbxxVO.lxdh" id="jbxx_lxdh" :value="PhoneNumber" maxlength="30" class="ui-input" type="text" style="margin-right: 350px">
+                            <input name="jbxxVO.lxdh" id="jbxx_lxdh" v-model="PhoneNumber" maxlength="30" class="ui-input" type="text" style="margin-right: 350px">
                             <p class="ui-form-explain"></p>
                         </div>
                         <div class="ui-form-item" title="最多可输入50个字符；地址请写明街道名称、门牌号码、楼层和房间号等信息">
@@ -421,7 +421,7 @@
                                 </select>
                             </div>
                             <br><input name="jbxxVO.txdzXxdz" id="jbxx_xxdz"
-                                       :value="SiteLL" maxlength="50"
+                                       v-model="SiteLL" maxlength="50"
                                        class="ui-input"
                                        style="width:300px;
                                        margin-right: 30px"
@@ -432,7 +432,7 @@
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>邮政编码：</strong></label>
                             <input id="hdxx_daszDwYzbm"
                                    name="jbxxVO.txdzYzbm"
-                                   :value="postal"
+                                   v-model="postal"
                                    maxlength="6"
                                    class="ui-input"
                                    style="width:58px;margin-right: 475px"
@@ -446,11 +446,11 @@
                                     <tbody><tr>
                                         <td align="right">父亲姓名</td>
                                         <td>
-                                            <input name="faInfoVO.xm" id="faname" class="ui-input valid" :value="father" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="faInfoVO.xm" id="faname" class="ui-input valid" v-model="father" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">联系电话</td>
                                         <td>
-                                            <input name="faInfoVO.lxdh" id="jbxx_fa_lxdh" class="ui-input valid" :value="PhoneNumberFather" maxlength="30" aria-invalid="false" type="text">
+                                            <input name="faInfoVO.lxdh" id="jbxx_fa_lxdh" class="ui-input valid" v-model="PhoneNumberFather" maxlength="30" aria-invalid="false" type="text">
                                         </td>
                                         <td align="right">文化程度</td>
                                         <td>
@@ -469,13 +469,13 @@
                                     <tr>
                                         <td align="right">职业</td>
                                         <td>
-                                            <input name="faInfoVO.zy" id="jbxx_fa_zy" class="ui-input valid" :value="professionFather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="faInfoVO.zy" id="jbxx_fa_zy" class="ui-input valid" v-model="professionFather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">工作单位</td>
-                                        <td><input name="faInfoVO.dw" id="jbxx_fa_dw" class="ui-input" :value="organizationFather" maxlength="30" type="text">
+                                        <td><input name="faInfoVO.dw" id="jbxx_fa_dw" class="ui-input" v-model="organizationFather" maxlength="30" type="text">
                                         </td>
                                         <td align="right">职务</td>
-                                        <td><input name="faInfoVO.zw" id="jbxx_fa_zw" class="ui-input" :value="dutyFather" maxlength="30" type="text">
+                                        <td><input name="faInfoVO.zw" id="jbxx_fa_zw" class="ui-input" v-model="dutyFather" maxlength="30" type="text">
                                         </td>
                                     </tr>
                                     </tbody></table>
@@ -483,11 +483,11 @@
                                     <tbody><tr>
                                         <td align="right">母亲姓名</td>
                                         <td>
-                                            <input name="maInfoVO.xm" id="maname" class="ui-input valid" :value="mather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="maInfoVO.xm" id="maname" class="ui-input valid"  v-model="mather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">联系电话</td>
                                         <td>
-                                            <input name="maInfoVO.lxdh" id="jbxx_ma_lxdh" class="ui-input valid" :value="PhoneNumberMather" maxlength="30" aria-invalid="false" type="text" aria-required="true">
+                                            <input name="maInfoVO.lxdh" id="jbxx_ma_lxdh" class="ui-input valid" v-model="PhoneNumberMather" maxlength="30" aria-invalid="false" type="text" aria-required="true">
                                         </td>
                                         <td align="right">文化程度</td>
                                         <td>
@@ -506,13 +506,13 @@
                                     <tr>
                                         <td align="right">职业</td>
                                         <td>
-                                            <input name="maInfoVO.zy" id="jbxx_ma_zy" class="ui-input valid" :value="professionMather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
+                                            <input name="maInfoVO.zy" id="jbxx_ma_zy" class="ui-input valid" v-model="professionMather" maxlength="30" type="text" aria-required="true" aria-invalid="false">
                                         </td>
                                         <td align="right">工作单位</td>
-                                        <td><input name="maInfoVO.dw" id="jbxx_ma_dw" class="ui-input" :value="organizationMather" maxlength="30" type="text">
+                                        <td><input name="maInfoVO.dw" id="jbxx_ma_dw" class="ui-input" v-model="organizationMather" maxlength="30" type="text">
                                         </td>
                                         <td align="right">职务</td>
-                                        <td><input name="maInfoVO.zw" id="jbxx_ma_zw" class="ui-input" :value="dutyMather" maxlength="30" type="text">
+                                        <td><input name="maInfoVO.zw" id="jbxx_ma_zw" class="ui-input" v-model="dutyMather" maxlength="30" type="text">
                                         </td>
                                     </tr>
                                     </tbody></table>
@@ -1321,39 +1321,40 @@
                 submit(){
                     let data = {
                         Height : this.Height,
-                        // chromatodysopia : this.colorEye,
-                        // PhoneNumber : this.contactNumber,
-                        // Site : this.contactProvinceAddress,
-                        // SiteLL : this.contactRoadAddress,
-                        // birth : this.date,
-                        // seeingLeft : this.eyeLeft,
-                        // seeingRight : this.eyeRight,
-                        // Home : this.famousRace,
-                        // degreeT : this.fatherCulture,
-                        // father : this.fatherName,
-                        // dutyFather : this.fatherOccupation,
-                        // PhoneNumberFather : this.fatherPhone,
-                        // dutyFather : this.fatherPost,
-                        // organizationFather : this.fatherWork,
-                        // SerialNumber : this.idNumber,
+                        // colorEye : this.chromatodysopia,
+                        contactNumber : this.PhoneNumber,
+                        // contactProvinceAddress : this.Site,
+                        contactRoadAddress : this.SiteLL,
+                        date : this.birth,
+                        eyeLeft : this.seeingLeft,
+                        eyeRight : this.seeingRight,
+                        // famousRace : this.Home,
+                        // fatherCulture : this.degreeT,
+                        fatherName : this.father,
+                        fatherOccupation : this.dutyFather,
+                        fatherPhone : this.PhoneNumberFather,
+                        fatherPost : this.dutyFather,
+                        fatherWork : this.organizationFather,
+                        idNumber : this.SerialNumber,
                         // languageType : this.Language,
-                        // degree : this.motherCulture,
+                        // motherCulture : this.degree,
                         motherName : this.mather,
-                        // professionMather : this.motherOccupation,
-                        // PhoneNumberMather : this.motherPhone,
-                        // dutyMather : this.motherPost,
-                        // organizationMather : this.motherWork,
-                        // name : this.name,
+                        motherOccupation : this.professionMather,
+                        motherPhone : this.PhoneNumberMather,
+                        motherPost : this.dutyMather,
+                        motherWork : this.organizationMather,
+                        name : this.name,
                         Phone : this.Phone,
-                        // Faces : this.politicalOutlook,
-                        // postal : this.postalCode,
+                        // politicalOutlook : this.Faces,
+                        postalCode : this.postal,
                         // sex : this.sex,
-                        // SerialNumber : this.signupNumber,
-                        // Bourn : this.signupProvinceAddress,
-                        // Examinee : this.studentType,
-                        // Type : this.subjectType,
-                        Weight : this.weight,
+                        signupNumber : this.SerialNumber,
+                        // signupProvinceAddress : this.Bourn,
+                        // studentType : this.Examinee,
+                        // subjectType : this.Type,
+                        weight : this.Weight,
                     }
+                    console.log(data);
                     aa(data);
                     // axios.post('/StudentInformation/save',data
                     //         // Phone : this.Phone,
@@ -1367,7 +1368,11 @@
                     //     console.log(error);
                     // });
                }
+            },
+            mounted(){
+
             }
+            
                         
         }
     </script>

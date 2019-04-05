@@ -338,7 +338,7 @@
                             </span>
                             <strong>所在班级：</strong>
                         </label>
-                        <input name="xyxxVO.bj" id="zxxx_bj" :value="classT" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
+                        <input name="xyxxVO.bj" id="zxxx_bj" v-model="classT" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
                         <p class="ui-form-explain">
                         </p>
                     </div>
@@ -348,7 +348,7 @@
                             <span class="ui-form-required">*</span>
                             <strong>担任职务：</strong>
                         </label>
-                        <input name="xyxxVO.zw" id="zxxx_zw" :value="duty" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
+                        <input name="xyxxVO.zw" id="zxxx_zw" v-model="duty" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
                         <p class="ui-form-explain"></p>
                     </div>
                     <!-- 班主任姓名： -->
@@ -357,7 +357,7 @@
                             <span class="ui-form-required">*</span>
                             <strong>班主任姓名：</strong>
                         </label>
-                        <input name="xyxxVO.bzr" id="zxxx_bzr" :value="teacher" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
+                        <input name="xyxxVO.bzr" id="zxxx_bzr" v-model="teacher" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
                         <p class="ui-form-explain"></p>
                     </div>
                     <!-- 班主任联系电话： -->
@@ -366,7 +366,7 @@
                             <span class="ui-form-required">*</span>
                             <strong>班主任联系电话：</strong>
                         </label>
-                        <input name="xyxxVO.bzrLxdh" id="zxxx_bzrlxdh" :value="teacherPhone" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
+                        <input name="xyxxVO.bzrLxdh" id="zxxx_bzrlxdh" v-model="teacherPhone" maxlength="30" class="ui-input" type="text" style="margin-right: 360px">
                         <p class="ui-form-explain"></p>
                     </div>
                     <!-- 中学详细地址： -->
@@ -378,7 +378,7 @@
                         <!--<div style="padding-top:7px;" id="zxxxdz">河北省唐山市路北区&nbsp;</div>-->
                         <input name="xyxxVO.xxxxdz" 
                         id="zxxx_zxxxdz" 
-                        :value="schoolSite" 
+                        v-model="schoolSite" 
                         maxlength="50" 
                         class="ui-input" 
                         style="width:200px;margin-left: 20px;margin-right: 360px" 
@@ -389,7 +389,7 @@
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>中学邮政编码：</strong></label>
                         <input name="xyxxVO.xxyzbm" id="zxxx_yzbm" 
-                        :value="postalCode" maxlength="6" class="ui-input" style="width:58px;margin-right: 480px" 
+                        v-model="postalCode" maxlength="6" class="ui-input" style="width:58px;margin-right: 480px" 
                         type="text">
                         <p class="ui-form-explain"></p>
                     </div>
@@ -397,7 +397,7 @@
                     <div class="ui-form-item" title="如教务处主任、年级组长等">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>主管教学领导姓名：</strong></label>
                         <input name="xyxxVO.xxlxr" id="zxxx_jxld" 
-                        :value="lead" maxlength="30" class="ui-input" type="text" 
+                        v-model="lead" maxlength="30" class="ui-input" type="text" 
                         style="margin-right: 360px">
                         <p class="ui-form-explain" style="margin-right: 360px">如教务处主任、年级组长等</p>
                     </div>
@@ -408,7 +408,7 @@
                             <strong>主管教学领导联系电话：</strong>
                         </label>
                         <input name="xyxxVO.xxlxdh" id="zxxx_jxldlxdh" 
-                        :value="leadPhone" maxlength="30" class="ui-input" type="text" 
+                        v-model="leadPhone" maxlength="30" class="ui-input" type="text" 
                         style="margin-right: 360px">
                         <p class="ui-form-explain"></p>
                     </div>
@@ -429,10 +429,10 @@
                                 <tr>
                                     <td width="68" align="right">自</td>
                                     <td><input name="xyjl1VO.start" id="jyjl1start" maxlength="10" 
-                                    :value="SchoolDataLeft" class="ui-input" type="text">
+                                    v-model="SchoolDataLeft" class="ui-input" type="text">
                                         至
                                         <input name="xyjl1VO.end" id="jyjl1end" maxlength="10" 
-                                        :value="SchoolDataRight" class="ui-input"  type="text">
+                                        v-model="SchoolDataRight" class="ui-input"  type="text">
                                     </td>
                                 </tr>
                                 <!-- 高三 教育经历 -->
@@ -578,7 +578,7 @@
                                 <tr>
                                     <td align="right">证明人</td>
                                     <td>
-                                        <input name="xyjl1VO.zmr" id="zxxx_jy_zmr1" :value="references" maxlength="30" class="ui-input" type="text">
+                                        <input name="xyjl1VO.zmr" id="zxxx_jy_zmr1" v-model="references" maxlength="30" class="ui-input" type="text">
                                     </td>
                                 </tr>
                                 <!--高中二年级：  -->
@@ -593,11 +593,11 @@
                                     <td>
                                         <input name="xyjl2VO.start" 
                                         id="jyjl2start" maxlength="10" 
-                                        :value="SchoolDataLeftTwo" class="ui-input" type="text">
+                                        v-model="SchoolDataLeftTwo" class="ui-input" type="text">
                                         至
                                         <input name="xyjl2VO.end" 
                                         id="jyjl2end" maxlength="10" 
-                                        :value="SchoolDataRightTwo" class="ui-input" type="text">
+                                        v-model="SchoolDataRightTwo" class="ui-input" type="text">
                                     </td>
                                 </tr>
                                 <!-- 高二教育经历 -->
@@ -741,7 +741,7 @@
                                 <tr>
                                     <td align="right">证明人</td>
                                     <td>
-                                        <input name="xyjl2VO.zmr" id="zxxx_jy_zmr2" :value="referencesTwo" maxlength="30" class="ui-input" type="text">
+                                        <input name="xyjl2VO.zmr" id="zxxx_jy_zmr2" v-model="referencesTwo" maxlength="30" class="ui-input" type="text">
                                     </td>
                                 </tr>
                                 <!-- 高中三年级： -->
@@ -754,9 +754,9 @@
                                 <tr>
                                     <td align="right">自</td>
                                     <td>
-                                        <input name="xyjl3VO.start" id="jyjl3start" maxlength="10" :value="SchoolDataLeftThree" class="ui-input" type="text">
+                                        <input name="xyjl3VO.start" id="jyjl3start" maxlength="10" v-model="SchoolDataLeftThree" class="ui-input" type="text">
                                         至
-                                        <input name="xyjl3VO.end" id="jyjl3end" maxlength="10" :value="SchoolDataRightThree" class="ui-input" type="text">
+                                        <input name="xyjl3VO.end" id="jyjl3end" maxlength="10" v-model="SchoolDataRightThree" class="ui-input" type="text">
                                     </td>
                                 </tr>
                                 <!-- 高三 教育经历 -->
@@ -900,7 +900,7 @@
                                 <tr>
                                     <td align="right">证明人</td>
                                     <td>
-                                        <input name="xyjl3VO.zmr" id="zxxx_jy_zmr3" :value="referencesThree" maxlength="30" class="ui-input" type="text">
+                                        <input name="xyjl3VO.zmr" id="zxxx_jy_zmr3" v-model="referencesThree" maxlength="30" class="ui-input" type="text">
                                     </td>
                                 </tr>
                                 </tbody>
@@ -934,11 +934,11 @@
                                     <td width="68" align="right">自</td>
                                     <td colspan="2">
                                         <input name="bxjl1VO.start" id="bxjl1start" 
-                                        maxlength="10" :value="SchoolDataLeftThree" 
+                                        maxlength="10" v-model="SchoolDataLeftThreeLL" 
                                         class="ui-input" type="text">
                                         至
                                         <input name="bxjl1VO.end" id="bxjl1end" 
-                                        maxlength="10" :value="SchoolDataRightThree" 
+                                        maxlength="10" v-model="SchoolDataRightThreeLL" 
                                         class="ui-input" type="text">
                                     </td>
                                 </tr>
@@ -1030,7 +1030,7 @@
                                     <td align="right">证明人</td>
                                     <td>
                                         <input name="bxjl1VO.zmr" id="zxxx_jybx_zmr1" 
-                                        maxlength="30" :value="referencesAlternative" 
+                                        maxlength="30" v-model="referencesAlternative" 
                                         class="ui-input" type="text">
                                     </td>
                                     <td width="40">
@@ -1064,11 +1064,11 @@
                                     <td width="68" align="right">自</td>
                                     <td colspan="2">
                                         <input name="bxjl2VO.start" id="bxjl2start" 
-                                        maxlength="10" :value="SchoolDataLeftThreeL"
+                                        maxlength="10" v-model="SchoolDataLeftThreeL"
                                         class="ui-input" type="text">
                                         至
                                         <input name="bxjl2VO.end" id="bxjl2end" 
-                                        maxlength="10" :value="SchoolDataRightThreeL" 
+                                        maxlength="10" v-model="SchoolDataRightThreeL" 
                                         class="ui-input" type="text">
                                     </td>
                                 </tr>
@@ -1160,7 +1160,7 @@
                                     <td align="right">证明人</td>
                                     <td>
                                         <input name="bxjl2VO.zmr" id="zxxx_bx_zmr2" 
-                                        maxlength="30" :value="referencesAlternativeTwo"
+                                        maxlength="30" v-model="referencesAlternativeTwo"
                                         class="ui-input" type="text">
                                     </td>
                                     <td width="40"><a href="#" class="clearbxjyjl">清空</a></td>
@@ -1181,7 +1181,7 @@
                                <!--type="button"-->
                                <!--style=" width: 44px;height: 31px"-->
                         <!--&gt;-->
-                        <Button type="warning">保存</Button>
+                        <Button type="warning" @click="submit">保存</Button>
                         &nbsp;&nbsp;
                         <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                     </div>
@@ -1192,6 +1192,8 @@
 </template>
 
 <script>
+import axios from "../../../node_modules/axios/dist/axios.js"
+import {mSchool} from '../../vuex/actions.js'
 export default {
     data(){
         return{
@@ -2605,8 +2607,8 @@ export default {
                 },
             ],
             // 备选：时间
-            SchoolDataLeftThree:"",
-            SchoolDataRightThree:"",
+            SchoolDataLeftThreeLL:"",
+            SchoolDataRightThreeLL:"",
             //  备选 教育经历
             educationAlternative:[
                 {
@@ -3173,6 +3175,57 @@ export default {
     //         return this.SchoolCountyLT.reverse();
     //     }
     // }
+    methods:{
+        submit(){
+            let data = {
+                classPost : this.duty,
+                classTeacherName : this.teacher,
+                classTeacherPhone : this.teacherPhone,
+                classid : this.classT,
+                // currentSchoolProvince : this.SchoolRollT,
+                // 当前就读中学
+                // middleSchoolNub1 : this.grade,
+                // middleSchoolNub2 : this.gradeTwo,
+                middleSchoolOneNew : this.SchoolDataRight,
+                middleSchoolOneNew1 : this.SchoolDataRightThreeLL,
+                middleSchoolOneOld : this.SchoolDataLeft,
+                middleSchoolOneOld1 : this.SchoolDataLeftThreeLL,
+                // middleSchoolOneProvince : this.,
+                // 高一三个学校地址省市县地址 ！！！  3个input框
+                // middleSchoolOneProvince1 : this.,
+                //  高xx学校地址
+                // middleSchoolOneSchoolName : this.educationCountyLTwo,
+                // middleSchoolOneSchoolName1 : this.educationCountyLAlternative,
+                middleSchoolOneWitnessName : this.references,
+                middleSchoolOneWitnessName1 : this.referencesAlternative,
+                middleSchoolThreeNew : this.SchoolDataRightThree,
+                middleSchoolThreeOld : this.SchoolDataLeftThree,
+                // middleSchoolThreeRegion : this.educationThree,
+                // 高三学校地址
+                // middleSchoolThreeSchoolName : this.educationCountyLThree,
+                middleSchoolThreeWitnessName : this.referencesThree,
+                middleSchoolTwoNew : this.SchoolDataRightTwo,
+                middleSchoolTwoNew1 : this.SchoolDataRightThreeL,
+                middleSchoolTwoOld : this.SchoolDataLeftTwo,
+                middleSchoolTwoOld1 : this.SchoolDataLeftThreeL,
+                // middleSchoolTwoProvince : this.educationTwo,
+                // 
+                // middleSchoolTwoProvince1 : this.educationAlternativeTwo,
+                // middleSchoolTwoSchoolName : this.educationCountyLTwo,
+                // middleSchoolTwoSchoolName1 : this.educationCountyLAlternativeTwo,
+                middleSchoolTwoWitnessName : this.referencesTwo,
+                middleSchoolTwoWitnessName1 : this.referencesAlternativeTwo,
+                schoolDetailedAddress : this.schoolSite,
+                // schoolLevel : this.level,
+                schoolPost : this.postalCode,
+                // studentStatusProvince : this.SchoolRoll,
+                teachingLeaderName : this.lead,
+                teachingLeaderPhone : this.leadPhone,
+            }
+            console.log(data);
+            mSchool(data);
+        }
+    }
 }
 </script>
 

@@ -32,20 +32,17 @@
                             </strong>
                         </label>
                         <div class="ui-form-text">
-                            <!--<img id="imgPhoto" src="../../assets/1111.jpg" width="120px" height="160px" v-if="isShow">-->
                             <img :src="uploadImg.url" alt="" width="120px" height="160px" >
                             <h4 class="Hoo">请选择照片</h4>
                         </div>
-                        <p style="padding:8px 0; text-align: left;margin-left: 117px;">必须上传本人近期一寸正面免冠彩色头像照片(参照居民身份证照片样式)：<br>
-                            1.格式 jpg 或 jpeg ，大小20K－500K<br>
-                            2.照片背景为单色(白色、蓝色、红色均可)，人像清晰，神态自然，无明显畸变<br>
-                            3.上传的照片文件名称不要包含空格等特殊字符<br>
-                            4.非jpg 或 jpeg格式的文件修改后缀上传、图片本身因素等有可能引起图片解析失败。可尝试使用图片编辑工具将该图另存为jpg 或 jpeg格式然后上传</p>
+                        <p style="padding:8px 0; text-align: left;margin-left: 117px;">
+                            {{condition}}：<br>
+                            {{conditionOne}}<br>
+                            {{conditionTwo}}<br>
+                            {{conditionThree}}<br>
+                            {{conditionFour}}</p>
                         <div class="file_box">
-                            <!--<input name="textfield" id="textfield" class="textfield" readonly="readonly" type="text">-->
-                            <!--<input class="ui-button ui-button-mwhite" value="选择照片" type="button">-->
-                                <Button type="text" class="ui-button ui-button-mwhite">选择照片</Button>
-                            <!--<input name="photo" value="" id="myphoto" class="file" type="file">-->
+                            <Button type="text" class="ui-button ui-button-mwhite">选择照片</Button>
                             <Upload
                                     ref="upload"
                                     :show-upload-list="false"
@@ -54,7 +51,6 @@
                                     action=""
                                     style="display: inline-block;width:58px;"
                             >
-                                <!--<div style="width: 58px;height:58px;line-height: 58px;" @click="onChange">-->
                                 <div style="width: 58px;height:58px;line-height: 58px;">
                                     <Icon type="ios-camera" size="20"></Icon>
                                 </div>
@@ -62,21 +58,18 @@
                         </div>
                         <p class="ui-form-explain ui-tiptext ui-tiptext-error" id="myphoto-tips"></p>
                     </div>
-                    <div class="ui-form-item" style="margin-right:344px">
-                        <!--<input class="ui-button ui-button-lceladon m_top10" value="上传照片" type="submit">-->
+                    <div class="ui-form-item" @click="submit" style="margin-right:344px">
                         <Button type="primary">上传照片</Button>
                     </div>
-                    <!--<wrap></wrap>-->
                 </form>
             </div>
         </div>
-
-        <!--<wrap></wrap>-->
     </div>
 </template>
 
 <script>
-    // import wrap from './loa'
+import { photo } from '../../vuex/actions.js'
+// import wrap from './loa'
     export default {
         // components:{
         //     // wrap
@@ -84,7 +77,14 @@
         data () {
             return {
                 uploadImg: {},
+                id:1,
                 // isShow:true
+                // 条件上传照片
+                condition:"必须上传本人近期一寸正面免冠彩色头像照片(参照居民身份证照片样式)",
+                conditionOne : "1.格式 jpg 或 jpeg ，大小20K－500K",
+                conditionTwo : "2.照片背景为单色(白色、蓝色、红色均可)，人像清晰，神态自然，无明显畸变",
+                conditionThree : "3.上传的照片文件名称不要包含空格等特殊字符",
+                conditionFour : "4.非jpg 或 jpeg格式的文件修改后缀上传、图片本身因素等有可能引起图片解析失败。可尝试使用图片编辑工具将该图另存为jpg 或 jpeg格式然后上传"
             };
         },
         methods: {
@@ -117,6 +117,16 @@
                 }
                 return false;
             },
+            submit(){
+                // console.log($refs)
+                let data = {
+                    name : this.uploadImg.url,
+                    // id : this.id
+                }
+                let bb = JSON.stringify(data)
+                console.log();
+                photo(data);
+            }
             // onChange(){
             //     this.isShow = false
             // }

@@ -335,7 +335,7 @@
                     </table>
                     <p class="text_center m_top10" id="errortip"></p>
                     <div class="text_center m_top10">
-                        <Button type="warning">保存</Button>
+                        <Button type="warning" @click="submit">保存</Button>
                         &nbsp;&nbsp;
                         <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                     </div>
@@ -346,6 +346,7 @@
 </template>
 
 <script>
+import { grade } from '../../vuex/actions.js'
 export default {
     data(){
         return{
@@ -368,24 +369,24 @@ export default {
             languageL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value:"1",
+                    value1:"1"
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value:"2",
+                    value1:"2" 
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value:"3",
+                    value1:"3"
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value:"4",
+                    value1:"4"
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value:"5",
+                    value1:"5" 
                 },
                 {
                     value:"A",
@@ -910,6 +911,14 @@ export default {
                     value1:""
                 }
             ],
+        }
+    },
+    methods:{
+        submit(){
+            let data = {
+                // academicLevelLower:this.
+            }
+            // grade(data);
         }
     }
 }

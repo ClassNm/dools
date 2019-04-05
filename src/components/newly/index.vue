@@ -8,7 +8,7 @@
             <div class="ui-tiptext-container ui-tiptext-container-message" style="margin-top:10px;">
                 <p class="ui-tiptext ui-tiptext-message">
                     <i title="提示" class="ui-tiptext-icon iconfont"></i>
-                    <span style="color:#c30;">注意：</span>本页面对于证明材料的删除，上传操作，均在点击“新增”或“保存”按钮之后才会生效。
+                    <span style="color:#c30;">注意：</span>{{notice}}。
                 </p>
             </div>
             <div class="ui-box-container">
@@ -24,18 +24,24 @@
                     <input id="UpToken" name="upToken" style="display: none;" value="ad0fcef5b7d9a3c7368ef03d9ffa38ec">
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>活动名称：</strong></label>
-                        <input name="zhxxVO.name" id="zhxx_hdmc" maxlength="50" class="ui-input" type="text">
+                        <input name="zhxxVO.name" id="zhxx_hdmc" maxlength="50" class="ui-input" type="text" v-model="name">
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>担任角色：</strong></label>
-                        <input name="zhxxVO.role" id="zhxx_drjs" maxlength="30" class="ui-input" type="text">
+                        <input name="zhxxVO.role" id="zhxx_drjs" maxlength="30" class="ui-input" type="text" v-model="role">
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>活动时间：</strong></label>
-                        <input name="zhxxVO.time" id="zhxx_hdsj" maxlength="10" onfocus="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'zhxx_hdsj2\')||\'%y-%M-%d\'}'})" class="ui-input date_time" type="text"> 至
-                        <input name="zhxxVO.endTime" id="zhxx_hdsj2" maxlength="10" onfocus="WdatePicker({readOnly:true,dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'zhxx_hdsj\')}'})" class="ui-input date_time" type="text">
+                        <input name="zhxxVO.time" id="zhxx_hdsj" maxlength="10" 
+                        class="ui-input date_time" type="text"
+                        v-model="old"
+                        > 至
+                        <input name="zhxxVO.endTime" id="zhxx_hdsj2" maxlength="10" 
+                        class="ui-input date_time" type="text"
+                        v-model="newly"
+                        >
                         <div class="td_title" style="display:none;position: absolute;z-index: 10000;border-radius: 2px;opacity: 0.9;background: #000;padding:5px 10px;color:#fff;">
                             <span style="border-color: transparent transparent #000;border-style: dashed dashed solid;border-width: 6px;font-size: 0;height: 0;left: 14px;position: absolute;top: -12px;width: 0;"></span>
                             <p style="color:#fff;"><i class="ui-tiptext-icon iconfont" style="color:#fff;padding-right: 5px"></i>当前活动时间不在高中时期</p>
@@ -45,25 +51,40 @@
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>组织单位：</strong></label>
-                        <input name="zhxxVO.org" id="zhxx_zzdw" maxlength="100" class="ui-input" type="text">
+                        <input name="zhxxVO.org" id="zhxx_zzdw" maxlength="100" class="ui-input" type="text" v-model="unit">
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>证明材料：</strong></label>
-                        <div id="showBox" class="ui-form-text" style="width:610px;">
-                            <div
+                        <!-- <div id="showBox" class="ui-form-text" style="width:610px;"> -->
+                            <!-- <div
                                     class="uploadnullbox"
                                     id="uploadnullbox">
                                 <i class="iconfont" title="添加-方"></i>
                                 <br>添加图片
                                 <input class="file" id="upZmcl" value="" name="zmcl" type="file">
                             </div>
+                        </div> -->
+                        <img :src="uploadImg.url" alt="" width="120px" height="160px" title="点击">
+                        <div class="file_box">
+                            <Upload
+                                    ref="upload"
+                                    :show-upload-list="false"
+                                    :before-upload="handleUpload"
+                                    type="drag"
+                                    action=""
+                                    style="display: inline-block;width:58px;"
+                            >
+                                <div style="width: 58px;height:58px;line-height: 58px;">
+                                    <Icon type="ios-camera" size="20"></Icon>
+                                </div>
+                            </Upload>
                         </div>
                         <p class="ui-form-explain uploadeddel" style="padding-top:0;">上传图片格式为 jpg 或 jpeg；大小为20K-1M</p>
                     </div>
                     <div class="ui-form-item m_top10">
                         <!--<input id="saveBtn" class="ui-button ui-button-lorange" value="新增" type="submit">-->
-                        <Button type="warning">新增</Button>
+                        <Button type="warning" @click="submit">新增</Button>
                         &nbsp;&nbsp;
                         <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
                         <!--<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">-->
@@ -73,6 +94,71 @@
         </div>
     </div>
 </template>
+
+<script>
+import { activity } from '../../vuex/actions.js'
+export default {
+    data(){
+        return{
+            uploadImg : {},
+            notice:"本页面对于证明材料的删除，上传操作，均在点击“新增”或“保存”按钮之后才会生效",
+        //    活动名称
+            name:"",
+            // 担任角色
+            role:"",
+            // 活动时间左
+            old:"",
+            // 活动时间右
+            newly:"",
+            // 组织单位
+            unit:"",
+        }
+    },
+    methods:{
+        handleFormatError(file) {
+                this.$Notice.warning({
+                    title: '文件格式不正确',
+                    desc: '文件 ' + file.name + ' 格式不正确，请上传 jpg、jpeg 或 png 的图片文件。',
+                });
+        },
+        handleMaxSize(file) {
+            this.$Notice.warning({
+                title: '超出文件大小限制',
+                desc: '文件 ' + file.name + ' 太大，不能超过 2M。',
+            });
+        },
+        handleUpload(file) {
+                if (file.type !== 'image/jpg' && file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                    this.handleFormatError(file);
+                } else if (file.size > 2 * 1024 * 1024) {
+                    this.handleMaxSize(file);
+                } else {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = () => {
+                        this.uploadImg = {
+                            url: reader.result,
+                            file,
+                        };
+                    };
+                }
+                return false;
+        },
+        submit(){
+            let data = {
+                activityName : this.name,
+                activityRole : this.role,
+                activityTimelower : this.newly,
+                activityTimeup : this.old,
+                organizationalUnit : this.unit,
+                // proofMaterial : this. 证明材料
+            }
+            console.log(data);
+            // activity(data);
+        }
+    }
+}
+</script>
 
 
 <style scoped>
@@ -215,10 +301,10 @@
         top: 0;
         left: 0px;
         height: 120px;
-        filter: alpha(opacity:0);
+        /* filter: alpha(opacity:0); */
         opacity: 0;
-        width: 90px;
-        cursor: pointer;
+        width:90px;
+        cursor:pointer;
     }
     .ui-form-text input {
         margin-right: 2px;
