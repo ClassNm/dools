@@ -58,8 +58,17 @@
                         <!-- 性别 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>性别：</strong></label>
-                            <select name="jbxxVO.xbDm" id="jbxx_xb" style="margin-right: 460px;">
-                                <option :selected="item.selected" :value="item.value" v-for="(item,i) in sex" :key="i">{{item.sexL}}</option>
+                            <select name="jbxxVO.xbDm" 
+                            id="jbxx_xb" 
+                            style="margin-right: 460px;"
+                            v-model="item.sexL"
+                            >
+                                <option :selected="item.selected" 
+                                :value="item.value" 
+                                v-for="item in sex" 
+                                :key="item.value">
+                                    {{item.name}}
+                                </option>
                                 <!-- <option value="1">{{sexK}}</option> -->
                                 <!-- <option value="2">{{sexJ}}</option> -->
                             </select>
@@ -76,89 +85,32 @@
                         <!-- 民族 -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>民族：</strong></label>
-                            <select name="jbxxVO.mzDm" id="jbxx_mz" style="margin-right: 390px;width: 140px;">
-                                 <option  v-for="(item,i) in Home" :key="i" :selected="item.selected" :value="item.value">{{item.name}}</option>
-                                <!-- <option value="" selected="selected">请选择</option>
-                                <option value="01">汉族</option>
-                                <option value="02">蒙古族</option>
-                                <option value="03">回族</option>
-                                <option value="04">藏族</option>
-                                <option value="05">维吾尔族</option>
-                                <option value="06">苗族</option>
-                                <option value="07">彝族</option>
-                                <option value="08">壮族</option>
-                                <option value="09">布依族</option>
-                                <option value="10">朝鲜族</option>
-                                <option value="11">满族</option>
-                                <option value="12">侗族</option>
-                                <option value="13">瑶族</option>
-                                <option value="14">白族</option>
-                                <option value="15">土家族</option>
-                                <option value="16">哈尼族</option>
-                                <option value="17">哈萨克族</option>
-                                <option value="18">傣族</option>
-                                <option value="19">黎族</option>
-                                <option value="20">傈僳族</option>
-                                <option value="21">佤族</option>
-                                <option value="22">畲族</option>
-                                <option value="23">高山族</option>
-                                <option value="24">拉祜族</option>
-                                <option value="25">水族</option>
-                                <option value="26">东乡族</option>
-                                <option value="27">纳西族</option>
-                                <option value="28">景颇族</option>
-                                <option value="29">柯尔克孜族</option>
-                                <option value="30">土族</option>
-                                <option value="31">达斡尔族</option>
-                                <option value="32">仫佬族</option>
-                                <option value="33">羌族</option>
-                                <option value="34">布朗族</option>
-                                <option value="35">撒拉族</option>
-                                <option value="36">毛南族</option>
-                                <option value="37">仡佬族</option>
-                                <option value="38">锡伯族</option>
-                                <option value="39">阿昌族</option>
-                                <option value="40">普米族</option>
-                                <option value="41">塔吉克族</option>
-                                <option value="42">怒族</option>
-                                <option value="43">乌孜别克族</option>
-                                <option value="44">俄罗斯族</option>
-                                <option value="45">鄂温克族</option>
-                                <option value="46">德昂族</option>
-                                <option value="47">保安族</option>
-                                <option value="48">裕固族</option>
-                                <option value="49">京族</option>
-                                <option value="50">塔塔尔族</option>
-                                <option value="51">独龙族</option>
-                                <option value="52">鄂伦春族</option>
-                                <option value="53">赫哲族</option>
-                                <option value="54">门巴族</option>
-                                <option value="55">珞巴族</option>
-                                <option value="56">基诺族</option>
-                                <option value="97">其他</option>
-                                <option value="98">外国血统中国籍人士</option> -->
+                            <select name="jbxxVO.mzDm" 
+                            id="jbxx_mz" 
+                            style="margin-right: 390px;width: 140px;"
+                            v-model="item.select"
+                            >
+                                 <option  v-for="item in Home" 
+                                 :key="item.value" :selected="item.selected" 
+                                 :value="item.value">
+                                    {{item.name}}
+                                 </option>
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
                         <!-- 政治面貌： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>政治面貌：</strong></label>
-                            <select name="jbxxVO.zzmmDm" id="jbxx_zzmm" style="margin-right: 390px;width: 140px;">
-                                <option  v-for="(item,i) in Faces" :key="i" :selected="item.selected" :value="item.value">{{item.face}}</option>
-                                <!-- <option value="" selected="selected">请选择</option>
-                                <option value="01">中国共产党党员</option>
-                                <option value="02">中国共产党预备党员</option>
-                                <option value="03">中国共产主义青年团团员</option>
-                                <option value="04">中国国民党革命委员会会员</option>
-                                <option value="05">中国民主同盟盟员</option>
-                                <option value="06">中国民主建国会会员</option>
-                                <option value="07">中国民主促进会会员</option>
-                                <option value="08">中国农工民主党党员</option>
-                                <option value="09">中国致公党党员</option>
-                                <option value="10">九三学社社员</option>
-                                <option value="11">台湾民主自治同盟盟员</option>
-                                <option value="12">无党派民主人士</option>
-                                <option value="13">群众</option> -->
+                            <select name="jbxxVO.zzmmDm" 
+                            id="jbxx_zzmm" 
+                            style="margin-right: 390px;width: 140px;"
+                            v-model="item.FacesL"
+                            >
+                                <option  v-for="item in Faces" 
+                                :key="item.value" :selected="item.selected" 
+                                :value="item.value">
+                                    {{item.name}}
+                                </option>
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
@@ -176,12 +128,15 @@
                         <!-- 是否色盲： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><strong>是否色盲：</strong></label>
-                            <select name="jbxxVO.sm" style="margin-right: 460px;">
-                                <option  v-for="(item,i) in chromatodysopia" :key="i" :selected="item.selected" :value="item.valueLL">{{item.if}}</option>
-                                <!-- <option value="" selected="selected">请选择</option> -->
-                                <!-- <option value="0">非色盲</option> -->
-                                <!-- <option value="1">色盲</option> -->
-                                <!-- <option value="2">色弱</option> -->
+                            <select name="jbxxVO.sm" 
+                            style="margin-right: 460px;"
+                            v-model="item.eyes"
+                            >
+                                <option  v-for="item in chromatodysopia" 
+                                :key="item.value" :selected="item.selected" 
+                                :value="item.value">
+                                     {{item.name}}
+                                </option>
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
@@ -286,8 +241,16 @@
                         <!-- 考生类型： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>考生类型：</strong></label>
-                            <select name="jbxxVO.kslxDm" id="jbxx_kslx" style="margin-right: 450px">
-                                <option :value="item.value" :selected="item.selected" v-for="(item,i) in Examinee" :key="i">{{item.name}}</option>
+                            <select name="jbxxVO.kslxDm" 
+                            id="jbxx_kslx" 
+                            style="margin-right: 450px"
+                            v-model="item.ExamineeL"
+                            >
+                                <option :value="item.value" 
+                                :selected="item.selected" v-for="item in Examinee" 
+                                :key="item.value">
+                                    {{item.name}}
+                                </option>
                                 <!-- <option value="" selected="selected">请选择</option>
                                 <option value="01">农村应届</option>
                                 <option value="02">农村往届</option>
@@ -299,8 +262,18 @@
                         <!-- 外语语种： -->
                         <div class="ui-form-item">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>外语语种：</strong></label>
-                            <select name="jbxxVO.wyyzDm" id="jbxx_wyyz" style="margin-right: 440px">
-                                <option :value="item.value" :selected="item.selected" v-for="(item,i) in Language" :key="i">{{item.name}}</option>
+                            <select name="jbxxVO.wyyzDm" 
+                            id="jbxx_wyyz" 
+                            style="margin-right: 440px"
+                            v-model="item.langue"
+                            >
+                                <option :value="item.value" 
+                                :selected="item.selected" 
+                                v-for="item in Language" 
+                                :key="item.value"
+                                >
+                                    {{item.name}}
+                                </option>
 
                                 <!-- <option value="" selected="selected">请选择</option>
                                 <option value="0">不应试外语</option>
@@ -323,8 +296,15 @@
                                     学科类型：
                                 </strong>
                             </label>
-                            <select name="jbxxVO.xklbDm" id="jbxx_xklx" style="margin-right: 450px">
-                                <option :value="item.value" :selected="item.selected" :disabled="item.disabled" v-for="(item,i) in Type" :key="i">{{item.name}}</option>
+                            <select name="jbxxVO.xklbDm" id="jbxx_xklx" 
+                            style="margin-right: 450px"
+                            v-model="item.TypeL"
+                            >
+                                <option :value="item.value" 
+                                :selected="item.selected" :disabled="item.disabled" 
+                                v-for="item in Type" :key="item.value">
+                                    {{item.name}}
+                                </option>
                                 <!-- <option value="" selected="selected">请选择</option> -->
                                 <!-- <option value="1">文史</option> -->
                                 <!-- <option value="5">理工</option> -->
@@ -454,8 +434,15 @@
                                         </td>
                                         <td align="right">文化程度</td>
                                         <td>
-                                            <select name="faInfoVO.whcdDm" id="jbxx_fa_whcd">
-                                                <option :selected="item.selected" :value="item.value" v-for="(item,i) in degree" :key="i">{{item.name}}</option>
+                                            <select name="faInfoVO.whcdDm" 
+                                            id="jbxx_fa_whcd"
+                                            v-model="item.cityIDFather"
+                                            >
+                                                <option :selected="item.selected" 
+                                                :value="item.value" v-for="item in degree" 
+                                                :key="item.value">
+                                                    {{item.name}}
+                                                </option>
 
                                                 <!-- <option value="" selected="selected">请选择</option>
                                                 <option value="01">博士</option>
@@ -491,8 +478,13 @@
                                         </td>
                                         <td align="right">文化程度</td>
                                         <td>
-                                            <select name="maInfoVO.whcdDm" id="jbxx_ma_whcd">
-                                                <option :selected="item.selected" :value="item.value" v-for="(item,i) in degreeT" :key="i">{{item.name}}</option>
+                                            <select name="maInfoVO.whcdDm" id="jbxx_ma_whcd" 
+                                            v-model="item.cityID">
+                                                <option :selected="item.selected" 
+                                                :value="item.value" v-for="item in degreeT" 
+                                                :key="item.value">
+                                                    {{item.name}}
+                                                </option>
 
                                                 <!-- <option value="" selected="selected">请选择</option>
                                                 <option value="01">博士</option>
@@ -545,16 +537,16 @@
                     // 性别
                     sex:[
                         {
-                            sexL:"请选择",
+                            name:"请选择",
                             selected:"selected"
                         },
                         {
-                            sexL:"男",
-                            value:"1",
+                            name:"男",
+                            value:"男",
                         },
                         {
-                            sexL:"女",
-                            value:"2"
+                            name:"女",
+                            value:"女"
                         },
                     ],
                     birth:"2019-02-26",
@@ -566,166 +558,166 @@
                         },
                         {
                             name:"汉族",
-                            value:"01"
+                            value:"汉族"
                         },
                         {
                             name:"蒙古族",
-                            value:"02"
+                            value:"蒙古族"
                         },
                         {
                             name:"回族",
-                            value:"03"
+                            value:"回族"
                         },
                         {
                             name:"藏族",
-                            value:"04"
+                            value:"藏族"
                         },
                         {
                             name:"维吾尔族",
-                            value:"05"
+                            value:"维吾尔族"
                         },
                         {
                             name:"苗族",
-                            value:"06"
+                            value:"苗族"
                         },
                         {
                             name:"彝族",
-                            value:"07"
+                            value:"彝族"
                         },
                         {
                             name:"壮族",
-                            value:"08"
+                            value:"壮族"
                         },
                         {
                             name:"布依族",
-                            value:"09"
+                            value:"布依族"
                         },
                         {
                             name:"朝鲜族",
-                            value:"10"
+                            value:"朝鲜族"
                         },
                         {
                             name:"满族",
-                            value:"11"
+                            value:"满族"
                         },
                         {
                             name:"侗族",
-                            value:"12"
+                            value:"侗族"
                         },
                         {
                             name:"瑶族",
-                            value:"13"
+                            value:"瑶族"
                         },
                         {
                             name:"白族",
-                            value:"14"
+                            value:"白族"
                         },
                         {
                             name:"土家族",
-                            value:"15"
+                            value:"土家族"
                         },
                         {
                             name:"哈尼族",
-                            value:"16"
+                            value:"哈尼族"
                         },
                         {
                             name:"哈萨克族",
-                            value:"17"
+                            value:"哈萨克族"
                         },
                         {
                             name:"傣族",
-                            value:"18"
+                            value:"傣族"
                         },
                         {
                             name:"黎族",
-                            value:"19"
+                            value:"黎族"
                         },
                         {
                             name:"傈僳族",
-                            value:"20"
+                            value:"傈僳族"
                         },
                         {
                             name:"佤族",
-                            value:"21"
+                            value:"佤族"
                         },
                         {
                             name:"畲族",
-                            value:"22"
+                            value:"畲族"
                         },
                         {
                             name:"高山族",
-                            value:"23"
+                            value:"高山族"
                         },
                         {
                             name:"拉祜族",
-                            value:"24"
+                            value:"拉祜族"
                         },
                         {
                             name:"水族",
-                            value:"25"
+                            value:"水族"
                         },
                         {
                             name:"达斡尔族",
-                            value:"26"
+                            value:"达斡尔族"
                         },
                     ],
                     // // 政治面貌
                     Faces:[
                         {
-                            face:"请选择",
+                            name:"请选择",
                             selected:"selected"
                         },
                         {
-                            face:"中国共产党党员",
-                            value:"01"
+                            name:"中国共产党党员",
+                            value:"中国共产党党员"
                         },
                         {
-                            face:"中国共产党预备党员",
-                            value:"02"
+                            name:"中国共产党预备党员",
+                            value:"中国共产党预备党员"
                         },
                         {
-                            face:"中国共产主义青年团团员",
-                            value:"03"
+                            name:"中国共产主义青年团团员",
+                            value:"中国共产主义青年团团员"
                         },
                         {
-                            face:"中国国民党革命委员会会员",
-                            value:"04"
+                            name:"中国国民党革命委员会会员",
+                            value:"中国国民党革命委员会会员"
                         },
                         {
-                            face:"中国民主同盟盟员",
-                            value:"05"
+                            name:"中国民主同盟盟员",
+                            value:"中国民主同盟盟员"
                         },
                         {
-                            face:"中国民主建国会会员",
-                            value:"06"
+                            name:"中国民主建国会会员",
+                            value:"中国民主建国会会员"
                         },
                         {
-                            face:"中国民主促进会会员",
-                            value:"07"
+                            name:"中国民主促进会会员",
+                            value:"中国民主促进会会员"
                         },
                         {
-                            face:"中国农工民主党党员",
-                            value:"08"
+                            name:"中国农工民主党党员",
+                            value:"中国农工民主党党员"
                         },
                         {
-                            face:"中国致公党党员",
-                            value:"09"
+                            name:"中国致公党党员",
+                            value:"中国致公党党员"
                         },
                         {
-                            face:"九三学社社员",
-                            value:"10"
+                            name:"九三学社社员",
+                            value:"九三学社社员"
                         },
                         {
-                            face:"台湾民主自治同盟盟员",
-                            value:"11"
+                            name:"台湾民主自治同盟盟员",
+                            value:"台湾民主自治同盟盟员"
                         },
                         {
-                            face:"无党派民主人士",
-                            value:"12"
+                            name:"无党派民主人士",
+                            value:"无党派民主人士"
                         },
                         {
-                            face:"群众",
-                            value:"13"
+                            name:"群众",
+                            value:"群众"
                         }
                     ],
                     // 视力
@@ -734,20 +726,20 @@
                     // 是否色盲
                     chromatodysopia:[
                         {
-                            if:"请选择",
+                            name:"请选择",
                             selected:"selected"
                         },
                         {
-                            if:"非色盲",
-                            valueLL:"1"
+                            name:"非色盲",
+                            value:"非色盲"
                         },
                         {
-                            if:"色盲",
-                            valueLL:"2",
+                            name:"色盲",
+                            value:"色盲",
                         },
                         {
-                            if:"色弱",
-                            valueLL:"3"
+                            name:"色弱",
+                            value:"色弱"
                         }
                     ],
                     // 身高
@@ -956,19 +948,19 @@
                         },
                         {
                             name:"农村应届",
-                            value:"1"
+                            value:"农村应届"
                         },
                          {
                             name:"农村往届",
-                            value:"2"
+                            value:"农村往届"
                         },
                          {
                             name:"城镇应届",
-                            value:"3"
+                            value:"城镇应届"
                         },
                          {
                             name:"城镇往届",
-                            value:"4"
+                            value:"城镇往届"
                         },
                     ],
                     // 外语语种：
@@ -979,35 +971,35 @@
                         },
                         {
                             name:"不应试外语",
-                            value:'1'
+                            value:'不应试外语'
                         },
                         {
                             name:"英语",
-                            value:'2'
+                            value:'英语'
                         },
                         {
                             name:"俄语",
-                            value:'3'
+                            value:'俄语'
                         },
                         {
                             name:"日语",
-                            value:'4'
+                            value:'日语'
                         },
                         {
                             name:"德语",
-                            value:'5'
+                            value:'德语'
                         },
                         {
                             name:"法语",
-                            value:'6'
+                            value:'法语'
                         },
                         {
                             name:"西班牙语",
-                            value:'7'
+                            value:'西班牙语'
                         },
                         {
                             name:"其他外语",
-                            value:'8'
+                            value:'其他外语'
                         },
                     ],
                     // 学科类型：
@@ -1018,11 +1010,11 @@
                         },
                         {
                             name:"文史",
-                            value:"1"
+                            value:"文史"
                         },
                         {
                             name:"理工",
-                            value:"2"
+                            value:"理工"
                         },
                         {
                             name:"综合改革",
@@ -1242,23 +1234,23 @@
                         },
                         {
                             name:"博士",
-                            value:"1"
+                            value:"博士"
                         },
                         {
                             name:"硕士",
-                            value:"2"
+                            value:"硕士"
                         },
                         {
                             name:"本科",
-                            value:"3"
+                            value:"本科"
                         },
                         {
                             name:"专科",
-                            value:"4"
+                            value:"专科"
                         },
                         {
                             name:"高中及以下",
-                            value:"5"
+                            value:"高中及以下"
                         },
                     ],
                      // 文化程度
@@ -1269,23 +1261,23 @@
                         },
                         {
                             name:"博士",
-                            value:"1"
+                            value:"博士"
                         },
                         {
                             name:"硕士",
-                            value:"2"
+                            value:"硕士"
                         },
                         {
                             name:"本科",
-                            value:"3"
+                            value:"本科"
                         },
                         {
                             name:"专科",
-                            value:"4"
+                            value:"专科"
                         },
                         {
                             name:"高中及以下",
-                            value:"5"
+                            value:"高中及以下"
                         },
                     ],
                     // 父亲姓名
@@ -1308,6 +1300,24 @@
                     organizationMather:"",
                     // 职务
                     dutyMather:"",
+                    // 母亲的文化程度  key值
+                    item : { cityID : "" },
+                    // 父亲的文化程度  key值
+                    item : { cityIDFather : "" },
+                     // 视力  key值
+                    item : { eyes : "" },
+                     // 民族  key值
+                    item : { select : "" },
+                    // 外语语种  key值
+                    item : { langue : "" },
+                    // 政治面貌：  key值
+                    item : { FacesL : "" },
+                    // 性别  key值
+                    item : { sexL : "" },
+                    // 考生类型  key值
+                    item : { ExamineeL : "" },
+                    // 学科类型  key值
+                    item : { TypeL : "" }
                 }
             },
             methods:{
@@ -1321,23 +1331,23 @@
                 submit(){
                     let data = {
                         Height : this.Height,
-                        // colorEye : this.chromatodysopia,
+                        colorEye : this.item.eyes,
                         contactNumber : this.PhoneNumber,
                         // contactProvinceAddress : this.Site,
                         contactRoadAddress : this.SiteLL,
                         date : this.birth,
                         eyeLeft : this.seeingLeft,
                         eyeRight : this.seeingRight,
-                        // famousRace : this.Home,
-                        // fatherCulture : this.degreeT,
+                        famousRace : this.item.select,
+                        fatherCulture : this.item.cityIDFather,
                         fatherName : this.father,
                         fatherOccupation : this.dutyFather,
                         fatherPhone : this.PhoneNumberFather,
                         fatherPost : this.dutyFather,
                         fatherWork : this.organizationFather,
                         idNumber : this.SerialNumber,
-                        // languageType : this.Language,
-                        // motherCulture : this.degree,
+                        languageType : this.item.langue,
+                        motherCulture : this.item.cityID,
                         motherName : this.mather,
                         motherOccupation : this.professionMather,
                         motherPhone : this.PhoneNumberMather,
@@ -1345,17 +1355,17 @@
                         motherWork : this.organizationMather,
                         name : this.name,
                         Phone : this.Phone,
-                        // politicalOutlook : this.Faces,
+                        politicalOutlook : this.item.FacesL,
                         postalCode : this.postal,
-                        // sex : this.sex,
+                        sex : this.item.sexL,
                         signupNumber : this.SerialNumber,
                         // signupProvinceAddress : this.Bourn,
-                        // studentType : this.Examinee,
-                        // subjectType : this.Type,
+                        studentType : this.item.ExamineeL,
+                        subjectType : this.item.TypeL,
                         weight : this.Weight,
                     }
                     console.log(data);
-                    aa(data);
+                    // aa(data);
                     // axios.post('/StudentInformation/save',data
                     //         // Phone : this.Phone,
                     //         // Height : this.Height,

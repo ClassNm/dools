@@ -57,7 +57,7 @@
                             <!-- <td id="td06"><input name="xycjs[6].cj1" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj1" type="text">/<input name="xycjs[6].mf1" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf1" type="text"></td> -->
                             <!-- <td id="td07"><input name="xycjs[7].cj1" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj1" type="text">/<input name="xycjs[7].mf1" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf1" type="text"></td> -->
                             <td v-for="(item,index) in languageL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 数学 -->
@@ -72,7 +72,7 @@
                             <!-- <td id="td16"><input name="xycjs[6].cj2" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj2" type="text">/<input name="xycjs[6].mf2" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf2" type="text"></td> -->
                             <!-- <td id="td17"><input name="xycjs[7].cj2" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj2" type="text">/<input name="xycjs[7].mf2" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf2" type="text"></td> -->
                             <td v-for="(item,index) in mathematicsL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 外语 -->
@@ -87,7 +87,7 @@
                             <!-- <td id="td26"><input name="xycjs[6].cj3" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj3" type="text">/<input name="xycjs[6].mf3" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf3" type="text"></td> -->
                             <!-- <td id="td27"><input name="xycjs[7].cj3" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj3" type="text">/<input name="xycjs[7].mf3" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf3" type="text"></td> -->
                             <td v-for="(item,index) in languagesL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 政治 -->
@@ -102,7 +102,7 @@
                             <!-- <td id="td36"><input name="xycjs[6].cj4" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj4" type="text">/<input name="xycjs[6].mf4" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf4" type="text"></td> -->
                             <!-- <td id="td37"><input name="xycjs[7].cj4" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj4" type="text">/<input name="xycjs[7].mf4" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf4" type="text"></td> -->
                             <td v-for="(item,index) in politicsL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 历史 -->  
@@ -117,7 +117,7 @@
                             <!-- <td id="td46"><input name="xycjs[6].cj5" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj5" type="text">/<input name="xycjs[6].mf5" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf5" type="text"></td> -->
                             <!-- <td id="td47"><input name="xycjs[7].cj5" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj5" type="text">/<input name="xycjs[7].mf5" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf5" type="text"></td> -->
                             <td v-for="(item,index) in historyL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                          <!--地理  -->
@@ -132,7 +132,7 @@
                             <!-- <td id="td56"><input name="xycjs[6].cj6" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj6" type="text">/<input name="xycjs[6].mf6" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf6" type="text"></td> -->
                             <!-- <td id="td57"><input name="xycjs[7].cj6" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj6" type="text">/<input name="xycjs[7].mf6" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf6" type="text"></td> -->
                             <td v-for="(item,index) in geographyL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                          <!-- 物理 -->
@@ -147,7 +147,7 @@
                             <!-- <td id="td66"><input name="xycjs[6].cj7" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj7" type="text">/<input name="xycjs[6].mf7" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf7" type="text"></td> -->
                             <!-- <td id="td67"><input name="xycjs[7].cj7" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj7" type="text">/<input name="xycjs[7].mf7" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf7" type="text"></td> -->
                             <td v-for="(item,index) in physicsL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 化学 --> 
@@ -162,7 +162,7 @@
                             <!-- <td id="td76"><input name="xycjs[6].cj8" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj8" type="text">/<input name="xycjs[6].mf8" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf8" type="text"></td> -->
                             <!-- <td id="td77"><input name="xycjs[7].cj8" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj8" type="text">/<input name="xycjs[7].mf8" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf8" type="text"></td> -->
                             <td v-for="(item,index) in chemistryL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 生物 -->
@@ -177,7 +177,7 @@
                             <!-- <td id="td86"><input name="xycjs[6].cj9" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj9" type="text">/<input name="xycjs[6].mf9" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf9" type="text"></td> -->
                             <!-- <td id="td87"><input name="xycjs[7].cj9" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj9" type="text">/<input name="xycjs[7].mf9" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf9" type="text"></td> -->
                             <td v-for="(item,index) in biologyL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                          <!-- 文科综合 -->
@@ -192,7 +192,7 @@
                             <!-- <td id="td146"><input name="xycjs[6].cj14" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj14" type="text">/<input name="xycjs[6].mf14" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf14" type="text"></td> -->
                             <!-- <td id="td147"><input name="xycjs[7].cj14" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj14" type="text">/<input name="xycjs[7].mf14" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf14" type="text"></td> -->
                             <td v-for="(item,index) in comprehensiveL" :key="index">
-                                 <input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1">  
+                                 <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">  
                             </td>
                         </tr>
                         <!-- 理科综合 -->
@@ -206,14 +206,16 @@
                             <!-- <td id="td155"><input name="xycjs[5].cj15" maxlength="10" value="无" id="commitDkpm_xycjs_5__cj15" type="text">/<input name="xycjs[5].mf15" maxlength="10" value="无" id="commitDkpm_xycjs_5__mf15" type="text"></td> -->
                             <!-- <td id="td156"><input name="xycjs[6].cj15" maxlength="10" value="无" id="commitDkpm_xycjs_6__cj15" type="text">/<input name="xycjs[6].mf15" maxlength="10" value="无" id="commitDkpm_xycjs_6__mf15" type="text"></td> -->
                             <!-- <td id="td157"><input name="xycjs[7].cj15" maxlength="10" value="无" id="commitDkpm_xycjs_7__cj15" type="text">/<input name="xycjs[7].mf15" maxlength="10" value="无" id="commitDkpm_xycjs_7__mf15" type="text"></td> -->
-                            <td v-for="(item,index) in integratedL" :key="index"><input type="text" maxlength="10" :value="item.value">/<input type="text" maxlength="10" :value="item.value1"></td>
+                            <td v-for="(item,index) in integratedL" :key="index">
+                                <input type="text" maxlength="10" v-model="item.value">/<input type="text" maxlength="10" v-model="item.value1">
+                                </td>
                         </tr>
                         </tbody>
                     </table>
                     <p class="text_center m_top10" id="errortip"></p>
                     <div class="text_center m_top10">
                         <!--<input id="commitDkpm_0" value="保存" class="ui-button ui-button-lceladon" type="submit">-->
-                        <Button type="primary">保存</Button>
+                        <Button type="primary" @click="submit">保存</Button>
                     </div>
                 </form>
             </div>
@@ -245,72 +247,88 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 数学
             mathematics:"数学",
             mathematicsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
-                { 
+                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 外语
@@ -319,72 +337,88 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 政治
             politics:"政治",
             politicsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
-                { 
+                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 历史
@@ -393,35 +427,43 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 地理
@@ -430,35 +472,43 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目  物理
@@ -467,35 +517,43 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 化学
@@ -504,109 +562,133 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 生物
             biology:"生物",
             biologyL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
-                { 
+                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
+                },
+                {
+                    value:"无",
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 文科综合	
             comprehensive:"文科综合",
             comprehensiveL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
-                { 
+                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 4
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
             // 科目 理科综合	
@@ -615,37 +697,65 @@ export default {
                 // 分别对应第一次成绩 第二次成绩 第三次成绩
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 1
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 2
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 3
                 },
                 { 
                     value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 4
                 },
                 { 
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    value1:"无",
+                     index : 6 
                 },
                 {
                     value:"无",
-                    value1:"无"
+                    value1:"无",
+                     index : 7
+                },
+                { 
+                    value:"无",
+                    value1:"无",
+                     index : 8
                 },
             ],
+        }
+    },
+     methods:{
+        submit(){
+            let data = {
+                academicLevelLower:this.languageL,
+                test : this.mathematicsL,
+                test1 : this.languagesL,
+                test2 : this.politicsL,
+                test3 : this.historyL,
+                test4 : this.geographyL,
+                test5 : this.physicsL,
+                test6 : this.chemistryL,
+                test7 : this.biologyL,
+                test13 : this.comprehensiveL,
+                test14 : this.integratedL,
+            }
+            let dataL = JSON.stringify(data)
+            console.log(dataL);
+            // grade(data);
         }
     }
 }

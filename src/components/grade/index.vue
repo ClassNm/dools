@@ -59,10 +59,15 @@
                             <!-- <td><input name="xycjs[3].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj1" type="text">/<input name="xycjs[3].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf1" type="text"></td> -->
                             <!-- <td><input name="xycjs[4].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj1" type="text">/<input name="xycjs[4].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf1" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj1" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj1" type="text">/<input name="xycjs[5].mf1" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf1" type="text"></td> -->
-                            <td  v-for="(item,index) in languageL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                            <td  v-for="item in languageL" :key="item.index">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" id="updateXycjxx_xycjs_0__cj1" 
+                                >
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text"
+                                >
                             </td>
                         </tr>
                          <!-- // 科目 数学 -->
@@ -75,9 +80,13 @@
                             <!-- <td><input name="xycjs[4].cj2" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj2" type="text">/<input name="xycjs[4].mf2" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf2" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj2" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj2" type="text">/<input name="xycjs[5].mf2" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf2" type="text"></td> -->
                             <td  v-for="(item,index) in mathematicsL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1"  
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"  
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                          <!-- //科目 外语 -->
@@ -90,9 +99,13 @@
                             <!-- <td><input name="xycjs[4].cj3" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj3" type="text">/<input name="xycjs[4].mf3" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf3" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj3" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj3" type="text">/<input name="xycjs[5].mf3" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf3" type="text"></td> -->
                             <td  v-for="(item,index) in languagesL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- // 科目 政治 -->
@@ -105,9 +118,13 @@
                             <!-- <td><input name="xycjs[4].cj4" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj4" type="text">/<input name="xycjs[4].mf4" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf4" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj4" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj4" type="text">/<input name="xycjs[5].mf4" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf4" type="text"></td> -->
                             <td  v-for="(item,index) in politicsL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 历史 -->
@@ -120,9 +137,13 @@
                             <!-- <td><input name="xycjs[4].cj5" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj5" type="text">/<input name="xycjs[4].mf5" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf5" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj5" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj5" type="text">/<input name="xycjs[5].mf5" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf5" type="text"></td> -->
                             <td  v-for="(item,index) in historyL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1"
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 地理 -->
@@ -135,9 +156,13 @@
                             <!-- <td><input name="xycjs[4].cj6" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj6" type="text">/<input name="xycjs[4].mf6" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf6" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj6" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj6" type="text">/<input name="xycjs[5].mf6" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf6" type="text"></td> -->
                             <td  v-for="(item,index) in geographyL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目  物理 -->
@@ -150,9 +175,13 @@
                             <!-- <td><input name="xycjs[4].cj7" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj7" type="text">/<input name="xycjs[4].mf7" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf7" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj7" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj7" type="text">/<input name="xycjs[5].mf7" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf7" type="text"></td> -->
                             <td  v-for="(item,index) in physicsL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1"
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 化学 -->
@@ -165,9 +194,13 @@
                             <!-- <td><input name="xycjs[4].cj8" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj8" type="text">/<input name="xycjs[4].mf8" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf8" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj8" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj8" type="text">/<input name="xycjs[5].mf8" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf8" type="text"></td> -->
                             <td  v-for="(item,index) in chemistryL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 生物 -->
@@ -180,9 +213,13 @@
                             <!-- <td><input name="xycjs[4].cj9" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj9" type="text">/<input name="xycjs[4].mf9" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf9" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj9" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj9" type="text">/<input name="xycjs[5].mf9" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf9" type="text"></td> -->
                             <td  v-for="(item,index) in biologyL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 美术 -->
@@ -195,9 +232,13 @@
                             <!-- <td><input name="xycjs[4].cj10" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj10" type="text">/<input name="xycjs[4].mf10" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf10" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj10" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj10" type="text">/<input name="xycjs[5].mf10" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf10" type="text"></td> -->
                             <td  v-for="(item,index) in artsL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 体育 -->
@@ -210,9 +251,13 @@
                             <!-- <td><input name="xycjs[4].cj11" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj11" type="text">/<input name="xycjs[4].mf11" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf11" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj11" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj11" type="text">/<input name="xycjs[5].mf11" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf11" type="text"></td> -->
                             <td  v-for="(item,index) in sportsL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1"
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 音乐 -->
@@ -225,9 +270,13 @@
                             <!-- <td><input name="xycjs[4].cj12" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj12" type="text">/<input name="xycjs[4].mf12" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf12" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj12" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj12" type="text">/<input name="xycjs[5].mf12" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf12" type="text"></td> -->
                             <td  v-for="(item,index) in musicL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 信息技术 -->
@@ -240,9 +289,13 @@
                             <!-- <td><input name="xycjs[4].cj13" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj13" type="text">/<input name="xycjs[4].mf13" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf13" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj13" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj13" type="text">/<input name="xycjs[5].mf13" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf13" type="text"></td> -->
                             <td  v-for="(item,index) in ITL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 通用技术 -->
@@ -255,9 +308,13 @@
                             <!-- <td><input name="xycjs[4].cj16" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj16" type="text">/<input name="xycjs[4].mf16" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf16" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj16" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj16" type="text">/<input name="xycjs[5].mf16" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf16" type="text"></td> -->
                             <td  v-for="(item,index) in techniqueL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2" 
+                                id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 文科综合 -->
@@ -270,9 +327,13 @@
                             <!-- <td><input name="xycjs[4].cj14" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj14" type="text">/<input name="xycjs[4].mf14" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf14" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj14" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj14" type="text">/<input name="xycjs[5].mf14" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf14" type="text"></td> -->
                             <td  v-for="(item,index) in comprehensiveL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1"
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                 id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 理科综合 -->
@@ -285,9 +346,13 @@
                             <!-- <td><input name="xycjs[4].cj15" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj15" type="text">/<input name="xycjs[4].mf15" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf15" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].cj15" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj15" type="text">/<input name="xycjs[5].mf15" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf15" type="text"></td> -->
                             <td  v-for="(item,index) in integratedL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1"
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                 id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                         </tr>
                         <!-- 科目 总分 -->
@@ -299,9 +364,13 @@
                             <!-- <td><input name="xycjs[3].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cjzf" type="text">/<input name="xycjs[3].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mfzf" type="text"></td> -->
                             <!-- <td><input name="xycjs[4].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cjzf" type="text">/<input name="xycjs[4].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mfzf" type="text"></td> -->
                             <td  v-for="(item,index) in totalL" :key="index">
-                                <input name="xycjs[0].cj1" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__cj1">
+                                <input name="xycjs[0].cj1" maxlength="10" 
+                                v-model="item.value1" 
+                                id="updateXycjxx_xycjs_0__cj1">
                                 /
-                                <input name="xycjs[0].mf1" maxlength="10" :value="item.value1" id="updateXycjxx_xycjs_0__mf1" type="text">
+                                <input name="xycjs[0].mf1" maxlength="10" 
+                                v-model="item.value2"
+                                 id="updateXycjxx_xycjs_0__mf1" type="text">
                             </td>
                             <td>&nbsp;</td>
                         </tr>
@@ -315,7 +384,9 @@
                             <!-- <td><input name="xycjs[4].pm" maxlength="10" value="无" id="updateXycjxx_xycjs_4__pm" class="big" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].pm" maxlength="10" id="updateXycjxx_xycjs_5__pm" class="big" type="text"></td> -->
                             <td  v-for="(item,index) in GradeL" :key="index">
-                                <input name="xycjs[0].pm" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__pm" class="big" type="text">
+                                <input name="xycjs[0].pm" maxlength="10" 
+                                v-model="item.value" 
+                                id="updateXycjxx_xycjs_0__pm" class="big" type="text">
                             </td>
                         </tr>
                         <!-- 科目 年级人数 -->
@@ -328,7 +399,9 @@
                             <!-- <td><input name="xycjs[4].rs" maxlength="10" value="无" id="updateXycjxx_xycjs_4__rs" class="big" type="text"></td> -->
                             <!-- <td><input name="xycjs[5].rs" maxlength="10" id="updateXycjxx_xycjs_5__rs" class="big" type="text"></td> -->
                             <td  v-for="(item,index) in numbergradeL" :key="index">
-                                <input name="xycjs[0].rs" maxlength="10" :value="item.value" id="updateXycjxx_xycjs_0__rs" class="big" type="text">
+                                <input name="xycjs[0].rs" maxlength="10" 
+                                v-model="item.value"
+                                id="updateXycjxx_xycjs_0__rs" class="big" type="text">
                             </td>
                         </tr>
                         </tbody>
@@ -369,28 +442,34 @@ export default {
             languageL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"1",
-                    value1:"1"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"2",
-                    value1:"2" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"3",
-                    value1:"3"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"4",
-                    value1:"4"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"5",
-                    value1:"5" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 数学
@@ -398,28 +477,34 @@ export default {
             mathematicsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 外语
@@ -427,115 +512,139 @@ export default {
             languagesL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 政治
             politics:"政治",
             politicsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 历史
             history:"历史",
             historyL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 地理
             geography:"地理",
             geographyL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 物理
@@ -543,57 +652,69 @@ export default {
             physicsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 化学
             chemistry:"化学",
             chemistryL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 生物
@@ -601,57 +722,69 @@ export default {
             biologyL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 美术
             arts:"美术",
             artsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 体育
@@ -659,28 +792,34 @@ export default {
             sportsL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 音乐
@@ -688,57 +827,69 @@ export default {
             musicL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 信息技术
             IT:"信息技术",
             ITL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
              // 科目 通用技术
@@ -746,86 +897,104 @@ export default {
             techniqueL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 文科综合
             comprehensive:"文科综合",
             comprehensiveL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 理科综合
             integrated:"理科综合",
             integratedL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+               { 
+                    value1:"无",
+                    value2:"无",
+                    index : 1
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 2
+                },
+                {
+                    value1:"无",
+                    value2:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 },
                 {
-                    value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"A",
-                    value1:"A"
+                    value1:"无·",
+                    value2:"无",
+                    index : 6
                 }
             ],
             // 科目 总分
@@ -833,24 +1002,29 @@ export default {
             totalL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 1
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 2
                 },
                 {
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                    value1:"无",
+                    value2:"无",
+                    index : 4
                 },
                 {
-                    value:"无",
-                    value1:"无" 
+                    value1:"无",
+                    value2:"无",
+                    index : 5 
                 }
             ],
             // 科目 年级排名
@@ -858,66 +1032,89 @@ export default {
             GradeL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
                 { 
-                    value:"无",
-                    value1:"无"
+                     value:"无",
+                    index : 1
+                },
+                {
+                     value:"无",
+                    index : 2
                 },
                 {
                     value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"无",
-                    value1:"无"
+                    index : 3
                 },
                 { 
-                    value:"无",
-                    value1:"无"
+                   value:"无",
+                    index : 4
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    index : 5
                 },
                 {
-                    value:"",
-                    value1:""
+                    value:"无",
+                    index : 6
                 }
             ],
             // 科目 年级人数
             numbergrade:"年级人数",
             numbergradeL:[
                 // 分别对应第一次成绩 第二次成绩 第三次成绩 第四次成绩 第五次成绩 第六次成绩
+                 { 
+                     value:"无",
+                    index : 1
+                },
+                {
+                    value:"无",
+                    index : 2
+                },
+                {
+                    value:"无",
+                    index : 3
+                },
                 { 
-                    value:"无",
-                    value1:"无"
+                   value:"无",
+                    index : 4
                 },
                 {
                     value:"无",
-                    value1:"无" 
+                    index : 5
                 },
                 {
                     value:"无",
-                    value1:"无"
-                },
-                { 
-                    value:"无",
-                    value1:"无"
-                },
-                {
-                    value:"无",
-                    value1:"无" 
-                },
-                {
-                    value:"",
-                    value1:""
+                    index : 6
                 }
             ],
+            item : { 
+                language : [], 
+            }
         }
     },
     methods:{
         submit(){
             let data = {
-                // academicLevelLower:this.
+                academicLevelLower:this.languageL,
+                test : this.mathematicsL,
+                test1 : this.languagesL,
+                test2 : this.politicsL,
+                test3 : this.historyL,
+                test4 : this.geographyL,
+                test5 : this.physicsL,
+                test6 : this.chemistryL,
+                test7 : this.biologyL,
+                test8 : this.artsL,
+                test9 : this.sportsL,
+                test10 : this.musicL,
+                test11 : this.ITL,
+                test12 : this.techniqueL,
+                test13 : this.comprehensiveL,
+                test14 : this.integratedL,
+                test15 : this.totalL,
+                test16 : this.GradeL,
+                test17 : this.numbergradeL,
             }
+            let dataL = JSON.stringify(data)
+            console.log(dataL);
             // grade(data);
         }
     }

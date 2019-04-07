@@ -69,6 +69,7 @@
 
 <script>
 import { photo } from '../../vuex/actions.js'
+import { read } from 'fs';
 // import wrap from './loa'
     export default {
         // components:{
@@ -108,6 +109,16 @@ import { photo } from '../../vuex/actions.js'
                 } else {
                     const reader = new FileReader();
                     reader.readAsDataURL(file);
+                    // reader.onloadend = () => {
+                    //     // Image_base64 = this.result.split(",")[1];
+                    //     // artive_image = Image_base64;
+                    //     this.uploadImg = {
+                    //         Image_base64 : this.result.split(",")[1],
+                    //         artive_image : Image_base64,
+                    //         url:reader.artive_image,
+                    //         file
+                    //     }
+                    // }
                     reader.onloadend = () => {
                         this.uploadImg = {
                             url: reader.result,
@@ -118,15 +129,17 @@ import { photo } from '../../vuex/actions.js'
                 return false;
             },
             submit(){
-                // console.log($refs)
                 let data = {
                     name : this.uploadImg.url,
                     // id : this.id
                 }
                 let bb = JSON.stringify(data)
-                console.log();
-                photo(data);
+                console.log(bb);
+                // photo(data);
             }
+
+
+            // 实验state的初始值
             // onChange(){
             //     this.isShow = false
             // }
