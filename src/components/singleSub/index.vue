@@ -750,8 +750,8 @@ export default {
                 test5 : this.physicsL,
                 test6 : this.chemistryL,
                 test7 : this.biologyL,
-                test13 : this.comprehensiveL,
-                test14 : this.integratedL,
+                test8 : this.comprehensiveL,
+                test9 : this.integratedL,
             }
             let dataL = JSON.stringify(data)
             console.log(dataL);

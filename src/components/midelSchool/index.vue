@@ -948,48 +948,16 @@
                                     </td>
                                     <td colspan="2">
                                         <!-- 备选 教育经历 -->
-                                        <select id="bx1Sslist" class="ignoreselect" >
+                                        <select id="bx1Sslist" class="ignoreselect" 
+                                        v-model="item.educationID"
+                                        @change= "aaa"
+                                        >
                                             <!-- <select id="jl3Xxlist" name="xyjl3VO.xxDm"> -->
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationAlternative" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="110000">北京市</option>
-                                            <option value="120000">天津市</option>
-                                            <option value="130000">河北省</option>
-                                            <option value="140000">山西省</option>
-                                            <option value="150000">内蒙古自治区</option>
-                                            <option value="210000">辽宁省</option>
-                                            <option value="220000">吉林省</option>
-                                            <option value="230000">黑龙江省</option>
-                                            <option value="310000">上海市</option>
-                                            <option value="320000">江苏省</option>
-                                            <option value="330000">浙江省</option>
-                                            <option value="340000">安徽省</option>
-                                            <option value="350000">福建省</option>
-                                            <option value="360000">江西省</option>
-                                            <option value="370000">山东省</option>
-                                            <option value="410000">河南省</option>
-                                            <option value="420000">湖北省</option>
-                                            <option value="430000">湖南省</option>
-                                            <option value="440000">广东省</option>
-                                            <option value="450000">广西壮族自治区</option>
-                                            <option value="460000">海南省</option>
-                                            <option value="500000">重庆市</option>
-                                            <option value="510000">四川省</option>
-                                            <option value="520000">贵州省</option>
-                                            <option value="530000">云南省</option>
-                                            <option value="540000">西藏自治区</option>
-                                            <option value="610000">陕西省</option>
-                                            <option value="620000">甘肃省</option>
-                                            <option value="630000">青海省</option>
-                                            <option value="640000">宁夏回族自治区</option>
-                                            <option value="650000">新疆维吾尔自治区</option>
-                                            <option value="710000">台湾省</option>
-                                            <option value="810000">香港特别行政区</option>
-                                            <option value="820000">澳门特别行政区</option>
-                                            <option value="990000">其他</option> -->
+                                             :value="item.id" 
+                                              v-for="item in educationAlternative" 
+                                             :key="item.id"
+                                             >{{item.name}}</option>
                                         </select>
                                         <!-- 备选 市级 -->
                                         <select id="bx1Xjslist" class="ignoreselect">
@@ -997,7 +965,6 @@
                                              :value="item.value" 
                                               v-for="(item,i) in educationCityLevelAlternative" 
                                              :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option> -->
                                         </select>
                                         <!-- 备选 区县级别 -->
                                         <select id="bx1Dqlist" class="ignoreselect">
@@ -1077,47 +1044,13 @@
                                     <td align="right">就读于</td>
                                     <td colspan="2">
                                         <!-- 备选2 教育经历 -->
-                                        <select id="bx2Sslist" class="ignoreselect">
+                                        <select id="bx2Sslist" 
+                                        class="ignoreselect"
+                                        >
                                             <option :selected="item.selected" 
                                              :value="item.value" 
-                                              v-for="(item,i) in educationAlternativeTwo" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="110000">北京市</option>
-                                            <option value="120000">天津市</option>
-                                            <option value="130000">河北省</option>
-                                            <option value="140000">山西省</option>
-                                            <option value="150000">内蒙古自治区</option>
-                                            <option value="210000">辽宁省</option>
-                                            <option value="220000">吉林省</option>
-                                            <option value="230000">黑龙江省</option>
-                                            <option value="310000">上海市</option>
-                                            <option value="320000">江苏省</option>
-                                            <option value="330000">浙江省</option>
-                                            <option value="340000">安徽省</option>
-                                            <option value="350000">福建省</option>
-                                            <option value="360000">江西省</option>
-                                            <option value="370000">山东省</option>
-                                            <option value="410000">河南省</option>
-                                            <option value="420000">湖北省</option>
-                                            <option value="430000">湖南省</option>
-                                            <option value="440000">广东省</option>
-                                            <option value="450000">广西壮族自治区</option>
-                                            <option value="460000">海南省</option>
-                                            <option value="500000">重庆市</option>
-                                            <option value="510000">四川省</option>
-                                            <option value="520000">贵州省</option>
-                                            <option value="530000">云南省</option>
-                                            <option value="540000">西藏自治区</option>
-                                            <option value="610000">陕西省</option>
-                                            <option value="620000">甘肃省</option>
-                                            <option value="630000">青海省</option>
-                                            <option value="640000">宁夏回族自治区</option>
-                                            <option value="650000">新疆维吾尔自治区</option>
-                                            <option value="710000">台湾省</option>
-                                            <option value="810000">香港特别行政区</option>
-                                            <option value="820000">澳门特别行政区</option>
-                                            <option value="990000">其他</option> -->
+                                              v-for="item in educationAlternativeTwo" 
+                                             :key="item.value">{{item.name}}</option>
                                         </select>
                                         <!-- 备选2 市级 -->
                                         <select id="bx2Xjslist" class="ignoreselect">
@@ -1193,7 +1126,9 @@
 
 <script>
 import axios from "../../../node_modules/axios/dist/axios.js"
-import {mSchool} from '../../vuex/actions.js'
+import {mSchool,Province} from '../../vuex/actions.js'
+import { error } from 'util';
+import { type } from 'os';
 export default {
     data(){
         return{
@@ -2610,114 +2545,7 @@ export default {
             SchoolDataLeftThreeLL:"",
             SchoolDataRightThreeLL:"",
             //  备选 教育经历
-            educationAlternative:[
-                {
-                    name:"请选择",
-                    selected:"selected"
-                },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
-                },
-            ],
+            educationAlternative:[],
             //备选 市级
             educationCityLevelAlternative:[
                 {
@@ -2725,37 +2553,7 @@ export default {
                     selected:"selected"
                 },
                 {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
+                    name:"市辖区"
                 },
             ],
              //备选 区县级别
@@ -3168,6 +2966,8 @@ export default {
             ],
             // 备选2 证明人
             referencesAlternativeTwo:"",
+            // 
+            item : { educationID : "" }
         }
     },
     // computed:{
@@ -3175,9 +2975,44 @@ export default {
     //         return this.SchoolCountyLT.reverse();
     //     }
     // }
+    created(){
+        // let aa = this.educationAlternative
+        // console.log(aa)
+        // console.log(typeof(edu))
+        axios.post('http://192.168.0.130:8080/City/findByCode')
+        .then((res)=>{
+            this.educationAlternative = res.data
+            // console.log(this.educationAlternative)
+        }),(err)=>{
+            console.log(error)
+        }
+        
+    },
+    computed:{
+        // document.getElementById("userNameID").onblur=function(){
+
+        // }
+    },
     methods:{
+        aaa(){
+            //  let data = {
+            //      id : this.item.educationID
+            //  }
+             let data = this.item.educationID
+            // console.log(this.item.educationID)
+            Province(data)
+            // axios.post('http://192.168.0.130:8080/City/findById',data)
+            // .then((res) => {
+            //     console.log(res.data)
+            //     // console.log(this.educationCityLevelAlternative)
+            //     // this.educationCityLevelAlternative = res.data
+            // }),(err) => {
+            //     console.log(err)
+            // }
+        },
         submit(){
             let data = {
+                // IID:this.item.educationID,
                 classPost : this.duty,
                 classTeacherName : this.teacher,
                 classTeacherPhone : this.teacherPhone,

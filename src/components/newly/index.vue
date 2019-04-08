@@ -83,11 +83,9 @@
                         <p class="ui-form-explain uploadeddel" style="padding-top:0;">上传图片格式为 jpg 或 jpeg；大小为20K-1M</p>
                     </div>
                     <div class="ui-form-item m_top10">
-                        <!--<input id="saveBtn" class="ui-button ui-button-lorange" value="新增" type="submit">-->
                         <Button type="warning" @click="submit">新增</Button>
                         &nbsp;&nbsp;
                         <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
-                        <!--<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">-->
                     </div>
                 </form>
             </div>
@@ -151,7 +149,7 @@ export default {
                 activityTimelower : this.newly,
                 activityTimeup : this.old,
                 organizationalUnit : this.unit,
-                // proofMaterial : this. 证明材料
+                proofMaterial : this.uploadImg.url
             }
             console.log(data);
             // activity(data);

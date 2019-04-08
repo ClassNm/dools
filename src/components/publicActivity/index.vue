@@ -20,8 +20,8 @@
                     <input id="UpToken" name="upToken" style="display: none;" value="c30b263cab7fba7d8239566eb1ff401f">
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>选择奖项类别：</strong></label>
-                        <select name="zhxxVO.info" id="zhxx_jxlb">
-                            <option :value="item.value" :selected="item.selected" v-for="(item,i) in aa" :key="i">
+                        <select name="zhxxVO.info" id="zhxx_jxlb" v-model="item.aaL">
+                            <option :value="item.value" :selected="item.selected" v-for="item in aa" :key="item.value">
                                 {{item.name}}
                             </option>
 <!-- 
@@ -81,8 +81,23 @@
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>证明材料：</strong></label>
-                        <div id="showBox" class="ui-form-text" style="width:610px;">
+                        <!-- <div id="showBox" class="ui-form-text" style="width:610px;">
                             <div class="uploadnullbox" id="uploadnullbox"><i class="iconfont" title="添加-方"></i><br>添加图片<input class="file" id="upZmcl" value="" name="zmcl" type="file"></div>
+                        </div> -->
+                        <img :src="uploadImg.url" alt="" width="120px" height="160px" title="点击">
+                        <div class="file_box">
+                            <Upload
+                                    ref="upload"
+                                    :show-upload-list="false"
+                                    :before-upload="handleUpload"
+                                    type="drag"
+                                    action=""
+                                    style="display: inline-block;width:58px;"
+                            >
+                                <div style="width: 58px;height:58px;line-height: 58px;">
+                                    <Icon type="ios-camera" size="20"></Icon>
+                                </div>
+                            </Upload>
                         </div>
                         <p class="ui-form-explain uploadeddel" style="padding-top:0;">上传图片格式为 jpg 或 jpeg；大小为20K-1M</p>
                     </div>
@@ -102,6 +117,7 @@ import { newly } from '../../vuex/actions.js'
 export default {
     data(){
         return{
+            uploadImg : {},
             kool : "本页面对于证明材料的删除，上传操作，均在点击“新增”或“保存”按钮之后才会生效",
             aa:[
                 {
@@ -110,19 +126,19 @@ export default {
                 },
                 {
                     name : "国际五项学科奥林匹克竞赛",
-                    value : 1    
+                    value : "国际五项学科奥林匹克竞赛"    
                 },
                 {
                     name : "全国青少年科技竞赛",
-                    value : 2
+                    value : "全国青少年科技竞赛"
                 },
                 {
                     name : "全国中小学电脑制作活动",
-                    value : 3    
+                    value : "全国中小学电脑制作活动"    
                 },
                 {
                     name : "其他",
-                    value : 4    
+                    value : "其他"    
                 }
             ],
             // 奖项名称
@@ -134,18 +150,48 @@ export default {
             // 组织单位
             unit : "",
             // 获奖等级：
-            classk : ""
+            classk : "",
+            item : { aaL : "" }
         }
     },
     methods:{
+         handleFormatError(file) {
+                this.$Notice.warning({
+                    title: '文件格式不正确',
+                    desc: '文件 ' + file.name + ' 格式不正确，请上传 jpg、jpeg 或 png 的图片文件。',
+                });
+        },
+        handleMaxSize(file) {
+            this.$Notice.warning({
+                title: '超出文件大小限制',
+                desc: '文件 ' + file.name + ' 太大，不能超过 2M。',
+            });
+        },
+        handleUpload(file) {
+                if (file.type !== 'image/jpg' && file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                    this.handleFormatError(file);
+                } else if (file.size > 2 * 1024 * 1024) {
+                    this.handleMaxSize(file);
+                } else {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onloadend = () => {
+                        this.uploadImg = {
+                            url: reader.result,
+                            file,
+                        };
+                    };
+                }
+                return false;
+        },
         submit(){
             let data = {
                 awardLevel : this.rank,
                 organizationalUnit : this.unit,
-                prizeCategory : this.rank,
+                prizeCategory : this.item.aaL,
                 prizeName : this.name,
                 prizeTime : this.time,
-                // proofMaterial : this.  证明材料
+                proofMaterial : this.uploadImg.url,
                 winAwardGrade : this.classk
             }
             console.log(data);

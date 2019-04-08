@@ -148,4 +148,20 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
             console.log(err)
         })
     }
+
+
+    // 接受省级信息
+    // export const Province = ({commit},obj) => {
+    //     return axios.post('/City/findByCode')
+    // }
+    export const Province = function(e) {
+        let url = '/City/findById'
+        let data = e
+        axios.post(url,data).then((data)=>{
+            console.log(data)
+            // this.educationAlternative = data
+        },(err)=>{
+            console.log(err)
+        })
+    }
             
