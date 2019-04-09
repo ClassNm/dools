@@ -39,125 +39,46 @@
                             <strong>学籍所在中学：</strong>
                         </label>
                         <!-- 地区 -->
-                        <select id="xjxxszdSslist" class="ignoreselect">
+                        <select id="xjxxszdSslist" class="ignoreselect"
+                        v-model="item.SchoolRollID"
+                        @change= "aaa(item.SchoolRollID)"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolRoll" 
-                            :key="i">{{item.name}}</option>                            
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="110000">北京市</option>
-                            <option value="120000">天津市</option>
-                            <option value="130000">河北省</option>
-                            <option value="140000">山西省</option>
-                            <option value="150000">内蒙古自治区</option>
-                            <option value="210000">辽宁省</option>
-                            <option value="220000">吉林省</option>
-                            <option value="230000">黑龙江省</option>
-                            <option value="310000">上海市</option>
-                            <option value="320000">江苏省</option>
-                            <option value="330000">浙江省</option>
-                            <option value="340000">安徽省</option>
-                            <option value="350000">福建省</option>
-                            <option value="360000">江西省</option>
-                            <option value="370000">山东省</option>
-                            <option value="410000">河南省</option>
-                            <option value="420000">湖北省</option>
-                            <option value="430000">湖南省</option>
-                            <option value="440000">广东省</option>
-                            <option value="450000">广西壮族自治区</option>
-                            <option value="460000">海南省</option>
-                            <option value="500000">重庆市</option>
-                            <option value="510000">四川省</option>
-                            <option value="520000">贵州省</option>
-                            <option value="530000">云南省</option>
-                            <option value="540000">西藏自治区</option>
-                            <option value="610000">陕西省</option>
-                            <option value="620000">甘肃省</option>
-                            <option value="630000">青海省</option>
-                            <option value="640000">宁夏回族自治区</option>
-                            <option value="650000">新疆维吾尔自治区</option>
-                            <option value="710000">台湾省</option>
-                            <option value="810000">香港特别行政区</option>
-                            <option value="820000">澳门特别行政区</option>
-                            <option value="990000">其他</option> -->
+                            :value="item.id" 
+                            v-for="item in SchoolRoll" 
+                            :key="item.id">{{item.name}}</option>                            
                         </select>
                         <!-- 市 -->
-                        <select id="xjxxszdXjslist" class="ignoreselect">
+                        <select id="xjxxszdXjslist" class="ignoreselect"
+                        v-model="item.SchoolRollIDTwo"
+                        @change= "bbb(item.SchoolRollIDTwo)"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolCityLevel" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="130100">石家庄市</option>
-                            <option value="130200">唐山市</option>
-                            <option value="130300">秦皇岛市</option>
-                            <option value="130400">邯郸市</option>
-                            <option value="130500">邢台市</option>
-                            <option value="130600">保定市</option>
-                            <option value="130700">张家口市</option>
-                            <option value="130800">承德市</option>
-                            <option value="130900">沧州市</option>
-                            <option value="131000">廊坊市</option>
-                            <option value="131100">衡水市</option> -->
+                            :value="item.id" 
+                            v-for="item in SchoolCityLevel" 
+                            :key="item.id">{{item.name}}</option>
+                            
                         </select>
                         <!-- 区 -->
-                        <select id="xjxxszdDqlist" class="ignoreselect">
+                        <select id="xjxxszdDqlist" class="ignoreselect"
+                        v-model="item.SchoolRollIDThree"
+                        @change= "ccc(item.SchoolRollIDThree)"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolCounty" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="130201">市辖区</option>
-                            <option value="130202">路南区</option>
-                            <option value="130203">路北区</option>
-                            <option value="130204">古冶区</option>
-                            <option value="130205">开平区</option>
-                            <option value="130207">丰南区</option>
-                            <option value="130208">丰润区</option>
-                            <option value="130209">曹妃甸区</option>
-                            <option value="130223">滦县</option>
-                            <option value="130224">滦南县</option>
-                            <option value="130225">乐亭县</option>
-                            <option value="130227">迁西县</option>
-                            <option value="130229">玉田县</option>
-                            <option value="130281">遵化市</option>
-                            <option value="130283">迁安市</option> -->
+                            :value="item.name" 
+                            v-for="item in SchoolCounty" 
+                            :key="item.name">{{item.name}}</option>
+
                         </select>
                         <!-- 学校 -->
-                        <select id="xjxxszdXxlist" name="xyxxVO.xjxxDm">
+                        <select id="xjxxszdXxlist" name="xyxxVO.xjxxDm"
+                        v-model="item.SchoolRollIDFour"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolCountyL" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="1302030010013413013059341">唐山市第十一中学</option>
-                            <option value="1302030010013613000618365">唐山市公共关系学校</option>
-                            <option value="1302030010053613000518362">唐山市路北区成人教育中心学校</option>
-                            <option value="1302030010123613000526364">唐山市路北区教师进修学校</option>
-                            <option value="1302030010173613000256362">唐山工程技术学校</option>
-                            <option value="1302030010183613000519362">唐山中华职业学校</option>
-                            <option value="1302030020013613000578362">唐山市艺术学校</option>
-                            <option value="1302030020023413013057341">唐山第十中学</option>
-                            <option value="1302030020093613000581364">唐山市农业广播电视学校</option>
-                            <option value="1302030020133613000258362">唐山市体育运动学校</option>
-                            <option value="1302030020173413000132342">唐山光厚高中学校</option>
-                            <option value="1302030020173413013060341">唐山市开滦第一中学</option>
-                            <option value="1302030030203613000600362">唐山市职业教育中心</option>
-                            <option value="1302030030233613000524362">唐山长城中等专业学校</option>
-                            <option value="1302030040013613000517362">唐山市第一职业中等专业学校</option>
-                            <option value="1302030050204113012787368">唐山工业职业技术学院</option>
-                            <option value="1302030060013613000586364">唐山市电视中等专业学校</option>
-                            <option value="1302030080053413000307342">唐山市第十二高级中学</option>
-                            <option value="1302030100043413013063341">河北唐山外国语学校（唐山八中）</option>
-                            <option value="1302030100043613000289362">开滦集团有限责任公司职工中等专业学校</option>
-                            <option value="1302030100044113012785368">唐山职业技术学院</option>
-                            <option value="1302032002073413000175342">唐山市翔云中学</option>
-                            <option value="1302032002073413013050342">唐山市第一中学</option>
-                            <option value="1302032002293613000574362">唐山市对外经济贸易学校</option>
-                            <option value="1302034502043413000126342">唐山市长宁高级中学</option>
-                            <option value="1302034502043613000520362">唐山长宁中等专业学校</option>
-                            <option value="1302034502043613000525362">唐山通远中等专业学校</option>
-                            <option value="1302034502063613000521362">唐山天成中等专业学校</option> -->
+                            :value="item.gxSchoolCode" 
+                            v-for="item in SchoolCountyL" 
+                            :key="item.gxSchoolCode">{{item.school}}</option>
+                            
                         </select>
                         <div id="xjxxmc" style="display:none; margin-top:4px;">
                             <div style="float:left;padding-top:6px;">学校名称：</div>
@@ -172,125 +93,47 @@
                             <strong>当前就读中学：</strong>
                         </label>
                         <!-- 学校 -->
-                        <select id="xxszdSslist" class="ignoreselect">
+                        <select id="xxszdSslist" class="ignoreselect"
+                        v-model="item.SchoolRollTID"
+                        @change= "aaa(item.SchoolRollTID)"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolRollT" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="110000">北京市</option>
-                            <option value="120000">天津市</option>
-                            <option value="130000">河北省</option>
-                            <option value="140000">山西省</option>
-                            <option value="150000">内蒙古自治区</option>
-                            <option value="210000">辽宁省</option>
-                            <option value="220000">吉林省</option>
-                            <option value="230000">黑龙江省</option>
-                            <option value="310000">上海市</option>
-                            <option value="320000">江苏省</option>
-                            <option value="330000">浙江省</option>
-                            <option value="340000">安徽省</option>
-                            <option value="350000">福建省</option>
-                            <option value="360000">江西省</option>
-                            <option value="370000">山东省</option>
-                            <option value="410000">河南省</option>
-                            <option value="420000">湖北省</option>
-                            <option value="430000">湖南省</option>
-                            <option value="440000">广东省</option>
-                            <option value="450000">广西壮族自治区</option>
-                            <option value="460000">海南省</option>
-                            <option value="500000">重庆市</option>
-                            <option value="510000">四川省</option>
-                            <option value="520000">贵州省</option>
-                            <option value="530000">云南省</option>
-                            <option value="540000">西藏自治区</option>
-                            <option value="610000">陕西省</option>
-                            <option value="620000">甘肃省</option>
-                            <option value="630000">青海省</option>
-                            <option value="640000">宁夏回族自治区</option>
-                            <option value="650000">新疆维吾尔自治区</option>
-                            <option value="710000">台湾省</option>
-                            <option value="810000">香港特别行政区</option>
-                            <option value="820000">澳门特别行政区</option>
-                            <option value="990000">其他</option> -->
+                            :value="item.id" 
+                            v-for="item in SchoolRollT" 
+                            :key="item.id">{{item.name}}</option>
+                            
                         </select>
                         <!-- 市 -->
-                        <select id="xxszdXjslist" class="ignoreselect">
+                        <select id="xxszdXjslist" class="ignoreselect"
+                        v-model="item.SchoolRollTIDTwo"
+                        @change= "bbb(item.SchoolRollTIDTwo)"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolCityLevelT" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="130100">石家庄市</option>
-                            <option value="130200">唐山市</option>
-                            <option value="130300">秦皇岛市</option>
-                            <option value="130400">邯郸市</option>
-                            <option value="130500">邢台市</option>
-                            <option value="130600">保定市</option>
-                            <option value="130700">张家口市</option>
-                            <option value="130800">承德市</option>
-                            <option value="130900">沧州市</option>
-                            <option value="131000">廊坊市</option>
-                            <option value="131100">衡水市</option> -->
+                            :value="item.id" 
+                            v-for="item in SchoolCityLevelT" 
+                            :key="item.id">{{item.name}}</option>
+                            
                         </select>
                         <!-- 区 -->
-                        <select id="xxszdDqlist" class="ignoreselect">
+                        <select id="xxszdDqlist" class="ignoreselect"
+                         v-model="item.SchoolRollTIDThree"
+                        @change= "ccc(item.SchoolRollTIDThree)"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolCountyT" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="130201">市辖区</option>
-                            <option value="130202">路南区</option>
-                            <option value="130203">路北区</option>
-                            <option value="130204">古冶区</option>
-                            <option value="130205">开平区</option>
-                            <option value="130207">丰南区</option>
-                            <option value="130208">丰润区</option>
-                            <option value="130209">曹妃甸区</option>
-                            <option value="130223">滦县</option>
-                            <option value="130224">滦南县</option>
-                            <option value="130225">乐亭县</option>
-                            <option value="130227">迁西县</option>
-                            <option value="130229">玉田县</option>
-                            <option value="130281">遵化市</option>
-                            <option value="130283">迁安市</option> -->
+                            :value="item.name" 
+                            v-for="item in SchoolCountyT" 
+                            :key="item.name">{{item.name}}</option>
+                            
                         </select>
-                        <!-- 县 -->
-                        <select id="xxszdXxlist" name="xyxxVO.xxDm">
+                        <!-- 学校 -->
+                        <select id="xxszdXxlist" name="xyxxVO.xxDm"
+                         v-model="item.SchoolRollTIDFourL"
+                        >
                             <option :selected="item.selected" 
-                            :value="item.value" 
-                            v-for="(item,i) in SchoolCountyLT" 
-                            :key="i">{{item.name}}</option>
-                            <!-- <option value="" selected="selected">请选择</option>
-                            <option value="1302030010013413013059341">唐山市第十一中学</option>
-                            <option value="1302030010013613000618365">唐山市公共关系学校</option>
-                            <option value="1302030010053613000518362">唐山市路北区成人教育中心学校</option>
-                            <option value="1302030010123613000526364">唐山市路北区教师进修学校</option>
-                            <option value="1302030010173613000256362">唐山工程技术学校</option>
-                            <option value="1302030010183613000519362">唐山中华职业学校</option>
-                            <option value="1302030020013613000578362">唐山市艺术学校</option>
-                            <option value="1302030020023413013057341">唐山第十中学</option>
-                            <option value="1302030020093613000581364">唐山市农业广播电视学校</option>
-                            <option value="1302030020133613000258362">唐山市体育运动学校</option>
-                            <option value="1302030020173413000132342">唐山光厚高中学校</option>
-                            <option value="1302030020173413013060341">唐山市开滦第一中学</option>
-                            <option value="1302030030203613000600362">唐山市职业教育中心</option>
-                            <option value="1302030030233613000524362">唐山长城中等专业学校</option>
-                            <option value="1302030040013613000517362">唐山市第一职业中等专业学校</option>
-                            <option value="1302030050204113012787368">唐山工业职业技术学院</option>
-                            <option value="1302030060013613000586364">唐山市电视中等专业学校</option>
-                            <option value="1302030080053413000307342">唐山市第十二高级中学</option>
-                            <option value="1302030100043413013063341">河北唐山外国语学校（唐山八中）</option>
-                            <option value="1302030100043613000289362">开滦集团有限责任公司职工中等专业学校</option>
-                            <option value="1302030100044113012785368">唐山职业技术学院</option>
-                            <option value="1302032002073413000175342">唐山市翔云中学</option>
-                            <option value="1302032002073413013050342">唐山市第一中学</option>
-                            <option value="1302032002293613000574362">唐山市对外经济贸易学校</option>
-                            <option value="1302034502043413000126342">唐山市长宁高级中学</option>
-                            <option value="1302034502043613000520362">唐山长宁中等专业学校</option>
-                            <option value="1302034502043613000525362">唐山通远中等专业学校</option>
-                            <option value="1302034502063613000521362">唐山天成中等专业学校</option> -->
+                            :value="item.gxSchoolCode" 
+                            v-for="item in SchoolCountyLT" 
+                            :key="item.gxSchoolCode">{{item.school}}</option>
+                            
                         </select>
                         <div id="xxmc" style="display:none; margin-top:4px;">
                             <div style="float:left;padding-top:6px;">学校名称：</div>
@@ -312,21 +155,7 @@
                             :selected="item.selected" 
                             v-for="(item,i) in level" 
                             :key="i">{{item.name}}</option>
-                            <!-- <option value="00">
-                                省级
-                            </option>
-                            <option value="01">
-                                区级
-                            </option>
-                            <option value="02">
-                                市级
-                            </option>
-                            <option value="03">
-                                县级
-                            </option>
-                            <option value="04">
-                                县级以下
-                            </option> -->
+                            
                         </select>
                         <p class="ui-form-explain"></p>
                     </div>
@@ -435,95 +264,43 @@
                                         v-model="SchoolDataRight" class="ui-input"  type="text">
                                     </td>
                                 </tr>
-                                <!-- 高三 教育经历 -->
+                                <!-- 高一 教育经历 -->
                                 <tr>
                                     <td align="right">就读于
                                     </td>
                                     <td>
                                         <!-- 教育经历 -->
-                                        <select id="jl1Sslist" class="ignoreselect">
+                                        <select id="jl1Sslist" class="ignoreselect"
+                                        v-model="item.educationONE"
+                                        @change= "aaa(item.educationONE)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in education" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="110000">北京市</option>
-                                            <option value="120000">天津市</option>
-                                            <option value="130000">河北省</option>
-                                            <option value="140000">山西省</option>
-                                            <option value="150000">内蒙古自治区</option>
-                                            <option value="210000">辽宁省</option>
-                                            <option value="220000">吉林省</option>
-                                            <option value="230000">黑龙江省</option>
-                                            <option value="310000">上海市</option>
-                                            <option value="320000">江苏省</option>
-                                            <option value="330000">浙江省</option>
-                                            <option value="340000">安徽省</option>
-                                            <option value="350000">福建省</option>
-                                            <option value="360000">江西省</option>
-                                            <option value="370000">山东省</option>
-                                            <option value="410000">河南省</option>
-                                            <option value="420000">湖北省</option>
-                                            <option value="430000">湖南省</option>
-                                            <option value="440000">广东省</option>
-                                            <option value="450000">广西壮族自治区</option>
-                                            <option value="460000">海南省</option>
-                                            <option value="500000">重庆市</option>
-                                            <option value="510000">四川省</option>
-                                            <option value="520000">贵州省</option>
-                                            <option value="530000">云南省</option>
-                                            <option value="540000">西藏自治区</option>
-                                            <option value="610000">陕西省</option>
-                                            <option value="620000">甘肃省</option>
-                                            <option value="630000">青海省</option>
-                                            <option value="640000">宁夏回族自治区</option>
-                                            <option value="650000">新疆维吾尔自治区</option>
-                                            <option value="710000">台湾省</option>
-                                            <option value="810000">香港特别行政区</option>
-                                            <option value="820000">澳门特别行政区</option>
-                                            <option value="990000">其他</option> -->
+                                             :value="item.id" 
+                                              v-for="item in education" 
+                                             :key="item.id">{{item.name}}</option>
+                                            
                                         </select>
                                         <!-- 教育经历 市级 -->
-                                        <select id="jl1Xjslist" class="ignoreselect">
+                                        <select id="jl1Xjslist" class="ignoreselect"
+                                        v-model="item.educationONEL"
+                                        @change= "bbb(item.educationONEL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCityLevel" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="130100">石家庄市</option>
-                                            <option value="130200">唐山市</option>
-                                            <option value="130300">秦皇岛市</option>
-                                            <option value="130400">邯郸市</option>
-                                            <option value="130500">邢台市</option>
-                                            <option value="130600">保定市</option>
-                                            <option value="130700">张家口市</option>
-                                            <option value="130800">承德市</option>
-                                            <option value="130900">沧州市</option>
-                                            <option value="131000">廊坊市</option>
-                                            <option value="131100">衡水市</option> -->
+                                             :value="item.id" 
+                                              v-for="item in educationCityLevel" 
+                                             :key="item.id">{{item.name}}</option>
+                                            
                                         </select>
                                         <!-- 教育经历 区县级别 -->
-                                        <select id="jl1Dqlist" class="ignoreselect">
+                                        <select id="jl1Dqlist" class="ignoreselect"
+                                        v-model="item.educationONELL"
+                                        @change= "ccc(item.educationONELL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCounty" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="130201">市辖区</option>
-                                            <option value="130202">路南区</option>
-                                            <option value="130203">路北区</option>
-                                            <option value="130204">古冶区</option>
-                                            <option value="130205">开平区</option>
-                                            <option value="130207">丰南区</option>
-                                            <option value="130208">丰润区</option>
-                                            <option value="130209">曹妃甸区</option>
-                                            <option value="130223">滦县</option>
-                                            <option value="130224">滦南县</option>
-                                            <option value="130225">乐亭县</option>
-                                            <option value="130227">迁西县</option>
-                                            <option value="130229">玉田县</option>
-                                            <option value="130281">遵化市</option>
-                                            <option value="130283">迁安市</option> -->
+                                             :value="item.name" 
+                                              v-for="item in educationCounty" 
+                                             :key="item.name">{{item.name}}</option>
+                                           
                                         </select>
                                         <br>
                                     </td>
@@ -533,40 +310,13 @@
                                     <td align="right">&nbsp;</td>
                                     <td>
                                         <div>
-                                            <select id="jl1Xxlist" name="xyjl1VO.xxDm">
+                                            <select id="jl1Xxlist" name="xyjl1VO.xxDm"
+                                            v-model="item.educationONELLL"
+                                            >
                                                 <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyL" 
-                                             :key="i">{{item.name}}</option>
-                                                <!-- <option value="" selected="selected">请选择</option>
-                                                <option value="1302030010013413013059341">唐山市第十一中学</option>
-                                                <option value="1302030010013613000618365">唐山市公共关系学校</option>
-                                                <option value="1302030010053613000518362">唐山市路北区成人教育中心学校</option>
-                                                <option value="1302030010123613000526364">唐山市路北区教师进修学校</option>
-                                                <option value="1302030010173613000256362">唐山工程技术学校</option>
-                                                <option value="1302030010183613000519362">唐山中华职业学校</option>
-                                                <option value="1302030020013613000578362">唐山市艺术学校</option>
-                                                <option value="1302030020023413013057341">唐山第十中学</option>
-                                                <option value="1302030020093613000581364">唐山市农业广播电视学校</option>
-                                                <option value="1302030020133613000258362">唐山市体育运动学校</option>
-                                                <option value="1302030020173413000132342">唐山光厚高中学校</option>
-                                                <option value="1302030020173413013060341">唐山市开滦第一中学</option>
-                                                <option value="1302030030203613000600362">唐山市职业教育中心</option>
-                                                <option value="1302030030233613000524362">唐山长城中等专业学校</option>
-                                                <option value="1302030040013613000517362">唐山市第一职业中等专业学校</option>
-                                                <option value="1302030050204113012787368">唐山工业职业技术学院</option>
-                                                <option value="1302030060013613000586364">唐山市电视中等专业学校</option>
-                                                <option value="1302030080053413000307342">唐山市第十二高级中学</option>
-                                                <option value="1302030100043413013063341">河北唐山外国语学校（唐山八中）</option>
-                                                <option value="1302030100043613000289362">开滦集团有限责任公司职工中等专业学校</option>
-                                                <option value="1302030100044113012785368">唐山职业技术学院</option>
-                                                <option value="1302032002073413000175342">唐山市翔云中学</option>
-                                                <option value="1302032002073413013050342">唐山市第一中学</option>
-                                                <option value="1302032002293613000574362">唐山市对外经济贸易学校</option>
-                                                <option value="1302034502043413000126342">唐山市长宁高级中学</option>
-                                                <option value="1302034502043613000520362">唐山长宁中等专业学校</option>
-                                                <option value="1302034502043613000525362">唐山通远中等专业学校</option>
-                                                <option value="1302034502063613000521362">唐山天成中等专业学校</option> -->
+                                             :value="item.gxSchoolCode" 
+                                              v-for="item in educationCountyL" 
+                                             :key="item.gxSchoolCode">{{item.school}}</option>
                                             </select>
                                         </div>
                                         <div id="jl1xxmc" style="display:none; float:left; padding-left:10px;">学校名称：
@@ -605,89 +355,37 @@
                                     <td align="right">就读于</td>
                                     <td>
                                         <!-- 高二教育经历 -->
-                                        <select id="jl2Sslist" class="ignoreselect">
+                                        <select id="jl2Sslist" class="ignoreselect"
+                                        v-model="item.educationTw"
+                                        @change= "aaa(item.educationTw)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationTwo" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="110000">北京市</option>
-                                            <option value="120000">天津市</option>
-                                            <option value="130000">河北省</option>
-                                            <option value="140000">山西省</option>
-                                            <option value="150000">内蒙古自治区</option>
-                                            <option value="210000">辽宁省</option>
-                                            <option value="220000">吉林省</option>
-                                            <option value="230000">黑龙江省</option>
-                                            <option value="310000">上海市</option>
-                                            <option value="320000">江苏省</option>
-                                            <option value="330000">浙江省</option>
-                                            <option value="340000">安徽省</option>
-                                            <option value="350000">福建省</option>
-                                            <option value="360000">江西省</option>
-                                            <option value="370000">山东省</option>
-                                            <option value="410000">河南省</option>
-                                            <option value="420000">湖北省</option>
-                                            <option value="430000">湖南省</option>
-                                            <option value="440000">广东省</option>
-                                            <option value="450000">广西壮族自治区</option>
-                                            <option value="460000">海南省</option>
-                                            <option value="500000">重庆市</option>
-                                            <option value="510000">四川省</option>
-                                            <option value="520000">贵州省</option>
-                                            <option value="530000">云南省</option>
-                                            <option value="540000">西藏自治区</option>
-                                            <option value="610000">陕西省</option>
-                                            <option value="620000">甘肃省</option>
-                                            <option value="630000">青海省</option>
-                                            <option value="640000">宁夏回族自治区</option>
-                                            <option value="650000">新疆维吾尔自治区</option>
-                                            <option value="710000">台湾省</option>
-                                            <option value="810000">香港特别行政区</option>
-                                            <option value="820000">澳门特别行政区</option>
-                                            <option value="990000">其他</option> -->
+                                             :value="item.id" 
+                                              v-for="item in educationTwo" 
+                                             :key="item.id">{{item.name}}</option>
+                                            
                                         </select>
                                          <!-- 教育经历 市级 -->
-                                        <select id="jl2Xjslist" class="ignoreselect">
+                                        <select id="jl2Xjslist" class="ignoreselect"
+                                        v-model="item.educationTwoL"
+                                        @change= "bbb(item.educationTwoL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCityLevelTwo" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value=""  selected="selected">请选择</option>
-                                            <option value="130100">石家庄市</option>
-                                            <option value="130200">唐山市</option>
-                                            <option value="130300">秦皇岛市</option>
-                                            <option value="130400">邯郸市</option>
-                                            <option value="130500">邢台市</option>
-                                            <option value="130600">保定市</option>
-                                            <option value="130700">张家口市</option>
-                                            <option value="130800">承德市</option>
-                                            <option value="130900">沧州市</option>
-                                            <option value="131000">廊坊市</option>
-                                            <option value="131100">衡水市</option> -->
+                                             :value="item.id" 
+                                              v-for="item in educationCityLevelTwo" 
+                                             :key="item.id">{{item.name}}</option>
+                                           
                                         </select>
                                          <!-- 教育经历  区县 -->
-                                        <select id="jl2Dqlist" class="ignoreselect">
+                                        <select id="jl2Dqlist" class="ignoreselect"
+                                        v-model="item.educationTwoLL"
+                                        @change= "ccc(item.educationTwoLL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyTwo" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="130201">市辖区</option>
-                                            <option value="130202">路南区</option>
-                                            <option value="130203">路北区</option>
-                                            <option value="130204">古冶区</option>
-                                            <option value="130205">开平区</option>
-                                            <option value="130207">丰南区</option>
-                                            <option value="130208">丰润区</option>
-                                            <option value="130209">曹妃甸区</option>
-                                            <option value="130223">滦县</option>
-                                            <option value="130224">滦南县</option>
-                                            <option value="130225">乐亭县</option>
-                                            <option value="130227">迁西县</option>
-                                            <option value="130229">玉田县</option>
-                                            <option value="130281">遵化市</option>
-                                            <option value="130283">迁安市</option> -->
+                                             :value="item.name" 
+                                              v-for="item in educationCountyTwo" 
+                                             :key="item.name">{{item.name}}</option>
+                                           
                                         </select>
                                     </td>
                                 </tr>
@@ -696,40 +394,14 @@
                                     <td align="right">&nbsp;</td>
                                     <td>
                                         <div>
-                                            <select id="jl2Xxlist" name="xyjl2VO.xxDm">
+                                            <select id="jl2Xxlist" name="xyjl2VO.xxDm"
+                                            v-model="item.educationTwoLLL"
+                                            >
                                                 <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyLTwo" 
-                                             :key="i">{{item.name}}</option>
-                                                <!-- <option value="" selected="selected">请选择</option>
-                                                <option value="1302030010013413013059341">唐山市第十一中学</option>
-                                                <option value="1302030010013613000618365">唐山市公共关系学校</option>
-                                                <option value="1302030010053613000518362">唐山市路北区成人教育中心学校</option>
-                                                <option value="1302030010123613000526364">唐山市路北区教师进修学校</option>
-                                                <option value="1302030010173613000256362">唐山工程技术学校</option>
-                                                <option value="1302030010183613000519362">唐山中华职业学校</option>
-                                                <option value="1302030020013613000578362">唐山市艺术学校</option>
-                                                <option value="1302030020023413013057341">唐山第十中学</option>
-                                                <option value="1302030020093613000581364">唐山市农业广播电视学校</option>
-                                                <option value="1302030020133613000258362">唐山市体育运动学校</option>
-                                                <option value="1302030020173413000132342">唐山光厚高中学校</option>
-                                                <option value="1302030020173413013060341">唐山市开滦第一中学</option>
-                                                <option value="1302030030203613000600362">唐山市职业教育中心</option>
-                                                <option value="1302030030233613000524362">唐山长城中等专业学校</option>
-                                                <option value="1302030040013613000517362">唐山市第一职业中等专业学校</option>
-                                                <option value="1302030050204113012787368">唐山工业职业技术学院</option>
-                                                <option value="1302030060013613000586364">唐山市电视中等专业学校</option>
-                                                <option value="1302030080053413000307342">唐山市第十二高级中学</option>
-                                                <option value="1302030100043413013063341">河北唐山外国语学校（唐山八中）</option>
-                                                <option value="1302030100043613000289362">开滦集团有限责任公司职工中等专业学校</option>
-                                                <option value="1302030100044113012785368">唐山职业技术学院</option>
-                                                <option value="1302032002073413000175342">唐山市翔云中学</option>
-                                                <option value="1302032002073413013050342">唐山市第一中学</option>
-                                                <option value="1302032002293613000574362">唐山市对外经济贸易学校</option>
-                                                <option value="1302034502043413000126342">唐山市长宁高级中学</option>
-                                                <option value="1302034502043613000520362">唐山长宁中等专业学校</option>
-                                                <option value="1302034502043613000525362">唐山通远中等专业学校</option>
-                                                <option value="1302034502063613000521362">唐山天成中等专业学校</option> -->
+                                             :value="item.gxSchoolCode" 
+                                              v-for="item in educationCountyLTwo" 
+                                             :key="item.gxSchoolCode">{{item.school}}</option>
+                                               
                                             </select>
                                         </div>
                                         <div id="jl2xxmc" style="display:none; float:left; padding-left:10px;">学校名称：
@@ -764,89 +436,37 @@
                                     <td align="right">就读于</td>
                                     <td>
                                         <!--高三 教育经历  -->
-                                        <select id="jl3Sslist" class="ignoreselect">
+                                        <select id="jl3Sslist" class="ignoreselect"
+                                        v-model="item.educationThre"
+                                        @change= "aaa(item.educationThre)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationThree" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="110000">北京市</option>
-                                            <option value="120000">天津市</option>
-                                            <option value="130000">河北省</option>
-                                            <option value="140000">山西省</option>
-                                            <option value="150000">内蒙古自治区</option>
-                                            <option value="210000">辽宁省</option>
-                                            <option value="220000">吉林省</option>
-                                            <option value="230000">黑龙江省</option>
-                                            <option value="310000">上海市</option>
-                                            <option value="320000">江苏省</option>
-                                            <option value="330000">浙江省</option>
-                                            <option value="340000">安徽省</option>
-                                            <option value="350000">福建省</option>
-                                            <option value="360000">江西省</option>
-                                            <option value="370000">山东省</option>
-                                            <option value="410000">河南省</option>
-                                            <option value="420000">湖北省</option>
-                                            <option value="430000">湖南省</option>
-                                            <option value="440000">广东省</option>
-                                            <option value="450000">广西壮族自治区</option>
-                                            <option value="460000">海南省</option>
-                                            <option value="500000">重庆市</option>
-                                            <option value="510000">四川省</option>
-                                            <option value="520000">贵州省</option>
-                                            <option value="530000">云南省</option>
-                                            <option value="540000">西藏自治区</option>
-                                            <option value="610000">陕西省</option>
-                                            <option value="620000">甘肃省</option>
-                                            <option value="630000">青海省</option>
-                                            <option value="640000">宁夏回族自治区</option>
-                                            <option value="650000">新疆维吾尔自治区</option>
-                                            <option value="710000">台湾省</option>
-                                            <option value="810000">香港特别行政区</option>
-                                            <option value="820000">澳门特别行政区</option>
-                                            <option value="990000">其他</option> -->
+                                             :value="item.id" 
+                                              v-for="item in educationThree" 
+                                             :key="item.id">{{item.name}}</option>
+                                           
                                         </select>
                                         <!-- 教育经历 市级 -->
-                                        <select id="jl3Xjslist" class="ignoreselect">
+                                        <select id="jl3Xjslist" class="ignoreselect"
+                                        v-model="item.educationThreeL"
+                                        @change= "bbb(item.educationThreeL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCityLevelThree" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="130100">石家庄市</option>
-                                            <option value="130200">唐山市</option>
-                                            <option value="130300">秦皇岛市</option>
-                                            <option value="130400">邯郸市</option>
-                                            <option value="130500">邢台市</option>
-                                            <option value="130600">保定市</option>
-                                            <option value="130700">张家口市</option>
-                                            <option value="130800">承德市</option>
-                                            <option value="130900">沧州市</option>
-                                            <option value="131000">廊坊市</option>
-                                            <option value="131100">衡水市</option> -->
+                                             :value="item.id" 
+                                              v-for="item in educationCityLevelThree" 
+                                             :key="item.id">{{item.name}}</option>
+                                    
                                         </select>
                                         <!-- 教育经历 区县级别 -->
-                                        <select id="jl3Dqlist" class="ignoreselect">
+                                        <select id="jl3Dqlist" class="ignoreselect"
+                                         v-model="item.educationThreeLL"
+                                        @change= "ccc(item.educationThreeLL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyThree" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="130201">市辖区</option>
-                                            <option value="130202">路南区</option>
-                                            <option value="130203">路北区</option>
-                                            <option value="130204">古冶区</option>
-                                            <option value="130205">开平区</option>
-                                            <option value="130207">丰南区</option>
-                                            <option value="130208">丰润区</option>
-                                            <option value="130209">曹妃甸区</option>
-                                            <option value="130223">滦县</option>
-                                            <option value="130224">滦南县</option>
-                                            <option value="130225">乐亭县</option>
-                                            <option value="130227">迁西县</option>
-                                            <option value="130229">玉田县</option>
-                                            <option value="130281">遵化市</option>
-                                            <option value="130283">迁安市</option> -->
+                                             :value="item.name" 
+                                              v-for="item in educationCountyThree" 
+                                             :key="item.name">{{item.name}}</option>
+                                           
                                         </select>
                                     </td>
                                 </tr>
@@ -855,40 +475,14 @@
                                     <td align="right">&nbsp;</td>
                                     <td>
                                         <div>
-                                            <select id="jl3Xxlist" name="xyjl3VO.xxDm">
+                                            <select id="jl3Xxlist" name="xyjl3VO.xxDm"
+                                            v-model="item.educationThreeLLL"
+                                            >
                                                 <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyLThree" 
-                                             :key="i">{{item.name}}</option>
-                                                <!-- <option value="" selected="selected">请选择</option>
-                                                <option value="1302030010013413013059341">唐山市第十一中学</option>
-                                                <option value="1302030010013613000618365">唐山市公共关系学校</option>
-                                                <option value="1302030010053613000518362">唐山市路北区成人教育中心学校</option>
-                                                <option value="1302030010123613000526364">唐山市路北区教师进修学校</option>
-                                                <option value="1302030010173613000256362">唐山工程技术学校</option>
-                                                <option value="1302030010183613000519362">唐山中华职业学校</option>
-                                                <option value="1302030020013613000578362">唐山市艺术学校</option>
-                                                <option value="1302030020023413013057341">唐山第十中学</option>
-                                                <option value="1302030020093613000581364">唐山市农业广播电视学校</option>
-                                                <option value="1302030020133613000258362">唐山市体育运动学校</option>
-                                                <option value="1302030020173413000132342">唐山光厚高中学校</option>
-                                                <option value="1302030020173413013060341">唐山市开滦第一中学</option>
-                                                <option value="1302030030203613000600362">唐山市职业教育中心</option>
-                                                <option value="1302030030233613000524362">唐山长城中等专业学校</option>
-                                                <option value="1302030040013613000517362">唐山市第一职业中等专业学校</option>
-                                                <option value="1302030050204113012787368">唐山工业职业技术学院</option>
-                                                <option value="1302030060013613000586364">唐山市电视中等专业学校</option>
-                                                <option value="1302030080053413000307342">唐山市第十二高级中学</option>
-                                                <option value="1302030100043413013063341">河北唐山外国语学校（唐山八中）</option>
-                                                <option value="1302030100043613000289362">开滦集团有限责任公司职工中等专业学校</option>
-                                                <option value="1302030100044113012785368">唐山职业技术学院</option>
-                                                <option value="1302032002073413000175342">唐山市翔云中学</option>
-                                                <option value="1302032002073413013050342">唐山市第一中学</option>
-                                                <option value="1302032002293613000574362">唐山市对外经济贸易学校</option>
-                                                <option value="1302034502043413000126342">唐山市长宁高级中学</option>
-                                                <option value="1302034502043613000520362">唐山长宁中等专业学校</option>
-                                                <option value="1302034502043613000525362">唐山通远中等专业学校</option>
-                                                <option value="1302034502063613000521362">唐山天成中等专业学校</option> -->
+                                             :value="item.gxSchoolCode" 
+                                              v-for="item in educationCountyLThree" 
+                                             :key="item.gxSchoolCode">{{item.school}}</option>
+                                               
                                             </select>
                                         </div>
                                         <div id="jl3xxmc" style="display:none; float:left; padding-left:10px;">学校名称：
@@ -922,10 +516,7 @@
                                             <option 
                                             :value="item.value" 
                                             :selected="item.selected" v-for="(item,i) in grade" :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="0">高中一年级</option>
-                                            <option value="1">高中二年级</option>
-                                            <option value="2">高中三年级</option> -->
+                                            
                                         </select>
                                     </td>
                                 </tr>
@@ -949,10 +540,9 @@
                                     <td colspan="2">
                                         <!-- 备选 教育经历 -->
                                         <select id="bx1Sslist" class="ignoreselect" 
-                                        v-model="item.educationID"
-                                        @change= "aaa"
+                                        v-model="item.alternative"
+                                        @change= "aaa(item.alternative)"
                                         >
-                                            <!-- <select id="jl3Xxlist" name="xyjl3VO.xxDm"> -->
                                             <option :selected="item.selected" 
                                              :value="item.id" 
                                               v-for="item in educationAlternative" 
@@ -960,19 +550,25 @@
                                              >{{item.name}}</option>
                                         </select>
                                         <!-- 备选 市级 -->
-                                        <select id="bx1Xjslist" class="ignoreselect">
+                                        <select id="bx1Xjslist" 
+                                        class="ignoreselect"
+                                        v-model="item.alternativeL"
+                                        @change= "bbb(item.alternativeL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCityLevelAlternative" 
-                                             :key="i">{{item.name}}</option>
+                                             :value="item.id" 
+                                              v-for="item in educationCityLevelAlternative" 
+                                             :key="item.id">{{item.name}}</option>
                                         </select>
                                         <!-- 备选 区县级别 -->
-                                        <select id="bx1Dqlist" class="ignoreselect">
+                                        <select id="bx1Dqlist" class="ignoreselect"
+                                        v-model="item.alternativeLL"
+                                        @change="ccc(item.alternativeLL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyAlternative" 
-                                             :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option> -->
+                                             :value="item.name" 
+                                              v-for="item in educationCountyAlternative" 
+                                             :key="item.name">{{item.name}}</option>
                                         </select>
                                         <br>
                                     </td>
@@ -980,13 +576,19 @@
                                 <!-- 备选 学校 -->
                                 <tr>
                                     <td align="right">&nbsp;</td>
-                                    <td colspan="2"><div><select id="bx1Xxlist" name="bxjl1VO.xxDm">
-                                        <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyLAlternative" 
-                                             :key="i">{{item.name}}</option>
-                                        <!-- <option value="" selected="selected">请选择</option> -->
-                                    </select></div>
+                                    <td colspan="2">
+                                        <div>
+                                            <select id="bx1Xxlist" 
+                                            name="bxjl1VO.xxDm"
+                                            v-model="item.alternativeLLL"
+                                            >
+                                                <option :selected="item.selected" 
+                                                    :value="item.gxSchoolCode" 
+                                                    v-for="item in educationCountyLAlternative" 
+                                                    :key="item.gxSchoolCode">{{item.school}}
+                                                </option>
+                                            </select>
+                                        </div>
                                         <div id="bx1xxmc" style="display:none; float:left; padding-left:10px;">学校名称：
                                             <input name="bxjl1VO.xxMc" id="zxxx_jybx_xxmc1" class="ui-input" type="text">
                                         </div>
@@ -1019,10 +621,6 @@
                                              :value="item.value" 
                                               v-for="(item,i) in gradeTwo" 
                                              :key="i">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option>
-                                            <option value="0">高中一年级</option>
-                                            <option value="1">高中二年级</option>
-                                            <option value="2">高中三年级</option> -->
                                         </select>
                                     </td>
                                 </tr>
@@ -1046,26 +644,34 @@
                                         <!-- 备选2 教育经历 -->
                                         <select id="bx2Sslist" 
                                         class="ignoreselect"
+                                        v-model="item.alternativeW"
+                                        @change= "aaa(item.alternativeW)"
                                         >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
+                                             :value="item.id" 
                                               v-for="item in educationAlternativeTwo" 
-                                             :key="item.value">{{item.name}}</option>
+                                             :key="item.id">{{item.name}}</option>
                                         </select>
                                         <!-- 备选2 市级 -->
-                                        <select id="bx2Xjslist" class="ignoreselect">
+                                        <select id="bx2Xjslist" class="ignoreselect"
+                                        v-model="item.alternativeWL"
+                                         @change= "bbb(item.alternativeWL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCityLevelAlternativeTwo" 
-                                             :key="i">{{item.name}}</option>
+                                             :value="item.id" 
+                                              v-for="item in educationCityLevelAlternativeTwo" 
+                                             :key="item.id">{{item.name}}</option>
                                             <!-- <option value="" selected="selected">请选择</option> -->
                                         </select>
                                         <!-- 备选2 区县级别 -->
-                                        <select id="bx2Dqlist" class="ignoreselect">
+                                        <select id="bx2Dqlist" class="ignoreselect"
+                                        v-model="item.alternativeWLL"
+                                        @change="ccc(item.alternativeWLL)"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyAlternativeTwo" 
-                                             :key="i">{{item.name}}</option>
+                                             :value="item.name" 
+                                              v-for="item in educationCountyAlternativeTwo" 
+                                             :key="item.name">{{item.name}}</option>
                                             <!-- <option value="" selected="selected">请选择</option> -->
                                         </select>
                                     </td>
@@ -1075,12 +681,14 @@
                                     <td align="right">&nbsp;</td>
                                     <td colspan="2">
                                         <div>
-                                            <select id="bx2Xxlist" name="bxjl2VO.xxDm">
+                                            <select id="bx2Xxlist" 
+                                            name="bxjl2VO.xxDm"
+                                            v-model="item.alternativeWLLL"
+                                            >
                                                 <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in educationCountyLAlternativeTwo" 
-                                             :key="i">{{item.name}}</option>
-                                                 <!-- <option value="" selected="selected">请选择</option> -->
+                                             :value="item.gxSchoolCode" 
+                                              v-for="item in educationCountyLAlternativeTwo" 
+                                             :key="item.gxSchoolCode">{{item.school}}</option>
                                             </select>
                                         </div>
                                         <div id="bx2xxmc" style="display:none; float:left; padding-left:10px;">学校名称：
@@ -1104,16 +712,6 @@
                         <p class="ui-form-explain"></p>
                     </div>
                     <div class="ui-form-item m_top10">
-                        <!--<input class="ui-button ui-button-lorange"-->
-                               <!--value="保存"-->
-                               <!--type="submit"-->
-                               <!--style=" width: 44px;height: 31px">-->
-                        <!--&nbsp;&nbsp;-->
-                        <!--<input class="ui-button ui-button-lceladon" value="取消"-->
-                               <!--onclick="javascript:history.go(-1);"-->
-                               <!--type="button"-->
-                               <!--style=" width: 44px;height: 31px"-->
-                        <!--&gt;-->
                         <Button type="warning" @click="submit">保存</Button>
                         &nbsp;&nbsp;
                         <Button type="primary" onclick="javascript:history.go(-1);">取消</Button>
@@ -1138,108 +736,6 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
-                },
             ],
             //户籍所在中学 市级
             SchoolCityLevel:[
@@ -1247,90 +743,13 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
-                },
+                
             ],
              //户籍所在中学 区县级别
             SchoolCounty:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
                 }
             ],
             // 户籍所在中学 学校
@@ -1339,174 +758,12 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"唐山市第十一中学"
-                },
-                {
-                    name:"唐山市公共关系学校"
-                },
-                {
-                    name:"唐山市路北区成人教育中心学校"
-                },
-                {
-                    name:"唐山市路北区教师进修学校"
-                },
-                {
-                    name:"唐山工程技术学校"
-                },
-                {
-                    name:"唐山中华职业学校"
-                },
-                {
-                    name:"唐山市艺术学校"
-                },
-                {
-                    name:"唐山第十中学"
-                },
-                {
-                    name:"唐山市农业广播电视学校"
-                },
-                {
-                    name:"唐山市体育运动学校"
-                },
-                {
-                    name:"唐山光厚高中学校"
-                },
-                {
-                    name:"唐山市开滦第一中学"
-                },
-                {
-                    name:"唐山市职业教育中心"
-                },
-                {
-                    name:"唐山长城中等专业学校"
-                },
-                {
-                    name:"唐山市第一职业中等专业学校"
-                },
-                {
-                    name:"唐山工业职业技术学院"
-                },
-                {
-                    name:"唐山市电视中等专业学校"
-                },
-                {
-                    name:"唐山市第十二高级中学"
-                },
-                {
-                    name:"河北唐山外国语学校（唐山八中）"
-                },
-                {
-                    name:"开滦集团有限责任公司职工中等专业学校"
-                },
             ],
             // 当前就读中学
             SchoolRollT:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
                 },
             ],
             //当前就读中学 市级
@@ -1515,39 +772,6 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
-                },
             ],
              //当前就读中学 区县级别
             SchoolCountyT:[
@@ -1555,117 +779,12 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 当前就读中学 学校
             SchoolCountyLT:[
                 {
-                    name:"请选择",
+                    school:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"唐山市第十一中学"
-                },
-                {
-                    name:"唐山市公共关系学校"
-                },
-                {
-                    name:"唐山市路北区成人教育中心学校"
-                },
-                {
-                    name:"唐山市路北区教师进修学校"
-                },
-                {
-                    name:"唐山工程技术学校"
-                },
-                {
-                    name:"唐山中华职业学校"
-                },
-                {
-                    name:"唐山市艺术学校"
-                },
-                {
-                    name:"唐山第十中学"
-                },
-                {
-                    name:"唐山市农业广播电视学校"
-                },
-                {
-                    name:"唐山市体育运动学校"
-                },
-                {
-                    name:"唐山光厚高中学校"
-                },
-                {
-                    name:"唐山市开滦第一中学"
-                },
-                {
-                    name:"唐山市职业教育中心"
-                },
-                {
-                    name:"唐山长城中等专业学校"
-                },
-                {
-                    name:"唐山市第一职业中等专业学校"
-                },
-                {
-                    name:"唐山工业职业技术学院"
-                },
-                {
-                    name:"唐山市电视中等专业学校"
-                },
-                {
-                    name:"唐山市第十二高级中学"
-                },
-                {
-                    name:"河北唐山外国语学校（唐山八中）"
-                },
-                {
-                    name:"开滦集团有限责任公司职工中等专业学校"
                 },
             ],
             // 中学级别
@@ -1712,147 +831,12 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
-                },
             ],
             //教育经历 市级
             educationCityLevel:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
                 },
             ],
              //教育经历 区县级别
@@ -1861,117 +845,12 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 教育经历 学校
             educationCountyL:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"唐山市第十一中学"
-                },
-                {
-                    name:"唐山市公共关系学校"
-                },
-                {
-                    name:"唐山市路北区成人教育中心学校"
-                },
-                {
-                    name:"唐山市路北区教师进修学校"
-                },
-                {
-                    name:"唐山工程技术学校"
-                },
-                {
-                    name:"唐山中华职业学校"
-                },
-                {
-                    name:"唐山市艺术学校"
-                },
-                {
-                    name:"唐山第十中学"
-                },
-                {
-                    name:"唐山市农业广播电视学校"
-                },
-                {
-                    name:"唐山市体育运动学校"
-                },
-                {
-                    name:"唐山光厚高中学校"
-                },
-                {
-                    name:"唐山市开滦第一中学"
-                },
-                {
-                    name:"唐山市职业教育中心"
-                },
-                {
-                    name:"唐山长城中等专业学校"
-                },
-                {
-                    name:"唐山市第一职业中等专业学校"
-                },
-                {
-                    name:"唐山工业职业技术学院"
-                },
-                {
-                    name:"唐山市电视中等专业学校"
-                },
-                {
-                    name:"唐山市第十二高级中学"
-                },
-                {
-                    name:"河北唐山外国语学校（唐山八中）"
-                },
-                {
-                    name:"开滦集团有限责任公司职工中等专业学校"
                 },
             ],
             // 高中一年级：时间
@@ -1988,148 +867,13 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
-                },
             ],
             //教育经历 市级
             educationCityLevelTwo:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
-                },
+                }
             ],
              //教育经历 区县级别
             educationCountyTwo:[
@@ -2137,117 +881,12 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 教育经历 学校
             educationCountyLTwo:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"唐山市第十一中学"
-                },
-                {
-                    name:"唐山市公共关系学校"
-                },
-                {
-                    name:"唐山市路北区成人教育中心学校"
-                },
-                {
-                    name:"唐山市路北区教师进修学校"
-                },
-                {
-                    name:"唐山工程技术学校"
-                },
-                {
-                    name:"唐山中华职业学校"
-                },
-                {
-                    name:"唐山市艺术学校"
-                },
-                {
-                    name:"唐山第十中学"
-                },
-                {
-                    name:"唐山市农业广播电视学校"
-                },
-                {
-                    name:"唐山市体育运动学校"
-                },
-                {
-                    name:"唐山光厚高中学校"
-                },
-                {
-                    name:"唐山市开滦第一中学"
-                },
-                {
-                    name:"唐山市职业教育中心"
-                },
-                {
-                    name:"唐山长城中等专业学校"
-                },
-                {
-                    name:"唐山市第一职业中等专业学校"
-                },
-                {
-                    name:"唐山工业职业技术学院"
-                },
-                {
-                    name:"唐山市电视中等专业学校"
-                },
-                {
-                    name:"唐山市第十二高级中学"
-                },
-                {
-                    name:"河北唐山外国语学校（唐山八中）"
-                },
-                {
-                    name:"开滦集团有限责任公司职工中等专业学校"
                 },
             ],
              // 高二证明人
@@ -2261,108 +900,7 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
-                },
+                
             ],
             //教育经历 市级
             educationCityLevelThree:[
@@ -2370,39 +908,7 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
-                },
+                
             ],
              //教育经历 区县级别
             educationCountyThree:[
@@ -2410,51 +916,6 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 教育经历 学校
             educationCountyLThree:[
@@ -2552,9 +1013,6 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
             ],
              //备选 区县级别
             educationCountyAlternative:[
@@ -2562,118 +1020,13 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 备选 学校
             educationCountyLAlternative:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"唐山市第十一中学"
-                },
-                {
-                    name:"唐山市公共关系学校"
-                },
-                {
-                    name:"唐山市路北区成人教育中心学校"
-                },
-                {
-                    name:"唐山市路北区教师进修学校"
-                },
-                {
-                    name:"唐山工程技术学校"
-                },
-                {
-                    name:"唐山中华职业学校"
-                },
-                {
-                    name:"唐山市艺术学校"
-                },
-                {
-                    name:"唐山第十中学"
-                },
-                {
-                    name:"唐山市农业广播电视学校"
-                },
-                {
-                    name:"唐山市体育运动学校"
-                },
-                {
-                    name:"唐山光厚高中学校"
-                },
-                {
-                    name:"唐山市开滦第一中学"
-                },
-                {
-                    name:"唐山市职业教育中心"
-                },
-                {
-                    name:"唐山长城中等专业学校"
-                },
-                {
-                    name:"唐山市第一职业中等专业学校"
-                },
-                {
-                    name:"唐山工业职业技术学院"
-                },
-                {
-                    name:"唐山市电视中等专业学校"
-                },
-                {
-                    name:"唐山市第十二高级中学"
-                },
-                {
-                    name:"河北唐山外国语学校（唐山八中）"
-                },
-                {
-                    name:"开滦集团有限责任公司职工中等专业学校"
-                },
+                }
             ],
              // 备选证明人
             referencesAlternative:"",
@@ -2702,148 +1055,14 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                    {
-                    name:"天津市"
-                },
-                    {
-                    name:"河北省"
-                },
-                    {
-                    name:"山西省"
-                },
-                    {
-                    name:"内蒙古自治区"
-                },
-                    {
-                    name:"辽宁省"
-                },
-                    {
-                    name:"吉林省"
-                },
-                    {
-                    name:"黑龙江省"
-                },
-                    {
-                    name:"上海市"
-                },
-                    {
-                    name:"江苏省"
-                },
-                    {
-                    name:"浙江省"
-                },
-                    {
-                    name:"安徽省"
-                },
-                    {
-                    name:"福建省"
-                },
-                    {
-                    name:"江西省"
-                },
-                    {
-                    name:"山东省"
-                },
-                    {
-                    name:"河南省"
-                },
-                    {
-                    name:"湖北省"
-                },
-                    {
-                    name:"湖南省"
-                },
-                    {
-                    name:"广东省"
-                },
-                    {
-                    name:"广西壮族自治区"
-                },
-                    {
-                    name:"海南省"
-                },
-                    {
-                    name:"四川省"
-                },
-                    {
-                    name:"贵州省"
-                },
-                    {
-                    name:"云南省"
-                },
-                    {
-                    name:"西藏自治区"
-                },
-                    {
-                    name:"陕西省"
-                },
-                    {
-                    name:"甘肃省"
-                },
-                    {
-                    name:"青海省"
-                },
-                    {
-                    name:"宁夏回族自治区"
-                },
-                    {
-                    name:"新疆维吾尔自治区"
-                },
-                    {
-                    name:"台湾省"
-                },
-                    {
-                    name:"香港特别行政区"
-                },
-                    {
-                    name:"澳门特别行政区"
-                },
-                    {
-                    name:"其他"
-                },
+                
             ],
             //备选2 市级
             educationCityLevelAlternativeTwo:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
-                },
+                }
             ],
              //备选2 区县级别
             educationCountyAlternativeTwo:[
@@ -2851,123 +1070,79 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 备选2 学校
             educationCountyLAlternativeTwo:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"唐山市第十一中学"
-                },
-                {
-                    name:"唐山市公共关系学校"
-                },
-                {
-                    name:"唐山市路北区成人教育中心学校"
-                },
-                {
-                    name:"唐山市路北区教师进修学校"
-                },
-                {
-                    name:"唐山工程技术学校"
-                },
-                {
-                    name:"唐山中华职业学校"
-                },
-                {
-                    name:"唐山市艺术学校"
-                },
-                {
-                    name:"唐山第十中学"
-                },
-                {
-                    name:"唐山市农业广播电视学校"
-                },
-                {
-                    name:"唐山市体育运动学校"
-                },
-                {
-                    name:"唐山光厚高中学校"
-                },
-                {
-                    name:"唐山市开滦第一中学"
-                },
-                {
-                    name:"唐山市职业教育中心"
-                },
-                {
-                    name:"唐山长城中等专业学校"
-                },
-                {
-                    name:"唐山市第一职业中等专业学校"
-                },
-                {
-                    name:"唐山工业职业技术学院"
-                },
-                {
-                    name:"唐山市电视中等专业学校"
-                },
-                {
-                    name:"唐山市第十二高级中学"
-                },
-                {
-                    name:"河北唐山外国语学校（唐山八中）"
-                },
-                {
-                    name:"开滦集团有限责任公司职工中等专业学校"
-                },
+                }
             ],
             // 备选2 证明人
             referencesAlternativeTwo:"",
-            // 
-            item : { educationID : "" }
+
+            // 备选省份
+            item : { alternative : "" },
+            // 市
+            item : { alternativeL : "" },
+            // 区
+            item : { alternativeLL : "" },
+            // 学校
+            item : { alternativeLLL : ""},
+
+            // 备选2 省份
+            item : { alternativeW : "" },
+            // 市
+            item : { alternativeWL : "" },
+            // 区
+            item : { alternativeWLL : "" },
+             // 学校
+            item : { alternativeWLLL : ""},
+
+            // 学籍所在学校 省份
+            item : { SchoolRollID : "" },
+            // 市
+            item : { SchoolRollIDTwo : "" },
+            // 区
+            item : { SchoolRollIDThree : "" },
+             // 学校
+            item : { SchoolRollIDFour : ""},
+
+            // 当前就读中学
+            item : { SchoolRollTID : "" },
+            // 市
+            item : { SchoolRollTIDTwo : "" },
+            // 区
+            item : { SchoolRollTIDThree : "" },
+             // 学校
+            item : { SchoolRollTIDFourL : ""},
+            
+             // 当前就读中学 高中一年级
+            item : { educationONE : "" },
+            // 市
+            item : { educationONEL : "" },
+            // 区
+            item : { educationONELL : "" },
+             // 学校
+            item : { educationONELLL : ""},
+
+             // 当前就读中学 高中二年级
+            item : { educationTw : "" },
+            // 市
+            item : { educationTwoL : "" },
+            // 区
+            item : { educationTwoLL : "" },
+             // 学校
+            item : { educationTwoLLL : ""},
+
+             // 当前就读中学 高中仨年级
+            item : { educationThre : "" },
+            // 市
+            item : { educationThreeL : "" },
+            // 区
+            item : { educationThreeLL : "" },
+             // 学校
+            item : { educationThreeLLL : ""},
         }
     },
     // computed:{
@@ -2976,39 +1151,127 @@ export default {
     //     }
     // }
     created(){
-        // let aa = this.educationAlternative
-        // console.log(aa)
-        // console.log(typeof(edu))
+        // 省份数据
         axios.post('http://192.168.0.130:8080/City/findByCode')
         .then((res)=>{
-            this.educationAlternative = res.data
-            // console.log(this.educationAlternative)
+            this.educationAlternative = res.data,
+            this.educationAlternativeTwo = res.data,
+            this.SchoolRoll = res.data,
+            this.SchoolRollT = res.data,
+            this.education = res.data,
+            this.educationTwo = res.data,
+            this.educationThree = res.data
         }),(err)=>{
             console.log(error)
         }
         
     },
     computed:{
-        // document.getElementById("userNameID").onblur=function(){
-
-        // }
     },
     methods:{
-        aaa(){
-            //  let data = {
-            //      id : this.item.educationID
-            //  }
-             let data = this.item.educationID
-            // console.log(this.item.educationID)
-            Province(data)
-            // axios.post('http://192.168.0.130:8080/City/findById',data)
-            // .then((res) => {
-            //     console.log(res.data)
-            //     // console.log(this.educationCityLevelAlternative)
-            //     // this.educationCityLevelAlternative = res.data
-            // }),(err) => {
-            //     console.log(err)
-            // }
+        // 市
+        aaa(word){
+            let data = word
+            axios.post('http://192.168.0.130:8080/City/findById',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                // console.log(data)
+                if(data ==  this.item.alternative){
+                    this.educationCityLevelAlternative = res.data
+                }
+                else if(data == this.item.alternativeW ){
+                    this.educationCityLevelAlternativeTwo = res.data
+                }
+                else if(data == this.item.SchoolRollID ){
+                    this.SchoolCityLevel = res.data
+                }
+                else if(data == this.item.SchoolRollTID ){
+                    this.SchoolCityLevelT = res.data
+                }
+                else if(data == this.item.educationONE ){
+                    this.educationCityLevel = res.data
+                }
+                else if(data == this.item.educationTw ){
+                    this.educationCityLevelTwo = res.data
+                }
+                else if(data == this.item.educationThre ){
+                    this.educationCityLevelThree = res.data
+                }
+                // this.educationCityLevelAlternative = res.data,
+                // this.educationCityLevelAlternativeTwo = res.data
+            }),(err) => {
+                console.log(err)
+            }
+        },
+        // 区县
+        bbb(word){
+            let data = word
+             axios.post('http://192.168.0.130:8080/City/findByCode2',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                if(data ==  this.item.alternativeL){
+                    this.educationCountyAlternative = res.data
+                }
+                else if(data == this.item.alternativeWL ){
+                    this.educationCountyAlternativeTwo = res.data
+                }
+                else if(data == this.item.SchoolRollIDTwo){
+                    this.SchoolCounty = res.data
+                }
+                else if(data == this.item.SchoolRollTIDTwo){
+                    this.SchoolCountyT = res.data
+                }
+                else if(data == this.item.educationONEL){
+                    this.educationCounty = res.data
+                }
+                else if(data == this.item.educationTwoL){
+                    this.educationCountyTwo = res.data
+                }
+                else if(data == this.item.educationThreeL){
+                    this.educationCountyThree = res.data
+                }
+            }),
+            (err) => {
+                console.log(err)
+            }
+        },
+        // 学校
+        ccc(word){
+            // let data = this.item.educationIDTwo
+            let data = word
+            axios.post('http://192.168.0.130:8080/City/findByCode3',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                if(data ==  this.item.alternativeLL){
+                    this.educationCountyLAlternative = res.data
+                }
+                else if(data == this.item.alternativeWLL ){
+                    this.educationCountyLAlternativeTwo = res.data
+                }
+                else if(data == this.item.SchoolRollIDThree ){
+                    this.SchoolCountyL = res.data
+                }
+                else if(data == this.item.SchoolRollTIDThree ){
+                    this.SchoolCountyLT = res.data
+                }
+                else if(data == this.item.educationONELL ){
+                    this.educationCountyL = res.data
+                }
+                else if(data == this.item.educationTwoLL ){
+                    this.educationCountyLTwo = res.data
+                }
+                else if(data == this.item.educationThreeLL ){
+                    this.educationCountyLThree = res.data
+                }
+            }),(err) => {
+                console.log(err)
+            }
         },
         submit(){
             let data = {

@@ -156,78 +156,38 @@
                         <div class="ui-form-item" title="">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>高考报名所在地：</strong></label>
                             <div style="margin-right: 245px">
-                                <select id="bmszdSslist" class="ignoreselect">
-                                    <option value="" :selected="item.selected" v-for="(item,i) in Bourn" :key="i">{{item.name}}</option>
-                                    <!-- <option value="" selected="selected">请选择</option>
-                                    <option value="110000">北京市</option>
-                                    <option value="120000">天津市</option>
-                                    <option value="130000">河北省</option>
-                                    <option value="140000">山西省</option>
-                                    <option value="150000">内蒙古自治区</option>
-                                    <option value="210000">辽宁省</option>
-                                    <option value="220000">吉林省</option>
-                                    <option value="230000">黑龙江省</option>
-                                    <option value="310000">上海市</option>
-                                    <option value="320000">江苏省</option>
-                                    <option value="330000">浙江省</option>
-                                    <option value="340000">安徽省</option>
-                                    <option value="350000">福建省</option>
-                                    <option value="360000">江西省</option>
-                                    <option value="370000">山东省</option>
-                                    <option value="410000">河南省</option>
-                                    <option value="420000">湖北省</option>
-                                    <option value="430000">湖南省</option>
-                                    <option value="440000">广东省</option>
-                                    <option value="450000">广西壮族自治区</option>
-                                    <option value="460000">海南省</option>
-                                    <option value="500000">重庆市</option>
-                                    <option value="510000">四川省</option>
-                                    <option value="520000">贵州省</option>
-                                    <option value="530000">云南省</option>
-                                    <option value="540000">西藏自治区</option>
-                                    <option value="610000">陕西省</option>
-                                    <option value="620000">甘肃省</option>
-                                    <option value="630000">青海省</option>
-                                    <option value="640000">宁夏回族自治区</option>
-                                    <option value="650000">新疆维吾尔自治区</option>
-                                    <option value="710000">台湾省</option>
-                                    <option value="810000">香港特别行政区</option>
-                                    <option value="820000">澳门特别行政区</option>
-                                    <option value="990000">其他</option> -->
+                                <select id="bmszdSslist" class="ignoreselect"
+                                 v-model="item.baseArea"
+                                @change= "aaa(item.baseArea)"
+                                >
+                                    <option :value="item.id" 
+                                    :selected="item.selected" 
+                                    v-for="item in Bourn" 
+                                    :key="item.id">{{item.name}}</option>
+                                    
                                 </select>
                                 <!-- 石家庄市 -->
-                                <select id="bmszdXjslist" class="ignoreselect">
-                                    <option value="" :selected="item.selected" v-for="(item,i) in CityLevel" :key="i">{{item.name}}</option>
-                                    <!-- <option value="130100">石家庄市</option>
-                                    <option value="130200">唐山市</option>
-                                    <option value="130300">秦皇岛市</option>
-                                    <option value="130400">邯郸市</option>
-                                    <option value="130500">邢台市</option>
-                                    <option value="130600">保定市</option>
-                                    <option value="130700">张家口市</option>
-                                    <option value="130800">承德市</option>
-                                    <option value="130900">沧州市</option>
-                                    <option value="131000">廊坊市</option>
-                                    <option value="131100">衡水市</option> -->
+                                <select id="bmszdXjslist" class="ignoreselect"
+                                 v-model="item.baseAreaL"
+                                @change= "bbb(item.baseAreaL)"
+                                >
+                                    <option :value="item.id" 
+                                    :selected="item.selected" 
+                                    v-for="item in CityLevel" 
+                                    :key="item.id">{{item.name}}</option>
+                                    
                                 </select>
                                 <!-- 市辖区 -->
-                                <select id="bmszdDqlist" name="jbxxVO.bmszdDm">
-                                    <option value="" :selected="item.selected" v-for="(item,i) in County" :key="i">{{item.name}}</option>
-                                    <!-- <option value="130201">市辖区</option>
-                                    <option value="130202">路南区</option>
-                                    <option value="130203">路北区</option>
-                                    <option value="130204">古冶区</option>
-                                    <option value="130205">开平区</option>
-                                    <option value="130207">丰南区</option>
-                                    <option value="130208">丰润区</option>
-                                    <option value="130209">曹妃甸区</option>
-                                    <option value="130223">滦县</option>
-                                    <option value="130224">滦南县</option>
-                                    <option value="130225">乐亭县</option>
-                                    <option value="130227">迁西县</option>
-                                    <option value="130229">玉田县</option>
-                                    <option value="130281">遵化市</option>
-                                    <option value="130283">迁安市</option> -->
+                                <select id="bmszdDqlist" name="jbxxVO.bmszdDm"
+                                v-model="item.baseAreaLL"
+                                >
+                                    <option :value="item.name" 
+                                    :selected="item.selected" 
+                                    v-for="item in County" 
+                                    :key="item.name">
+                                        {{item.name}}
+                                    </option>
+                                    
                                 </select>
                             </div>
                             <p class="ui-form-explain" style="margin-left: 66px">填写高考报名时的户籍所在地，应与参加高考录取的省（区、市）保持一致</p>
@@ -251,11 +211,6 @@
                                 :key="item.value">
                                     {{item.name}}
                                 </option>
-                                <!-- <option value="" selected="selected">请选择</option>
-                                <option value="01">农村应届</option>
-                                <option value="02">农村往届</option>
-                                <option value="03">城镇应届</option>
-                                <option value="04">城镇往届</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
@@ -274,16 +229,6 @@
                                 >
                                     {{item.name}}
                                 </option>
-
-                                <!-- <option value="" selected="selected">请选择</option>
-                                <option value="0">不应试外语</option>
-                                <option value="1">英语</option>
-                                <option value="2">俄语</option>
-                                <option value="3">日语</option>
-                                <option value="4">德语</option>
-                                <option value="5">法语</option>
-                                <option value="6">西班牙语</option>
-                                <option value="7">其他外语</option> -->
                             </select>
                             <p class="ui-form-explain"></p>
                         </div>
@@ -305,10 +250,6 @@
                                 v-for="item in Type" :key="item.value">
                                     {{item.name}}
                                 </option>
-                                <!-- <option value="" selected="selected">请选择</option> -->
-                                <!-- <option value="1">文史</option> -->
-                                <!-- <option value="5">理工</option> -->
-                                <!-- <option value="Z" disabled="disabled">综合改革</option> -->
                             </select>
                             <p class="ui-form-explain" style="margin-left: 170px">
                                 高考报名所在地为上海、浙江的考生，请选择“综合改革”。其他省份的考生请选择“文科”或“理科”
@@ -323,81 +264,34 @@
                         <div class="ui-form-item" title="最多可输入50个字符；地址请写明街道名称、门牌号码、楼层和房间号等信息">
                             <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>联系地址：</strong></label>
                             <div style="margin-right: 250px">
-                                <select id="txdzSslist" class="ignoreselect">
-                                    <option :selected="item.selected" :value="item.value" v-for="(item,i) in Site" :key="i">{{item.name}}</option>
-                                    <!-- <option value="" selected="selected">请选择</option>
-                                    <option value="110000">北京市</option>
-                                    <option value="120000">天津市</option>
-                                    <option value="130000">河北省</option>
-                                    <option value="140000">山西省</option>
-                                    <option value="150000">内蒙古自治区</option>
-                                    <option value="210000">辽宁省</option>
-                                    <option value="220000">吉林省</option>
-                                    <option value="230000">黑龙江省</option>
-                                    <option value="310000">上海市</option>
-                                    <option value="320000">江苏省</option>
-                                    <option value="330000">浙江省</option>
-                                    <option value="340000">安徽省</option>
-                                    <option value="350000">福建省</option>
-                                    <option value="360000">江西省</option>
-                                    <option value="370000">山东省</option>
-                                    <option value="410000">河南省</option>
-                                    <option value="420000">湖北省</option>
-                                    <option value="430000">湖南省</option>
-                                    <option value="440000">广东省</option>
-                                    <option value="450000">广西壮族自治区</option>
-                                    <option value="460000">海南省</option>
-                                    <option value="500000">重庆市</option>
-                                    <option value="510000">四川省</option>
-                                    <option value="520000">贵州省</option>
-                                    <option value="530000">云南省</option>
-                                    <option value="540000">西藏自治区</option>
-                                    <option value="610000">陕西省</option>
-                                    <option value="620000">甘肃省</option>
-                                    <option value="630000">青海省</option>
-                                    <option value="640000">宁夏回族自治区</option>
-                                    <option value="650000">新疆维吾尔自治区</option>
-                                    <option value="710000">台湾省</option>
-                                    <option value="810000">香港特别行政区</option>
-                                    <option value="820000">澳门特别行政区</option>
-                                    <option value="990000">其他</option> -->
+                                <select id="txdzSslist" class="ignoreselect"
+                                v-model="item.contactAdd"
+                                @change= "aaa(item.contactAdd)"
+                                >
+                                    <option :selected="item.selected" 
+                                    :value="item.id" 
+                                    v-for="item in Site" 
+                                    :key="item.id">{{item.name}}</option>
                                 </select>
                                 <!-- 联系地址 -->
-                                <select id="txdzXjslist" class="ignoreselect">
-                                    <option :selected="item.selected" :value="item.value" v-for="(item,i) in CityLevelTwo" :key="i">{{item.name}}</option>
+                                <select id="txdzXjslist" class="ignoreselect"
+                                v-model="item.contactAddL"
+                                @change= "bbb(item.contactAddL)"
+                                >
+                                    <option :selected="item.selected" 
+                                    :value="item.id" 
+                                    v-for="item in CityLevelTwo" 
+                                    :key="item.id">{{item.name}}</option>
 
-                                    <!-- <option value="" selected="selected">请选择</option>
-                                    <option value="130100">石家庄市</option>
-                                    <option value="130200">唐山市</option>
-                                    <option value="130300">秦皇岛市</option>
-                                    <option value="130400">邯郸市</option>
-                                    <option value="130500">邢台市</option>
-                                    <option value="130600">保定市</option>
-                                    <option value="130700">张家口市</option>
-                                    <option value="130800">承德市</option>
-                                    <option value="130900">沧州市</option>
-                                    <option value="131000">廊坊市</option>
-                                    <option value="131100">衡水市</option> -->
                                 </select>
-                                <select id="txdzDqlist" name="jbxxVO.txdzDm">
-                                    <option :selected="item.selected" :value="item.value" v-for="(item,i) in CountyTwo" :key="i">{{item.name}}</option>
+                                <select id="txdzDqlist" name="jbxxVO.txdzDm"
+                                v-model="item.contactAddLL"
+                                >
+                                    <option :selected="item.selected" 
+                                    :value="item.name" 
+                                    v-for="item in CountyTwo" 
+                                    :key="item.name">{{item.name}}</option>
 
-                                    <!-- <option value="" selected="selected">请选择</option>
-                                    <option value="130201">市辖区</option>
-                                    <option value="130202">路南区</option>
-                                    <option value="130203">路北区</option>
-                                    <option value="130204">古冶区</option>
-                                    <option value="130205">开平区</option>
-                                    <option value="130207">丰南区</option>
-                                    <option value="130208">丰润区</option>
-                                    <option value="130209">曹妃甸区</option>
-                                    <option value="130223">滦县</option>
-                                    <option value="130224">滦南县</option>
-                                    <option value="130225">乐亭县</option>
-                                    <option value="130227">迁西县</option>
-                                    <option value="130229">玉田县</option>
-                                    <option value="130281">遵化市</option>
-                                    <option value="130283">迁安市</option> -->
                                 </select>
                             </div>
                             <br><input name="jbxxVO.txdzXxdz" id="jbxx_xxdz"
@@ -443,13 +337,6 @@
                                                 :key="item.value">
                                                     {{item.name}}
                                                 </option>
-
-                                                <!-- <option value="" selected="selected">请选择</option>
-                                                <option value="01">博士</option>
-                                                <option value="02">硕士</option>
-                                                <option value="03">本科</option>
-                                                <option value="04">专科</option>
-                                                <option value="05">高中及以下</option> -->
                                             </select>
                                         </td>
                                     </tr>
@@ -485,13 +372,6 @@
                                                 :key="item.value">
                                                     {{item.name}}
                                                 </option>
-
-                                                <!-- <option value="" selected="selected">请选择</option>
-                                                <option value="01">博士</option>
-                                                <option value="02">硕士</option>
-                                                <option value="03">本科</option>
-                                                <option value="04">专科</option>
-                                                <option value="05">高中及以下</option> -->
                                             </select>
                                         </td>
                                     </tr>
@@ -752,144 +632,12 @@
                             name:"请选择",
                             selected:"selected"
                         },
-                        {
-                            name:"北京市"
-                        },
-                         {
-                            name:"天津市"
-                        },
-                         {
-                            name:"河北省"
-                        },
-                         {
-                            name:"山西省"
-                        },
-                         {
-                            name:"内蒙古自治区"
-                        },
-                         {
-                            name:"辽宁省"
-                        },
-                         {
-                            name:"吉林省"
-                        },
-                         {
-                            name:"黑龙江省"
-                        },
-                         {
-                            name:"上海市"
-                        },
-                         {
-                            name:"江苏省"
-                        },
-                         {
-                            name:"浙江省"
-                        },
-                         {
-                            name:"安徽省"
-                        },
-                         {
-                            name:"福建省"
-                        },
-                         {
-                            name:"江西省"
-                        },
-                         {
-                            name:"山东省"
-                        },
-                         {
-                            name:"河南省"
-                        },
-                         {
-                            name:"湖北省"
-                        },
-                         {
-                            name:"湖南省"
-                        },
-                         {
-                            name:"广东省"
-                        },
-                         {
-                            name:"广西壮族自治区"
-                        },
-                         {
-                            name:"海南省"
-                        },
-                         {
-                            name:"四川省"
-                        },
-                         {
-                            name:"贵州省"
-                        },
-                         {
-                            name:"云南省"
-                        },
-                         {
-                            name:"西藏自治区"
-                        },
-                         {
-                            name:"陕西省"
-                        },
-                         {
-                            name:"甘肃省"
-                        },
-                         {
-                            name:"青海省"
-                        },
-                         {
-                            name:"宁夏回族自治区"
-                        },
-                         {
-                            name:"新疆维吾尔自治区"
-                        },
-                         {
-                            name:"台湾省"
-                        },
-                         {
-                            name:"香港特别行政区"
-                        },
-                         {
-                            name:"澳门特别行政区"
-                        },
-                         {
-                            name:"其他"
-                        },
                     ],
                     // 市级
                     CityLevel:[
                         {
-                            name:"石家庄市",
+                            name:"请选择",
                             selected:"selected"
-                        },
-                        {
-                            name:"唐山市"
-                        },
-                        {
-                            name:"秦皇岛市"
-                        },
-                        {
-                            name:"邯郸市"
-                        },
-                        {
-                            name:"邢台市"
-                        },
-                        {
-                            name:"保定市"
-                        },
-                        {
-                            name:"张家口市"
-                        },
-                        {
-                            name:"承德市"
-                        },
-                        {
-                            name:"沧州市"
-                        },
-                        {
-                            name:"廊坊市"
-                        },
-                        {
-                            name:"衡水市"
                         },
                     ],
                     // 区县级别
@@ -897,48 +645,6 @@
                         {
                             name:"市辖区"
                         },
-                        {
-                            name:"路南区"
-                        },
-                        {
-                            name:"路北区"
-                        },
-                        {
-                            name:"古冶区"
-                        },
-                        {
-                            name:"开平区"
-                        },
-                        {
-                            name:"丰南区"
-                        },
-                        {
-                            name:"丰润区"
-                        },
-                        {
-                            name:"曹妃甸区"
-                        },
-                        {
-                            name:"滦县"
-                        },
-                        {
-                            name:"滦南县"
-                        },
-                        {
-                            name:"乐亭县"
-                        },
-                        {
-                            name:"迁西县"
-                        },
-                        {
-                            name:"玉田县"
-                        },
-                        {
-                            name:"遵化市"
-                        },
-                        {
-                            name:"迁安市"
-                        }
                     ],
                     // 考生类型
                     Examinee:[
@@ -1027,147 +733,12 @@
                             name:"请选择",
                             selected:"selected"
                         },
-                        {
-                            name:"北京市"
-                        },
-                         {
-                            name:"天津市"
-                        },
-                         {
-                            name:"河北省"
-                        },
-                         {
-                            name:"山西省"
-                        },
-                         {
-                            name:"内蒙古自治区"
-                        },
-                         {
-                            name:"辽宁省"
-                        },
-                         {
-                            name:"吉林省"
-                        },
-                         {
-                            name:"黑龙江省"
-                        },
-                         {
-                            name:"上海市"
-                        },
-                         {
-                            name:"江苏省"
-                        },
-                         {
-                            name:"浙江省"
-                        },
-                         {
-                            name:"安徽省"
-                        },
-                         {
-                            name:"福建省"
-                        },
-                         {
-                            name:"江西省"
-                        },
-                         {
-                            name:"山东省"
-                        },
-                         {
-                            name:"河南省"
-                        },
-                         {
-                            name:"湖北省"
-                        },
-                         {
-                            name:"湖南省"
-                        },
-                         {
-                            name:"广东省"
-                        },
-                         {
-                            name:"广西壮族自治区"
-                        },
-                         {
-                            name:"海南省"
-                        },
-                         {
-                            name:"四川省"
-                        },
-                         {
-                            name:"贵州省"
-                        },
-                         {
-                            name:"云南省"
-                        },
-                         {
-                            name:"西藏自治区"
-                        },
-                         {
-                            name:"陕西省"
-                        },
-                         {
-                            name:"甘肃省"
-                        },
-                         {
-                            name:"青海省"
-                        },
-                         {
-                            name:"宁夏回族自治区"
-                        },
-                         {
-                            name:"新疆维吾尔自治区"
-                        },
-                         {
-                            name:"台湾省"
-                        },
-                         {
-                            name:"香港特别行政区"
-                        },
-                         {
-                            name:"澳门特别行政区"
-                        },
-                         {
-                            name:"其他"
-                        },
                     ],
                     // 市级
                     CityLevelTwo:[
                         {
                             name:"请选择",
                             selected:"selected"
-                        },
-                        {
-                            name:"石家庄市"
-                        },
-                        {
-                            name:"唐山市"
-                        },
-                        {
-                            name:"秦皇岛市"
-                        },
-                        {
-                            name:"邯郸市"
-                        },
-                        {
-                            name:"邢台市"
-                        },
-                        {
-                            name:"保定市"
-                        },
-                        {
-                            name:"张家口市"
-                        },
-                        {
-                            name:"承德市"
-                        },
-                        {
-                            name:"沧州市"
-                        },
-                        {
-                            name:"廊坊市"
-                        },
-                        {
-                            name:"衡水市"
                         },
                     ],
                     // 区县级别
@@ -1176,51 +747,6 @@
                             name:"请选择",
                             selected:"selected"
                         },
-                        {
-                            name:"市辖区"
-                        },
-                        {
-                            name:"路南区"
-                        },
-                        {
-                            name:"路北区"
-                        },
-                        {
-                            name:"古冶区"
-                        },
-                        {
-                            name:"开平区"
-                        },
-                        {
-                            name:"丰南区"
-                        },
-                        {
-                            name:"丰润区"
-                        },
-                        {
-                            name:"曹妃甸区"
-                        },
-                        {
-                            name:"滦县"
-                        },
-                        {
-                            name:"滦南县"
-                        },
-                        {
-                            name:"乐亭县"
-                        },
-                        {
-                            name:"迁西县"
-                        },
-                        {
-                            name:"玉田县"
-                        },
-                        {
-                            name:"遵化市"
-                        },
-                        {
-                            name:"迁安市"
-                        }
                     ],
                     // 详细地址
                     SiteLL:"",
@@ -1317,7 +843,29 @@
                     // 考生类型  key值
                     item : { ExamineeL : "" },
                     // 学科类型  key值
-                    item : { TypeL : "" }
+                    item : { TypeL : "" },
+                    // 联系地址 省份
+                    item : { contactAdd : ""},
+                    // 市
+                    item : { contactAddL : ""},
+                    // 区
+                    item : { contactAddLL : ""},
+                    // 高考报名所在地 省份
+                    item : { baseArea : ""},
+                    // 市
+                    item : { baseAreaL : ""},
+                    // 区
+                    item : { baseAreaLL : ""},
+                }
+            },
+            created(){
+                // 省份数据
+                axios.post('http://192.168.0.130:8080/City/findByCode')
+                    .then((res)=>{
+                        this.Site = res.data,
+                        this.Bourn = res.data
+                }),(err)=>{
+                        console.log(error)
                 }
             },
             methods:{
@@ -1328,6 +876,45 @@
                     // };
                     // this.$store.commit('GET_APP_NAME','this.SerialNumber')
                 // },
+                aaa(word){
+                    let data = word
+                    axios.post('http://192.168.0.130:8080/City/findById',
+                    data,
+                    {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+                    )
+                    .then((res) => {
+                        // console.log(data)
+                        if(data ==  this.item.contactAdd){
+                            this.CityLevelTwo = res.data
+                        }
+                        else if(data ==  this.item.baseArea){
+                            this.CityLevel = res.data
+                        }
+                        
+                    }),(err) => {
+                        console.log(err)
+                    }
+                },
+                // 区县
+                bbb(word){
+                    let data = word
+                    axios.post('http://192.168.0.130:8080/City/findByCode2',
+                    data,
+                    {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+                    )
+                    .then((res) => {
+                        if(data ==  this.item.contactAddL){
+                            this.CountyTwo = res.data
+                        }
+                        else if(data ==  this.item.baseAreaL){
+                            this.County = res.data
+                        }
+                        
+                    }),
+                    (err) => {
+                        console.log(err)
+                    }
+                },
                 submit(){
                     let data = {
                         Height : this.Height,
