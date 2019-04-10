@@ -270,7 +270,7 @@
                                 >
                                     <option :selected="item.selected" 
                                     :value="item.id" 
-                                    v-for="item in Site" 
+                                    v-for="item in Site"
                                     :key="item.id">{{item.name}}</option>
                                 </select>
                                 <!-- 联系地址 -->
@@ -643,7 +643,8 @@
                     // 区县级别
                     County:[
                         {
-                            name:"市辖区"
+                            school:"请选择",
+                            selected:"selected"
                         },
                     ],
                     // 考生类型
@@ -898,6 +899,7 @@
                 // 区县
                 bbb(word){
                     let data = word
+                    // console.log(data)
                     axios.post('http://192.168.0.130:8080/City/findByCode2',
                     data,
                     {headers:{'Content-Type':"application/json; charset=UTF-8"}}
@@ -915,12 +917,34 @@
                         console.log(err)
                     }
                 },
+                // 获取名字
                 submit(){
+                    //联系地址    
+                    let a = JSON.stringify(this.item.contactAdd)
+                    let b = JSON.stringify(this.item.contactAddL)
+                    let c = this.item.contactAddLL
+                    let m = ","
+                    let d = a+m+b+m+c
+                    // console.log(typeof(d,'d'))
+                    // console.log(d)
+                    // 高考报名所在地  
+                    let aaa = JSON.stringify(this.item.baseArea)
+                    // console.log(a,'a')
+                    let bb = JSON.stringify(this.item.baseAreaL)
+                    // console.log(b,'b')
+                    let cc = this.item.baseAreaLL
+                    // console.log(c,'c')
+                    let mm = ","
+                    let dd = aaa+mm+bb+mm+cc
+                    // console.log(dd)
+                    // console.log(typeof(dd,'dd'))
+
+
                     let data = {
                         Height : this.Height,
                         colorEye : this.item.eyes,
                         contactNumber : this.PhoneNumber,
-                        // contactProvinceAddress : this.Site,
+                        contactProvinceAddress : d, 
                         contactRoadAddress : this.SiteLL,
                         date : this.birth,
                         eyeLeft : this.seeingLeft,
@@ -946,31 +970,15 @@
                         postalCode : this.postal,
                         sex : this.item.sexL,
                         signupNumber : this.SerialNumber,
-                        // signupProvinceAddress : this.Bourn,
+                        signupProvinceAddress : dd,
                         studentType : this.item.ExamineeL,
                         subjectType : this.item.TypeL,
                         weight : this.Weight,
                     }
-                    console.log(data);
-                    // aa(data);
-                    // axios.post('/StudentInformation/save',data
-                    //         // Phone : this.Phone,
-                    //         // Height : this.Height,
-                    //         // languageType : this.Language.value,
-                    // )
-                    // .then((data) => {
-                    //     console.log(data);
-                    //     // res = res.data;
-                    // }).catch(function (error) {
-                    //     console.log(error);
-                    // });
+                    // console.log(data);
+                    aa(data);
                }
             },
-            mounted(){
-
-            }
-            
-                        
         }
     </script>
 

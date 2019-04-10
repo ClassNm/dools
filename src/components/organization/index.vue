@@ -29,21 +29,28 @@
                             所在地：
                         </strong>
                     </label> 
-                    <select id="slist" name="slist">
-                        <option value="" :selected="item.selected"  
-                        v-for="(item,i) in Bourn" :key="i" 
+                    <select id="slist" name="slist"
+                     v-model="item.cityI"
+                        @change= "aaa(item.cityI)"
+                    >
+                        <option :value="item.id" :selected="item.selected"  
+                        v-for="item in Bourn" :key="item.id" 
                         >{{item.name}}</option>
                     </select> 
-                    <select id="clist" name="clist" onchange="i
-                    nitDqList('slist', 'clist', 'xlist');">
-                        <option value="" :selected="item.selected" 
-                        v-for="(item,i) in CityLevel" :key="i"
+                    <select id="clist" name="clist" 
+                     v-model="item.cityIL"
+                        @change= "bbb(item.cityIL)"
+                    >
+                        <option :value="item.id" :selected="item.selected" 
+                        v-for="item in CityLevel" :key="item.id"
                         >{{item.name}}
                         </option>
                     </select> 
-                    <select id="xlist" name="data.szdm">
-                        <option value="" :selected="item.selected" 
-                        v-for="(item,i) in County" :key="i">
+                    <select id="xlist" name="data.szdm"
+                    v-model="item.cityILL"
+                    >
+                        <option :value="item.name" :selected="item.selected" 
+                        v-for="item in County" :key="item.name">
                         {{item.name}}
                         </option>
                     </select>
@@ -89,6 +96,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { organization } from '../../vuex/actions.js'
 export default {
     data(){
@@ -99,147 +107,13 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                {
-                    name:"天津市"
-                },
-                {
-                    name:"河北省"
-                },
-                {
-                    name:"山西省"
-                },
-                {
-                    name:"内蒙古自治区"
-                },
-                {
-                    name:"辽宁省"
-                },
-                {
-                    name:"吉林省"
-                },
-                {
-                    name:"黑龙江省"
-                },
-                {
-                    name:"上海市"
-                },
-                {
-                    name:"江苏省"
-                },
-                {
-                    name:"浙江省"
-                },
-                {
-                    name:"安徽省"
-                },
-                {
-                    name:"福建省"
-                },
-                {
-                    name:"江西省"
-                },
-                {
-                    name:"山东省"
-                },
-                {
-                    name:"河南省"
-                },
-                {
-                    name:"湖北省"
-                },
-                {
-                    name:"湖南省"
-                },
-                {
-                    name:"广东省"
-                },
-                {
-                    name:"广西壮族自治区"
-                },
-                {
-                    name:"海南省"
-                },
-                {
-                    name:"四川省"
-                },
-                {
-                    name:"贵州省"
-                },
-                {
-                    name:"云南省"
-                },
-                {
-                    name:"西藏自治区"
-                },
-                {
-                    name:"陕西省"
-                },
-                {
-                    name:"甘肃省"
-                },
-                {
-                    name:"青海省"
-                },
-                {
-                    name:"宁夏回族自治区"
-                },
-                {
-                    name:"新疆维吾尔自治区"
-                },
-                {
-                    name:"台湾省"
-                },
-                {
-                    name:"香港特别行政区"
-                },
-                {
-                    name:"澳门特别行政区"
-                },
-                {
-                    name:"其他"
-                },
+                
             ],
             // 市级
             CityLevel:[
                 {
                     name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"石家庄市"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
                 },
             ],
             // 区县级别
@@ -248,51 +122,6 @@ export default {
                     name:"请选择",
                     selected : "selected"
                 },
-                {
-                    name:"市辖区"
-                },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 联系人
             people : "",
@@ -301,20 +130,74 @@ export default {
             // 手机号码：
             number : "",
             // 邮箱
-            emil : ""
+            emil : "",
+            // post请求iD
+            item : { cityI : "" },
+            item : { cityIL : "" },
+            item : { cityILL : "" }
+        }
+    },
+    created(){
+        // 省份数据
+        axios.post('http://192.168.0.130:8080/City/findByCode')
+        .then((res)=>{
+            this.Bourn = res.data
+        }),(err)=>{
+            console.log(error)
         }
     },
     methods:{
+        aaa(word){
+            let data = word
+            // console.log(data)
+            axios.post('http://192.168.0.130:8080/City/findById',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                // console.log(data)
+                if(data ==  this.item.cityI){
+                    this.CityLevel = res.data
+                }else{
+                }
+            }),(err) => {
+                console.log(err)
+            }
+        },
+        // 区县
+        bbb(word){
+            let data = word
+             axios.post('http://192.168.0.130:8080/City/findByCode2',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                if(data ==  this.item.cityIL){
+                    this.County = res.data
+                }else{
+                }
+            }),
+            (err) => {
+                console.log(err)
+            }
+        },
         submit(){
+             //学籍所在中学 
+            let a = JSON.stringify(this.item.cityI)
+            let b = JSON.stringify(this.item.cityIL)
+            let c = this.item.cityILL
+            let m = "-"
+            let e = a+m+b+m+c
             let data = {
                 email : this.emil,
                 name : this.team,
                 peopleName : this.people,
                 phone : this.number,
-                // address : this.Bourn, 所在地
+                // address : e,
             }
-            console.log(data);
-            // organization(data);
+            // let dataL = JSON.stringify(data)
+            // console.log(data);
+            organization(data);
         }
     }
 }

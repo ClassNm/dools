@@ -30,54 +30,39 @@
                                 所在地：
                             </strong>
                         </label> 
-                        <select id="slist" name="slist">
-                            <option value="" :selected="item.selected"
-                            v-for="(item,i) in Bourn" :key="i"
+                        <!-- 省 -->
+                        <select id="slist" name="slist"
+                         v-model="item.cityI"
+                        @change= "aaa(item.cityI)"
+                        >
+                            <option 
+                            :value="item.id" 
+                            :selected="item.selected"
+                            v-for="item in Bourn" 
+                            :key="item.id"
                             >{{item.name}}</option>
-                        <!-- <option value="110000">北京市</option>
-                        <option value="120000">天津市</option>
-                        <option value="130000">河北省</option>
-                        <option value="140000">山西省</option>
-                        <option value="150000">内蒙古自治区</option>
-                        <option value="210000">辽宁省</option>
-                        <option value="220000">吉林省</option>
-                        <option value="230000">黑龙江省</option>
-                        <option value="310000">上海市</option>
-                        <option value="320000">江苏省</option>
-                        <option value="330000">浙江省</option>
-                        <option value="340000">安徽省</option>
-                        <option value="350000">福建省</option>
-                        <option value="360000">江西省</option>
-                        <option value="370000">山东省</option>
-                        <option value="410000">河南省</option>
-                        <option value="420000">湖北省</option>
-                        <option value="430000">湖南省</option>
-                        <option value="440000">广东省</option>
-                        <option value="450000">广西壮族自治区</option>
-                        <option value="460000">海南省</option>
-                        <option value="500000">重庆市</option>
-                        <option value="510000">四川省</option>
-                        <option value="520000">贵州省</option>
-                        <option value="530000">云南省</option>
-                        <option value="540000">西藏自治区</option>
-                        <option value="610000">陕西省</option>
-                        <option value="620000">甘肃省</option>
-                        <option value="630000">青海省</option>
-                        <option value="640000">宁夏回族自治区</option>
-                        <option value="650000">新疆维吾尔自治区</option>
-                        <option value="710000">台湾省</option>
-                        <option value="810000">香港特别行政区</option>
-                        <option value="820000">澳门特别行政区</option>
-                        <option value="990000">其他</option> -->
-                    </select> 
-                    <select id="clist" name="clist" onchange="initDqList('slist', 'clist', 'xlist');">
-                        <option value="" :selected="item.selected" 
-                        v-for="(item,i) in CityLevel" :key="i">{{item.name}}</option>
-                    </select> <select id="xlist" name="data.szdm">
-                        <option value="" :selected="item.selected"
-                        v-for="(item,i) in County" :key="i"
-                        >{{item.name}}</option>
-                    </select>
+                        </select>
+                         <!--市  -->
+                        <select id="clist" name="clist" 
+                        v-model="item.cityIL"
+                        @change= "bbb(item.cityIL)"    
+                        >
+                            <option 
+                            :value="item.id" 
+                            :selected="item.selected" 
+                            v-for="item in CityLevel" 
+                            :key="item.id">{{item.name}}</option>
+                        </select>
+                         <!--区  -->
+                        <select id="xlist" name="data.szdm"
+                        v-model="item.cityILL"
+                        >
+                            <option :value="item.name" 
+                            :selected="item.selected"
+                            v-for="item in County" 
+                            :key="item.name"
+                            >{{item.name}}</option>
+                        </select>
                         <p class="ui-form-explain"></p>
                     </div>
                     <!-- 所在单位： -->
@@ -139,6 +124,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { expert } from '../../vuex/actions.js'
 export default {
     data(){
@@ -149,193 +135,19 @@ export default {
                     name:"请选择",
                     selected:"selected"
                 },
-                {
-                    name:"北京市"
-                },
-                {
-                    name:"天津市"
-                },
-                {
-                    name:"河北省"
-                },
-                {
-                    name:"山西省"
-                },
-                {
-                    name:"内蒙古自治区"
-                },
-                {
-                    name:"辽宁省"
-                },
-                {
-                    name:"吉林省"
-                },
-                {
-                    name:"黑龙江省"
-                },
-                {
-                    name:"上海市"
-                },
-                {
-                    name:"江苏省"
-                },
-                {
-                    name:"浙江省"
-                },
-                {
-                    name:"安徽省"
-                },
-                {
-                    name:"福建省"
-                },
-                {
-                    name:"江西省"
-                },
-                {
-                    name:"山东省"
-                },
-                {
-                    name:"河南省"
-                },
-                {
-                    name:"湖北省"
-                },
-                {
-                    name:"湖南省"
-                },
-                {
-                    name:"广东省"
-                },
-                {
-                    name:"广西壮族自治区"
-                },
-                {
-                    name:"海南省"
-                },
-                {
-                    name:"四川省"
-                },
-                {
-                    name:"贵州省"
-                },
-                {
-                    name:"云南省"
-                },
-                {
-                    name:"西藏自治区"
-                },
-                {
-                    name:"陕西省"
-                },
-                {
-                    name:"甘肃省"
-                },
-                {
-                    name:"青海省"
-                },
-                {
-                    name:"宁夏回族自治区"
-                },
-                {
-                    name:"新疆维吾尔自治区"
-                },
-                {
-                    name:"台湾省"
-                },
-                {
-                    name:"香港特别行政区"
-                },
-                {
-                    name:"澳门特别行政区"
-                },
-                {
-                    name:"其他"
-                },
             ],
             // 市级
             CityLevel:[
                 {
-                    name:"石家庄市",
+                    name:"请选择",
                     selected:"selected"
-                },
-                {
-                    name:"唐山市"
-                },
-                {
-                    name:"秦皇岛市"
-                },
-                {
-                    name:"邯郸市"
-                },
-                {
-                    name:"邢台市"
-                },
-                {
-                    name:"保定市"
-                },
-                {
-                    name:"张家口市"
-                },
-                {
-                    name:"承德市"
-                },
-                {
-                    name:"沧州市"
-                },
-                {
-                    name:"廊坊市"
-                },
-                {
-                    name:"衡水市"
                 },
             ],
             // 区县级别
             County:[
                 {
-                    name:"市辖区"
+                    name:"请选择"
                 },
-                {
-                    name:"路南区"
-                },
-                {
-                    name:"路北区"
-                },
-                {
-                    name:"古冶区"
-                },
-                {
-                    name:"开平区"
-                },
-                {
-                    name:"丰南区"
-                },
-                {
-                    name:"丰润区"
-                },
-                {
-                    name:"曹妃甸区"
-                },
-                {
-                    name:"滦县"
-                },
-                {
-                    name:"滦南县"
-                },
-                {
-                    name:"乐亭县"
-                },
-                {
-                    name:"迁西县"
-                },
-                {
-                    name:"玉田县"
-                },
-                {
-                    name:"遵化市"
-                },
-                {
-                    name:"迁安市"
-                }
             ],
             // 推荐人姓名
             name : "",
@@ -349,21 +161,78 @@ export default {
             number : "",
             // 邮箱：
             eMail : "",
+            // post请求iD
+            item : { cityI : "" },
+            item : { cityIL : "" },
+            item : { cityILL : "" }
+        }
+    },
+    created(){
+        // 省份数据
+        axios.post('http://192.168.0.130:8080/City/findByCode')
+        .then((res)=>{
+            this.Bourn = res.data
+        }),(err)=>{
+            console.log(error)
         }
     },
     methods:{
+         aaa(word){
+            let data = word
+            // console.log(data)
+            axios.post('http://192.168.0.130:8080/City/findById',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                // console.log(data)
+                if(data ==  this.item.cityI){
+                    this.CityLevel = res.data
+                }else{
+
+                }
+            }),(err) => {
+                console.log(err)
+            }
+        },
+        // 区县
+        bbb(word){
+            let data = word
+             axios.post('http://192.168.0.130:8080/City/findByCode2',
+            data,
+            {headers:{'Content-Type':"application/json; charset=UTF-8"}}
+            )
+            .then((res) => {
+                if(data ==  this.item.cityIL){
+                    this.County = res.data
+                }else{
+
+                }
+            }),
+            (err) => {
+                console.log(err)
+            }
+        },
         submit(){
+             //学籍所在中学 
+            let a = JSON.stringify(this.item.cityI)
+            let b = JSON.stringify(this.item.cityIL)
+            let c = this.item.cityILL
+            let m = ","
+            let e = a+m+b+m+c
+
             let data = {
                 email : this.eMail,
                 phone : this.number,
                 post : this.postL,
                 recommenderCompany : this.unit,
                 recommenderName : this.name,
-                title : this.duty
-                // recommenderAddress : this. 推荐人所在地
+                title : this.duty,
+                recommenderAddress : e
             }
-            console.log(data);
-            // expert(data);
+            // let dataL = JSON.stringify(data)
+            // console.log(typeof(dataL));
+            expert(data);
         }
     }
 }

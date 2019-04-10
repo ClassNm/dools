@@ -195,7 +195,7 @@ export default {
                 winAwardGrade : this.classk
             }
             console.log(data);
-            // newly(data);
+            newly(data);
         }
     }
 }

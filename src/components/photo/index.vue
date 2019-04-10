@@ -130,12 +130,12 @@ import { read } from 'fs';
             },
             submit(){
                 let data = {
-                    name : this.uploadImg.url,
+                    name : JSON.stringify(this.uploadImg.url),
                     // id : this.id
                 }
                 let bb = JSON.stringify(data)
-                console.log(bb);
-                // photo(data);
+                // console.log(typeof(bb))
+                photo(bb);
             }
 
 

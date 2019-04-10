@@ -392,12 +392,6 @@
                         <!-- 科目 年级人数 -->
                         <tr>
                             <td>{{numbergrade}}</td>
-                            <!-- <td><input name="xycjs[0].rs" maxlength="10" value="无" id="updateXycjxx_xycjs_0__rs" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].rs" maxlength="10" value="无" id="updateXycjxx_xycjs_1__rs" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].rs" maxlength="10" value="无" id="updateXycjxx_xycjs_2__rs" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].rs" maxlength="10" value="无" id="updateXycjxx_xycjs_3__rs" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].rs" maxlength="10" value="无" id="updateXycjxx_xycjs_4__rs" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].rs" maxlength="10" id="updateXycjxx_xycjs_5__rs" class="big" type="text"></td> -->
                             <td  v-for="(item,index) in numbergradeL" :key="index">
                                 <input name="xycjs[0].rs" maxlength="10" 
                                 v-model="item.value"
@@ -1092,30 +1086,36 @@ export default {
     },
     methods:{
         submit(){
+            // let aa = JSON.stringify(this.languageL)
+            // let aa = this.languageL
+            // let aal = aa.join("{}")
+            // console.log(aa)
             let data = {
-                academicLevelLower:this.languageL,
-                test : this.mathematicsL,
-                test1 : this.languagesL,
-                test2 : this.politicsL,
-                test3 : this.historyL,
-                test4 : this.geographyL,
-                test5 : this.physicsL,
-                test6 : this.chemistryL,
-                test7 : this.biologyL,
-                test8 : this.artsL,
-                test9 : this.sportsL,
-                test10 : this.musicL,
-                test11 : this.ITL,
-                test12 : this.techniqueL,
-                test13 : this.comprehensiveL,
-                test14 : this.integratedL,
-                test15 : this.totalL,
-                test16 : this.GradeL,
-                test17 : this.numbergradeL,
+                academicLevelLower:JSON.stringify(this.languageL),
+                test : JSON.stringify(this.mathematicsL),
+                test1 : JSON.stringify(this.languagesL),
+                test2 : JSON.stringify(this.politicsL),
+                test3 : JSON.stringify(this.historyL),
+                test4 : JSON.stringify(this.geographyL),
+                test5 : JSON.stringify(this.physicsL),
+                test6 : JSON.stringify(this.chemistryL),
+                test7 : JSON.stringify(this.biologyL),
+                test8 : JSON.stringify(this.artsL),
+                test9 : JSON.stringify(this.sportsL),
+                test10 : JSON.stringify(this.musicL),
+                test11 : JSON.stringify(this.ITL),
+                test12 : JSON.stringify(this.techniqueL),
+                test13 : JSON.stringify(this.comprehensiveL),
+                test14 : JSON.stringify(this.integratedL),
+                test15 : JSON.stringify(this.totalL),
+                test16 : JSON.stringify(this.GradeL),
+                test17 : JSON.stringify(this.numbergradeL),
             }
             let dataL = JSON.stringify(data)
             console.log(dataL);
-            // grade(data);
+            // console.log(aa)
+            // console.log(typeof(dataL))
+            grade(dataL);
         }
     }
 }

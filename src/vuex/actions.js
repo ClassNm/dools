@@ -67,7 +67,8 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
     export const grade = function(e) {
         let url = '/Scoresheet/save'
         let data = e
-        axios.post(url,data).then((res)=>{
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
             console.log(res)
             res = res.data;
         },(err)=>{
@@ -105,7 +106,8 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
     export const expert = function(e) {
         let url = '/Recommender/save'
         let data = e
-        axios.post(url,data).then((res)=>{
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
             console.log(res)
             res = res.data;
         },(err)=>{
@@ -117,7 +119,8 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
     export const secondarySchool = function(e) {
         let url = '/RecommendSchool/save'
         let data = e
-        axios.post(url,data).then((res)=>{
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
             console.log(res)
             res = res.data;
         },(err)=>{
@@ -129,7 +132,8 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
     export const organization = function(e) {
         let url = '/RecommendSocialgroups/save'
         let data = e
-        axios.post(url,data).then((res)=>{
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
             console.log(res)
             res = res.data;
         },(err)=>{
@@ -141,7 +145,8 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
     export const photo = function(e) {
         let url = '/Picture/save'
         let data = e
-        axios.post(url,data).then((res)=>{
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
             console.log(res)
             res = res.data;
         },(err)=>{

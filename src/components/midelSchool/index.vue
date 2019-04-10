@@ -149,12 +149,16 @@
                             <span class="ui-form-required">*</span>
                             <strong>中学级别：</strong>
                         </label>
-                        <select name="xyxxVO.xxjbDm" id="zxxx_zxjb" style="margin-right: 450px">
+                        <select name="xyxxVO.xxjbDm" 
+                        id="zxxx_zxjb" 
+                        style="margin-right: 450px"
+                        v-model="item.levelNumber"
+                        >
                             <option 
-                            :value="item.value" 
+                            :value="item.name" 
                             :selected="item.selected" 
-                            v-for="(item,i) in level" 
-                            :key="i">{{item.name}}</option>
+                            v-for="item in level" 
+                            :key="item.name">{{item.name}}</option>
                             
                         </select>
                         <p class="ui-form-explain"></p>
@@ -512,10 +516,17 @@
                                 <!-- 备选经历 -->
                                 <tr>
                                     <td colspan="3">
-                                        <select name="bxjl1VO.bxjlDm" class="ignoreselect">
+                                        <select name="bxjl1VO.bxjlDm" 
+                                        class="ignoreselect"
+                                        v-model="item.gradeOne"
+                                        >
                                             <option 
-                                            :value="item.value" 
-                                            :selected="item.selected" v-for="(item,i) in grade" :key="i">{{item.name}}</option>
+                                            :value="item.name" 
+                                            :selected="item.selected" 
+                                            v-for="item in grade" 
+                                            :key="item.name">
+                                            {{item.name}}
+                                            </option>
                                             
                                         </select>
                                     </td>
@@ -616,11 +627,14 @@
                                     <!-- 备选经历2  年级 -->
                                 <tr>
                                     <td colspan="3" valign="bottom">
-                                        <select name="bxjl2VO.bxjlDm" class="ignoreselect">
+                                        <select name="bxjl2VO.bxjlDm" 
+                                        class="ignoreselect"
+                                        v-model="item.gradeTwoL"
+                                        >
                                             <option :selected="item.selected" 
-                                             :value="item.value" 
-                                              v-for="(item,i) in gradeTwo" 
-                                             :key="i">{{item.name}}</option>
+                                             :value="item.name" 
+                                              v-for="item in gradeTwo" 
+                                             :key="item.name">{{item.name}}</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -1143,13 +1157,16 @@ export default {
             item : { educationThreeLL : "" },
              // 学校
             item : { educationThreeLLL : ""},
+
+            // 中学级别
+            item : { levelNumber : ""},
+
+            // 备选第几年级
+            item : { gradeOne : ""},
+            item : { gradeTwoL : ""}
+
         }
     },
-    // computed:{
-    //     SchoolCountyLT(){
-    //         return this.SchoolCountyLT.reverse();
-    //     }
-    // }
     created(){
         // 省份数据
         axios.post('http://192.168.0.130:8080/City/findByCode')
@@ -1274,49 +1291,106 @@ export default {
             }
         },
         submit(){
+             //学籍所在中学 
+            let a = JSON.stringify(this.item.SchoolRollID)
+            let b = JSON.stringify(this.item.SchoolRollIDTwo)
+            let c = this.item.SchoolRollIDThree
+            let d = this.item.SchoolRollIDFour
+            let m = ","
+            let e = a+m+b+m+c+m+d
+
+            //当前就读中学 
+            let aa = JSON.stringify(this.item.SchoolRollTID)
+            let bb = JSON.stringify(this.item.SchoolRollTIDTwo)
+            let cc = this.item.SchoolRollTIDThree
+            let dd = this.item.SchoolRollTIDFourL
+            let mm = ","
+            let ee = aa+mm+bb+mm+cc+mm+dd
+            // console.log(typeof(ee))
+
+            //教育经历 高一
+            let aaOne = JSON.stringify(this.item.educationONE)
+            let bbOne = JSON.stringify(this.item.educationONEL)
+            let ccOne = this.item.educationONELL
+            // let ddOne = this.item.educationONELLL
+            let mmOne = ","
+            let eeOne = aaOne+mmOne+bbOne+mmOne+ccOne
+            // console.log(typeof(eeOne))
+
+            //教育经历 高二
+            let aaTwo = JSON.stringify(this.item.educationTw)
+            let bbTwo = JSON.stringify(this.item.educationTwoL)
+            let ccTwo = this.item.educationTwoLL
+            // let ddTwo = this.item.educationTwoLLL
+            let mmTwo = ","
+            let eeTwo = aaTwo+mmTwo+bbTwo+mmTwo+ccTwo
+            console.log(eeTwo)
+            console.log(typeof(eeTwo))
+            
+            //教育经历 高三
+            let aaThree = JSON.stringify(this.item.educationThre)
+            let bbThree = JSON.stringify(this.item.educationThreeL)
+            let ccThree = this.item.educationThreeLL
+            // let ddThree = this.item.educationThreeLLL
+            let mmThree = ","
+            let eeThree = aaThree+mmThree+bbThree+mmThree+ccThree
+
+            //备选教育经历 第一个
+            let aanat = JSON.stringify(this.item.alternative)
+            let bbnat = JSON.stringify(this.item.alternativeL)
+            let ccnat = this.item.alternativeLL
+            // let ddnat = this.item.alternativeLLL
+            let mmnat = ","
+            let eenat = aanat+mmnat+bbnat+mmnat+ccnat
+
+            //备选教育经历 第二个
+            let aanatTwo = JSON.stringify(this.item.alternativeW)
+            let bbnatTwo = JSON.stringify(this.item.alternativeWL)
+            let ccnatTwo = this.item.alternativeWLL
+            // let ddnatTwo = this.item.alternativeWLLL
+            let mmnatTwo = ","
+            let eenatTwo = aanatTwo+mmnatTwo+bbnatTwo+mmnatTwo+ccnatTwo
+
+            
+
             let data = {
                 // IID:this.item.educationID,
                 classPost : this.duty,
                 classTeacherName : this.teacher,
                 classTeacherPhone : this.teacherPhone,
                 classid : this.classT,
-                // currentSchoolProvince : this.SchoolRollT,
-                // 当前就读中学
-                // middleSchoolNub1 : this.grade,
-                // middleSchoolNub2 : this.gradeTwo,
+                currentSchoolProvince : ee,
+                middleSchoolNub1 : this.item.gradeOne,
+                middleSchoolNub2 : this.item.gradeTwoL,
                 middleSchoolOneNew : this.SchoolDataRight,
                 middleSchoolOneNew1 : this.SchoolDataRightThreeLL,
                 middleSchoolOneOld : this.SchoolDataLeft,
                 middleSchoolOneOld1 : this.SchoolDataLeftThreeLL,
-                // middleSchoolOneProvince : this.,
-                // 高一三个学校地址省市县地址 ！！！  3个input框
-                // middleSchoolOneProvince1 : this.,
-                //  高xx学校地址
-                // middleSchoolOneSchoolName : this.educationCountyLTwo,
-                // middleSchoolOneSchoolName1 : this.educationCountyLAlternative,
+                middleSchoolOneProvince : eeOne,
+                middleSchoolOneProvince1 : eenat,
+                middleSchoolOneSchoolName : this.item.educationONELLL,
+                middleSchoolOneSchoolName1 : this.item.alternativeLLL,
                 middleSchoolOneWitnessName : this.references,
                 middleSchoolOneWitnessName1 : this.referencesAlternative,
                 middleSchoolThreeNew : this.SchoolDataRightThree,
                 middleSchoolThreeOld : this.SchoolDataLeftThree,
-                // middleSchoolThreeRegion : this.educationThree,
-                // 高三学校地址
-                // middleSchoolThreeSchoolName : this.educationCountyLThree,
+                middleSchoolThreeRegion : eeThree,
+                middleSchoolThreeSchoolName : this.item.educationThreeLLL,
                 middleSchoolThreeWitnessName : this.referencesThree,
                 middleSchoolTwoNew : this.SchoolDataRightTwo,
                 middleSchoolTwoNew1 : this.SchoolDataRightThreeL,
                 middleSchoolTwoOld : this.SchoolDataLeftTwo,
                 middleSchoolTwoOld1 : this.SchoolDataLeftThreeL,
-                // middleSchoolTwoProvince : this.educationTwo,
-                // 
-                // middleSchoolTwoProvince1 : this.educationAlternativeTwo,
-                // middleSchoolTwoSchoolName : this.educationCountyLTwo,
-                // middleSchoolTwoSchoolName1 : this.educationCountyLAlternativeTwo,
+                middleSchoolTwoProvince : eeTwo,
+                middleSchoolTwoProvince1 : eenatTwo,
+                middleSchoolTwoSchoolName : this.item.educationTwoLLL,
+                middleSchoolTwoSchoolName1 : this.item.alternativeWLLL,
                 middleSchoolTwoWitnessName : this.referencesTwo,
                 middleSchoolTwoWitnessName1 : this.referencesAlternativeTwo,
                 schoolDetailedAddress : this.schoolSite,
-                // schoolLevel : this.level,
+                schoolLevel : this.item.levelNumber,
                 schoolPost : this.postalCode,
-                // studentStatusProvince : this.SchoolRoll,
+                studentStatusProvince : e,
                 teachingLeaderName : this.lead,
                 teachingLeaderPhone : this.leadPhone,
             }
