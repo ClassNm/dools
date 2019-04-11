@@ -675,7 +675,6 @@
                                              :value="item.id" 
                                               v-for="item in educationCityLevelAlternativeTwo" 
                                              :key="item.id">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option> -->
                                         </select>
                                         <!-- 备选2 区县级别 -->
                                         <select id="bx2Dqlist" class="ignoreselect"
@@ -686,7 +685,6 @@
                                              :value="item.name" 
                                               v-for="item in educationCountyAlternativeTwo" 
                                              :key="item.name">{{item.name}}</option>
-                                            <!-- <option value="" selected="selected">请选择</option> -->
                                         </select>
                                     </td>
                                 </tr>

@@ -30,14 +30,23 @@
                                    id="orgName"
                                    class="ui-input"
                                    autocomplete="off"
-                                   @click="modal10 = true">
+                                   @click="foon"
+                                   >
                             <!-- 对话框 -->
                             <Modal
                                     title="请选择学校"
                                     v-model="modal10"
                                     class-name="vertical-center-modal"
                             >
-                                <div class="school" v-for="(item,index) in schoolArr" :key="index" @click="schoolSel" :data-index="index" :style="{'color':item.color}">{{item.schoolName}}</div>
+                                <div class="school" 
+                                v-for="item in schoolArr" 
+                                :key = "item.code"
+                                :value = "item.code" 
+                                :data-id="item.id"
+                                @click="schoolSel(item)" 
+                                :style="{'color':item.colour}">
+                                    {{item.school}}
+                                </div>
                             </Modal>
                         </div>
                     </div>
@@ -47,7 +56,7 @@
                                 <input type="hidden" name="org" value="476736792" id="lxdmform_org">
                                 <div id="gkxxDiv">
                                     <ul class="orgInfos">
-                                        <li>• <a href="javascript:;" target="_blank">{{SchoolName}}2019年外语类专业保送生招生简章</a></li>
+                                        <li>• <a href="javascript:;">{{SchoolName}}2019年外语类专业保送生招生简章</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -58,18 +67,25 @@
                                 <label style="margin-right: 463px">
                                     <input type="radio" name="lxdm" value="11">
                                     {{form}}&nbsp;&nbsp;<font color="red"></font>
-                                    <a href="javascript:;" target="_blank">填报说明</a>
+                                    <a href="javascript:;">填报说明</a>
                                 </label>
-                                <ul class="orgInfos" style="margin-bottom:12px;width: 580px;text-align: left">
-                                    <li>报名时间：{{timeL}}；{{SchoolName}}{{condition}}。</li>
-                                </ul>
+                                <div>
+                                    <ul 
+                                    class="orgInfos" 
+                                    style="margin-bottom:12px;width: 580px;text-align: left" 
+                                    v-for = "(item,i) in timeL" 
+                                    :key = "i" 
+                                    :value = "item.bid">
+                                        <input type="checkbox" name="bmtjs" class="inputL" @click="aaa(item)">
+                                        <li style="display:inline">{{item.type}}</li>
+                                    </ul>
+                                </div>
+                                
                             </div>
                         </div>
                         <!--  报考志愿 button点击跳路由 -->
                         <div class="ui-form-item" style="width: 70px">
-                            <!--<input type="submit" id="lxdmform_0" value="下一步" class="ui-button ui-button-lceladon m_top10" onclick="">-->
                             <router-link :to="{path:'/volunteerNew/applicationForm',query:obj}"   exact-active-class="router-volunteerNew-applicationForm">
-                                <!--<router-link :to="{path:'/home111',query:obj}">首页</router-link>-->
                                 <Button type="primary" id="lxdmform_0" class="ui-button ui-button-lceladon m_top10">下一步</Button>
                             </router-link>
                         </div>
@@ -82,207 +98,98 @@
     </div>
 </template>
 
-<script>
-    export default {
-        data () {
-            return {
-                modal10: false,
-                Show:false,
-                SchoolName:"",
-                modal10:false,
-                Show: false,
-                // 招生类型
-                form:"自主招生",
-                // 报名时间
-                timeL:"2019-01-29 19:00:00 至 2019-02-26 23:00:00",
-                // 报名时间条件
-                condition:"最多允许填报 10 个报名类型；“保送生”类型要求考生的报考学校总数不能超过50个；允许填报的专业类别总数至少 1 个，最多 3 个；允许填报专业总数最少 1 个，最多 3 个；允许每个专业类别下可选专业数最少 1 个，最多 3 个",
-                /* 根据点击input框来浮现下一步跳的学校 query里的1-6代替query传的参*/
-                obj:{
-                    a:1
-                },
-                // 学校名字
-                schoolArr:[
-                    {
-                        schoolName:'中国人民大学',
 
-                    },
-                    {
-                        schoolName:'北京科技大学',
-                        color:'orange'
-                    },
-                    {
-                        schoolName:'北京化工大学'
-                    },
-                    {
-                        schoolName:'北京师范大学'
-                    },
-                    {
-                        schoolName:'北京语言大学'
-                    },
-                    {
-                        schoolName:'中央财经大学'
-                    },
-                    {
-                        schoolName:'对外经济贸易大学'
-                    },
-                    {
-                        schoolName:'天津大学'
-                    },
-                    {
-                        schoolName:'东北大学',
-                        color:'orange'
-                    },
-                    {
-                        schoolName:'黑龙江大学'
-                    },
-                    {
-                        schoolName:'哈尔滨工业大学',
-                        color:'orange'
-                    },
-                    {
-                        schoolName:'复旦大学'
-                    },
-                    {
-                        schoolName:'同济大学'
-                    },
-                    {
-                        schoolName:'东华大学'
-                    },
-                    {
-                        schoolName:'华东师范大学'
-                    },
-                    {
-                        schoolName:'上海财经大学'
-                    },
-                    {
-                        schoolName:'南京大学'
-                    },
-                    {
-                        schoolName:'南京航空航天大学'
-                    },
-                    {
-                        schoolName:'南京理工大学'
-                    },
-                    {
-                        schoolName:'江南大学'
-                    },
-                    {
-                        schoolName:'南京信息工程大学'
-                    },
-                    {
-                        schoolName:'华北电力大学',
-                        color:'orange'
-                    },
-                    {
-                        schoolName:'南京农业大学'
-                    },
-                    {
-                        schoolName:'中国药科大学'
-                    },
-                    {
-                        schoolName:'南京师范大学'
-                    },
-                    {
-                        schoolName:'厦门大学'
-                    },
-                    {
-                        schoolName:'山东大学'
-                    },
-                    {
-                        schoolName:'武汉大学'
-                    },
-                    {
-                        schoolName:'华中科技大学'
-                    },
-                    {
-                        schoolName:'中国地质大学(武汉)'
-                    },
-                    {
-                        schoolName:'武汉理工大学'
-                    },
-                    {
-                        schoolName:'中南大学'
-                    },
-                    {
-                        schoolName:'湖南大学',
-                        color:'orange'
-                    },
-                    {
-                        schoolName:'中山大学'
-                    },
-                    {
-                        schoolName:'四川大学'
-                    },
-                    {
-                        schoolName:'重庆大学'
-                    },
-                    {
-                        schoolName:'西南交通大学'
-                    },
-                    {
-                        schoolName:'电子科技大学'
-                    },
-                    {
-                        schoolName:'西南大学',
-                        color:'orange'
-                    },
-                    {
-                        schoolName:'西南财经大学'
-                    },
-                    {
-                        schoolName:'兰州大学'
-                    },
-                    {
-                        schoolName:'香港中文大学(深圳)'
-                    },
-                    
-                ]
-            }
-        },
-        computed:{
-          free(){
-              let pa = this.$route.path;
-              if (pa == '/volunteerNew/applicationForm' ||
-                  pa=="/additional" ||
-                  pa=="/messaged" ||
-                  pa == "/applicationT" ||
-                  pa=="/referrerT" ||
-                  pa == "/statement" ||
-                  pa == "/mock" ||
-                  pa == "/obstetrics"
-              ){
-                //   console.log('三级路由');
-                  // debugger;
-                  return false;
-              } else {
-                  return true
-              }
-          },
-        //   color(){
-        //       let a  = this.schoolArr.index;
-        //       if(a == 1){
-                
-        //     }
-        //   }
-        },
-        methods:{
-            schoolSel(e){
-                // console.log(e)
-                this.SchoolName = e.target.innerText;
-                this.modal10 = false;
-                this.Show = true;
-                this.obj.a = e.target.dataset.index;
-                this.obj.schoolName = this.SchoolName
-            }
-        },
-        mounted(){
-            // let a  = this.schoolArr.index;
-            // if(a == 1){
-            //     return two;
-            // }
+<script>
+import axios from 'axios'
+export default {
+    data () {
+        return {
+            modal10: false,
+            Show:false,
+            SchoolName:"",
+            modal10:false,
+            Show: false,
+            // 招生类型
+            form:"自主招生",
+            // 报名时间
+            timeL:[],
+            // 报名时间条件
+            /* 根据点击input框来浮现下一步跳的学校 query里的1-6代替query传的参*/
+            obj:{
+                a:1
+            },
+            // 学校名字
+            schoolArr:[],
+            // 学校的cod
+            schoolCode:"",
+            // 条件的  bid  cid
+            bid:"",
+            cid:"",
         }
+    },
+    computed:{
+        free(){
+            let pa = this.$route.path;
+            if (pa == '/volunteerNew/applicationForm' ||
+                pa=="/additional" ||
+                pa=="/messaged" ||
+                pa == "/applicationT" ||
+                pa=="/referrerT" ||
+                pa == "/statement" ||
+                pa == "/mock" ||
+                pa == "/obstetrics"
+            ){
+                //   console.log('三级路由');
+                // debugger;
+                return false;
+            } else {
+                return true
+            }
+        },
+    },
+    created(){
+        axios.post('http://192.168.0.130:8080/School/findAll')
+        .then((res)=>{
+            this.schoolArr = res.data
+        }),(err)=>{
+            console.log(err)
+        }
+    },
+    methods:{
+        foon(){
+            this.modal10 = true
+        },
+        schoolSel(a){
+            this.SchoolName = a.school;
+            this.modal10 = false;
+            this.Show = true;
+            this.obj.a = a.id;
+            this.schoolCode = a.code
+            let data = this.schoolCode
+            axios.post('http://192.168.0.130:8080/SchoolEntryType/findByCid',data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+            .then((res)=>{
+                this.timeL = res.data
+            }),(err)=>{
+                console.log(err)
+            }
+        },
+       
+        aaa(b){
+            // console.log(b)
+            this.bid = b.bid;
+            this.cid = b.cid;
+            // console.log(this.bid,"bid")
+            // console.log(this.cid,"cid")
+        }
+        
+    },
+    mounted(){
+        // let a  = this.schoolArr.index;
+        // if(a == 1){
+        //     return two;
+        // }
     }
+}
 </script>
 
 <style scoped>
@@ -389,24 +296,12 @@
         cursor: pointer;
     }
 
-    /*  确定 取消 按钮文字*/
-    /*.ok-text{*/
-        /*display: none;*/
-        /*z-index: 100;*/
-    /*}*/
-    /*.cancel-text{*/
-        /*display: none;*/
-        /*z-index: 100;*/
-    /*}*/
-    /*.ivu-btn{*/
-        /*display: none;*/
-    /*}*/
-    /*.ivu-btn-large{*/
-        /*display: none;*/
-    /*}*/
-    /*.ivu-btn-text{*/
-        /*display: none;*/
-    /*}*/
+
+    .inputL{
+        /* margin-top: 2px; */
+        /* width: 10px; */
+        display: inline
+    }
 
 
     /*  隐藏的下边3部曲*/

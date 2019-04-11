@@ -20,7 +20,6 @@
                     <p class="ui-form-explain">添加后将不允许修改</p>
                 </div>
                 <div class="ui-form-item">
-                    <!--<label for="" class="ui-label"><span class="ui-form-required">*</span><strong>所在地：</strong></label> <select id="slist" name="slist" onchange="initXjsList('slist', 'clist', 'xlist');">-->
                     <label for="" class="ui-label">
                         <span class="ui-form-required">
                             *
@@ -31,7 +30,7 @@
                     </label> 
                     <select id="slist" name="slist"
                      v-model="item.cityI"
-                        @change= "aaa(item.cityI)"
+                    @change= "aaa(item.cityI)"
                     >
                         <option :value="item.id" :selected="item.selected"  
                         v-for="item in Bourn" :key="item.id" 
@@ -84,10 +83,8 @@
                     <p class="ui-form-explain">该邮箱用于提醒推荐人填写推荐信，仅限一个，请如实填写</p>
                 </div>
                 <div class="ui-form-item m_top10">
-                    <!--<input id="form_step_0" value="保存" class="ui-button ui-button-lorange add" type="submit">-->
                     <Button type="warning" @click="submit">保存</Button>
                     &nbsp;&nbsp;
-                    <!--<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">-->
                     <Button type="primary" onclick="javascript:history.go(-1);" >取消</Button>
                 </div>
             </form>

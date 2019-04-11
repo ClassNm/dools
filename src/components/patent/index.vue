@@ -95,7 +95,6 @@
         margin: 0;
         padding: 0;
         border-bottom: 0;
-        /* box-shadow: 0px 1px 2px #dadad8; */
     }
     .ui-box-head {
         border-bottom: 1px solid #ccc;

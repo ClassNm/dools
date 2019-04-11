@@ -3,7 +3,6 @@
         <div class="ui-box">
             <headerT></headerT>
             <div class="ui-box-container ui-box-zhiy">
-                <!--<form id="add" name="add" action="https://gaokao.chsi.com.cn/zzbm/stu/zhiy/add.action" method="POST">-->
                 <form id="add" name="add" method="POST">
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>招生类型：</strong></label>
@@ -43,26 +42,6 @@
                             <li style="color:#c06800;">
                                 可填报专业依赖于报名条件，请先选择报名条件再选择报考专业
                             </li>
-                            <!-- <li>
-                                <label>
-                                    <input type="checkbox" value="高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者；" name="bmtjs">
-                                    高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者；
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="高中阶段在全国青少年科技创新大赛（含全国青少年生物和环境科学实践活动）、“明天小小科学家”奖励活动或全国中小学电脑制作活动中获得省级一等奖（含）以上奖励者；" name="bmtjs" onclick="">
-                                    高中阶段在全国青少年科技创新大赛（含全国青少年生物和环境科学实践活动）、“明天小小科学家”奖励活动或全国中小学电脑制作活动中获得省级一等奖（含）以上奖励者；
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" value="对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。" name="bmtjs">
-                                    对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，
-                                    须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质
-                                    ，推荐人或推荐单位须对其所推荐材料真实性负责。
-                                </label>
-                            </li> -->
                             <li v-for="(item,index) in uitest" :key="index">
                                 <label>
                                     <input type="checkbox" :value="{'value':item.testvalue }" name="bmtjs" onclick="">
@@ -70,10 +49,6 @@
                                 </label>
                             </li>
                             <div class="ui-tiptext-container ui-tiptext-container-wait" style="margin-top:6px;">
-                                <!--<div class="ui-tiptext-arrow ui-tiptext-arrowup" style="left:14px;">-->
-                                    <!--<em>◆</em>-->
-                                    <!--<span>◆</span>-->
-                                <!--</div>-->
                                 <p class="ui-tiptext ui-tiptext-wait">
                                     <i class="ui-tiptext-icon iconfont" title="报名条件说明"></i>
                                     请选择1个报名条件
@@ -91,24 +66,6 @@
                         <div id="allZymls">
                             <ul class="zhiyzy">
                                 <li class="zhiyzyt">理工二类</li>
-                                <!-- <li>
-                                    <label>
-                                        <input type="checkbox" id="cakv1nz4g1rl4gnu" onclick="" bmtjs="">
-                                        冶金工程
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="mgnsdv5se550dv2z" onclick="" bmtjs="">
-                                        矿业类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="zs6fuje1jtpw2nx4" onclick="" bmtjs="">
-                                        安全工程
-                                    </label>
-                                </li> -->
                                 <li v-for="(item,index) in second" :key="index">
                                     <label>
                                         <input type="checkbox" :id="{'id':item.id}" onclick="" bmtjs="">
@@ -124,84 +81,6 @@
                                         {{item.name}}
                                     </label>
                                 </li>
-                                <!-- <li>
-                                    <label>
-                                        <input type="checkbox" id="sdrk4sfvrmsgf0pp" onclick="" bmtjs="">
-                                        材料科学与工程
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="5h49mm89x8blrx5d" onclick="" bmtjs="">
-                                        机械类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="48xth0zyyo3cs5b7" onclick="" bmtjs="">
-                                        计算机类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="81z2o4t7dd5u5ojy" onclick="" bmtjs="">
-                                        通信工程
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="xqom8mq1jpmorkmf" onclick="" bmtjs="">
-                                        自动化类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="upu3e0p6nhn60c5y" onclick="" bmtjs="">
-                                        土木类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="whw9oavvcjiekdkc" onclick="" bmtjs="">
-                                        能源动力类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="oqieo8c1v0ujx0x0" onclick="" bmtjs="">
-                                        环境科学与工程类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="jxmg11fgbv8wmkgg" onclick="" bmtjs="">
-                                        数学类
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="axni75f6ohywf19s" onclick="" bmtjs="">
-                                        应用物理学
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="hjduvhet4kuuf5ay" onclick="" bmtjs="">
-                                        应用化学
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="0iox18182eybh1xs" onclick="" bmtjs="">
-                                        生物技术
-                                    </label>
-                                </li>
-                                <li>
-                                    <label>
-                                        <input type="checkbox" id="uc5axdlettrkwwmn" onclick="" bmtjs="">
-                                        管理科学与工程类
-                                    </label>
-                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -336,6 +215,7 @@
             headerT
         },
         mounted(){
+            console.log(this.$route)
             this.schoolName = this.$route.query.schoolName
             this.obj.schoolName = this.$route.query.schoolName
         },

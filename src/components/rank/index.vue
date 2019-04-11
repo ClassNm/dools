@@ -31,7 +31,6 @@
                               margin-bottom:6px;
                               display: inline-block;
                                 "
-
                     >
                         123456789111111
                     </p>

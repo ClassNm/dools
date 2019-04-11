@@ -19,27 +19,15 @@
             <div class="jbxxhjtitle text_center">{{publicActivity}}</div>
             <div class="text_center color-999">尚未添加社会活动</div>
             <div class="text_center" style="margin: 15px 0;">
-                <!--<a class="ui-button ui-button-lgreen select" href="javascript:;">+ 添加社会活动</a>-->
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加社会活动</Button>
             </div>
             <div class="jbxxhjtitle text_center">{{bearThePalm}}</div>
             <div class="text_center color-999">尚未添加获奖记录</div>
             <div class="text_center" style="margin: 15px 0;">
-                <!--<a class="ui-button ui-button-lgreen select" href="javascript:;">+ 添加获奖记录</a>-->
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加获奖记录</Button>
             </div>
-            <!-- <div class="jbxxhjtitle text_center">{{patent}}</div> -->
-            <!-- <div class="text_center color-999">尚未添加专利</div> -->
-            <!-- <div class="text_center" style="margin: 15px 0;"> -->
-                <!--<a class="ui-button ui-button-lgreen select" href="javascript:;" style="width: 100px;">+ 添加专利</a>-->
-                <!-- <Button type="success" class="ui-button ui-button-lgreen select">+ 添加专利</Button> -->
-            <!-- </div> -->
             <div class="text_center" style="margin-top:15px;">
-                <!--<a href="javascript:;" class="ui-button ui-button-lceladon">下一步</a>-->
-                <!-- referrerT 推荐人-->
-                <!-- <router-link :to="{path:'/referrerT',query:obj}"> -->
                     <Button type="primary" class="ui-button ui-button-lceladon" @click="pook">下一步</Button>
-                <!-- </router-link> -->
             </div>
         </div>
         <router-view></router-view>

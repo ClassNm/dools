@@ -21,7 +21,6 @@
                         <p class="ui-form-explain">添加后将不允许修改</p>
                     </div>
                     <div class="ui-form-item">
-                        <!--<label for="" class="ui-label"><span class="ui-form-required">*</span><strong>所在地：</strong></label> <select id="slist" name="slist" onchange="initXjsList('slist', 'clist', 'xlist');">-->
                         <label for="" class="ui-label">
                             <span class="ui-form-required">
                                 *
@@ -114,7 +113,6 @@
                         <!--<input id="form_step_0" value="保存" class="ui-button ui-button-lorange add" type="submit">-->
                         <Button type="warning" @click="submit">保存</Button>
                         &nbsp;&nbsp;
-                        <!--<input class="ui-button ui-button-lceladon" value="取消" onclick="javascript:history.go(-1);" type="button">-->
                         <Button type="primary" onclick="javascript:history.go(-1);" >取消</Button>
                     </div>
                 </form>

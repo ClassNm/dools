@@ -27,11 +27,7 @@
                             </p>
                         </div>
                         <div class="text_center">
-                            <!--action="ignoreKskmcj.action"-->
-                            <!--method="post"-->
-                            <!--novalidate="novalidate"-->
                             <div id="form_step" class="addsubmittip">
-                                <!--<input class="ui-button ui-button-lceladon" value="下一步" type="submit">-->
                                 <Button type="primary">下一步</Button>
                             </div>
                         </div>

@@ -24,11 +24,6 @@
                             <option :value="item.value" :selected="item.selected" v-for="item in aa" :key="item.value">
                                 {{item.name}}
                             </option>
-<!-- 
-                            <option value="01">国际五项学科奥林匹克竞赛</option>
-                            <option value="02">全国青少年科技竞赛</option>
-                            <option value="03">全国中小学电脑制作活动</option>
-                            <option value="04">其他</option> -->
                         </select>
                         <p class="ui-form-explain"></p>
                     </div>
@@ -81,9 +76,6 @@
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>证明材料：</strong></label>
-                        <!-- <div id="showBox" class="ui-form-text" style="width:610px;">
-                            <div class="uploadnullbox" id="uploadnullbox"><i class="iconfont" title="添加-方"></i><br>添加图片<input class="file" id="upZmcl" value="" name="zmcl" type="file"></div>
-                        </div> -->
                         <img :src="uploadImg.url" alt="" width="120px" height="160px" title="点击">
                         <div class="file_box">
                             <Upload

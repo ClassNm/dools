@@ -19,10 +19,8 @@
                 <div class="color-999 text_center">该志愿未关联推荐人信息。</div>
             </div>
             <div class="text_center m_top10">
-                <!--<a href="javascript:;" class="ui-button ui-button-lgreen select">+ 添加推荐人</a>-->
                 <Button type="success" class="ui-button ui-button-lgreen select">+ 添加推荐人</Button>
                 <br>
-                <!--<a href="javascript:;" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</a>-->
                 <router-link :to="{path:'/applicationT',query:obj}">
                     <Button type="info" class="ui-button ui-button-lceladon" style="margin-top:20px;">下一步</Button>
                 </router-link>

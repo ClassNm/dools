@@ -198,221 +198,101 @@
             <tr>
                 <td class="zhiysqbtdt"> </td>
                 <td class="zhiysqbtdt" v-for="(item,i) in Hschool" :key="i">{{item.schoolLLL}}</td>
-                <!-- <td class="zhiysqbtdt">高一上</td>
-                <td class="zhiysqbtdt">高一下</td>
-                <td class="zhiysqbtdt">高二上</td>
-                <td class="zhiysqbtdt">高二下</td>
-                <td class="zhiysqbtdt">高三上</td>
-                <td class="zhiysqbtdt">学业水平</td> -->
             </tr>
             <!-- 语文 -->
             <tr>
                 <td class="zhiysqbtdt">{{language}}</td>
                 <td v-for="(item,i) in languageL" :key="i">{{item.value}}</td>
-                <!-- <td>132/150</td>
-                <td>130/150</td>
-                <td>130/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 数学 -->
             <tr>
                 <td class="zhiysqbtdt">{{mathematics}}</td>
                 <td v-for="(item,i) in mathematicsL" :key="i">{{item.value}}</td>
-                <!-- <td>132/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 外语 -->
             <tr>
                 <td class="zhiysqbtdt">{{languages}}</td>
                 <td v-for="(item,i) in languagesL" :key="i">{{item.value}}</td>
-                <!-- <td>132/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>132/150</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 政治 -->
             <tr>
                 <td class="zhiysqbtdt">{{politics}}</td>
                 <td v-for="(item,i) in politicsL" :key="i">{{item.value}}</td>
-                <!-- <td>90/100</td>
-                <td>90/100</td>
-                <td>/</td>
-                <td>/</td>
-                <td>/</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 历史 -->
             <tr>
                 <td class="zhiysqbtdt">{{history}}</td>
                 <td v-for="(item,i) in historyL" :key="i">{{item.value}}</td>
-                <!-- <td>90/100</td>
-                <td>90/100</td>
-                <td>/</td>
-                <td>/</td>
-                <td>/</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 地理 -->
             <tr>
                 <td class="zhiysqbtdt">{{geography}}</td>
                 <td v-for="(item,i) in geographyL" :key="i">{{item.value}}</td>
-                <!-- <td>90/100</td>
-                <td>90/100</td>
-                <td>/</td>
-                <td>/</td>
-                <td>/</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 物理 -->
             <tr>
                 <td class="zhiysqbtdt">{{physics}}</td>
                 <td v-for="(item,i) in physicsL" :key="i">{{item.value}}</td>
-                <!-- <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 化学 -->
             <tr>
                 <td class="zhiysqbtdt">{{chemistry}}</td>
                 <td v-for="(item,i) in chemistryL" :key="i">{{item.value}}</td>
-                <!-- <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 生物 -->
             <tr>
                 <td class="zhiysqbtdt">{{biology}}</td>
                 <td v-for="(item,i) in biologyL" :key="i">{{item.value}}</td>
-                <!-- <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>90/100</td>
-                <td>A/A</td> -->
             </tr>
             <!-- 美术 -->
             <tr>
                 <td class="zhiysqbtdt">{{arts}}</td>
                 <td v-for="(item,i) in artsL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>合格/合格</td> -->
             </tr>
             <!-- 体育 -->
             <tr>
                 <td class="zhiysqbtdt">{{sports}}</td>
                 <td v-for="(item,i) in sportsL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>合格/合格</td> -->
             </tr>
             <!-- 音乐 -->
             <tr>
                 <td class="zhiysqbtdt">{{music}}</td>
                 <td v-for="(item,i) in musicL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>合格/合格</td> -->
             </tr>
             <!-- 信息技术  -->
             <tr>
                 <td class="zhiysqbtdt">{{IT}}</td>
                 <td v-for="(item,i) in ITL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>合格/合格</td> -->
             </tr>
             <!-- 通用技术 -->
             <tr>
                 <td class="zhiysqbtdt">{{technique}}</td>
                 <td v-for="(item,i) in techniqueL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>合格/合格</td> -->
             </tr>
             <!-- 文科综合 -->
             <tr>
                 <td class="zhiysqbtdt">{{comprehensive}}</td>
                 <td v-for="(item,i) in comprehensiveL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
             </tr>
             <!-- 理科综合 -->
             <tr>
                 <td class="zhiysqbtdt">{{integrated}}</td>
                 <td v-for="(item,i) in integratedL" :key="i">{{item.value}}</td>
-                <!-- <td>/</td> -->
-                <!-- <td>/</td> -->
-                <!-- <td>250/300</td> -->
-                <!-- <td>250/300</td> -->
-                <!-- <td>250/300</td> -->
-                <!-- <td>/</td> -->
             </tr>
             <!-- 总分 -->
             <tr>
                 <td class="zhiysqbtdt">{{total}}</td>
                 <td v-for="(item,i) in totalL" :key="i">{{item.value}}</td>
-                <!-- <td>936/1050</td> -->
-                <!-- <td>934/1050</td> -->
-                <!-- <td>664/750</td> -->
-                <!-- <td>666/750</td> -->
-                <!-- <td>666/750</td> -->
-                <!-- <td></td> -->
             </tr>
             <!-- 年级排名 -->
             <tr>
                 <td class="zhiysqbtdt">{{Grade}}</td>
                 <td v-for="(item,i) in GradeL" :key="i">{{item.value}}</td>
-                <!-- <td>20</td> -->
-                <!-- <td>20</td> -->
-                <!-- <td>20</td> -->
-                <!-- <td>20</td> -->
-                <!-- <td>20</td> -->
-                <!-- <td></td> -->
             </tr>
             <!-- 年级人数    -->
             <tr>
                 <td class="zhiysqbtdt">{{numbergrade}}</td>
                 <td v-for="(item,i) in numbergradeL" :key="i">{{item.value}}</td>
-                <!-- <td>1000</td> -->
-                <!-- <td>1000</td> -->
-                <!-- <td>1000</td> -->
-                <!-- <td>1000</td> -->
-                <!-- <td>1000</td> -->
-                <!-- <td></td> -->
             </tr>
             </tbody></table>
             <!-- 志愿信息 -->
@@ -524,12 +404,6 @@
             </tr>
             </tbody></table>
             <div class="text_center">
-                <!--<form id="next" name="next" action="" method="post">-->
-                    <!--<input name="id" type="hidden" value="hyxwozx97f00uv2l">-->
-                    <!--<input name="order" type="hidden" value="9">-->
-                    <!--<input id="randamT" name="randamTime" type="hidden" value="1551768739362">-->
-                    <!--<input value="下一步" type="submit" class="ui-button ui-button-lceladon m_top10">-->
-                <!--</form>-->
                 <Button type="primary" class="ui-button ui-button-lceladon m_top10">下一步</Button>
             </div>
         </div>

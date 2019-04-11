@@ -46,7 +46,6 @@
     </div>
 
 </template>
-<!--    about  居中 margin  0  auto-->
 
 
 

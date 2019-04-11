@@ -79,8 +79,6 @@ import { read } from 'fs';
             return {
                 uploadImg: {},
                 id:1,
-                // isShow:true
-                // 条件上传照片
                 condition:"必须上传本人近期一寸正面免冠彩色头像照片(参照居民身份证照片样式)",
                 conditionOne : "1.格式 jpg 或 jpeg ，大小20K－500K",
                 conditionTwo : "2.照片背景为单色(白色、蓝色、红色均可)，人像清晰，神态自然，无明显畸变",
@@ -109,16 +107,6 @@ import { read } from 'fs';
                 } else {
                     const reader = new FileReader();
                     reader.readAsDataURL(file);
-                    // reader.onloadend = () => {
-                    //     // Image_base64 = this.result.split(",")[1];
-                    //     // artive_image = Image_base64;
-                    //     this.uploadImg = {
-                    //         Image_base64 : this.result.split(",")[1],
-                    //         artive_image : Image_base64,
-                    //         url:reader.artive_image,
-                    //         file
-                    //     }
-                    // }
                     reader.onloadend = () => {
                         this.uploadImg = {
                             url: reader.result,

@@ -69,8 +69,6 @@
                                 :key="item.value">
                                     {{item.name}}
                                 </option>
-                                <!-- <option value="1">{{sexK}}</option> -->
-                                <!-- <option value="2">{{sexJ}}</option> -->
                             </select>
                             <p class="ui-form-explain" id="zjhmInfo"></p>
                         </div>

@@ -14,7 +14,6 @@
                     内容包括本人的申请理由、成长经历及体会、学科特长及取得的成果、进入大学后的努力方向及设想等，不超过1000字。
                 </p>
             </div>
-            <!--<form id="grcs" name="grcs" action="" method="POST">-->
             <form id="grcs" name="grcs" action="" method="">
                 <div class="ui-form-item">
                     <label for="" class="ui-label"><strong>个人陈述：</strong></label>
@@ -29,11 +28,7 @@
                     </p>
                 </div>
                     <p></p>
-                    <!--<input type="hidden" name="id" value="9mcas3swdee0k8dv" id="grcs_id">-->
-                    <!--<input type="submit" id="grcs_0" value="下一步" class="ui-button ui-button-lceladon m_top10">-->
-                    <!-- <router-link :to="{path:'/mock',query:obj}"> -->
                         <Button type="primary" class="ui-button ui-button-lceladon m_top10" @click="heer">下一步</Button>
-                    <!-- </router-link> -->
                 </div>
             </form>
         </div>

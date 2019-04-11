@@ -38,8 +38,6 @@
                 </div>
                 <router-link to="/volunteerNew">
                     <div class="text_center">
-                        <!--<a href="https://gaokao.chsi.com.cn/zzbm/stu/zhiy/toselorg.action" class="ui-button ui-button-lceladon">添加志愿</a>-->
-                        <!--<Button type="primary" @click="btn">添加志愿</Button>-->
                         <Button type="primary" @click="btn">添加志愿</Button>
                     </div>
                 </router-link>

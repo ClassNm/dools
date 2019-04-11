@@ -201,7 +201,7 @@ export default {
             }
             let dataL = JSON.stringify(data)
             // console.log(typeof(dataL))
-            // secondarySchool(dataL);
+            secondarySchool(dataL);
         }
     }
 }

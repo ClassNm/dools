@@ -53,12 +53,6 @@
                         <!-- // 科目 语文 -->
                         <tr>
                             <td>{{language}}</td>
-                            <!-- <td><input name="xycjs[0].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj1" type="text">/<input name="xycjs[0].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf1" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj1" type="text">/<input name="xycjs[1].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf1" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj1" type="text">/<input name="xycjs[2].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf1" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj1" type="text">/<input name="xycjs[3].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf1" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj1" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj1" type="text">/<input name="xycjs[4].mf1" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf1" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj1" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj1" type="text">/<input name="xycjs[5].mf1" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf1" type="text"></td> -->
                             <td  v-for="item in languageL" :key="item.index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" id="updateXycjxx_xycjs_0__cj1" 
@@ -73,12 +67,6 @@
                          <!-- // 科目 数学 -->
                         <tr>
                             <td>{{mathematics}}</td>
-                            <!-- <td><input name="xycjs[0].cj2" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj2" type="text">/<input name="xycjs[0].mf2" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf2" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj2" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj2" type="text">/<input name="xycjs[1].mf2" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf2" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj2" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj2" type="text">/<input name="xycjs[2].mf2" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf2" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj2" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj2" type="text">/<input name="xycjs[3].mf2" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf2" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj2" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj2" type="text">/<input name="xycjs[4].mf2" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf2" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj2" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj2" type="text">/<input name="xycjs[5].mf2" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf2" type="text"></td> -->
                             <td  v-for="(item,index) in mathematicsL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1"  
@@ -92,12 +80,6 @@
                          <!-- //科目 外语 -->
                         <tr>
                             <td>{{languages}}</td>
-                            <!-- <td><input name="xycjs[0].cj3" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj3" type="text">/<input name="xycjs[0].mf3" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf3" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj3" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj3" type="text">/<input name="xycjs[1].mf3" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf3" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj3" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj3" type="text">/<input name="xycjs[2].mf3" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf3" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj3" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj3" type="text">/<input name="xycjs[3].mf3" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf3" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj3" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj3" type="text">/<input name="xycjs[4].mf3" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf3" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj3" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj3" type="text">/<input name="xycjs[5].mf3" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf3" type="text"></td> -->
                             <td  v-for="(item,index) in languagesL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -111,12 +93,6 @@
                         <!-- // 科目 政治 -->
                         <tr>
                             <td>{{politics}}</td>                           
-                            <!-- <td><input name="xycjs[0].cj4" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj4" type="text">/<input name="xycjs[0].mf4" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf4" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj4" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj4" type="text">/<input name="xycjs[1].mf4" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf4" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj4" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj4" type="text">/<input name="xycjs[2].mf4" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf4" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj4" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj4" type="text">/<input name="xycjs[3].mf4" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf4" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj4" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj4" type="text">/<input name="xycjs[4].mf4" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf4" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj4" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj4" type="text">/<input name="xycjs[5].mf4" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf4" type="text"></td> -->
                             <td  v-for="(item,index) in politicsL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -130,12 +106,6 @@
                         <!-- 科目 历史 -->
                         <tr>
                             <td>{{history}}</td>
-                            <!-- <td><input name="xycjs[0].cj5" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj5" type="text">/<input name="xycjs[0].mf5" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf5" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj5" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj5" type="text">/<input name="xycjs[1].mf5" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf5" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj5" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj5" type="text">/<input name="xycjs[2].mf5" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf5" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj5" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj5" type="text">/<input name="xycjs[3].mf5" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf5" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj5" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj5" type="text">/<input name="xycjs[4].mf5" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf5" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj5" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj5" type="text">/<input name="xycjs[5].mf5" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf5" type="text"></td> -->
                             <td  v-for="(item,index) in historyL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1"
@@ -149,12 +119,6 @@
                         <!-- 科目 地理 -->
                         <tr>
                             <td>{{geography}}</td>
-                            <!-- <td><input name="xycjs[0].cj6" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj6" type="text">/<input name="xycjs[0].mf6" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf6" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj6" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj6" type="text">/<input name="xycjs[1].mf6" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf6" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj6" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj6" type="text">/<input name="xycjs[2].mf6" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf6" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj6" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj6" type="text">/<input name="xycjs[3].mf6" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf6" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj6" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj6" type="text">/<input name="xycjs[4].mf6" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf6" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj6" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj6" type="text">/<input name="xycjs[5].mf6" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf6" type="text"></td> -->
                             <td  v-for="(item,index) in geographyL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -168,12 +132,6 @@
                         <!-- 科目  物理 -->
                         <tr>
                             <td>{{physics}}</td>
-                            <!-- <td><input name="xycjs[0].cj7" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj7" type="text">/<input name="xycjs[0].mf7" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf7" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj7" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj7" type="text">/<input name="xycjs[1].mf7" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf7" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj7" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj7" type="text">/<input name="xycjs[2].mf7" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf7" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj7" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj7" type="text">/<input name="xycjs[3].mf7" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf7" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj7" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj7" type="text">/<input name="xycjs[4].mf7" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf7" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj7" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj7" type="text">/<input name="xycjs[5].mf7" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf7" type="text"></td> -->
                             <td  v-for="(item,index) in physicsL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1"
@@ -187,12 +145,6 @@
                         <!-- 科目 化学 -->
                         <tr>
                             <td>{{chemistry}}</td>
-                            <!-- <td><input name="xycjs[0].cj8" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj8" type="text">/<input name="xycjs[0].mf8" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf8" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj8" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj8" type="text">/<input name="xycjs[1].mf8" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf8" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj8" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj8" type="text">/<input name="xycjs[2].mf8" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf8" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj8" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj8" type="text">/<input name="xycjs[3].mf8" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf8" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj8" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj8" type="text">/<input name="xycjs[4].mf8" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf8" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj8" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj8" type="text">/<input name="xycjs[5].mf8" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf8" type="text"></td> -->
                             <td  v-for="(item,index) in chemistryL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -206,12 +158,6 @@
                         <!-- 科目 生物 -->
                         <tr>
                             <td>{{biology}}</td>
-                            <!-- <td><input name="xycjs[0].cj9" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj9" type="text">/<input name="xycjs[0].mf9" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf9" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj9" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj9" type="text">/<input name="xycjs[1].mf9" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf9" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj9" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj9" type="text">/<input name="xycjs[2].mf9" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf9" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj9" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj9" type="text">/<input name="xycjs[3].mf9" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf9" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj9" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj9" type="text">/<input name="xycjs[4].mf9" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf9" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj9" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj9" type="text">/<input name="xycjs[5].mf9" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf9" type="text"></td> -->
                             <td  v-for="(item,index) in biologyL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -225,12 +171,6 @@
                         <!-- 科目 美术 -->
                         <tr>
                             <td>{{arts}}</td>
-                            <!-- <td><input name="xycjs[0].cj10" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj10" type="text">/<input name="xycjs[0].mf10" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf10" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj10" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj10" type="text">/<input name="xycjs[1].mf10" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf10" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj10" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj10" type="text">/<input name="xycjs[2].mf10" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf10" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj10" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj10" type="text">/<input name="xycjs[3].mf10" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf10" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj10" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj10" type="text">/<input name="xycjs[4].mf10" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf10" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj10" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj10" type="text">/<input name="xycjs[5].mf10" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf10" type="text"></td> -->
                             <td  v-for="(item,index) in artsL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -244,12 +184,6 @@
                         <!-- 科目 体育 -->
                         <tr>
                             <td>{{sports}}</td>
-                            <!-- <td><input name="xycjs[0].cj11" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj11" type="text">/<input name="xycjs[0].mf11" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf11" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj11" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj11" type="text">/<input name="xycjs[1].mf11" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf11" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj11" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj11" type="text">/<input name="xycjs[2].mf11" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf11" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj11" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj11" type="text">/<input name="xycjs[3].mf11" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf11" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj11" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj11" type="text">/<input name="xycjs[4].mf11" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf11" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj11" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj11" type="text">/<input name="xycjs[5].mf11" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf11" type="text"></td> -->
                             <td  v-for="(item,index) in sportsL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1"
@@ -263,12 +197,6 @@
                         <!-- 科目 音乐 -->
                         <tr>
                             <td>{{music}}</td>
-                            <!-- <td><input name="xycjs[0].cj12" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj12" type="text">/<input name="xycjs[0].mf12" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf12" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj12" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj12" type="text">/<input name="xycjs[1].mf12" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf12" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj12" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj12" type="text">/<input name="xycjs[2].mf12" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf12" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj12" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj12" type="text">/<input name="xycjs[3].mf12" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf12" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj12" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj12" type="text">/<input name="xycjs[4].mf12" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf12" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj12" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj12" type="text">/<input name="xycjs[5].mf12" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf12" type="text"></td> -->
                             <td  v-for="(item,index) in musicL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -282,12 +210,6 @@
                         <!-- 科目 信息技术 -->
                         <tr>
                             <td>{{IT}}</td>
-                            <!-- <td><input name="xycjs[0].cj13" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj13" type="text">/<input name="xycjs[0].mf13" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf13" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj13" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj13" type="text">/<input name="xycjs[1].mf13" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf13" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj13" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj13" type="text">/<input name="xycjs[2].mf13" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf13" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj13" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj13" type="text">/<input name="xycjs[3].mf13" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf13" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj13" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj13" type="text">/<input name="xycjs[4].mf13" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf13" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj13" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj13" type="text">/<input name="xycjs[5].mf13" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf13" type="text"></td> -->
                             <td  v-for="(item,index) in ITL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -301,12 +223,6 @@
                         <!-- 科目 通用技术 -->
                         <tr>
                             <td>{{technique}}</td>
-                            <!-- <td><input name="xycjs[0].cj16" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj16" type="text">/<input name="xycjs[0].mf16" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf16" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj16" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj16" type="text">/<input name="xycjs[1].mf16" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf16" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj16" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj16" type="text">/<input name="xycjs[2].mf16" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf16" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj16" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj16" type="text">/<input name="xycjs[3].mf16" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf16" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj16" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj16" type="text">/<input name="xycjs[4].mf16" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf16" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj16" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj16" type="text">/<input name="xycjs[5].mf16" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf16" type="text"></td> -->
                             <td  v-for="(item,index) in techniqueL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -320,12 +236,6 @@
                         <!-- 科目 文科综合 -->
                         <tr>
                             <td>{{comprehensive}}</td>
-                            <!-- <td><input name="xycjs[0].cj14" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj14" type="text">/<input name="xycjs[0].mf14" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf14" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj14" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj14" type="text">/<input name="xycjs[1].mf14" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf14" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj14" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj14" type="text">/<input name="xycjs[2].mf14" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf14" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj14" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj14" type="text">/<input name="xycjs[3].mf14" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf14" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj14" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj14" type="text">/<input name="xycjs[4].mf14" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf14" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj14" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj14" type="text">/<input name="xycjs[5].mf14" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf14" type="text"></td> -->
                             <td  v-for="(item,index) in comprehensiveL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1"
@@ -339,12 +249,6 @@
                         <!-- 科目 理科综合 -->
                         <tr>
                             <td>{{integrated}}</td>
-                            <!-- <td><input name="xycjs[0].cj15" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cj15" type="text">/<input name="xycjs[0].mf15" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mf15" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cj15" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cj15" type="text">/<input name="xycjs[1].mf15" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mf15" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cj15" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cj15" type="text">/<input name="xycjs[2].mf15" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mf15" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cj15" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cj15" type="text">/<input name="xycjs[3].mf15" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mf15" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cj15" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cj15" type="text">/<input name="xycjs[4].mf15" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mf15" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].cj15" maxlength="10" value="A" id="updateXycjxx_xycjs_5__cj15" type="text">/<input name="xycjs[5].mf15" maxlength="10" value="A" id="updateXycjxx_xycjs_5__mf15" type="text"></td> -->
                             <td  v-for="(item,index) in integratedL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1"
@@ -358,11 +262,6 @@
                         <!-- 科目 总分 -->
                         <tr>
                             <td>{{total}}</td>
-                            <!-- <td><input name="xycjs[0].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_0__cjzf" type="text">/<input name="xycjs[0].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_0__mfzf" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_1__cjzf" type="text">/<input name="xycjs[1].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_1__mfzf" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_2__cjzf" type="text">/<input name="xycjs[2].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_2__mfzf" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_3__cjzf" type="text">/<input name="xycjs[3].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_3__mfzf" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].cjzf" maxlength="10" value="无" id="updateXycjxx_xycjs_4__cjzf" type="text">/<input name="xycjs[4].mfzf" maxlength="10" value="无" id="updateXycjxx_xycjs_4__mfzf" type="text"></td> -->
                             <td  v-for="(item,index) in totalL" :key="index">
                                 <input name="xycjs[0].cj1" maxlength="10" 
                                 v-model="item.value1" 
@@ -377,12 +276,6 @@
                         <!-- 科目 年级排名 -->
                         <tr>
                             <td>{{Grade}}</td>
-                            <!-- <td><input name="xycjs[0].pm" maxlength="10" value="无" id="updateXycjxx_xycjs_0__pm" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[1].pm" maxlength="10" value="无" id="updateXycjxx_xycjs_1__pm" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[2].pm" maxlength="10" value="无" id="updateXycjxx_xycjs_2__pm" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[3].pm" maxlength="10" value="无" id="updateXycjxx_xycjs_3__pm" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[4].pm" maxlength="10" value="无" id="updateXycjxx_xycjs_4__pm" class="big" type="text"></td> -->
-                            <!-- <td><input name="xycjs[5].pm" maxlength="10" id="updateXycjxx_xycjs_5__pm" class="big" type="text"></td> -->
                             <td  v-for="(item,index) in GradeL" :key="index">
                                 <input name="xycjs[0].pm" maxlength="10" 
                                 v-model="item.value" 

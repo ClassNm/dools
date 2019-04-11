@@ -56,15 +56,6 @@
                     </div>
                     <div class="ui-form-item">
                         <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>证明材料：</strong></label>
-                        <!-- <div id="showBox" class="ui-form-text" style="width:610px;"> -->
-                            <!-- <div
-                                    class="uploadnullbox"
-                                    id="uploadnullbox">
-                                <i class="iconfont" title="添加-方"></i>
-                                <br>添加图片
-                                <input class="file" id="upZmcl" value="" name="zmcl" type="file">
-                            </div>
-                        </div> -->
                         <img :src="uploadImg.url" alt="" width="120px" height="160px" title="点击">
                         <div class="file_box">
                             <Upload
@@ -166,7 +157,6 @@ export default {
         margin: 0;
         padding: 0;
         border-bottom: 0;
-        /* box-shadow: 0px 1px 2px #dadad8; */
     }
     .ui-box-head {
         border-bottom: 1px solid #ccc;

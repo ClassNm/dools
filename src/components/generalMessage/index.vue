@@ -32,15 +32,8 @@
                     <router-link to="/publicActivity">
                         <a href="javascript:;">+ {{newlyK}}</a>
                     </router-link>
-                    <!-- &nbsp;或者&nbsp; -->
-                    <!-- <router-link to="/patent">
-                        <a href="javascript:;">+ 新增高中期间获得的专利</a>
-                    </router-link> -->
                 </div>
                 <div class="text_center">
-                    <!--<form action="ignoreZhxx.action" method="post">-->
-                        <!--<input value="下一步" class="ui-button ui-button-lceladon" type="submit">-->
-                    <!--</form>--> 
                     <Button type="primary">下一步</Button>
                 </div>
             </div>
