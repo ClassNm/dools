@@ -108,7 +108,9 @@
 </template>
 
 <script>
-    import headerT from '../common/headerT'
+import axios from 'axios'
+import headerT from '../common/headerT'
+import Axios from 'axios';
     export default {
         data(){
             return {
@@ -208,16 +210,37 @@
                         name:"管理科学与工程类",
                         id:"uc5axdlettrkwwmn"
                     },
-                ]
+                ],
+                // 学校的 bid cid
+                bid : "",
+                cid : "",
+
             }
         },
         components:{
             headerT
         },
         mounted(){
-            console.log(this.$route)
+            // console.log(this.$route)
             this.schoolName = this.$route.query.schoolName
             this.obj.schoolName = this.$route.query.schoolName
+            
+            // this.bid = JSON.stringify(this.$route.query.bid)
+            // this.cid = JSON.stringify(this.$route.query.cid)
+            this.bid = this.$route.query.bid
+            this.cid = this.$route.query.cid
+            let data = {
+                bid :  this.bid,
+                cid : this.cid
+            }
+            let datal = JSON.stringify(data)
+            console.log(typeof(datal))
+            axios.post('http://192.168.0.130:8080/SchoolEntryRequirements/fingByBidAndCid',datal,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+            .then((res) => {
+                console.log(res)
+            }),(err)=>{
+                console.log(err)
+            }
         },
         computed:{
             // flag(){
@@ -236,15 +259,15 @@
             hot(){
                 // console.log(this.$route.query.a,'query的参数显示对应的信息')
                 // console.log(this.$route)
-                let a = this.$route.query.a;
+                // let a = this.$route.query.a;
+                let a = this.$route.query.schoolName;
                 let obj = this.obj;
                 // console.log(obj)
                 // 32 湖南大学  8 东北大学  21 华北电力大学  38 西南大学
-                if(a == 8 || a == 32 || a == 21 || a == 38){
-                    // this.$route.path = '/statement'
+                // if(a == 8 || a == 32 || a == 21 || a == 38){
+                if(a == "东北大学" || a == "湖南大学" || a == "华北电力大学" || a == "西南大学"){
                     this.$router.push({path:'/statement',query:obj})
                 }else{
-                    //  {path:'/additional',query:obj}
                      this.$router.push({path:'/additional',query:obj});
                 }
             }

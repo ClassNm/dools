@@ -25,7 +25,7 @@
                         <div class="ui-form-text">
                             <input type="text"
                                    name=""
-                                   v-model="SchoolName"
+                                   v-model="schoolName"
                                    readonly="readonly"
                                    id="orgName"
                                    class="ui-input"
@@ -56,7 +56,7 @@
                                 <input type="hidden" name="org" value="476736792" id="lxdmform_org">
                                 <div id="gkxxDiv">
                                     <ul class="orgInfos">
-                                        <li>• <a href="javascript:;">{{SchoolName}}2019年外语类专业保送生招生简章</a></li>
+                                        <li>• <a href="javascript:;">{{schoolName}}2019年外语类专业保送生招生简章</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -80,12 +80,11 @@
                                         <li style="display:inline">{{item.type}}</li>
                                     </ul>
                                 </div>
-                                
                             </div>
                         </div>
                         <!--  报考志愿 button点击跳路由 -->
                         <div class="ui-form-item" style="width: 70px">
-                            <router-link :to="{path:'/volunteerNew/applicationForm',query:obj}"   exact-active-class="router-volunteerNew-applicationForm">
+                            <router-link :to="{path:'/volunteerNew/applicationForm',query:{obj,schoolName,bid,cid}}"   exact-active-class="router-volunteerNew-applicationForm">
                                 <Button type="primary" id="lxdmform_0" class="ui-button ui-button-lceladon m_top10">下一步</Button>
                             </router-link>
                         </div>
@@ -106,7 +105,7 @@ export default {
         return {
             modal10: false,
             Show:false,
-            SchoolName:"",
+            schoolName:"",
             modal10:false,
             Show: false,
             // 招生类型
@@ -160,7 +159,7 @@ export default {
             this.modal10 = true
         },
         schoolSel(a){
-            this.SchoolName = a.school;
+            this.schoolName = a.school;
             this.modal10 = false;
             this.Show = true;
             this.obj.a = a.id;
