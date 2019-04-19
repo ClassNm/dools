@@ -5,13 +5,27 @@
             <div class="ui-box-container ui-box-zhiy">
                 <form id="add" name="add" method="POST">
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>招生类型：</strong></label>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                招生类型：
+                            </strong>
+                        </label>
                         <p class="ui-form-text" style="margin-right: 345px">
                             {{autonomously}}
                         </p>
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>学校：</strong></label>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                学校：
+                            </strong>
+                        </label>
                         <p class="ui-form-text" style="margin-right: 345px">
                             {{schoolName}}
                             <input type="hidden" name="zhiY.orgId" value="476734158">
@@ -20,16 +34,31 @@
                         <div id="orgInfos"></div>
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>报名类型：</strong></label>
-                        <p class="ui-form-text" style="margin-right: 372px">{{autonomouslyL}}</p>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                报名类型：
+                            </strong>
+                        </label>
+                        <p class="ui-form-text" style="margin-right: 372px">
+                            {{autonomouslyL}}
+                        </p>
                         <div class="ui-tiptext-container ui-tiptext-container-wait" style="margin-top:6px;">
                             <div class="ui-tiptext-arrow ui-tiptext-arrowup" style="left:14px;">
-                                <em>◆</em>
-                                <span>◆</span>
+                                <em>
+                                    ◆
+                                </em>
+                                <span>
+                                    ◆
+                                </span>
                             </div>
-                            <p class="ui-tiptext ui-tiptext-wait">
-                                <i class="ui-tiptext-icon iconfont" title="提示"></i>
-                                {{time}}
+                            <p class="ui-tiptext ui-tiptext-wait" v-for="(item,i) in time" :key="i">
+                                <i class="ui-tiptext-icon iconfont" title="提示">
+                                    
+                                </i>
+                                {{item.type}}
                             </p>
                         </div>
                         <input type="hidden" name="zhiY.lxmc" value="自主招生">
@@ -37,27 +66,47 @@
                         <input type="hidden" name="lxdm" value="01" id="add_lxdm">
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>您具备的报名条件：</strong></label>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                您具备的报名条件：
+                            </strong>
+                        </label>
                         <ul class="ui-form-text">
                             <li style="color:#c06800;">
                                 可填报专业依赖于报名条件，请先选择报名条件再选择报考专业
                             </li>
                             <li v-for="(item,index) in uitest" :key="index">
                                 <label>
-                                    <input type="checkbox" :value="{'value':item.testvalue }" name="bmtjs" onclick="">
-                                    {{item.testname}}
+                                    <input type="checkbox" :value="{'value':item.cid }" name="bmtjs" onclick="">
+                                    {{item.condition}}
                                 </label>
                             </li>
-                            <div class="ui-tiptext-container ui-tiptext-container-wait" style="margin-top:6px;">
-                                <p class="ui-tiptext ui-tiptext-wait">
-                                    <i class="ui-tiptext-icon iconfont" title="报名条件说明"></i>
-                                    请选择1个报名条件
+                            <div class="ui-tiptext-container ui-tiptext-container-wait" 
+                            style="margin-top:6px;"
+                            >
+                                <i class="ui-tiptext-icon iconfont" title="报名条件说明">
+                                        
+                                </i>
+                                <p class="ui-tiptext ui-tiptext-wait" 
+                                v-for="(item,index) in uitest" :key="index"                            
+                                >
+                                    {{item.explain1}}
                                 </p>
                             </div>
                         </ul>
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>专业：</strong></label>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                专业：
+                            </strong>
+                        </label>
                         <p class="ui-form-text" style="margin-bottom:5px;color:#c06800;margin-right: 88px;">
                             选定报考专业之后，可通过右侧的箭头调整专业的次序。
                         </p>
@@ -65,15 +114,17 @@
                         </div>
                         <div id="allZymls">
                             <ul class="zhiyzy">
-                                <li class="zhiyzyt">理工二类</li>
+                                <!-- <li class="zhiyzyt">
+                                    理工二类
+                                </li> -->
                                 <li v-for="(item,index) in second" :key="index">
                                     <label>
                                         <input type="checkbox" :id="{'id':item.id}" onclick="" bmtjs="">
-                                        {{item.name}}
+                                        {{item.branchCampus}}
                                     </label>
                                 </li>
                             </ul>
-                            <ul class="zhiyzy">
+                            <!-- <ul class="zhiyzy">
                                 <li class="zhiyzyt">理工一类</li>
                                 <li v-for="(item,index) in category" :key="index">
                                     <label>
@@ -81,14 +132,27 @@
                                         {{item.name}}
                                     </label>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                     <div class="ui-form-item">
-                        <label for="" class="ui-label"><span class="ui-form-required">*</span><strong>是否服从调剂：</strong></label>
+                        <label for="" class="ui-label">
+                            <span class="ui-form-required">
+                                *
+                            </span>
+                            <strong>
+                                是否服从调剂：
+                            </strong>
+                        </label>
                         <p class="ui-form-text" style="margin-right: 370px">
-                            <label><input type="radio" name="zhiY.fctj" value="true">是</label>
-                            <label><input type="radio" name="zhiY.fctj" value="false" checked="checked">否</label>
+                            <label>
+                                <input type="radio" name="zhiY.fctj" value="true">
+                                是
+                            </label>
+                            <label>
+                                <input type="radio" name="zhiY.fctj" value="false" checked="checked">
+                                否
+                            </label>
                         </p>
                     </div>
                     <div class="ui-form-item" id="errorMessageBox" style="display:none">
@@ -108,6 +172,7 @@
 </template>
 
 <script>
+import {ApplicationF} from '../../vuex/actions.js'
 import axios from 'axios'
 import headerT from '../common/headerT'
 import Axios from 'axios';
@@ -125,36 +190,16 @@ import Axios from 'axios';
                 // 报名类型
                 autonomouslyL:"自主招生",
                 // 报名时间
-                time:"报名时间：2018-03-20 19:40:00 至 2018-04-01 00:00:00；北京科技大学最多允许填报 2 个报名类型；“自主招生”类型要求考生的报考学校总数不能超过5个；允许填报的专业类别总数至少 1 个，最多 2 个；允许填报专业总数最少 6 个，最多 6 个；允许每个专业类别下可选专业数最少 0 个，最多 6 个。",
+                time:"",
                 // 报名条件
                 uitest:[
-                    {
-                        testname:"高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者;",
-                        testvalue:"高中阶段获得全国奥林匹克竞赛（数学、物理、化学、生物、信息学）省级赛区二等奖（含）以上奖励者；"
-                    },
-                    {
-                        testname:"高中阶段在全国青少年科技创新大赛（含全国青少年生物和环境科学实践活动）、“明天小小科学家”奖励活动或全国中小学电脑制作活动中获得省级一等奖（含）以上奖励者;",
-                        testvalue:"高中阶段在全国青少年科技创新大赛（含全国青少年生物和环境科学实践活动）、“明天小小科学家”奖励活动或全国中小学电脑制作活动中获得省级一等奖（含）以上奖励者；"
-                    },
-                    {
-                        testname:"对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。",
-                        testvalue:"对我校某类学科有浓厚兴趣，并具有较强学科特长或较强创新实践能力，且能提供相关证明材料。符合该报名条件的考生，须配寄中学校长、社会团体或专家（正教授或相当专业技术职务）的实名推荐材料，推荐内容要能够证明该考生的学科特长和专业培养潜质，推荐人或推荐单位须对其所推荐材料真实性负责。"
-                    },
+                    
                 ],
+                // 选择几个条件
+                explain1 : "",
                 // 二类
                 second:[
-                    {
-                        name:"冶金工程",
-                        id:"cakv1nz4g1rl4gnu"
-                    },
-                    {
-                        name:"矿业类",
-                        id:"mgnsdv5se550dv2z"
-                    },
-                    {
-                        name:"安全工程",
-                        id:"zs6fuje1jtpw2nx4"
-                    }
+                   
                 ],
                 // 一类
                 category:[
@@ -214,7 +259,8 @@ import Axios from 'axios';
                 // 学校的 bid cid
                 bid : "",
                 cid : "",
-
+                 // 学校的cod
+                schoolCode:"",
             }
         },
         components:{
@@ -224,20 +270,33 @@ import Axios from 'axios';
             // console.log(this.$route)
             this.schoolName = this.$route.query.schoolName
             this.obj.schoolName = this.$route.query.schoolName
+            this.schoolCode = this.$route.query.schoolCode
             
-            // this.bid = JSON.stringify(this.$route.query.bid)
-            // this.cid = JSON.stringify(this.$route.query.cid)
-            this.bid = this.$route.query.bid
-            this.cid = this.$route.query.cid
-            let data = {
-                bid :  this.bid,
-                cid : this.cid
+            let dataL = this.schoolCode
+            // 报名时间
+            axios.post('http://192.168.0.130:8080/SchoolEntryType/findByCid',dataL,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+            .then((res)=>{
+                console.log(res.data)
+                this.time = res.data
+            }),(err)=>{
+                console.log(err)
             }
-            let datal = JSON.stringify(data)
-            console.log(typeof(datal))
-            axios.post('http://192.168.0.130:8080/SchoolEntryRequirements/fingByBidAndCid',datal,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+
+            this.bid = this.$route.query.bid
+            let data = this.bid
+            // 报名条件
+            axios.post('http://192.168.0.130:8080/SchoolEntryType/fingByBid',data,{headers:{'Content-Type':"application/json;charset=UTF-8"}})
             .then((res) => {
-                console.log(res)
+                // console.log(res.data)
+                this.uitest = res.data
+            }),(err)=>{
+                console.log(err)
+            }
+            // 报名专业
+            axios.post('http://192.168.0.130:8080/SchoolEntryType/findByBidAndCid',data,{headers:{'Content-Type':"application/json;charset=UTF-8"}})
+            .then((res)=>{
+                // console.log(res.data)
+                this.second = res.data
             }),(err)=>{
                 console.log(err)
             }
@@ -257,18 +316,17 @@ import Axios from 'axios';
         },
         methods:{
             hot(){
-                // console.log(this.$route.query.a,'query的参数显示对应的信息')
                 // console.log(this.$route)
-                // let a = this.$route.query.a;
                 let a = this.$route.query.schoolName;
                 let obj = this.obj;
+                let bid = this.bid
                 // console.log(obj)
                 // 32 湖南大学  8 东北大学  21 华北电力大学  38 西南大学
                 // if(a == 8 || a == 32 || a == 21 || a == 38){
-                if(a == "东北大学" || a == "湖南大学" || a == "华北电力大学" || a == "西南大学"){
-                    this.$router.push({path:'/statement',query:obj})
+                if(a == "苏州大学" || a == "湖南大学" || a == "华北电力大学" || a == "西南交通大学"){
+                    this.$router.push({path:'/statement',query:{obj,bid}})
                 }else{
-                     this.$router.push({path:'/additional',query:obj});
+                     this.$router.push({path:'/additional',query:{obj,bid}});
                 }
             }
         }
@@ -318,6 +376,7 @@ import Axios from 'axios';
         display: inline-block;
         margin-top: 5px;
         text-align: left;
+        width: 100%
     }
     .ui-tiptext-container-wait {
         border: 1px solid #fae3cc;
@@ -347,6 +406,7 @@ import Axios from 'axios';
         position: relative;
         font-size: 12px;
         zoom: 1;
+        display: inline
     }
     .ui-tiptext-wait .ui-tiptext-icon {
         color: #d1a066;
@@ -462,6 +522,4 @@ import Axios from 'axios';
         color: #f60;
         font-weight: 700;
     }
-
-
 </style>

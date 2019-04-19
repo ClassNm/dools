@@ -64,7 +64,7 @@
             pook(){
                 let obj = this.obj;
                 let a = obj.schoolName;
-                if(a == "西南大学"){
+                if(a == "西南交通大学"){
                     this.$router.push({path:'/applicationT',query:obj})
                 }else{
                     this.$router.push({path:'/referrerT',query:obj})

@@ -22,7 +22,7 @@
                         </router-link>
                         <Submenu name="3">
                             <template slot="title">
-                                    <Icon type="ios-keypad" style="margin: 0 10px 10px 0"></Icon>
+                                    <Icon type="ios-keypad" style="margin: 0 10px 8px 0"></Icon>
                                     <div style="display: inline-block;" title="填报个人信息">
                                         填报个人信息
                                     </div>
@@ -107,11 +107,18 @@
 </script>
 
 <style scoped>
+     
+     /* 小图标 */
+    /* .ivu-menu-vertical .ivu-menu-submenu-title-icon{
+        top: 30px;
+        background: red
+    } */
+
+
     .ivu-menu-submenu{
         padding-bottom:-10px;
     }
     .layout{
-        /*border: 1px solid #d7dde4;*/
         box-shadow: 0 0 1px #888888;
         background: white;
         position: relative;

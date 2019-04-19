@@ -84,7 +84,7 @@
                         </div>
                         <!--  报考志愿 button点击跳路由 -->
                         <div class="ui-form-item" style="width: 70px">
-                            <router-link :to="{path:'/volunteerNew/applicationForm',query:{obj,schoolName,bid,cid}}"   exact-active-class="router-volunteerNew-applicationForm">
+                            <router-link :to="{path:'/volunteerNew/applicationForm',query:{obj,schoolName,bid,cid,schoolCode}}"   exact-active-class="router-volunteerNew-applicationForm">
                                 <Button type="primary" id="lxdmform_0" class="ui-button ui-button-lceladon m_top10">下一步</Button>
                             </router-link>
                         </div>
@@ -126,6 +126,7 @@ export default {
             cid:"",
         }
     },
+    // 通过计算路由隐藏 显示下边的页面
     computed:{
         free(){
             let pa = this.$route.path;
@@ -146,6 +147,7 @@ export default {
             }
         },
     },
+    //  学校列表
     created(){
         axios.post('http://192.168.0.130:8080/School/findAll')
         .then((res)=>{
@@ -158,6 +160,7 @@ export default {
         foon(){
             this.modal10 = true
         },
+        // 获取报名时间
         schoolSel(a){
             this.schoolName = a.school;
             this.modal10 = false;
@@ -172,7 +175,7 @@ export default {
                 console.log(err)
             }
         },
-       
+        // 根据接受来的参数获取下个页面的信息
         aaa(b){
             // console.log(b)
             this.bid = b.bid;
@@ -180,13 +183,6 @@ export default {
             // console.log(this.bid,"bid")
             // console.log(this.cid,"cid")
         }
-        
-    },
-    mounted(){
-        // let a  = this.schoolArr.index;
-        // if(a == 1){
-        //     return two;
-        // }
     }
 }
 </script>
@@ -198,8 +194,6 @@ export default {
         margin: 0;
         padding: 0;
         border-bottom: 0;
-        /*box-shadow: 0 1px 2px #dadad8;*/
-        /*background: white;*/
     }
     .ui-box-head {
         border-bottom: 1px solid #ccc;
@@ -367,13 +361,5 @@ export default {
     .ui-button-lceladon {
         height: 32px;
     }
-
-
-
-
-
-
-
-
 </style>
 

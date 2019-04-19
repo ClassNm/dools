@@ -153,10 +153,10 @@
             hear(){
                 let pa = this.$route.query.schoolName;
                 // console.log(pa,'1111');
-                if (pa == "东北大学" ||
+                if (pa == "苏州大学" ||
                     pa == "湖南大学" ||
                     pa == "华北电力大学" ||
-                    pa == "西南大学"
+                    pa == "西南交通大学"
                 ){
                     return true
                 }else {

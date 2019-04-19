@@ -589,7 +589,7 @@
             fool(){
                 let obj = this.obj;
                 let a = obj.schoolName;
-                if(a == "西南大学" || a == "东北大学" || a == "湖南大学"){
+                if(a == "西南交通大学" || a == "苏州大学" || a == "湖南大学"){
                     this.$router.push({path:'/additional',query:obj})
                 }else{
                     this.$router.push({path:'/obstetrics',query:obj})

@@ -9,33 +9,6 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
 //     })
 // };
 
-
-// 学生基本信息·
-// export const getListDataFn = ({commit},obj)=>{
-    //     axios.post('/StudentInformation/save').then((data)=>{
-    //         commit('getListData',data.data)
-    //     })
-    // }
-
-    // export const aa = function(){
-    //     let url = '/StudentInformation/save'
-    //     axios.post(url,data).then(res) => {
-            
-    //     },(err)=>{
-
-    //     }
-    // }
-    // heads : {
-        //     'content-type' : 'application/x-www-form-urlencoded'
-        // }
-        // let heads = {
-        //     'content-type' : 'application/x-www-form-urlencoded'
-        // }
-        // var instance = axios.create({
-        //     baseURL: 'http://192.168.0.130:8080/swagger-ui.html#/',
-        //     timeout: 1000,
-        //     headers: {'X-Custom-Header': 'foobar'}
-        //   });  
         
         
         //基本信息 
@@ -65,7 +38,7 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
 
     // 成绩信息
     export const grade = function(e) {
-        let url = '/Scoresheet/save'
+        let url = '/Scoresheet1/save'
         let data = e
         axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
         .then((res)=>{
@@ -75,8 +48,6 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
             console.log(err)
         })
     }
-
-
 
     // 新增社会活动
     export const activity = function(e) {
@@ -154,22 +125,15 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
         })
     }
 
-
-    // 接受省级信息
-    // export const Province = function(e) {
-    //     let url = '/City/findById'
+    // 志愿填报 bid cid
+    // export const ApplicationF = function(e) {
+    //     let url = '/SchoolEntryType/fingByBid'
     //     let data = e
-    //     // console.log(this.data)
-    //     let contentType = "application/json"
-    //     // axios.post(baseURL，data,
-    //         // {headers: {'Content-Type': 'json'}})
-    //     axios.post(url,data)
+    //     axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
     //     .then((res)=>{
-            
-    //         // console.log(data)
-    //         // this.educationAlternative = data
+    //         console.log(res.data)
+    //         // res = res.data;
     //     },(err)=>{
     //         console.log(err)
     //     })
     // }
-            
