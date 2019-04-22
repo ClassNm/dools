@@ -256,6 +256,7 @@
 </template>
 
 <script>
+import { mockEx } from '../../vuex/actions.js'
 export default {
     data(){
         return{
@@ -272,17 +273,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 数学
@@ -292,17 +290,14 @@ export default {
                      { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 外语
@@ -312,17 +307,14 @@ export default {
                      { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 政治
@@ -332,17 +324,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 历史
@@ -352,17 +341,14 @@ export default {
                      { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 地理
@@ -372,17 +358,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目  物理
@@ -392,17 +375,14 @@ export default {
                      { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 化学
@@ -412,17 +392,14 @@ export default {
                      { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 生物
@@ -432,17 +409,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 美术
@@ -452,17 +426,14 @@ export default {
                      { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 体育
@@ -472,17 +443,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 音乐
@@ -492,17 +460,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                  // 科目 信息技术
@@ -512,17 +477,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                  // 科目 通用技术
@@ -532,17 +494,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 文科综合	
@@ -552,17 +511,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 理科综合	
@@ -572,37 +528,31 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 总分	
-                total:"理科综合",
+                total:"总分",
                 totalL:[
                       // 分别对应第一次成绩 第二次成绩 第三次成绩
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 年级排名		
@@ -612,17 +562,14 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
                 // 科目 年级人数			
@@ -632,46 +579,310 @@ export default {
                     { 
                         value:"无",
                         value1:"无",
-                        index : 1
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 2 
                     },
                     {
                         value:"无",
                         value1:"无",
-                        index : 3
                     },
                 ],
         }
     },
     methods:{
         submit(){
-            let data = {
-                test : this.languageL,
-                test1 : this.mathematicsL,
-                test2 : this.languagesL,
-                test3 : this.politicsL,
-                test4 : this.historyL,
-                test5 : this.geographyL,
-                test6 : this.physicsL,
-                test7 : this.chemistryL,
-                test8 : this.biologyL,
-                test9 : this.artsL,
-                test10 : this.sportsL,
-                test11 : this.musicL,
-                test12 : this.ITL,
-                test13 : this.techniqueL,
-                test14 : this.comprehensiveL,
-                test15 : this.integratedL,
-                test16 : this.totalL,
-                test17 : this.GradeL,
-                test18 : this.numbergradeL,
-            }
-            let dataL = JSON.stringify(data)
-            console.log(dataL);
+            // 语文
+            let a = JSON.stringify(this.languageL[0])
+            let b = JSON.stringify(this.languageL[1])
+            let c = JSON.stringify(this.languageL[2]) 
+            // 数学
+            let aM = JSON.stringify(this.mathematicsL[0])
+            let bM = JSON.stringify(this.mathematicsL[1])
+            let cM = JSON.stringify(this.mathematicsL[2]) 
+            // 外语
+            let aP = JSON.stringify(this.languagesL[0])
+            let bP = JSON.stringify(this.languagesL[1])
+            let cP = JSON.stringify(this.languagesL[2]) 
+            // 政治
+            let aPo = JSON.stringify(this.politicsL[0])
+            let bPo = JSON.stringify(this.politicsL[1])
+            let cPo = JSON.stringify(this.politicsL[2]) 
+            // 历史
+            let aH = JSON.stringify(this.historyL[0])
+            let bH = JSON.stringify(this.historyL[1])
+            let cH = JSON.stringify(this.historyL[2]) 
+             // 地理
+            let aG = JSON.stringify(this.geographyL[0])
+            let bG = JSON.stringify(this.geographyL[1])
+            let cG = JSON.stringify(this.geographyL[2]) 
+            // 物理
+            let aPh = JSON.stringify(this.physicsL[0])
+            let bPh = JSON.stringify(this.physicsL[1])
+            let cPh = JSON.stringify(this.physicsL[2]) 
+            // 化学
+            let aC = JSON.stringify(this.chemistryL[0])
+            let bC = JSON.stringify(this.chemistryL[1])
+            let cC = JSON.stringify(this.chemistryL[2]) 
+            // 生物
+            let aB = JSON.stringify(this.biologyL[0])
+            let bB = JSON.stringify(this.biologyL[1])
+            let cB = JSON.stringify(this.biologyL[2]) 
+            // 美术
+            let aA = JSON.stringify(this.artsL[0])
+            let bA = JSON.stringify(this.artsL[1])
+            let cA = JSON.stringify(this.artsL[2]) 
+            // 体育
+            let aS = JSON.stringify(this.sportsL[0])
+            let bS = JSON.stringify(this.sportsL[1])
+            let cS = JSON.stringify(this.sportsL[2]) 
+            // 音乐
+            let aMu = JSON.stringify(this.musicL[0])
+            let bMu = JSON.stringify(this.musicL[1])
+            let cMu = JSON.stringify(this.musicL[2]) 
+            // 信息技术
+            let aIT = JSON.stringify(this.ITL[0])
+            let bIT = JSON.stringify(this.ITL[1])
+            let cIT = JSON.stringify(this.ITL[2]) 
+            // 通用技术
+            let aTe = JSON.stringify(this.techniqueL[0])
+            let bTe = JSON.stringify(this.techniqueL[1])
+            let cTe = JSON.stringify(this.techniqueL[2]) 
+            // 文科综合
+            let aCo = JSON.stringify(this.comprehensiveL[0])
+            let bCo = JSON.stringify(this.comprehensiveL[1])
+            let cCo = JSON.stringify(this.comprehensiveL[2]) 
+            // 理科综合
+            let aIn = JSON.stringify(this.integratedL[0])
+            let bIn = JSON.stringify(this.integratedL[1])
+            let cIn = JSON.stringify(this.integratedL[2]) 
+            // 总分
+            let aTo = JSON.stringify(this.totalL[0])
+            let bTo = JSON.stringify(this.totalL[1])
+            let cTo = JSON.stringify(this.totalL[2]) 
+             // 年级排名
+            let aGr = JSON.stringify(this.GradeL[0])
+            let bGr = JSON.stringify(this.GradeL[1])
+            let cGr = JSON.stringify(this.GradeL[2]) 
+            // 年级人数
+            let aNu = JSON.stringify(this.numbergradeL[0])
+            let bNu = JSON.stringify(this.numbergradeL[1])
+            let cNu = JSON.stringify(this.numbergradeL[2]) 
+
+
+            let data = [
+                // 科目 语文
+                {
+                    // 高一上学期
+                    seniorThreeOne: a,
+                     // 高一下学期
+                    seniorThreeTwo:b,
+                     // 高二上学期
+                    seniorThreeThree: c,
+                    code:"Chinese",
+                },
+                 // 数学
+                {
+                    // 高一上学期
+                    seniorThreeOne: aM,
+                     // 高一下学期
+                    seniorThreeTwo:bM,
+                     // 高二上学期
+                    seniorThreeThree: cM,
+                    // 标注
+                    code:"Math",
+                },
+                // 外语
+                {
+                    // 高一上学期
+                    seniorThreeOne: aP,
+                     // 高一下学期
+                    seniorThreeTwo:bP,
+                     // 高二上学期
+                    seniorThreeThree: cP,
+                    // 标注
+                    code:"ForeignLanguage",
+                },
+                // 政治
+                {
+                    // 高一上学期
+                    seniorThreeOne: aPo,
+                     // 高一下学期
+                    seniorThreeTwo:bPo,
+                     // 高二上学期
+                    seniorThreeThree: cPo,
+                    // 标注
+                    code:"Politics",
+                },
+                // 历史
+                {
+                    // 高一上学期
+                    seniorThreeOne: aH,
+                     // 高一下学期
+                    seniorThreeTwo:bH,
+                     // 高二上学期
+                    seniorThreeThree: cH,
+                    // 标注
+                    code:"History",
+                },
+                // 地理
+                 {
+                    // 高一上学期
+                    seniorThreeOne: aG,
+                     // 高一下学期
+                    seniorThreeTwo:bG,
+                     // 高二上学期
+                    seniorThreeThree: cG,
+                    // 标注
+                    code:"Geography",
+                },
+                // 物理
+                 {
+                    // 高一上学期
+                    seniorThreeOne: aPh,
+                     // 高一下学期
+                    seniorThreeTwo:bPh,
+                     // 高二上学期
+                    seniorThreeThree: cPh,
+                    // 标注
+                    code:"Physics",
+                },
+                 // 科目 化学
+                {
+                    // 高一上学期
+                    seniorThreeOne: aC,
+                     // 高一下学期
+                    seniorThreeTwo:bC,
+                     // 高二上学期
+                    seniorThreeThree: cC,
+                    // 标注
+                    code:"Chem",
+                },
+                 // 科目 生物
+                {
+                    // 高一上学期
+                    seniorThreeOne: aB,
+                     // 高一下学期
+                    seniorThreeTwo:bB,
+                     // 高二上学期
+                    seniorThreeThree: cB,
+                    // 标注
+                    code:"Biology",
+                },
+                 // 科目 美术
+                {
+                    // 高一上学期
+                    seniorThreeOne: aA,
+                     // 高一下学期
+                    seniorThreeTwo:bA,
+                     // 高二上学期
+                    seniorThreeThree: cA,
+                    // 标注
+                    code:"FineArts",
+                },
+                 // 科目 体育
+                {
+                    // 高一上学期
+                    seniorThreeOne: aS,
+                     // 高一下学期
+                    seniorThreeTwo:bS,
+                     // 高二上学期
+                    seniorThreeThree: cS,
+                    // 标注
+                    code:"Sports",
+                },
+                // 科目 音乐
+                {
+                    // 高一上学期
+                    seniorThreeOne: aMu,
+                     // 高一下学期
+                    seniorThreeTwo:bMu,
+                     // 高二上学期
+                    seniorThreeThree: cMu,
+                    // 标注
+                    code:"Music",
+                },
+                // 科目 信息技术
+                {
+                    // 高一上学期
+                    seniorThreeOne: aIT,
+                     // 高一下学期
+                    seniorThreeTwo:bIT,
+                     // 高二上学期
+                    seniorThreeThree: cIT,
+                    // 标注
+                    code:"InformationTechnology",
+                },
+                // 科目 通用技术
+                {
+                    // 高一上学期
+                    seniorThreeOne: aTe,
+                     // 高一下学期
+                    seniorThreeTwo:bTe,
+                     // 高二上学期
+                    seniorThreeThree: cTe,
+                    // 标注
+                    code:"CommunicationTechnology",
+                },
+                // 科目 文科综合
+                {
+                    // 高一上学期
+                    seniorThreeOne: aCo,
+                     // 高一下学期
+                    seniorThreeTwo:bCo,
+                     // 高二上学期
+                    seniorThreeThree: cCo,
+                    // 标注
+                    code:"LiberalArts",
+                },
+                // 科目 理科综合
+                {
+                    // 高一上学期
+                    seniorThreeOne: aIn,
+                     // 高一下学期
+                    seniorThreeTwo:bIn,
+                     // 高二上学期
+                    seniorThreeThree: cIn,
+                    // 标注
+                    code:"Science",
+                },
+                // 科目 总分
+                 {
+                    // 高一上学期
+                    seniorThreeOne: aTo,
+                     // 高一下学期
+                    seniorThreeTwo:bTo,
+                     // 高二上学期
+                    seniorThreeThree: cTo,
+                    // 标注
+                    code:"Score",
+                },
+                // 科目 年级排名
+                {
+                    // 高一上学期
+                    seniorThreeOne: aGr,
+                     // 高一下学期
+                    seniorThreeTwo:bGr,
+                     // 高二上学期
+                    seniorThreeThree: cGr,
+                    // 标注
+                    code:"GradeRanking",
+                },
+                // 科目 年级人数
+                {
+                    // 高一上学期
+                    seniorThreeOne: aNu,
+                     // 高一下学期
+                    seniorThreeTwo:bNu,
+                     // 高二上学期
+                    seniorThreeThree: cNu,
+                    // 标注
+                    code:"GradeNumber",
+                },
+            ]
+            console.log(data);
+            mockEx(data)
         }
     }
 }

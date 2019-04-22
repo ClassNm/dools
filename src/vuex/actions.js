@@ -73,6 +73,33 @@ axios.defaults.baseURL = "http://192.168.0.130:8080";
         })
     }
 
+    // 模考成绩
+    export const mockEx = function(e) {
+        let url = '/Analogscore/save'
+        let data = e
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+    // 单科排名
+    export const singUb = function(e) {
+        let url = '/Subjectranking/save'
+        let data = e
+        axios.post(url,data,{headers:{'Content-Type':"application/json; charset=UTF-8"}})
+        .then((res)=>{
+            console.log(res)
+            res = res.data;
+        },(err)=>{
+            console.log(err)
+        })
+    }
+
+
     // 推荐人信息  添加推荐专家
     export const expert = function(e) {
         let url = '/Recommender/save'

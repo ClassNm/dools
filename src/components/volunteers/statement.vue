@@ -70,7 +70,6 @@
             }),(err)=>{
                 console.log(err)
             }
-            
         },
         methods:{
             heer(){
@@ -87,8 +86,6 @@
                 }),(err)=>{
                     console.log(err)
                 }
-
-
                 let obj = this.obj;
                 let a = obj.schoolName;
                 // if(a == "西南大学"){
@@ -97,7 +94,6 @@
                 //     this.$router.push({path:'/mock',query:obj})
                 // }
                 this.$router.push({path:'/mock',query:obj})
-                
             }
         }
     }
